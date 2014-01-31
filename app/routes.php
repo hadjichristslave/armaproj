@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	echo 'this';
+	var_dump(User::all());
 	return View::make('hello');
 });
 
