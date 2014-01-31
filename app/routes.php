@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	var_dump(Geographcompartment::find(1)->counties;
+	var_dump(Geographcompartment::find(1)->counties);
 	echo '-----------------------------';
 	var_dump(County::find(1)->compartment);
 	var_dump(County::find(1)->town;
