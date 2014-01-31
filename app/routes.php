@@ -16,10 +16,10 @@ Route::get('/', function()
 	var_dump(Geographcompartment::find(1)->counties);
 	echo '-----------------------------';
 	var_dump(County::find(1)->compartment);
-	var_dump(County::find(1)->town;
+	var_dump(County::find(1)->town);
 	echo '-----------------------------';
-	var_dump(Town::find(1)->county;
-	var_dump(Town::find(1)->area;
+	var_dump(Town::find(1)->county);
+	var_dump(Town::find(1)->area);
 	echo '-----------------------------';
 	var_dump(Area::find(1)->town);
 	return View::make('hello');
