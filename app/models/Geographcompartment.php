@@ -6,5 +6,7 @@ class Geographcompartment extends Eloquent{
     {
         return $this->hasMany('County' , 'compartId');
     }
-
+    public function echothis(){
+    	echo 'asdf';
+    }
 }
