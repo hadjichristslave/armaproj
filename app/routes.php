@@ -13,20 +13,6 @@
 
 Route::get('/', function()
 {
-	Area::all();
-	County::all();
-	Employee::all();
-	Employeeorder::all();
-	Geographcompartment::all();
-	Order::all();
-	Orderstate::all();
-	Product::all();
-	Store::all();
-	Storeproduct::all();
-	Town::all();
-	User::all();
-	Usergroup::all();
-	Warehouse::all();
 	return View::make('hello');
 });
 
