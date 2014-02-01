@@ -109,6 +109,7 @@ return array(
 		'Slave\Validpack\ValidpackServiceProvider',
 		'Slave\Login\LoginServiceProvider',
 		'Slave\Dbtools\DbtoolsServiceProvider',
+		'Slave\Calendar\CalendarServiceProvider',
 
 	),
 

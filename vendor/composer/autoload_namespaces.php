@@ -24,6 +24,7 @@ return array(
     'Slave\\Validpack\\' => array($vendorDir . '/slave/validpack/src'),
     'Slave\\Login\\' => array($vendorDir . '/slave/login/src'),
     'Slave\\Dbtools\\' => array($vendorDir . '/slave/dbtools/src'),
+    'Slave\\Calendar\\' => array($vendorDir . '/slave/calendar/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Predis' => array($vendorDir . '/predis/predis/lib'),
     'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),

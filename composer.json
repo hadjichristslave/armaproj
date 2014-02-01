@@ -7,7 +7,8 @@
 		"laravel/framework": "4.1.*",
 		"slave/dbtools": "dev-master",
 		"slave/login": "dev-master",
-		"slave/validpack": "dev-master"
+		"slave/validpack": "dev-master",
+		"slave/calendar": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
