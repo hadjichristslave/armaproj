@@ -107,8 +107,9 @@ class Calendar extends Model  {
 			$counter = Calendar::where("start" , "like" , "%$currentMonth%")
 					->where("user_id" , "=", $value->user_id)
 					->count();
-			$currentEmployee = Calendar::find($value->id)->employee->id;
-			var_dump($counter . " " . $currentEmployee);			
+			$currentEmployee = Calendar::find($value->id)->employee-;
+			var_dump($counter);
+			var_dump($currentEmployee);
 		}
 	}
 }
