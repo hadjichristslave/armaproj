@@ -1338,10 +1338,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="http://armancon.com/azadmin/assets/scripts/app.js"></script>
 <script src="http://armancon.com/azadmin/assets/scripts/calendar.js"></script>
-<script src="/myproject/public/packages/slave/calendar/js/dataTableScripts.js"></script>
-<script src="/myproject/public/packages/slave/calendar/js/demo.calendar.js"></script> 
-<script src="/myproject/public/packages/slave/calendar/js/cmsScripts.js"></script>	
-<script src="/myproject/public/packages/slave/calendar/js/select2.min.js"></script>
+<script src="packages/slave/calendar/js/dataTableScripts.js"></script>
+<script src="packages/slave/calendar/js/demo.calendar.js"></script> 
+<script src="packages/slave/calendar/js/cmsScripts.js"></script>	
+<script src="packages/slave/calendar/js/select2.min.js"></script>
 <script>
 jQuery(document).ready(function() {       
    // initiate layout and plugins
