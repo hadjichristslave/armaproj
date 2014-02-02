@@ -35,9 +35,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <link href="http://armancon.com/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="http://armancon.com/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="http://armancon.com/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
-<link media="all" type="text/css" rel="stylesheet" href="packages/slave/calendar/css/fullcalendar.print.css">
-<link media="all" type="text/css" rel="stylesheet" href="packages/slave/calendar/css/select2.css">
-<link media="all" type="text/css" rel="stylesheet" href="packages/slave/calendar/css/jquery.ui.all.css">
+<link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/fullcalendar.print.css">
+<link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/select2.css">
+<link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/jquery.ui.all.css">
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -1339,10 +1339,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="http://armancon.com/azadmin/assets/scripts/app.js"></script>
 <script src="http://armancon.com/azadmin/assets/scripts/calendar.js"></script>
-<script src="packages/slave/calendar/js/dataTableScripts.js"></script>
-<script src="packages/slave/calendar/js/demo.calendar.js"></script> 
-<script src="packages/slave/calendar/js/cmsScripts.js"></script>	
-<script src="packages/slave/calendar/js/select2.min.js"></script>
+<script src="../packages/slave/calendar/js/dataTableScripts.js"></script>
+<script src="../packages/slave/calendar/js/demo.calendar.js"></script> 
+<script src="../packages/slave/calendar/js/cmsScripts.js"></script>	
+<script src="../packages/slave/calendar/js/select2.min.js"></script>
 <script>
 jQuery(document).ready(function() {       
    // initiate layout and plugins
