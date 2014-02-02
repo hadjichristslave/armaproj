@@ -142,7 +142,7 @@
 
 				},
                 editable: true,
-				events: "calendar/calreturn"
+				events: "calreturn"
 
             });
         }
