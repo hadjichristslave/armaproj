@@ -22,7 +22,6 @@
     position: relative;
     padding: 13px 16px;
     background: url(../../images/core/mws-panel-header-bg.png) repeat-x;
-    z-index:10;
 }
 
 .ui-dialog .ui-dialog-title {
