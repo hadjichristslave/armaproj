@@ -94,4 +94,9 @@ class Calendar extends Model  {
 	public static function retrievewebservicefeed($limit, $offset){
 		return Calendar::skip($offset)->take($limit)->orderBy('start', 'desc')->get();
 	}
+
+	public static function getEmployeesClosingTimes(){
+		$dat = Calendar::group_by('user_id')->count();
+		var_dump($dat);
+	}
 }
