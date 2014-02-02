@@ -11,6 +11,9 @@ class Calendar extends Model  {
 	public $timestamps = false;
 	public $rules = array('title'=> array('required', 'min:4') , 'start' =>array('date_format:Y-m-d H:i:s'), 'end' =>array('date_format:Y-m-d H:i:s'), 'allDay' =>array('integer'));
 	
+	public function employeee(){
+		return $this->hasOne('Employee', 'id', 'user_id');
+	}
 	
 	public static function returnCal(){
 		$data   = Calendar::all();
@@ -96,7 +99,16 @@ class Calendar extends Model  {
 	}
 
 	public static function getEmployeesClosingTimes(){
-		$dat = Calendar::groupBy('user_id')->count('user_id as counter')->get();
-		var_dump($dat);
+		$currentMonth = $today = date("Y-m");
+		$currentEvents = Calendar::where("start" , "like" , "%$currentMonth%")->groupBy("user_id")->get();
+
+		$employeeCount = array();
+		foreach ($currentEvents as $key => $value) {
+			$counter = Calendar::where("start" , "like" , "%$currentMonth%")
+					->where("user_id" , "=", $value->user_id)
+					->count();
+			$currentEmployee = Calendar::find($value->id)->employee->id;
+			var_dump($counter . " " . $currentEmployee);			
+		}
 	}
 }
