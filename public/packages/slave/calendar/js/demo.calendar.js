@@ -37,7 +37,7 @@
 							buttons: [{
 								text: "Create",
 								click: function () {
-										url      = "calendar/create";
+										url      = "../calendar/create";
 										$(".calendar_start").val(start);
 										$(".calendar_end").val(end);
 										$(".calendar_allday").val(allDay);
