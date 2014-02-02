@@ -37,7 +37,7 @@
 							buttons: [{
 								text: "Create",
 								click: function () {
-										url      = "calendar/create";
+										url      = "../calendar/create";
 										$(".calendar_start").val(start);
 										$(".calendar_end").val(end);
 										$(".calendar_allday").val(allDay);
@@ -65,7 +65,7 @@
 				eventDrop: function(e, delta) {
 					calendar.fullCalendar('removeEvents' , e.id);			
 										
-					url      = "calendar/edit";
+					url      = "../calendar/edit";
 					data     = { _token :token , id: e.id , start:e.start , end : e.end , extras:e.extras, title:e.title, allDay:e.allDay, user_id: $(".ev_creator_class").val()}
 					calendarModifyCall(url , data);
 
@@ -104,7 +104,7 @@
 										calendar.fullCalendar('removeEvents' , $(".modal_msg_id").val());
 										
 										
-										url      = "calendar/edit";
+										url      = "../calendar/edit";
 										$(".calendar_start").val(calEvent.start);
 										$(".calendar_end").val(calEvent.end);
 										$(".calendar_allday").val(calEvent.allDay);
@@ -130,7 +130,7 @@
 							{
 								text: "Delete the event",
 								click: function () {
-									url      = "calendar/delete/"+ $(".modal_msg_id").val();
+									url      = "../calendar/delete/"+ $(".modal_msg_id").val();
 									data     = { _token: token}
 									calendar.fullCalendar('removeEvents' , $(".modal_msg_id").val());
 									calendarModifyCall(url , data);
@@ -142,7 +142,7 @@
 
 				},
                 editable: true,
-				events: "calendar/calreturn"
+				events: "../calendar/calreturn"
 
             });
         }
