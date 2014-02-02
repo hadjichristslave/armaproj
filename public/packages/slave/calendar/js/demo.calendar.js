@@ -32,7 +32,7 @@
 				select: function(start, end, allDay) {
 					//$("#mws-calendar").fullCalendar('removeEvents' , 'idOrArray');
 					 $("#mws-form-dialog").dialog("option", {
-							title: 'Create Event',
+							title: 'Ανάθεση κλεισίματος σε υπάλληλο',
 							modal: true,
 							buttons: [{
 								text: "Create",

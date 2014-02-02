@@ -70,7 +70,7 @@
 						</div>
 					</div>
 					<div class="mws-form-row">
-						<label class="mws-form-label">Διαθέσιμοι υπάληλοι για κλείσιμο:</label><br>
+						<label class="mws-form-label">Διαθέσιμοι υπάληλοι:</label><br>
 							<select class="select2 medium ev_creator_class" name="user_id">
 				               <optgroup label="0 φορές αυτό το μήνα">
 				                   <option value="3">Casper</option>
