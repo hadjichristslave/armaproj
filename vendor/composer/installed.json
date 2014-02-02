@@ -1704,19 +1704,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/hadjichristslave/calendar.git",
-            "reference": "c79c01cf0ef186f26fe082a1a6966ca84a316469"
+            "reference": "748c8e6aa4790977861f611542350b656b5e6983"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/hadjichristslave/calendar/zipball/c79c01cf0ef186f26fe082a1a6966ca84a316469",
-            "reference": "c79c01cf0ef186f26fe082a1a6966ca84a316469",
+            "url": "https://api.github.com/repos/hadjichristslave/calendar/zipball/748c8e6aa4790977861f611542350b656b5e6983",
+            "reference": "748c8e6aa4790977861f611542350b656b5e6983",
             "shasum": ""
         },
         "require": {
             "illuminate/support": "4.1.*",
             "php": ">=5.3.0"
         },
-        "time": "2014-02-02 17:29:11",
+        "time": "2014-02-02 17:33:33",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
