@@ -97,7 +97,7 @@
 
 <style>
 .select2{
-	width:100%;
+	width:150px;
 }
 </style>
 
