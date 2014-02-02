@@ -96,7 +96,7 @@ class Calendar extends Model  {
 	}
 
 	public static function getEmployeesClosingTimes(){
-		$dat = Calendar::groupBy('user-id')->count();
+		$dat = Calendar::groupBy('user_id')->count();
 		var_dump($dat);
 	}
 }
