@@ -183,7 +183,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				</ul>
 			</li>
 			<!-- END NOTIFICATION DROPDOWN -->
-			<?php echo getcwd(); ?>
 			<!-- BEGIN INBOX DROPDOWN -->
 			<li class="dropdown" id="header_inbox_bar">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
