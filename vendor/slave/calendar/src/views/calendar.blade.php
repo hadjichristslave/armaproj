@@ -71,8 +71,7 @@
 					</div>
 					<div class="mws-form-row">
 						<label class="mws-form-label">Last Modify From:</label>
-							<select class="mws-select2 medium ev_creator_class" name="user_id" disabled="disabled">
-							     <option value="1" selected >panos</option>
+							<select class="mws-select2 medium ev_creator_class" name="user_id">
 							</select>
 					</div>
 					<div class="mws-form-row" style="display:none;">
