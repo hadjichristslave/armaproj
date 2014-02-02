@@ -70,8 +70,8 @@
 						</div>
 					</div>
 					<div class="mws-form-row">
-						<label class="mws-form-label">Διαθέσιμοι υπάληλοι για κλείσιμο:</label>
-							<select class="mws-select2 medium ev_creator_class" name="user_id">
+						<label class="mws-form-label">Διαθέσιμοι υπάληλοι για κλείσιμο:</label><br>
+							<select class="select2 medium ev_creator_class" name="user_id">
 				               <optgroup label="0 φορές αυτό το μήνα">
 				                   <option value="3">Casper</option>
 				               </optgroup>
@@ -94,6 +94,12 @@
 	</form>
  </div>
 <!-- END FOOTER -->
+
+<style>
+.select2{
+	width:100%;
+}
+</style>
 
 
 @stop
