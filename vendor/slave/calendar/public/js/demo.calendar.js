@@ -20,10 +20,10 @@
             var y = date.getFullYear();
 
 
-           var calendar =  $("#mws-calendar").fullCalendar({
+           var calendar =  $("#calendar").fullCalendar({
 				onClick: function(event ,ui){ console.log(event); console.log(ui);},
                 header: {
-                    left: 'prev,next today',
+                    left: 'title prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },

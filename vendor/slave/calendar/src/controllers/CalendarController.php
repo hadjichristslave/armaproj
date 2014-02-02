@@ -42,6 +42,7 @@ class CalendarController extends Controller {
      *
      * @return void
      */
+     protected $layout = 'layouts.master';
 
 	public function __construct(){
 		$this->beforeFilter('csrf', array('on' => 'post'));
@@ -50,6 +51,9 @@ class CalendarController extends Controller {
 	public function getIndex(){
 		return View::make('calendar::index');
 	}
+     public function getCalendar(){
+        return View::make('calendar::calendar');
+     }
 	public function postCreate(){
 		Calendar::customCreate();
 	}
