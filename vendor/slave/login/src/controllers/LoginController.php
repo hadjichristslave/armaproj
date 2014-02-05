@@ -56,7 +56,9 @@ class LoginController extends Controller {
 		else    return Redirect::to("login");	
 	}
 	public function getLogin(){
-		return View::make("login::login");
+		if (Auth::check())
+		        return Redirect::intended('dashboard');
+		else    return View::make('login::login');
 	}
 	public function postSignup(){
 		$input = Input::except('_token');
@@ -96,7 +98,7 @@ class LoginController extends Controller {
 		->with('token', $token)
 		->with('email', $email);
 	}
-	
+
 	public function postToken(){
 		if(Input::get('password')!= Input::get("rpassword"))
 			return 'login-8';
