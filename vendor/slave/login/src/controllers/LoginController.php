@@ -50,7 +50,7 @@ class LoginController extends Controller {
 	}
 
 	public function postLogin(){
-		if (Auth::attempt(array('username' => $username, 'password' => $password),true))
+		if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')),true))
 		        return Redirect::intended('dashboard');
 		else    return Redirect::to("login");	
 	}
