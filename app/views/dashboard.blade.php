@@ -22,25 +22,25 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <meta content="" name="author"/>
 <meta name="MobileOptimized" content="320">
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-<link href="/assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL PLUGIN STYLES -->
 <!-- BEGIN THEME STYLES -->
-<link href="/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/pages/tasks.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/pages/tasks.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -53,12 +53,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<div class="header-inner">
 		<!-- BEGIN LOGO -->
 		<a class="navbar-brand" href="index.html">
-		<img src="/assets/img/logo.png" alt="logo" class="img-responsive"/>
+		<img src="/azadmin/assets/img/logo.png" alt="logo" class="img-responsive"/>
 		</a>
 		<!-- END LOGO -->
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 		<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<img src="/assets/img/menu-toggler.png" alt=""/>
+		<img src="/azadmin/assets/img/menu-toggler.png" alt=""/>
 		</a>
 		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
@@ -205,7 +205,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src=".//assets/img/avatar2.jpg" alt=""/>
+									<img src=".//azadmin/assets/img/avatar2.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -223,7 +223,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src=".//assets/img/avatar3.jpg" alt=""/>
+									<img src=".//azadmin/assets/img/avatar3.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -241,7 +241,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src=".//assets/img/avatar1.jpg" alt=""/>
+									<img src=".//azadmin/assets/img/avatar1.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -259,7 +259,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src=".//assets/img/avatar2.jpg" alt=""/>
+									<img src=".//azadmin/assets/img/avatar2.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -277,7 +277,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src=".//assets/img/avatar3.jpg" alt=""/>
+									<img src=".//azadmin/assets/img/avatar3.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -460,7 +460,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-				<img alt="" src="/assets/img/avatar1_small.jpg"/>
+				<img alt="" src="/azadmin/assets/img/avatar1_small.jpg"/>
 				<span class="username">
 					Εργαζόμενος Μηδέν
 				</span>
@@ -1388,7 +1388,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</div>
 						<div class="portlet-body">
 							<div id="site_statistics_loading">
-								<img src="/assets/img/loading.gif" alt="loading"/>
+								<img src="/azadmin/assets/img/loading.gif" alt="loading"/>
 							</div>
 							<div id="site_statistics_content" class="display-none">
 								<div id="site_statistics" class="chart">
@@ -1414,7 +1414,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</div>
 						<div class="portlet-body">
 							<div id="site_activities_loading">
-								<img src="/assets/img/loading.gif" alt="loading"/>
+								<img src="/azadmin/assets/img/loading.gif" alt="loading"/>
 							</div>
 							<div id="site_activities_content" class="display-none">
 								<div id="site_activities" style="height: 100px;">
@@ -1438,7 +1438,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</div>
 						<div class="portlet-body">
 							<div id="load_statistics_loading">
-								<img src="/assets/img/loading.gif" alt="loading"/>
+								<img src="/azadmin/assets/img/loading.gif" alt="loading"/>
 							</div>
 							<div id="load_statistics_content" class="display-none">
 								<div id="load_statistics" style="height: 108px;">
@@ -2277,7 +2277,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</div>
 						<div class="portlet-body">
 							<div id="region_statistics_loading">
-								<img src="/assets/img/loading.gif" alt="loading"/>
+								<img src="/azadmin/assets/img/loading.gif" alt="loading"/>
 							</div>
 							<div id="region_statistics_content" class="display-none">
 								<div class="btn-toolbar margin-bottom-10">
@@ -2987,7 +2987,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										<div class="scroller" style="height: 290px;" data-always-visible="1" data-rail-visible1="1">
 											<div class="row">
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Robert Nilson</a>
@@ -3001,7 +3001,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 													</div>
 												</div>
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Lisa Miller</a>
@@ -3017,7 +3017,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 											</div>
 											<div class="row">
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Eric Kim</a>
@@ -3031,7 +3031,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 													</div>
 												</div>
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Lisa Miller</a>
@@ -3047,7 +3047,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 											</div>
 											<div class="row">
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Eric Kim</a>
@@ -3061,7 +3061,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 													</div>
 												</div>
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Lisa Miller</a>
@@ -3077,7 +3077,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 											</div>
 											<div class="row">
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Eric Kim</a>
@@ -3091,7 +3091,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 													</div>
 												</div>
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Lisa Miller</a>
@@ -3107,7 +3107,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 											</div>
 											<div class="row">
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Eric Kim</a>
@@ -3121,7 +3121,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 													</div>
 												</div>
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Lisa Miller</a>
@@ -3137,7 +3137,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 											</div>
 											<div class="row">
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Eric Kim</a>
@@ -3151,7 +3151,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 													</div>
 												</div>
 												<div class="col-md-6 user-info">
-													<img alt="" src="/assets/img/avatar.png" class="img-responsive"/>
+													<img alt="" src="/azadmin/assets/img/avatar.png" class="img-responsive"/>
 													<div class="details">
 														<div>
 															<a href="#">Lisa Miller</a>
@@ -3211,7 +3211,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<div class="scroller" style="height: 435px;" data-always-visible="1" data-rail-visible1="1">
 								<ul class="chats">
 									<li class="in">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar1.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3225,7 +3225,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar2.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar2.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3239,7 +3239,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										</div>
 									</li>
 									<li class="in">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar1.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3253,7 +3253,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar3.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3267,7 +3267,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										</div>
 									</li>
 									<li class="in">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar3.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3281,7 +3281,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar1.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3295,7 +3295,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										</div>
 									</li>
 									<li class="in">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar3.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar3.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3309,7 +3309,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 										</div>
 									</li>
 									<li class="out">
-										<img class="avatar img-responsive" alt="" src="/assets/img/avatar1.jpg"/>
+										<img class="avatar img-responsive" alt="" src="/azadmin/assets/img/avatar1.jpg"/>
 										<div class="message">
 											<span class="arrow">
 											</span>
@@ -3359,43 +3359,43 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-<script src="/assets/plugins/respond.min.js"></script>
-<script src="/assets/plugins/excanvas.min.js"></script> 
+<script src="/azadmin/assets/plugins/respond.min.js"></script>
+<script src="/azadmin/assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="/assets/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
-<script src="/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
-<script src="/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
-<script src="/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
-<script src="/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
-<script src="/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
-<script src="/assets/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
-<script src="/assets/plugins/flot/jquery.flot.js" type="text/javascript"></script>
-<script src="/assets/plugins/flot/jquery.flot.resize.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
-<script src="/assets/plugins/gritter/js/jquery.gritter.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/flot/jquery.flot.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/flot/jquery.flot.resize.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/gritter/js/jquery.gritter.js" type="text/javascript"></script>
 <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
-<script src="/assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/assets/scripts/app.js" type="text/javascript"></script>
-<script src="/assets/scripts/index.js" type="text/javascript"></script>
-<script src="/assets/scripts/tasks.js" type="text/javascript"></script>
+<script src="/azadmin/assets/scripts/app.js" type="text/javascript"></script>
+<script src="/azadmin/assets/scripts/index.js" type="text/javascript"></script>
+<script src="/azadmin/assets/scripts/tasks.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {    
