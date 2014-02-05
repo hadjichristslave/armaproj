@@ -56,6 +56,7 @@ class LoginController extends Controller {
 		else    return Redirect::to("login");	
 	}
 	public function getLogin(){
+		die('there');
 		return Vies::make("login::login");
 	}
 	public function postSignup(){
