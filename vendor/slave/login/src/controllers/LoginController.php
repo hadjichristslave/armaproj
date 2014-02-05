@@ -73,10 +73,6 @@ class LoginController extends Controller {
 		        
 	}
 
-	public function getLogin(){
-		if (Auth::check())
-		    return Redirect::to("login");
-	}
 
 	public function getLogout(){
 		Auth::logout();
