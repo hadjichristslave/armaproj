@@ -22,7 +22,6 @@
 <link rel="stylesheet" type="text/css" href="/azadmin/assets/plugins/select2/select2_metro.css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
-<link href="/azadmin/assets/css/style-metronidc.css" rel="stylesheet" type="text/css"/>
 <link href="/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
 <link href="/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>

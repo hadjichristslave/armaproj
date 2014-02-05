@@ -21,20 +21,20 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <meta content="" name="author"/>
 <meta name="MobileOptimized" content="320">
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="http://armancon.com/azadmin/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link href="http://armancon.com/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet"/>
+<link href="/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet"/>
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
-<link href="http://armancon.com/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="http://armancon.com/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/fullcalendar.print.css">
 <link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/select2.css">
 <link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/jquery.ui.all.css">
@@ -1323,24 +1323,24 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="assets/plugins/respond.min.js"></script>
 <script src="assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
-<script src="http://armancon.com/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+<script src="/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="http://armancon.com/azadmin/assets/scripts/app.js"></script>
-<script src="http://armancon.com/azadmin/assets/scripts/calendar.js"></script>
+<script src="/azadmin/assets/scripts/app.js"></script>
+<script src="/azadmin/assets/scripts/calendar.js"></script>
 <script src="../packages/slave/calendar/js/dataTableScripts.js"></script>
 <script src="../packages/slave/calendar/js/demo.calendar.js"></script> 
 <script src="../packages/slave/calendar/js/cmsScripts.js"></script>	
