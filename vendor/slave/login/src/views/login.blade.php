@@ -42,6 +42,7 @@
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
+	{{Hash::make('123456')}}
 	<!-- BEGIN LOGIN FORM -->
 	<form class="login-form" action="/azadmin/myproject/public/auth/login" method="post">
 		<h3 class="form-title">Login to your account</h3>
