@@ -10,6 +10,7 @@ use User;
 use Mail;
 use App;
 use Auth;
+use Redirect;
 
 
 class LoginController extends Controller {
@@ -71,15 +72,11 @@ class LoginController extends Controller {
 				return 'login-1';
 		}else
 			return 'login-7';
-		        
 	}
-
-
 	public function getLogout(){
 		Auth::logout();
 		return Redirect::to("login");
 	}
-
 	public function postForgot(){
 		$count = User::where('email' , '=' , Input::get('email'))->count();
 		if($count<=0)
@@ -99,7 +96,7 @@ class LoginController extends Controller {
 		->with('token', $token)
 		->with('email', $email);
 	}
-
+	
 	public function postToken(){
 		if(Input::get('password')!= Input::get("rpassword"))
 			return 'login-8';
