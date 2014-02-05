@@ -9,6 +9,7 @@ use Response;
 use User;
 use Mail;
 use App;
+use Auth;
 
 
 class LoginController extends Controller {
