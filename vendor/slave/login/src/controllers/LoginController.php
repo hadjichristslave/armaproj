@@ -55,6 +55,9 @@ class LoginController extends Controller {
 		        return Redirect::intended('dashboard');
 		else    return Redirect::to("login");	
 	}
+	public function getLogin(){
+		return Vies::make("login:login");
+	}
 	public function postSignup(){
 		$input = Input::except('_token');
 		$user  = new User();
