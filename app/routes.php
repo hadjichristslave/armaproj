@@ -14,7 +14,7 @@
 Route::get('/', function(){
 	return View::make('hello');
 });
-
+Route::controller('app', 'AppController');
 Route::controller('database', 'Slave\Dbtools\DbtoolsController');
 Route::controller('auth', 'Slave\Login\LoginController');
 Route::controller('calendar', 'Slave\Calendar\CalendarController');

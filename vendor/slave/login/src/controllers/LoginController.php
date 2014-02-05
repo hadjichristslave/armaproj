@@ -77,7 +77,7 @@ class LoginController extends Controller {
 	}
 	public function getLogout(){
 		Auth::logout();
-		return Redirect::to("login");
+		return Redirect::intended("auth/login");
 	}
 	public function postForgot(){
 		$count = User::where('email' , '=' , Input::get('email'))->count();
