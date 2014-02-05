@@ -43,9 +43,7 @@ class LoginController extends Controller {
      * @return void
      */
 
-	public function __construct(UserRepositoryInterface $user){
-		$this->user = $user;
-		$this->user->getSomeOutput();
+	public function __construct(){
 		$this->beforeFilter('csrf', array('on' => 'post'));
 	 	//$this->beforeFilter('auth'); 
 	}
@@ -56,8 +54,7 @@ class LoginController extends Controller {
 		else    return Redirect::to("login");	
 	}
 	public function getLogin(){
-		die('there');
-		return Vies::make("login::login");
+		return View::make("login::login");
 	}
 	public function postSignup(){
 		$input = Input::except('_token');
