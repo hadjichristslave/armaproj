@@ -43,8 +43,9 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="/auth/login" method="post">
+	<form class="login-form" action="/azadmin/myproject/public/auth/login" method="post">
 		<h3 class="form-title">Login to your account</h3>
+		{{ Form::token()}}
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>
 			<span>
@@ -83,7 +84,7 @@
 	</form>
 	<!-- END LOGIN FORM -->
 	<!-- BEGIN FORGOT PASSWORD FORM -->
-	<form class="forget-form" action="/auth/forgot" method="post">
+	<form class="forget-form" action="/azadmin/myproject/public/auth/forgot" method="post">
 		<h3>Forget Password ?</h3>
 		<p>
 			 Enter your e-mail address below to reset your password.
@@ -107,7 +108,7 @@
 <!-- END LOGIN -->
 <!-- BEGIN COPYRIGHT -->
 <div class="copyright">
-	 2014 &copy; 
+	 2014 &copy; Slave - Saint Al. productions
 </div>
 <!-- END COPYRIGHT -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->

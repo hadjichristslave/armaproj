@@ -49,6 +49,8 @@ class LoginController extends Controller {
 	}
 
 	public function postLogin(){
+		var_dump(Input::all());
+		die();
 		if (Auth::attempt(array('username' => $username, 'password' => $password)))
 		        return Redirect::intended('dashboard');
 		else    return Redirect::to("login");	
@@ -79,7 +81,7 @@ class LoginController extends Controller {
 		return Redirect::to("login");
 	}
 
-	public function getForgot(){
+	public function postForgot(){
 		$count = User::where('email' , '=' , Input::get('email'))->count();
 		if($count<=0)
 			return 'login-3';
