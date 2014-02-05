@@ -56,7 +56,7 @@ class LoginController extends Controller {
 		else    return Redirect::to("login");	
 	}
 	public function getLogin(){
-		return Vies::make("login:login");
+		return Vies::make("login::login");
 	}
 	public function postSignup(){
 		$input = Input::except('_token');
