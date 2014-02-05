@@ -89,7 +89,7 @@ class LoginController extends Controller {
 		$user->token = $token;
 		$user->save();
 		Mail::send('login::token', array('email'=>Input::get('email') , 'token'=>$token, 'title' =>'Password reset email!'), function($message){
-	      $message->to("p.hadjichristodoulou@hotmail.com","Panos")->subject('Password reset email!');
+	      $message->to($user->email,"Panos")->subject('Password reset email!');
 	   	});
 	}
 
