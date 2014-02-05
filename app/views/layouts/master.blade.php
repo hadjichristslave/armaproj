@@ -39,6 +39,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/select2.css">
 <link media="all" type="text/css" rel="stylesheet" href="../packages/slave/calendar/css/jquery.ui.all.css">
 <!-- END THEME STYLES -->
+<!-- Login styles	-->
+<link rel="stylesheet" type="text/css" href="http://www.armancon.com/azadmin/assets/plugins/select2/select2_metro.css"/>
+<!-- Login styles end	-->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 <!-- END HEAD -->
@@ -1342,10 +1345,16 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="../packages/slave/calendar/js/demo.calendar.js"></script> 
 <script src="../packages/slave/calendar/js/cmsScripts.js"></script>	
 <script src="../packages/slave/calendar/js/select2.min.js"></script>
+<!-- LOGIN SCRIPTS-->
+<script src="http://www.armancon.com/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="http://www.armancon.com/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="http://www.armancon.com/azadmin/assets/scripts/login-soft.js" type="text/javascript"></script>
+<!-- END LOGIN SCRIPTS -->
 <script>
 jQuery(document).ready(function() {       
    // initiate layout and plugins
    App.init();
+   Login.init();
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->

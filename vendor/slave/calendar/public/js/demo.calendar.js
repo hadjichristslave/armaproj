@@ -96,7 +96,7 @@
 					
 					
 					$("#mws-form-dialog").dialog("option", {
-							title: 'Τροποποίηση ανάθεσης',
+							title: 'Edit event',
 							modal: true,
 							buttons: [{
 								text: "Edit the event",
@@ -128,7 +128,7 @@
 								}
 							},
 							{
-								text: "Διαγραφή ανάθεσης",
+								text: "Delete the event",
 								click: function () {
 									url      = "delete/"+ $(".modal_msg_id").val();
 									data     = { _token: token}

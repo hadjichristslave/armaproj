@@ -1481,63 +1481,71 @@
         "description": "Laravel based db tools"
     },
     {
-        "name": "slave/login",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "patchwork/utf8",
+        "version": "v1.1.18",
+        "version_normalized": "1.1.18.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/hadjichristslave/login.git",
-            "reference": "b6c70e8fc22308a11aeccc6ec78def6c3bc24abb"
+            "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
+            "reference": "66a936cc633fe13378c91f81030d5193be968480"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/hadjichristslave/login/zipball/b6c70e8fc22308a11aeccc6ec78def6c3bc24abb",
-            "reference": "b6c70e8fc22308a11aeccc6ec78def6c3bc24abb",
+            "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/66a936cc633fe13378c91f81030d5193be968480",
+            "reference": "66a936cc633fe13378c91f81030d5193be968480",
             "shasum": ""
         },
         "require": {
-            "illuminate/support": "4.1.*",
+            "lib-pcre": ">=7.3",
             "php": ">=5.3.0"
         },
-        "time": "2014-01-28 20:58:50",
+        "suggest": {
+            "ext-iconv": "Use iconv for best performance",
+            "ext-intl": "Use Intl for best performance",
+            "ext-mbstring": "Use Mbstring for best performance"
+        },
+        "time": "2014-02-02 17:09:49",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
-            "classmap": [
-                "src/migrations",
-                "src/models",
-                "src/controllers",
-                "src/views"
-            ],
             "psr-0": {
-                "Slave\\Login\\": "src/"
+                "Patchwork": "class/",
+                "Normalizer": "class/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD-2-Clause"
+            "(Apache-2.0 or GPL-2.0)"
         ],
         "authors": [
             {
-                "name": "panagiotis",
-                "email": "p.hadjichristodoulou@hotmail.com"
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com",
+                "role": "Developer"
             }
         ],
-        "description": "Login module containing sign in login logout forgot you password"
+        "description": "Extensive, portable and performant handling of UTF-8 and grapheme clusters for PHP",
+        "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
+        "keywords": [
+            "i18n",
+            "unicode",
+            "utf-8",
+            "utf8"
+        ]
     },
     {
         "name": "laravel/framework",
-        "version": "v4.1.19",
-        "version_normalized": "4.1.19.0",
+        "version": "v4.1.21",
+        "version_normalized": "4.1.21.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "d6774632e7aa6774ed53c6c38386967c2671fffe"
+            "reference": "d4b2d82d7ec26d193d179df7b4fc653f37dcae6b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/d6774632e7aa6774ed53c6c38386967c2671fffe",
-            "reference": "d6774632e7aa6774ed53c6c38386967c2671fffe",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/d4b2d82d7ec26d193d179df7b4fc653f37dcae6b",
+            "reference": "d4b2d82d7ec26d193d179df7b4fc653f37dcae6b",
             "shasum": ""
         },
         "require": {
@@ -1605,7 +1613,7 @@
         "suggest": {
             "doctrine/dbal": "Allow renaming columns and dropping SQLite columns."
         },
-        "time": "2014-01-31 21:17:43",
+        "time": "2014-02-04 01:21:04",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1645,57 +1653,49 @@
         ]
     },
     {
-        "name": "patchwork/utf8",
-        "version": "v1.1.18",
-        "version_normalized": "1.1.18.0",
+        "name": "slave/login",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-            "reference": "66a936cc633fe13378c91f81030d5193be968480"
+            "url": "https://github.com/hadjichristslave/login.git",
+            "reference": "ab1e8d0b984a05ec4453160dbfda47efd5a1fa8c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/66a936cc633fe13378c91f81030d5193be968480",
-            "reference": "66a936cc633fe13378c91f81030d5193be968480",
+            "url": "https://api.github.com/repos/hadjichristslave/login/zipball/ab1e8d0b984a05ec4453160dbfda47efd5a1fa8c",
+            "reference": "ab1e8d0b984a05ec4453160dbfda47efd5a1fa8c",
             "shasum": ""
         },
         "require": {
-            "lib-pcre": ">=7.3",
+            "illuminate/support": "4.1.*",
             "php": ">=5.3.0"
         },
-        "suggest": {
-            "ext-iconv": "Use iconv for best performance",
-            "ext-intl": "Use Intl for best performance",
-            "ext-mbstring": "Use Mbstring for best performance"
-        },
-        "time": "2014-02-02 17:09:49",
+        "time": "2014-02-05 16:39:34",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
+            "classmap": [
+                "src/migrations",
+                "src/models",
+                "src/controllers",
+                "src/views"
+            ],
             "psr-0": {
-                "Patchwork": "class/",
-                "Normalizer": "class/"
+                "Slave\\Login\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "(Apache-2.0 or GPL-2.0)"
+            "BSD-2-Clause"
         ],
         "authors": [
             {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com",
-                "role": "Developer"
+                "name": "panagiotis",
+                "email": "p.hadjichristodoulou@hotmail.com"
             }
         ],
-        "description": "Extensive, portable and performant handling of UTF-8 and grapheme clusters for PHP",
-        "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
-        "keywords": [
-            "i18n",
-            "unicode",
-            "utf-8",
-            "utf8"
-        ]
+        "description": "Login module containing sign in login logout forgot you password"
     },
     {
         "name": "slave/calendar",
@@ -1704,19 +1704,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/hadjichristslave/calendar.git",
-            "reference": "748c8e6aa4790977861f611542350b656b5e6983"
+            "reference": "9cfaa673e6414fc6b49bdc4ebc092df7fec1a20c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/hadjichristslave/calendar/zipball/748c8e6aa4790977861f611542350b656b5e6983",
-            "reference": "748c8e6aa4790977861f611542350b656b5e6983",
+            "url": "https://api.github.com/repos/hadjichristslave/calendar/zipball/9cfaa673e6414fc6b49bdc4ebc092df7fec1a20c",
+            "reference": "9cfaa673e6414fc6b49bdc4ebc092df7fec1a20c",
             "shasum": ""
         },
         "require": {
             "illuminate/support": "4.1.*",
             "php": ">=5.3.0"
         },
-        "time": "2014-02-02 17:33:33",
+        "time": "2014-02-02 19:40:08",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

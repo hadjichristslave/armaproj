@@ -52,7 +52,6 @@ class CalendarController extends Controller {
 		return View::make('calendar::index');
 	}
      public function getCalendar(){
-          Calendar::getEmployeesClosingTimes();
         return View::make('calendar::calendar');
      }
 	public function postCreate(){

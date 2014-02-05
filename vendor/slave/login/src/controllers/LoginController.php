@@ -8,9 +8,10 @@ use View;
 use Response;
 use User;
 use Mail;
+use App;
+
 
 class LoginController extends Controller {
-
 	/**
      * Basic Controller API
      * methods supported
@@ -42,7 +43,9 @@ class LoginController extends Controller {
      * @return void
      */
 
-	public function __construct(){
+	public function __construct(UserRepositoryInterface $user){
+		$this->user = $user;
+		$this->user->getSomeOutput();
 		$this->beforeFilter('csrf', array('on' => 'post'));
 	 	//$this->beforeFilter('auth'); 
 	}
