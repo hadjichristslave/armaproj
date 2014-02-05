@@ -49,9 +49,7 @@ class LoginController extends Controller {
 	}
 
 	public function postLogin(){
-		var_dump(Input::all());
-		die();
-		if (Auth::attempt(array('username' => $username, 'password' => $password)))
+		if (Auth::attempt(array('username' => $username, 'password' => $password),true))
 		        return Redirect::intended('dashboard');
 		else    return Redirect::to("login");	
 	}
