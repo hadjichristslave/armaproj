@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- 
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.0.3
@@ -496,7 +495,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						<a href="extra_lock.html"><i class="fa fa-lock"></i> Lock Screen</a>
 					</li>
 					<li>
-						<a href="login.html"><i class="fa fa-key"></i> Log Out</a>
+						<a href="/azadmin/myproject/public/auth/logout"><i class="fa fa-key"></i> Log Out</a>
 					</li>
 				</ul>
 			</li>
