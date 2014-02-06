@@ -18,8 +18,6 @@ class Validpack {
 			$data[$key] = $obj->$key;
 		}
 		$validator = Validator::make($data,$rules);
-		if($validator->passes())
-			return true;
-		return $validator->errors();
+		return $validator;
 	}	 
 }
