@@ -868,7 +868,7 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Τρέχων e-mail</label>
-														<input type="text" placeholder="πχ onoma@azade.com" class="form-control" value="{{{{Auth::user()->email}}}}"/>
+														<input type="text" placeholder="πχ onoma@azade.com" class="form-control" value="{{Auth::user()->email}}"/>
 													</div>
 													<div class="margin-top-10">
 														<a href="#" class="btn green">Αλλαγή Κωδικού</a>
