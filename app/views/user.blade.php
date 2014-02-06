@@ -781,18 +781,19 @@
 									<div class="col-md-9">
 										<div class="tab-content">
 											<div id="tab_1-1" class="tab-pane active">
-												<form role="form" action="#">
+												<form role="form" action="/azadmin/myproject/public/app/update/Employee">
+													{{Form::token()}}
 													<div class="form-group">
 														<label class="control-label">Όνομα</label>
-														<input type="text" placeholder="πχ. Παναγιώτης" class="form-control"/>
+														<input type="text" name="name" placeholder="πχ. Παναγιώτης" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Επώνυμο</label>
-														<input type="text" placeholder="πχ. Παπαδόπουλος" class="form-control"/>
+														<input type="text" name="lname" placeholder="πχ. Παπαδόπουλος" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Κινητό Τηλέφωνο</label>
-														<input type="text" placeholder="πχ. 698 888 8888" class="form-control"/>
+														<input type="text" name="mobile" placeholder="πχ. 698 888 8888" class="form-control"/>
 													</div>
 													<!-- <div class="form-group">
 														<label class="control-label">Interests</label>
@@ -802,10 +803,6 @@
 														<label class="control-label">About</label>
 														<textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
 													</div> -->
-													<div class="form-group">
-														<label class="control-label">Προσωπικό Email</label>
-														<input type="text" placeholder="πχ alex@gmail.com" class="form-control"/>
-													</div>
 													<div class="margiv-top-10">
 														<a href="#" class="btn green">Save Changes</a>
 														<a href="#" class="btn default">Cancel</a>
@@ -1394,4 +1391,7 @@
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
+			<?php
+			var_dump(Auth::user());
+			?>
 @stop
