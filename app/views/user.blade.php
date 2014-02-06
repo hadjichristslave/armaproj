@@ -781,7 +781,7 @@
 									<div class="col-md-9">
 										<div class="tab-content">
 											<div id="tab_1-1" class="tab-pane active">
-												<form role="form" action="/azadmin/myproject/public/app/update/Employee">
+												<form role="form" action="/azadmin/myproject/public/app/update/Employee" method="post">
 													{{Form::token()}}
 													<div class="form-group">
 														<label class="control-label">Όνομα</label>
