@@ -783,19 +783,17 @@
 											<div id="tab_1-1" class="tab-pane active">
 												<form role="form" action="/azadmin/myproject/public/app/update/Employee" method="post">
 													{{Form::token()}}
-													<?php 
-													var_dump(Auth::user()->employee->attributes);?>
 													<div class="form-group">
 														<label class="control-label">Όνομα</label>
-														<input type="text" name="name" placeholder="πχ. Παναγιώτης" value="" class="form-control"/>
+														<input type="text" name="name" placeholder="πχ. Παναγιώτης" value="{{Auth::user()->employee->name}}" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Επώνυμο</label>
-														<input type="text" name="lname" placeholder="πχ. Παπαδόπουλος" class="form-control"/>
+														<input type="text" name="lname" placeholder="πχ. Παπαδόπουλος" class="form-control" value="{{Auth::user()->employee->lname}}"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Κινητό Τηλέφωνο</label>
-														<input type="text" name="mobile" placeholder="πχ. 698 888 8888" class="form-control"/>
+														<input type="text" name="mobile" placeholder="πχ. 698 888 8888" class="form-control" value="{{Auth::user()->employee->mobile}}"/>
 													</div>
 													<!-- <div class="form-group">
 														<label class="control-label">Interests</label>
@@ -1394,7 +1392,4 @@
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
-			<?php
-			var_dump(Auth::user());
-			?>
 @stop
