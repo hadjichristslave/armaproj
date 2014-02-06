@@ -111,13 +111,13 @@
 														<i class="fa fa-calendar"></i> 18 Ιαν. 1982
 													</li>
 													<li>
-														<i class="fa fa-mobile"></i> Auth::user()->employee->mobile
+														<i class="fa fa-mobile"></i> {{Auth::user()->employee->mobile}}
 													</li>
 													<li>
-														<i class="fa fa-phone"></i> Auth::user()->employee->mobile
+														<i class="fa fa-phone"></i> {{Auth::user()->employee->mobile}}
 													</li>
 													<li>
-														<i class="fa fa-envelope-o"></i> a.panagiotopoulos@azade.com
+														<i class="fa fa-envelope-o"></i> {{Auth::user()->email}}
 													</li>
 													
 												</ul>
