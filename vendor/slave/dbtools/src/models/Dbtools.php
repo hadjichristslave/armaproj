@@ -46,7 +46,6 @@ class Dbtools extends Model {
 	public static function updateFromModel($model , $id , $tablekey){
 		$input = Input::except('_token');
         $inputData = $model::where($tablekey, '=' , $id)->first();
-        die('there');
         try{
         	if(!Dbtools::exists($model, $id, $tablekey))
 				return "database-4";
