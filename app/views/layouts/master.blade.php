@@ -1209,7 +1209,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
-<script src="/azadmin/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+<script src="/azadmin/myproject/public/packages/slave/calendar/js/fullcalendar.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/azadmin/assets/scripts/app.js"></script>
@@ -1219,10 +1219,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="../packages/slave/calendar/js/cmsScripts.js"></script>	
 <script src="../packages/slave/calendar/js/select2.min.js"></script>
 <!--user scripts-->
-<script type="text/javascript" src="/azadmin/myproject/public/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="/azadmin/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <!--user scripts end-->
 <!-- LOGIN SCRIPTS-->
-<script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/scripts/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/scripts/login-soft.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
