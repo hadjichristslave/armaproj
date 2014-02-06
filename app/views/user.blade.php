@@ -1,8 +1,6 @@
 @extends('layouts.master')
 @section('content')
 <link href="/azadmin/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
-<div class="page-content-wrapper">
-		<div class="page-content">
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
@@ -1396,6 +1394,4 @@
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
-		</div>
-	</div>
 @stop
