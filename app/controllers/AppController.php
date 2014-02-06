@@ -1,5 +1,7 @@
 <?php
 use Slave\Dbtools\Dbtools;
+use Slave\Validpack\Validator;
+
 class AppController extends Controller {
 
 	/**

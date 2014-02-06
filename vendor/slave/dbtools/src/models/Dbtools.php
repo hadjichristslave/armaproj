@@ -49,18 +49,16 @@ class Dbtools extends Model {
         try{
         	if(!Dbtools::exists($model, $id, $tablekey))
 				return "database-4";
+
             foreach ($input as $key => $value)
                     $inputData->$key = $value;
 
-            
             $flag = Validpack::validateoperation($inputData);
-            die('no, there there');
             if($flag->passes()){
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password")
                         $inputData->$key = Hash::make($value);
                 $inputData->save();
-                die('no, there there there');
                 return "database-1";
             }else{
                 return "database-2";
