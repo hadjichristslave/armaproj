@@ -1223,7 +1223,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--user scripts end-->
 <!-- LOGIN SCRIPTS-->
 <script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/scripts/login-soft.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
 <script>
