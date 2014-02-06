@@ -770,8 +770,8 @@
 											<li>
 												<a data-toggle="tab" href="#tab_2-2"><i class="fa fa-picture-o"></i> Αλλαγή Εικόνας</a>
 											</li>
-											<li>
-												<a data-toggle="tab" href="#tab_3-3"><i class="fa fa-lock"></i> Αλλαγή Password</a>
+											<li class="tooltips" data-placement="right" data-original-title="Frontend&nbsp;Theme For&nbsp;Metronic&nbsp;Admin">
+												<a data-toggle="tab" href="#tab_3-3"><i class="fa fa-lock"></i> Αλλαγή Ευαίσθητων στοιχείων</a>
 											</li>
 											<!-- <li>
 												<a data-toggle="tab" href="#tab_4-4"><i class="fa fa-eye"></i> Privacity Settings</a>
@@ -868,7 +868,7 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Τρέχων e-mail</label>
-														<input type="text" placeholder="πχ onoma@azade.com" class="form-control"/>
+														<input type="text" placeholder="πχ onoma@azade.com" class="form-control" value="{{{{Auth::user()->email}}}}"/>
 													</div>
 													<div class="margin-top-10">
 														<a href="#" class="btn green">Αλλαγή Κωδικού</a>
