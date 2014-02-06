@@ -1222,7 +1222,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script type="text/javascript" src="/azadmin/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <!--user scripts end-->
 <!-- LOGIN SCRIPTS-->
-<script src="/azadmin/assets/scripts/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/scripts/login-soft.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
