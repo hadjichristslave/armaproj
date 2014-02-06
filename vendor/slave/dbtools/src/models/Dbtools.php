@@ -55,14 +55,14 @@ class Dbtools extends Model {
 
             $flag = Validpack::validateoperation($inputData);
             if($flag->passes()){
-                die('there');
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password")
                         $inputData->$key = Hash::make($value);
                 $inputData->save();
+                echo 'database 1';
                 return "database-1";
             }else{
-                die('there fail');
+                echo 'database 2';
                 return "database-2";
             }
         }catch(Exception $e){
