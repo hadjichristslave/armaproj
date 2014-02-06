@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<link href="/azadmin/myproject/public/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
 <div class="page-content-wrapper">
 		<div class="page-content">
 			<div class="row">
