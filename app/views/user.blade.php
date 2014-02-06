@@ -785,7 +785,7 @@
 													{{Form::token()}}
 													<div class="form-group">
 														<label class="control-label">Όνομα</label>
-														<input type="text" name="name" placeholder="πχ. Παναγιώτης" class="form-control"/>
+														<input type="text" name="name" placeholder="πχ. Παναγιώτης" value="{{Auth::user()->employee()->name}}" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Επώνυμο</label>
