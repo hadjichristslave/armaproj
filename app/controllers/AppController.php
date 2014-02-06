@@ -11,4 +11,8 @@ class AppController extends Controller {
 		return View::make('dashboard');
 	}
 
+	public function getUser(){
+		return View::make('user');
+	}
+
 }
