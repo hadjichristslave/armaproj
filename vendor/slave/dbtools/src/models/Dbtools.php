@@ -49,10 +49,10 @@ class Dbtools extends Model {
         try{
         	if(!Dbtools::exists($model, $id, $tablekey))
 				return "database-4";
-            die('no, there');
             foreach ($input as $key => $value)
                     $inputData->$key = $value;
 
+            
             $flag = Validpack::validateoperation($inputData);
             die('no, there there');
             if($flag->passes()){
