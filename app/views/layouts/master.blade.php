@@ -53,12 +53,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<div class="header-inner">
 		<!-- BEGIN LOGO -->
 		<a class="navbar-brand" href="index.html">
-		<img src="assets/img/logo.png" alt="logo" class="img-responsive"/>
+		<img src="/azadmin/assets/img/logo.png" alt="logo" class="img-responsive"/>
 		</a>
 		<!-- END LOGO -->
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 		<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<img src="assets/img/menu-toggler.png" alt=""/>
+		<img src="/azadmin/assets/img/menu-toggler.png" alt=""/>
 		</a>
 		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
@@ -1223,6 +1223,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--user scripts end-->
 <!-- LOGIN SCRIPTS-->
 <script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/scripts/login-soft.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
 <script>
