@@ -205,7 +205,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="./assets/img/avatar2.jpg" alt=""/>
+									<img src="/azadmin/assets/img/avatar2.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -223,7 +223,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="./assets/img/avatar3.jpg" alt=""/>
+									<img src="/azadmin/assets/img/avatar3.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -241,7 +241,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="./assets/img/avatar1.jpg" alt=""/>
+									<img src="/azadmin/assets/img/avatar1.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -259,7 +259,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="./assets/img/avatar2.jpg" alt=""/>
+									<img src="/azadmin/assets/img/avatar2.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -277,7 +277,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="./assets/img/avatar3.jpg" alt=""/>
+									<img src="/azadmin/assets/img/avatar3.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
