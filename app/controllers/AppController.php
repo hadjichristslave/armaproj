@@ -19,7 +19,7 @@ class AppController extends Controller {
 		return View::make('user');
 	}
 
-	public function postUpdate($model , $tablekey){
+	public function postUpdate($model , $tablekey=null){
 		$id = 0;
 		$key = $tablekey==null?'id':$tablekey;
 		if($model  == "Employee")    $id = Auth::user()->userId;
