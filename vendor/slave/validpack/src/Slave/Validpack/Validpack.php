@@ -1,5 +1,6 @@
 <?php namespace Slave\Validpack;
 use View;
+use Validator;
 class Validpack {
 
 	public function foo(){
