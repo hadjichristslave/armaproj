@@ -804,8 +804,7 @@
 														<textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
 													</div> -->
 													<div class="margiv-top-10">
-														<button type ="submit" value="Save changes">Save Changes</button>
-														<a href="#" class="btn green">Save Changes</a>
+														<button type ="submit" class="btn green" value="Save changes">Save Changes</button>
 														<a href="#" class="btn default">Cancel</a>
 													</div>
 												</form>
