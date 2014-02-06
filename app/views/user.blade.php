@@ -98,7 +98,7 @@
 									<div class="col-md-9">
 										<div class="row">
 											<div class="col-md-8 profile-info">
-												<h1>Ανδρέας Παναγιωτόπουλος</h1>
+												<h1>{{Auth::user()->employee->name}} {{Auth::user()->employee->lname}}</h1>
 												<!-- <p>
 													Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam tincidunt erat volutpat laoreet dolore magna aliquam tincidunt erat volutpat.
 												</p> -->
@@ -111,10 +111,10 @@
 														<i class="fa fa-calendar"></i> 18 Ιαν. 1982
 													</li>
 													<li>
-														<i class="fa fa-mobile"></i> 697 444 4444
+														<i class="fa fa-mobile"></i> Auth::user()->employee->mobile
 													</li>
 													<li>
-														<i class="fa fa-phone"></i> 210 999 8555
+														<i class="fa fa-phone"></i> Auth::user()->employee->mobile
 													</li>
 													<li>
 														<i class="fa fa-envelope-o"></i> a.panagiotopoulos@azade.com
