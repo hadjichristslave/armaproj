@@ -19,12 +19,12 @@ class AppController extends Controller {
 		return View::make('user');
 	}
 
-	public function postUpdate($model){
+	public function postUpdate($model , $tablekey){
 		$id = 0;
+		$key = $tablekey==null?'id':$tablekey;
 		if($model  == "Employee")    $id = Auth::user()->userId;
 		else 						 $id = Input::get('id');
-		Dboperation::updateFromModel($model, $id);
-
+		Dboperation::updateFromModel($model, $id ,$tablekey);
 	}
 
 }
