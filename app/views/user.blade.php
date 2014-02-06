@@ -798,10 +798,6 @@
 														<label class="control-label">Interests</label>
 														<input type="text" placeholder="Design, Web etc." class="form-control"/>
 													</div> -->
-													<div class="form-group">
-														<label class="control-label">Εταιρικό Email</label>
-														<input type="text" placeholder="πχ onoma@azade.com" class="form-control"/>
-													</div>
 													<!-- <div class="form-group">
 														<label class="control-label">About</label>
 														<textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
@@ -872,6 +868,10 @@
 													<div class="form-group">
 														<label class="control-label">Επανάληψη Νέου Κωδικού</label>
 														<input type="password" class="form-control"/>
+													</div>
+													<div class="form-group">
+														<label class="control-label">Τρέχων e-mail</label>
+														<input type="text" placeholder="πχ onoma@azade.com" class="form-control"/>
 													</div>
 													<div class="margin-top-10">
 														<a href="#" class="btn green">Αλλαγή Κωδικού</a>
