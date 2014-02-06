@@ -1,5 +1,5 @@
 <?php
-
+use Slave\Dbtools\Dbtools;
 class AppController extends Controller {
 
 	/**
