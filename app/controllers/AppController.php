@@ -1,5 +1,5 @@
 <?php
-use \Slave\Dbtools as Dboperation;
+
 class AppController extends Controller {
 
 	/**
@@ -24,7 +24,7 @@ class AppController extends Controller {
 		$key = $tablekey==null?'id':$tablekey;
 		if($model  == "Employee")    $id = Auth::user()->userId;
 		else 						 $id = Input::get('id');
-		Dboperation::updateFromModel($model, $id ,$tablekey);
+		Dbtools::updateFromModel($model, $id ,$tablekey);
 	}
 
 }
