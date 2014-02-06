@@ -24,7 +24,7 @@ class AppController extends Controller {
 		$key = $tablekey==null?'id':$tablekey;
 		if($model  == "Employee")    $id = Auth::user()->userId;
 		else 						 $id = Input::get('id');
-		Dbtools::updateFromModel($model, $id ,$tablekey);
+		Dbtools::updateFromModel($model, $id ,$key);
 	}
 
 }
