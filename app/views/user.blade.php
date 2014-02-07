@@ -861,14 +861,17 @@
 													<div class="form-group">
 														<label class="control-label">Νέος Κωδικός</label>
 														<input type="password" name="newpassword" id="newpassword" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό" class="form-control"/>
+														<span></span>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Επανάληψη Νέου Κωδικού</label>
 														<input type="password" name="rnewpassword" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό"  class="form-control"/>
+														<span></span>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Τρέχων e-mail</label>
 														<input type="text" name="email" placeholder="πχ onoma@azade.com" class="form-control" value="{{Auth::user()->email}}"/>
+														<span></span>
 													</div>
 													<div class="margin-top-10">
 														

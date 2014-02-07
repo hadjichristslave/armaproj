@@ -69,7 +69,7 @@ var Login = function () {
 	                    email: true
 	                },
 	                rnewpassword: {
-	                    equalTo: "#register_password"
+	                    equalTo: "#newpassword"
 	                },
 	            },
 
