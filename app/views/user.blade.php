@@ -771,7 +771,7 @@
 												<a data-toggle="tab" href="#tab_2-2"><i class="fa fa-picture-o"></i> Αλλαγή Εικόνας</a>
 											</li>
 											<li>
-												<a data-toggle="tab" href="#tab_3-3"><i class="fa fa-lock"></i> Αλλαγή Ευαίσθητων στοιχείων</a>
+												<a data-toggle="tab" href="#tab_3-3"><i class="fa fa-lock"></i> Ευαίσθητα στοιχεία</a>
 											</li>
 											<!-- <li>
 												<a data-toggle="tab" href="#tab_4-4"><i class="fa fa-eye"></i> Privacity Settings</a>
@@ -853,10 +853,10 @@
 												</form>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
-												<form action="#">
+												<form action="#" id="updateSensibleDataForm">
 													<div class="form-group">
 														<label class="control-label">Τρέχων Κωδικός</label>
-														<input type="password" class="form-control" placeholder="Για οποιαδήποτε αλλαγή στα ευαίσθητα πεδία πρέπει να πληκτρολογήσετε και τον κωδικό σας"/>
+														<input type="password" class="form-control" placeholder="Για οποιαδήποτε αλλαγή στα πεδία πληκτρολογήστε και τον κωδικό σας"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Νέος Κωδικός</label>
@@ -864,7 +864,7 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Επανάληψη Νέου Κωδικού</label>
-														<input type="password" placeholder="Γιαμή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό"  class="form-control"/>
+														<input type="password" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό"  class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Τρέχων e-mail</label>
