@@ -770,7 +770,7 @@
 											<li>
 												<a data-toggle="tab" href="#tab_2-2"><i class="fa fa-picture-o"></i> Αλλαγή Εικόνας</a>
 											</li>
-											<li class="tooltips" data-placement="right" data-original-title="Για&nbsp;την&nbsp;αλλαγή&nbsp;ευαίσθητων&nbsp;στοιχείων,&nbsp;θα&nbsp;πρέπει&nbsp;να&nbsp;πληκτρολογήσετε&nbsp;τον&nbsp;προσωπικό&nbsp;σας&nbsp;κωδικό">
+											<li>
 												<a data-toggle="tab" href="#tab_3-3"><i class="fa fa-lock"></i> Αλλαγή Ευαίσθητων στοιχείων</a>
 											</li>
 											<!-- <li>
@@ -856,7 +856,7 @@
 												<form action="#">
 													<div class="form-group">
 														<label class="control-label">Τρέχων Κωδικός</label>
-														<input type="password" class="form-control"/>
+														<input type="password" class="form-control" placeholder="Για οποιαδήποτε αλλαγή στα ευαίσθητα πεδία πρέπει να πληκτρολογήσετε και τον κωδικό σας"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Νέος Κωδικός</label>
@@ -864,7 +864,7 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Επανάληψη Νέου Κωδικού</label>
-														<input type="password" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό" class="form-control"/>
+														<input type="password" placeholder="Γιαμή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό"  class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Τρέχων e-mail</label>
