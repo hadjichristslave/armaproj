@@ -860,18 +860,19 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Νέος Κωδικός</label>
-														<input type="password" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό" class="form-control"/>
+														<input type="password" name="newpassword" id="newpassword" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Επανάληψη Νέου Κωδικού</label>
-														<input type="password" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό"  class="form-control"/>
+														<input type="password" name="rnewpassword" placeholder="Για μή αλλαγή του κωδικού αφήστε αυτό το πεδίο κενό"  class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Τρέχων e-mail</label>
-														<input type="text" placeholder="πχ onoma@azade.com" class="form-control" value="{{Auth::user()->email}}"/>
+														<input type="text" name="email" placeholder="πχ onoma@azade.com" class="form-control" value="{{Auth::user()->email}}"/>
 													</div>
 													<div class="margin-top-10">
-														<button type="submit" class="btn green">Αλλαγή κωδικού</button>
+														<a href="#" >Αλλαγή Κωδικού</a>
+														<a href="#" class="btn default">Ακύρωση</a>
 													</div>
 												</form>
 											</div>

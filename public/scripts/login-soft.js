@@ -59,6 +59,7 @@ var Login = function () {
 	        });
 	}
 	var handleUpdate = function() {
+		console.log('thid');
 		$('#updateSensibleDataForm').validate({
 	            errorElement: 'span', //default input error message container
 	            errorClass: 'help-block', // default input error message class
@@ -67,7 +68,7 @@ var Login = function () {
 	               email: {
 	                    email: true
 	                },
-	                rpassword: {
+	                rnewpassword: {
 	                    equalTo: "#register_password"
 	                },
 	            },
@@ -76,7 +77,7 @@ var Login = function () {
 	                email: {
 	                    required: "Email not valid."
 	                },
-	                password: {
+	                rnewpassword: {
 	                    required: "Passwords do not match."
 	                }
 	            },
@@ -100,11 +101,12 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
+	            	alert('thid');
 	                form.submit();
 	            }
 	        });
 
-	        $('#updateSensibleDataForm input').keypress(function (e) {
+	        $('#updateSensibleDataForm>input').keypress(function (e) {
 	            if (e.which == 13) {
 	                if ($('#updateSensibleDataForm').validate().form()) {
 	                    $('#updateSensibleDataForm').submit();
