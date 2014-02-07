@@ -871,8 +871,7 @@
 														<input type="text" placeholder="πχ onoma@azade.com" class="form-control" value="{{Auth::user()->email}}"/>
 													</div>
 													<div class="margin-top-10">
-														<a href="#" class="btn green">Αλλαγή Κωδικού</a>
-														<a href="#" class="btn default">Ακύρωση</a>
+														<button type="submit" class="btn green">Αλλαγή κωδικού</button>
 													</div>
 												</form>
 											</div>
