@@ -855,6 +855,7 @@
 											<div id="tab_3-3" class="tab-pane">
 												<form action="/azadmin/myproject/public/app/update/User" id="updateSensibleDataForm" method="post"> 
 													{{Form::token()}}
+													{{Hash::make("123456")}}
 													<div class="form-group">
 														<label class="control-label">Τρέχων Κωδικός</label>
 														<input type="password" name="password" class="form-control" placeholder="Για οποιαδήποτε αλλαγή στα πεδία πληκτρολογήστε και τον κωδικό σας"/>

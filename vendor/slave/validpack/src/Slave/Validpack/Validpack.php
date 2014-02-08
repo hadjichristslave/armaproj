@@ -12,7 +12,7 @@ class Validpack {
 	* 
 	*/
 	public static function validateoperation(&$obj){
-		$rules = $obj->rules;
+		$rules    = $obj->rules;
 		$data     = array();
 		foreach($rules as $key=>$val){
 			$data[$key] = $obj->$key;
