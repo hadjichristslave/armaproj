@@ -36,7 +36,7 @@ class AppController extends Controller {
 			}
 			$password       = Input::get('password');
 			$hashedPassword = User::find(Auth::user()->id)->password;
-			if(!Hash::check('secret', $hashedPassword)){
+			if(!Hash::check($password, $hashedPassword)){
 				echo 'pgnc';
 				return 'password given is not correct';
 			}
