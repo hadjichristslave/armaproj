@@ -57,7 +57,7 @@ class Dbtools extends Model {
             $flag = Validpack::validateoperation($inputData);
             if($flag->passes()){
                 foreach ($inputData->attributes as $key => $value)
-                    if($key == "password")
+                    if($key == "newpassword")
                         $inputData->$key = Hash::make($value);
                 $inputData->save();
                 echo 'database 1';
