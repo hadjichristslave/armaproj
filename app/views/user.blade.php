@@ -857,7 +857,7 @@
 													{{Form::token()}}
 													<div class="form-group">
 														<label class="control-label">Τρέχων Κωδικός</label>
-														<input type="password" class="form-control" placeholder="Για οποιαδήποτε αλλαγή στα πεδία πληκτρολογήστε και τον κωδικό σας"/>
+														<input type="password" name="password" class="form-control" placeholder="Για οποιαδήποτε αλλαγή στα πεδία πληκτρολογήστε και τον κωδικό σας"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Νέος Κωδικός</label>

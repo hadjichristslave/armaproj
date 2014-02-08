@@ -22,6 +22,7 @@ class AppController extends Controller {
 	}
 
 	public function postUpdate($model , $tablekey=null){
+		var_dump(Input::all());
 		$id = 0;
 		$key = $tablekey==null?'id':$tablekey;
 		if($model  == "Employee")    $id = Auth::user()->userId;
