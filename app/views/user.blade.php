@@ -853,7 +853,7 @@
 												</form>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
-												<form action="#" id="updateSensibleDataForm">
+												<form action="/azadmin/myproject/public/app/update/User" id="updateSensibleDataForm" method="post"> 
 													<div class="form-group">
 														<label class="control-label">Τρέχων Κωδικός</label>
 														<input type="password" class="form-control" placeholder="Για οποιαδήποτε αλλαγή στα πεδία πληκτρολογήστε και τον κωδικό σας"/>

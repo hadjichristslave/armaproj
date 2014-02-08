@@ -26,6 +26,21 @@ class AppController extends Controller {
 		$key = $tablekey==null?'id':$tablekey;
 		if($model  == "Employee")    $id = Auth::user()->userId;
 		else 						 $id = Input::get('id');
+		/*
+		*     USER SPECIFIC UPDATE LOGIC
+		*/
+		if($model == "User"){
+			if(Input::get('newpassword')!=Input::get('rnewpassword')){
+				echo 'pnm';
+				return 'passwords do not match';
+			}
+			$password       = Input::get('password');
+			$hashedPassword = Auth::user()->password;
+			if(!Hash::check('secret', $hashedPassword)){
+				echo 'pgnc';
+				return 'password given is not correct';
+			}
+		}
 		Dbtools::updateFromModel($model, $id ,$key);
 	}
 

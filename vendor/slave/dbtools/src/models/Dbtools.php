@@ -44,13 +44,14 @@ class Dbtools extends Model {
 		}
 	}
 	public static function updateFromModel($model , $id , $tablekey){
-		$input = Input::except('_token');
+		$input = Input::except('_token' , 'rnewpassword');
         $inputData = $model::where($tablekey, '=' , $id)->first();
         try{
         	if(!Dbtools::exists($model, $id, $tablekey))
 				return "database-4";
 
             foreach ($input as $key => $value)
+                if($value!="")
                     $inputData->$key = $value;
 
             $flag = Validpack::validateoperation($inputData);

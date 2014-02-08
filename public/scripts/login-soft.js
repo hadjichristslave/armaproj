@@ -59,14 +59,14 @@ var Login = function () {
 	        });
 	}
 	var handleUpdate = function() {
-		console.log('thid');
 		$('#updateSensibleDataForm').validate({
 	            errorElement: 'span', //default input error message container
 	            errorClass: 'help-block', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
 	            rules: {
 	               email: {
-	                    email: true
+	                    email: true,
+	                    required: false
 	                },
 	                rnewpassword: {
 	                    equalTo: "#newpassword"
@@ -101,7 +101,6 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	            	alert('thid');
 	                form.submit();
 	            }
 	        });
