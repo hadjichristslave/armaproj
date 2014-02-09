@@ -59,7 +59,7 @@
 {{ Form::token() . Form::close() }}
 	<!-- END LOGIN FORM -->
 	<!-- BEGIN FORGOT PASSWORD FORM -->
-	<form class="forget-form" action="/azadmin/myproject/public/auth/forgot" method="post">
+	<form class="forget-form" action="/auth/forgot" method="post">
 		{{ Form::token()}}
 		<h3>Forget Password ?</h3>
 		<p>
