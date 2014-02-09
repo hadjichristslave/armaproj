@@ -13,7 +13,7 @@ jQuery( document ).ready(function( $ ) {
 	$('.shopEdit').click(function(){
 		$('.shopEditForm').submit();
 	});
-	$('.shopEdit').click(function(){
+	$('.shopDelete').click(function(){
 		$('.shopEditForm').attr('action' , '/azadmin/myproject/public/app/data/Store/delete');
 		$('.shopEditForm').submit();
 	});
