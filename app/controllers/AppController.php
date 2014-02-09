@@ -12,7 +12,7 @@ class AppController extends Controller {
     public function __construct(){
         $this->beforeFilter('csrf', array('on' => 'post'));
         $this->beforeFilter('auth');
-        // Auth::login(User::find(1));
+        //  Auth::login(User::find(1));
     }
 	public function getDashboard(){
 		return View::make('dashboard');
@@ -49,6 +49,9 @@ class AppController extends Controller {
 		return View::make($model."." . $action)->with('id' , $id);
 	}
 
+	public function getReturn($model, $id , $singleRecord){
+		echo Response::json(Dbtools::returnData($model, $id , $singleRecord));
+	}
 	public function postData($model, $action, $id=null){
 		if($action =='create'){
 			$message = Dbtools::createFromModel($model);

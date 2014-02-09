@@ -1227,6 +1227,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
+
+
+<script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
 <script>
 jQuery(document).ready(function() {       

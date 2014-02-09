@@ -8,7 +8,7 @@
 										</div>
 										<div class="tools">
 											<span>
-											<select class="form-control" name="companyId">
+											<select class="form-control" name="companyId" id="companyIdSelect">
 												@foreach(Store::where('employeeId' , '=' , Auth::user()->userId)->get() as $key=>$value)
 												<option value="{{$value->id}}">{{$value->brand}}</option>																	
 												@endforeach
