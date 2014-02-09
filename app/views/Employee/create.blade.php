@@ -50,7 +50,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Κινητό Τηλέφωνο</label>
 															<div class="col-md-9">
-																<input type="text" name="mobiel" class="form-control">
+																<input type="text" name="mobile" class="form-control">
 															</div>
 														</div>
 													</div>
