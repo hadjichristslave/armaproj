@@ -63,6 +63,15 @@ class AppController extends Controller {
 			$message = Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
 			return Redirect::to('/app/data/'. $model. '/edit')->with('message' , $message)->with('id' , $id);
 		}
+	}
+	public function postCustom($model, $action){
+		if($model == 'Employee'){
+			$input = array('name' , 'lname' , 'mobile' , 'phone' , 'groupid');
+			$message = Dbtools::createFromModel($model);
+			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+		}
+
+
 
 	}
 

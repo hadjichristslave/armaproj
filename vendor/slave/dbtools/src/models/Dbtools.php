@@ -14,8 +14,12 @@ class Dbtools extends Model {
         return $counter>0;
     }
 
-	public static function createFromModel($model){
-		$input = Input::except('_token');
+	public static function createFromModel($model , $arrayOfAttributes = null){
+        if($arrayOfAttributes==null)
+		  $input = Input::except('_token');
+        else
+            $input = Input::get($arrayOfAttributes);
+
         $inputData = new $model();
         try{
             foreach ($input as $key => $value)
