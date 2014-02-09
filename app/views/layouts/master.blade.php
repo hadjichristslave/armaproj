@@ -1188,22 +1188,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 			</div>
 			<!-- /.modal -->
 						
-				<?php
-					if(isset($message) && !empty($message)){
-					// your code here
-						echo '<div class="tile-body">
-						<h4>support@metronic.com</h4>
-						<p>
-							Re: Metronic v1.2 - Project Update!
-						</p>
-						<p>
-							24 March 2013 12.30PM confirmed for the project plan update meeting...
-						</p>
-					</div>';
-					}
-				?>
-				
-			</div>
 			@yield('content')
 
 
