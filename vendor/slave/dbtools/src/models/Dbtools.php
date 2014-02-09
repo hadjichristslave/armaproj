@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dbtools extends Model {
 
+    public static function exists($model, $id, $tablekey){
+        $counter = $model::where($tablekey , '=' , $id)->count();
+        return $counter>0;
+    }
+
 	public static function createFromModel($model){
 		$input = Input::except('_token');
         $inputData = new $model();
@@ -34,7 +39,7 @@ class Dbtools extends Model {
 	}
 	public static function deleteFromModel($model, $id, $tablekey){
 		try{
-			if(!exists($model, $id, $tablekey)){
+			if(!Dbtools::exists($model, $id, $tablekey)){
                 $message = 'Record with id '.$id.' not found in model' . $model. " delete aborted.";
                 return $message;
             }
@@ -82,10 +87,7 @@ class Dbtools extends Model {
             echo 'Caught exception: '.  $e->getMessage(). "\n";
         }
 	}
-	public static function exists($model, $id, $tablekey){
-		$counter = $model::where($tablekey , '=' , $id)->count();
-		return $counter>0;
-	}
+	
     public static function returnData($model, $id, $singleRecord){
         if($singleRecord==true){
             $data = $model::find($id);
