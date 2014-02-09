@@ -785,7 +785,7 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Σταθερό τηλέφωνο</label>
-														<input type="text" name="phone" placeholder="πχ. 210 771 11 69" class="form-control" value="{{Auth::user()->employee->mobile}}"/>
+														<input type="text" name="phone" placeholder="πχ. 210 771 11 69" class="form-control" value="{{Auth::user()->employee->phone}}"/>
 													</div>
 													<!-- <div class="form-group">
 														<label class="control-label">Interests</label>
