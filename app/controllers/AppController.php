@@ -11,9 +11,7 @@ class AppController extends Controller {
 	 */
     public function __construct(){
         $this->beforeFilter('csrf', array('on' => 'post'));
-        //$this->beforeFilter('auth');
-        $user = User::find(1);
-        Auth::login($user);
+        $this->beforeFilter('auth');
     }
 	public function getDashboard(){
 		return View::make('dashboard');
