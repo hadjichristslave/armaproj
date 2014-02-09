@@ -42,7 +42,7 @@ class AppController extends Controller {
 			}
 		}
 		$message = Dbtools::updateFromModel($model, $id ,$key);
-		return Redirect::to('/azadmin/myproject/public/app/user');
+		return Redirect::to('/app/user');
 	}
 
 }
