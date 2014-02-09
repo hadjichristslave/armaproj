@@ -46,7 +46,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	{{ Form::open(array("url" => "/azadmin/myproject/public/auth/token/".$token."/".$email , "method"=>"post")) }}
+	{{ Form::open(array("url" => "/auth/token/".$token."/".$email , "method"=>"post")) }}
 
 {{ Form::label('password', 'Password')}}<br>
 {{ Form::password('password', Input::old('password')) }}<br>
