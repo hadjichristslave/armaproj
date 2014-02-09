@@ -100,7 +100,7 @@ class LoginController extends Controller {
 		->with('email', $email);
 	}
 
-	public function postToken(){
+	public function postToken($token, $email){
 		if(Input::get('password')!= Input::get("rpassword"))
 			Redirect::back()->with('message', 'Password mismatch');
 		$input = Input::except("_token");
