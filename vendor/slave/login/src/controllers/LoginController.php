@@ -102,10 +102,12 @@ class LoginController extends Controller {
 
 	public function postToken(){
 		if(Input::get('password')!= Input::get("rpassword"))
-			Redirect::to('auth/token/'. Input::get('token') . '/' . Input::get('email'))->with('message', 'Password mismatch');
+			return Redirect::to('auth/token/'. Input::get('token') . '/' . Input::get('email'))->with('message', 'Password mismatch');
+		
 		$input = Input::except("_token");
 		$count = User::where('email' , '=' , Input::get('email'))->count();
-		return Redirect::to('auth/token/'. Input::get('token') . '/' . Input::get('email'))->with('message', 'User not found');
+		if($count==0)
+			return Redirect::to('auth/token/'. Input::get('token') . '/' . Input::get('email'))->with('message', 'User not found');
 
 		$user = User::where('email' , '='  , Input::get('email'))->first();
 		if($user->token==0)
