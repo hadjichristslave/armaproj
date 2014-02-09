@@ -13,10 +13,9 @@
 							<span>
 								<?php
 									if(Session::has('message'))
-										echo $message;
+										echo Session::get('message');
 									else
 										echo 'no message';
-									
 								?>
 							</span>
 							<i class="fa fa-angle-down"></i>
