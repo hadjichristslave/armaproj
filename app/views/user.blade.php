@@ -9,7 +9,7 @@
 					</h3>
 					<ul class="page-breadcrumb breadcrumb">
 						<li class="btn-group">
-							<button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+							<button type="button" class="btn {{Session::has('message')?'red':'blue'}} dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
 							<span>
 								<?php
 									if(Session::has('message'))
@@ -18,24 +18,7 @@
 										echo 'no message';
 								?>
 							</span>
-							<i class="fa fa-angle-down"></i>
 							</button>
-							<ul class="dropdown-menu pull-right" role="menu">
-								<li>
-									<a href="#">Προσθήκη Υπαλλήλου</a>
-								</li>
-								<li>
-									<a href="#">Προσθήκη Καταστήματος</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<!-- <li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li> -->
-							</ul>
 						</li>
 						<li>
 							<i class="fa fa-home"></i>

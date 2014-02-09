@@ -49,8 +49,11 @@ class Dbtools extends Model {
         $input = Input::except('_token' , 'rnewpassword' , 'newpassword');
         $inputData = $model::where($tablekey, '=' , $id)->first();
         try{
-            if(!Dbtools::exists($model, $id, $tablekey))
-                return "database-4";
+            if(!Dbtools::exists($model, $id, $tablekey)){
+                $message = 'Something went wrong, user not found!';
+                return $message;
+            }
+                
             foreach ($input as $key => $value){
                 if($key == "password" && Input::get('newpassword')!="")
                     $inputData->$key = Input::get('newpassword');
@@ -63,12 +66,12 @@ class Dbtools extends Model {
                     if($key == "password" && strlen(Input::get('newpassword'))>2)
                         $inputData->$key = Hash::make(Input::get('newpassword'));
                 $inputData->save();
-                $message = 'Succesful user ' . Auth::user()->username  . " update";
+                $message = 'Succesful user ' . Auth::user()->username  . " update!";
                 return $message;
 
             }else{
-                echo 'database 2';
-                return "database-2";
+                $message = 'Data for user ' . Auth::user()->username  . " not valid!";
+                return $message;
             }
         }catch(Exception $e){
             echo 'Caught exception: '.  $e->getMessage(). "\n";
