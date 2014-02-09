@@ -53,7 +53,7 @@ class LoginController extends Controller {
 	public function postLogin(){
 		if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')),true))
 		        return Redirect::intended('app/dashboard');
-		else    return Redirect::to("/login");	
+		else    return Redirect::to("/auth/login");	
 	}
 	public function getLogin(){
 		if (Auth::check())
