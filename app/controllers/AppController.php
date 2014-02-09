@@ -50,7 +50,7 @@ class AppController extends Controller {
 	}
 
 	public function getReturn($model, $id , $singleRecord){
-		return json_encode(Dbtools::returnData($model, $id , $singleRecord));
+		echo json_encode(Dbtools::returnData($model, $id , $singleRecord));
 	}
 	public function postData($model, $action, $id=null){
 		if($action =='create'){
