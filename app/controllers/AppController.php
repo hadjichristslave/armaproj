@@ -56,10 +56,14 @@ class AppController extends Controller {
 		if($action =='create'){
 			$message = Dbtools::createFromModel($model);
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
-		}if($action=='edit'){
+		}else if($action=='edit'){
 			$message = Dbtools::updateFromModel($model ,Input::get('id') , $tblkey);
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message)->with('id' , $id);
+		}else if($action=='delete'){
+			$message = Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
+			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message)->with('id' , $id);
 		}
+
 	}
 
 }

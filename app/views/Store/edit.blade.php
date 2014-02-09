@@ -119,7 +119,7 @@
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
 															<button type="button" class="btn green shopEdit">Αποθήκευση αλλαγών</button>
-															<a class="btn red" data-toggle="modal" href="#basic">View Demo</a>
+															<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή εταιρίας</a>
 														</div>
 													</div>
 													<div class="col-md-6">

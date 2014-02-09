@@ -34,14 +34,17 @@ class Dbtools extends Model {
 	}
 	public static function deleteFromModel($model, $id, $tablekey){
 		try{
-			if(!exists($model, $id, $tablekey))
-				return "database-4";	
+			if(!exists($model, $id, $tablekey)){
+                $message = 'Record with id '.$id.' not found in model' . $model. " delete aborted.";
+                return $message;
+            }
+				
 			else if($tablekey!='id'){
 				$model::where($tablekey , '=' , $id)->delete();
-				return "database-1";
+				return "Succesful data delete!";
 			}else{
 				$model::find($id)->delete();
-				return "database-1";
+				return "Succesful data delete!";
 			}
 		}catch(Exception $e){
 			echo 'Caught exception: '.  $e->getMessage(). "\n";	
