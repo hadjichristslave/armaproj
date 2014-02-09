@@ -1,12 +1,21 @@
 @extends('layouts.master')
 @section('content')
+<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+					<h3 class="page-title">
+					Δημιουργία καταστήματος<small> βασικές πληροφορίες</small>
+					</h3>
+					<!-- END PAGE TITLE & BREADCRUMB-->
+				</div>
+			</div>
 <div class="portlet-body form">
 	<!-- BEGIN FORM-->
 	<form action="#" class="form-horizontal">
 		<div class="form-actions top fluid">
 			<div class="col-md-offset-3 col-md-9">
-				<button type="submit" class="btn green">Submit</button>
-				<button type="button" class="btn default">Cancel</button>
+				<button type="submit" class="btn green">Create</button>
+				<button type="button" class="btn default">Reset</button>
 			</div>
 		</div>
 		<div class="form-body">
@@ -77,7 +86,7 @@
 		<div class="form-actions fluid">
 			<div class="col-md-offset-3 col-md-9">
 				<button type="submit" class="btn green">Submit</button>
-				<button type="button" class="btn default">Cancel</button>
+				<button type="button" class="btn default">Reset</button>
 			</div>
 		</div>
 	</form>
