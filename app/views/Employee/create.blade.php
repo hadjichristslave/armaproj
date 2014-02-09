@@ -86,7 +86,7 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
-															<button type="button" class="btn green">Αποθήκευση υπαλλήλου</button>
+															<button type="submit" class="btn green">Αποθήκευση υπαλλήλου</button>
 														</div>
 													</div>
 													<div class="col-md-6">
