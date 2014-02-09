@@ -57,7 +57,7 @@ class AppController extends Controller {
 			$message = Dbtools::createFromModel($model);
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
 		}if($action=='edit'){
-			$message = Dbtools::updateFromModel($model ,Input::get('id') , $tablekey);
+			$message = Dbtools::updateFromModel($model ,Input::get('id') , $tblkey);
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message)->with('id' , $id);
 		}
 	}
