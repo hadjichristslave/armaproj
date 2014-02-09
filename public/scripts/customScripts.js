@@ -12,6 +12,6 @@ jQuery( document ).ready(function( $ ) {
 	
 	$('.shopEdit').click(function(){
 		$('.shopEditForm').submit();
-	}};
+	});
 
 });

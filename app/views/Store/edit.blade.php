@@ -47,8 +47,9 @@
 															<label class="control-label col-md-3">Υπεύθυνος υπάλληλος</label>
 															<div class="col-md-9">
 																<select class="form-control ajax_employeeId" name="employeeId">
+																	<option value="0" selected>--</option>
 																	@foreach(Employee::all() as $key=>$value)
-																	<option value="{{$value->id}}">{{$value->name}}</option>																	
+																	<option value="{{$value->id}}">{{$value->name}}</option>
 																	@endforeach
 																</select>
 																<span class="help-block">
