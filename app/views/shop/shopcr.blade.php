@@ -40,17 +40,21 @@
 														</div>
 													</div>
 													<!--/span-->
-													<!-- <div class="col-md-6">
+													<div class="col-md-6">
 														<div class="form-group">
 															<label class="control-label col-md-3">Διακριτικός τίτλος</label>
 															<div class="col-md-9">
-																<input type="text" class="form-control" placeholder="Chee Kin">
+																<select class="form-control">
+																	@foreach(Employee::all() as $key=>$value)
+																	<option value="{{$value->id}}">{{$value->name}}</option>																	
+																	@endforeach
+																</select>
 																<span class="help-block">
-																	This is inline help
+																	Select your gender
 																</span>
 															</div>
 														</div>
-													</div> -->
+													</div>
 												</div>
 													
 												<h3 class="form-section">Γεωγραφικές πληροφορίες</h3>
