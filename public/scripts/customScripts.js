@@ -3,9 +3,11 @@ jQuery( document ).ready(function( $ ) {
   alert('this');
 	$( "#companyIdSelect" ).change(function() {
 		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function( data ) {
-		  	$.each(data, function(dat){
-		  		console.log(dat);
-		  	});
+		  	console.log(data);
+		  	 $.each(data, function(index, element) {
+	            console.log(element);
+
+	        });
 		});
 	});
 	
