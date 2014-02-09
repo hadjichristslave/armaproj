@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-{{Hash::make('123456')}}
 <link href="/azadmin/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
 			<div class="row">
 				<div class="col-md-12">
@@ -783,6 +782,10 @@
 													<div class="form-group">
 														<label class="control-label">Κινητό Τηλέφωνο</label>
 														<input type="text" name="mobile" placeholder="πχ. 698 888 8888" class="form-control" value="{{Auth::user()->employee->mobile}}"/>
+													</div>
+													<div class="form-group">
+														<label class="control-label">Σταθερό τηλέφωνο</label>
+														<input type="text" name="phone" placeholder="πχ. 210 771 11 69" class="form-control" value="{{Auth::user()->employee->mobile}}"/>
 													</div>
 													<!-- <div class="form-group">
 														<label class="control-label">Interests</label>

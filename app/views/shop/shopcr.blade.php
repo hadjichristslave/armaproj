@@ -42,7 +42,7 @@
 													<!--/span-->
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label col-md-3">Διακριτικός τίτλος</label>
+															<label class="control-label col-md-3">Υπεύθυνος υπάλληλος</label>
 															<div class="col-md-9">
 																<select class="form-control">
 																	@foreach(Employee::all() as $key=>$value)
