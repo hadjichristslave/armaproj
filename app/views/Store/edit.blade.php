@@ -5,14 +5,14 @@
 									<div class="portlet-title">
 										<div class="caption">
 											<i class="fa fa-reorder"></i>Τροποποίηση εταιρίας
+										</div>
+										<div class="tools">
+											<span>
 											<select class="form-control" name="employeeId">
 												@foreach(Store::where('employeeId' , '=' , Auth::user()->userId)->get() as $key=>$value)
 												<option value="{{$value->id}}">{{$value->brand}}</option>																	
 												@endforeach
 											</select>
-										</div>
-										<div class="tools">
-											<span>
 												<?php
 													if(Session::has('message'))
 														echo Session::get('message');
@@ -26,7 +26,7 @@
 										<!-- BEGIN FORM-->
 										<form action="/azadmin/myproject/public/app/data/Store/edit" class="form-horizontal" method="post">
 											{{Form::token()}}
-											{{ Form::text("id", $value = "0", array('class'=>"fooclass"));}}
+											{{ Form::text("id", $value = "0", array('class'=>"fooclass" , "hidden" =>true));}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>
 												<div class="row">
@@ -118,7 +118,6 @@
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
 															<button type="submit" class="btn green">Υποβολή</button>
-															<button type="button" class="btn default" id="fieldsReset">Εκαθάρηση πεδίων</button>
 														</div>
 													</div>
 													<div class="col-md-6">
