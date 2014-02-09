@@ -26,7 +26,7 @@
 										<!-- BEGIN FORM-->
 										<form action="/azadmin/myproject/public/app/data/Store/edit" class="form-horizontal" method="post">
 											{{Form::token()}}
-											{{ Form::text("id", $value = "0", array('class'=>"fooclass" , "hidden" =>true));}}
+											{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>
 												<div class="row">
@@ -34,7 +34,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Ονομασία</label>
 															<div class="col-md-9">
-																<input type="text" class="form-control" name="brand" placeholder="π.χ Azade">
+																<input type="text" class="form-control" name="brand" claas="ajax_brand" placeholder="π.χ Azade">
 																<span class="help-block">
 																	Η ονομασία της εταιρίας
 																</span>
@@ -46,7 +46,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Υπεύθυνος υπάλληλος</label>
 															<div class="col-md-9">
-																<select class="form-control" name="employeeId">
+																<select class="form-control" name="employeeId" class="ajax_employeeId">
 																	@foreach(Employee::all() as $key=>$value)
 																	<option value="{{$value->id}}">{{$value->name}}</option>																	
 																	@endforeach
@@ -66,7 +66,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Διεύθυνση</label>
 															<div class="col-md-9">
-																<input type="text" name="address" class="form-control">
+																<input type="text" name="address" class="ajax_address" class="form-control">
 															</div>
 														</div>
 													</div>
@@ -74,7 +74,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Περιοχή</label>
 															<div class="col-md-9">
-																<input type="text" name="area" class="form-control" placeholder="Περιοχή">
+																<input type="text" name="area" class="ajax_area" class="form-control" placeholder="Περιοχή">
 															</div>
 														</div>
 													</div>
@@ -84,7 +84,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Post Code</label>
 															<div class="col-md-9">
-																<input type="text" name='postcode' class="form-control">
+																<input type="text" name='postcode' class="ajax_postcode" class="form-control">
 															</div>
 														</div>
 													</div>
@@ -93,7 +93,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Πόλη</label>
 															<div class="col-md-9">
-																<input type="text" name="city" class="form-control" placeholder="Πόλη">
+																<input type="text" name="city" class="ajax_city" class="form-control" placeholder="Πόλη">
 															</div>
 														</div>
 													</div>
@@ -105,7 +105,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Νομός</label>
 															<div class="col-md-9">
-																<input type="text" name="county" class="form-control" placeholder="Νομός">
+																<input type="text" name="county" class="ajax_county" class="form-control" placeholder="Νομός">
 															</div>
 														</div>
 													</div>
