@@ -86,7 +86,7 @@ class Dbtools extends Model {
     public static function returnData($model, $id, $singleRecord){
         if($singleRecord==true){
             $data = $model::find($id);
-            echo $data;
+            return $data;
         }
     }
 	
