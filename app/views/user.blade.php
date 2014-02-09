@@ -11,7 +11,13 @@
 						<li class="btn-group">
 							<button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
 							<span>
-								Εργαλεία
+								<?php
+									if(isset($message) && !empty($message))
+										echo $message;
+									else
+										echo 'no message';
+									
+								?>
 							</span>
 							<i class="fa fa-angle-down"></i>
 							</button>
