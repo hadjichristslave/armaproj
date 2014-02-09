@@ -52,7 +52,7 @@ class Dbtools extends Model {
         $inputData = $model::where($tablekey, '=' , $id)->first();
         try{
             if(!Dbtools::exists($model, $id, $tablekey)){
-                $message = 'Something went wrong, record of ',$model,' not found!';
+                $message = 'Something went wrong, record of '.$model.' not found!';
                 return $message;
             }
                 
