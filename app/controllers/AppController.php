@@ -48,7 +48,7 @@ class AppController extends Controller {
 
 	public function getData($model, $action){
 		if($action=='create'){
-			return View::make($model.".shopcr");
+			return View::make($model."." . $action);
 		}
 	}
 
@@ -57,7 +57,7 @@ class AppController extends Controller {
 			$message = Dbtools::createFromModel($model);
 			return Redirect::to('/app/'. $model. '/' . $action)->with('message' , $message);
 		}
-		
+
 	}
 
 }
