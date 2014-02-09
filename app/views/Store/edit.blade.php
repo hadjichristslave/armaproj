@@ -144,7 +144,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn default" data-dismiss="modal">Close</button>
-											<button type="button shopDelete" class="btn blue"><i class="fa fa-times"></i>Διαγραφή</button>
+											<button type="button " class="btn blue shopDelete"><i class="fa fa-times"></i>Διαγραφή</button>
 										</div>
 									</div>
 									<!-- /.modal-content -->
