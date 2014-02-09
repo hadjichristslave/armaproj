@@ -24,7 +24,7 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/azadmin/myproject/public/app/data/Store/edit" class="form-horizontal" method="post">
+										<form action="/azadmin/myproject/public/app/data/Store/edit" class="form-horizontal shopEditForm" method="post">
 											{{Form::token()}}
 											{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 											<div class="form-body">
@@ -117,7 +117,8 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
-															<button type="submit" class="btn green">Υποβολή</button>
+															<button type="button" class="btn green shopEdit">Αποθήκευση αλλαγών</button>
+															<button type="button" class="btn red shopDelete">Διαγραφή εταιρίας</button>
 														</div>
 													</div>
 													<div class="col-md-6">

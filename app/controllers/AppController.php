@@ -52,12 +52,13 @@ class AppController extends Controller {
 	public function getReturn($model, $id , $singleRecord){
 		echo json_encode(Dbtools::returnData($model, $id , $singleRecord));
 	}
-	public function postData($model, $action, $id=null){
+	public function postData($model, $action, $id=null , $tablekey = null){
+		$tblkey = $tablekey==null?'id':$tablekey;
 		if($action =='create'){
 			$message = Dbtools::createFromModel($model);
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
 		}if($action=='edit'){
-			$message = Dbtools::updateFromModel($model);
+			$message = Dbtools::updateFromModel($model ,Input::get('id') , $tablekey);
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message)->with('id' , $id);
 		}
 	}
