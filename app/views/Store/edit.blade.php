@@ -34,7 +34,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Ονομασία</label>
 															<div class="col-md-9">
-																<input type="text" class="form-control" name="brand" class="ajax_brand" placeholder="π.χ Azade">
+																<input type="text" class="form-control ajax_brand" name="brand"  placeholder="π.χ Azade">
 																<span class="help-block">
 																	Η ονομασία της εταιρίας
 																</span>
@@ -46,7 +46,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Υπεύθυνος υπάλληλος</label>
 															<div class="col-md-9">
-																<select class="form-control" name="employeeId" class="ajax_employeeId">
+																<select class="form-control ajax_employeeId" name="employeeId">
 																	@foreach(Employee::all() as $key=>$value)
 																	<option value="{{$value->id}}">{{$value->name}}</option>																	
 																	@endforeach
