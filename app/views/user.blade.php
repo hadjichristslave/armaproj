@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+{{Hash::make('123456')}}
 <link href="/azadmin/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
 			<div class="row">
 				<div class="col-md-12">

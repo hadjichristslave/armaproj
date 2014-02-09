@@ -45,6 +45,11 @@
 	<!-- BEGIN LOGIN FORM -->
 	<form class="login-form" action="/azadmin/myproject/public/auth/login" method="post">
 		<h3 class="form-title">Login to your account</h3>
+		<?
+		if(Session::has('message'))
+			echo '<h5 class="form-title">'.Session::get('message').'</h5>'
+		?>
+		<h3 class="form-title"></h3>
 		{{ Form::token()}}
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>

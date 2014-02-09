@@ -53,7 +53,7 @@ class LoginController extends Controller {
 	public function postLogin(){
 		if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')),true))
 		        return Redirect::intended('app/dashboard');
-		else    return Redirect::to("/auth/login");	
+		else    return Redirect::to("/login")->with('message' , 'wrong credentials!');	
 	}
 	public function getLogin(){
 		if (Auth::check())
@@ -82,7 +82,7 @@ class LoginController extends Controller {
 	public function postForgot(){
 		$count = User::where('email' , '=' , Input::get('email'))->count();
 		if($count<=0)
-			return 'login-3';
+			return Redirect::to('/login')->with('message', 'Email not found')
 
 		$user = User::where('email' , '=' , Input::get('email'))->first();
 		$token = Loginmod::generateRandomString(20);
@@ -91,6 +91,7 @@ class LoginController extends Controller {
 		Mail::send('login::token', array('email'=>Input::get('email') , 'token'=>$token, 'title' =>'Password reset email!'), function($message){
 	      $message->to(Input::get('email'),"Panos")->subject('Password reset email!');
 	   	});
+	   	return Redirect::to('/login')->with('message', 'An email with the reset link has been sent.');
 	}
 
 	public function getToken($token , $email){
@@ -104,11 +105,11 @@ class LoginController extends Controller {
 			return 'login-8';
 		$input = Input::except("_token");
 		$count = User::where('email' , '=' , Input::get('email'))->count();
-		if($count<=0) return 'login-3';
+		return Redirect::to('/token')->with('message', 'User not found');
 
 		$user = User::where('email' , '='  , Input::get('email'))->first();
 		if($user->token==0)
-			return 'login-9';
+			return Redirect::to('/login')->with('message', 'Token already used');
 		if($user->token == Input::get('token')){
 			$user->password = Input::get('password');
 			$flag = Validpack::validateoperation($user);
@@ -116,10 +117,10 @@ class LoginController extends Controller {
 				$user->password = Hash::make($user->password);
 				$user->token    = 0;
                 $user->save();
-				return 'login-1';
+				return Redirect::to('/login')->with('message', 'Password succesfuly changed!');
 			}else
-				return 'login-7';
-		}else return 'login-6';
+				return Redirect::to('/token')->with('message', 'Password not valid');
+		}else return Redirect::to('/token')->with('message', 'Token mismatch error');
 	}
 
 	
