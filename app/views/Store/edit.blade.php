@@ -119,7 +119,7 @@
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
 															<button type="button" class="btn green shopEdit">Αποθήκευση αλλαγών</button>
-															<button type="button" class="btn red shopDelete">Διαγραφή εταιρίας</button>
+															<a class="btn red" data-toggle="modal" href="#basic">View Demo</a>
 														</div>
 													</div>
 													<div class="col-md-6">
@@ -130,5 +130,25 @@
 										<!-- END FORM-->
 									</div>
 								</div>
+							</div>
+							<div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+											<h4 class="modal-title">Διαγραφή εταιρίας!</h4>
+										</div>
+										<div class="modal-body">
+											 Θα χαθούν όλα τα στοιχεία περασμένα και συσχετισμένα με την εγγραφή αυτή. 
+											 Είστε σίγουρος/η ότι θέλετε να προχωρήσετε με τη διαγραφή
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn default" data-dismiss="modal">Close</button>
+											<button type="button shopDelete" class="btn blue"><i class="fa fa-times"></i>Διαγραφή</button>
+										</div>
+									</div>
+									<!-- /.modal-content -->
+								</div>
+								<!-- /.modal-dialog -->
 							</div>
 @stop
