@@ -108,7 +108,7 @@ class LoginController extends Controller {
 		if($count==0)
 			return Redirect::to('auth/token/'. Input::get('token') . '/' . Input::get('email'))->with('message', 'User not found');
 		$user = User::where('email' , '='  , Input::get('email'))->first();
-		if(strlen($user->token)>5)
+		if(strlen($user->token)==1)
 			return Redirect::to('auth/login')->with('message', 'Token already used');
 		if($user->token == Input::get('token')){
 			$user->password = Input::get('password');
