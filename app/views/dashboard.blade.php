@@ -877,7 +877,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="/app/user">
+							<a href="/azadmin/myproject/public/app/user">
 							User Profile</a>
 						</li>
 						<li>

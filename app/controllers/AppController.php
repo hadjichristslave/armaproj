@@ -46,4 +46,11 @@ class AppController extends Controller {
 		->with('message' , $message);
 	}
 
+	public function getShop($action){
+		if($action=='create'){
+			return View::make("shop.shopcr");
+		}
+
+	}
+
 }
