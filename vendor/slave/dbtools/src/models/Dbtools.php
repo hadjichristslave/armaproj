@@ -85,7 +85,7 @@ class Dbtools extends Model {
 	}
     public static function returnData($model, $id, $singleRecord){
         if($singleRecord==true){
-            $data = $model::where($tablekey , '=' , $id)->first();
+            $data = $model::find($id);
             return $data;
         }
     }
