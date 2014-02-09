@@ -8,7 +8,7 @@ jQuery( document ).ready(function( $ ) {
 		  	 $.each(response, function(index, element) {
 	            console.log(index);
 	            console.log(element);
-            	$("ajax_"+index).val(element);
+            	$(".ajax_"+index).val(element);
 	        });
 		});
 	});
