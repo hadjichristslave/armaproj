@@ -52,7 +52,7 @@ class Dbtools extends Model {
         $inputData = $model::where($tablekey, '=' , $id)->first();
         try{
             if(!Dbtools::exists($model, $id, $tablekey)){
-                $message = 'Something went wrong, user not found!';
+                $message = 'Something went wrong, record of ',$model,' not found!';
                 return $message;
             }
                 
@@ -68,11 +68,11 @@ class Dbtools extends Model {
                     if($key == "password" && strlen(Input::get('newpassword'))>2)
                         $inputData->$key = Hash::make(Input::get('newpassword'));
                 $inputData->save();
-                $message = 'Succesful user ' . Auth::user()->username  . " update!";
+                $message = 'Succesful ' .$model. " record update!";
                 return $message;
 
             }else{
-                $message = 'Data for user ' . Auth::user()->username  . " not valid!";
+                $message = 'Data for  ' . $model. " not valid!";
                 return $message;
             }
         }catch(Exception $e){
