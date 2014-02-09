@@ -53,7 +53,7 @@ class AppController extends Controller {
 	public function postData($model, $action){
 		if($action =='create'){
 			$message = Dbtools::createFromModel($model);
-			return Redirect::to('/app/'. $model. '/' . $action)->with('message' , $message);
+			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
 		}
 
 	}

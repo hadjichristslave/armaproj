@@ -45,7 +45,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Υπεύθυνος υπάλληλος</label>
 															<div class="col-md-9">
-																<select class="form-control">
+																<select class="form-control" name="employeeId">
 																	@foreach(Employee::all() as $key=>$value)
 																	<option value="{{$value->id}}">{{$value->name}}</option>																	
 																	@endforeach
