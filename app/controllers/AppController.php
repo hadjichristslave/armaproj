@@ -46,11 +46,18 @@ class AppController extends Controller {
 		->with('message' , $message);
 	}
 
-	public function getShop($action){
+	public function getData($model, $action){
 		if($action=='create'){
-			return View::make("shop.shopcr");
+			return View::make($model.".shopcr");
 		}
+	}
 
+	public function postData($model, $action){
+		if($action =='create'){
+			$message = Dbtools::createFromModel($model);
+			return Redirect::to('/app/'. $model. '/' . $action)->with('message' , $message);
+		}
+		
 	}
 
 }

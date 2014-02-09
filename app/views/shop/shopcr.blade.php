@@ -24,7 +24,8 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="#" class="form-horizontal">
+										<form action="/azadmin/myproject/public/app/data/Store/create" class="form-horizontal" method="post">
+											{{Form::token();}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>
 												<div class="row">
@@ -50,7 +51,7 @@
 																	@endforeach
 																</select>
 																<span class="help-block">
-																	Select your gender
+																	Διαλέξτε τον υπεύθυνο υπάλληλο
 																</span>
 															</div>
 														</div>

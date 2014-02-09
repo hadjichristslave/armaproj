@@ -22,9 +22,11 @@ class Dbtools extends Model {
                     if($key == "password")
                         $inputData->key = Hash::make($value);
                 $inputData->save();
-                return "database-1";
+                $message = 'Succesful data insert!';
+                return $message;
             }else{
-                return "database-2";
+                $message = 'Data Validation error!';
+                return $message;
             }
         }catch(Exception $e){
             echo 'Caught exception: '.  $e->getMessage(). "\n";
