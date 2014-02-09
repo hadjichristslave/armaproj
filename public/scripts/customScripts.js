@@ -8,13 +8,7 @@ jQuery( document ).ready(function( $ ) {
 		  	 $.each(response, function(index, element) {
 	            // console.log(index);
 	            // console.log(element);
-            	
-            	if(index == "employeeId"){
-            		console.log('gotin');
-            		$(".ajax_employeeId").select2("val", element);
-            	}
-            	else
-            		$(".ajax_"+index).val(element);
+            	$(".ajax_"+index).val(element);
 	        });
 		});
 	});
