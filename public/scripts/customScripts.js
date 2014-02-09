@@ -4,7 +4,8 @@ jQuery( document ).ready(function( $ ) {
 	$( "#companyIdSelect" ).change(function() {
 		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function( data ) {
 		  	console.log(data);
-		  	 $.each(data, function(index, element) {
+		  	var response = eval('['+data+']');
+		  	 $.each(response, function(index, element) {
 	            console.log(element);
 
 	        });
