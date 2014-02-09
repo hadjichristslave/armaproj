@@ -1,8 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-		<div class="page-content">
+
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -2176,8 +2174,6 @@
 					<!-- END PORTLET-->
 				</div>
 			</div>
-		</div>
-	</div>
 	<!-- END CONTENT -->
 
 @stop
