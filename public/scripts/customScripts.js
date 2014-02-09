@@ -15,6 +15,7 @@ jQuery( document ).ready(function( $ ) {
 	});
 	$('.shopEdit').click(function(){
 		$('.shopEditForm').attr('action' , '/azadmin/myproject/public/app/data/Store/delete');
+		$('.shopEditForm').submit();
 	});
 
 });
