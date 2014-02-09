@@ -82,7 +82,7 @@ class LoginController extends Controller {
 	public function postForgot(){
 		$count = User::where('email' , '=' , Input::get('email'))->count();
 		if($count<=0)
-			return Redirect::to('/login')->with('message', 'Email not found')
+			return Redirect::to('/login')->with('message', 'Email not found');
 
 		$user = User::where('email' , '=' , Input::get('email'))->first();
 		$token = Loginmod::generateRandomString(20);
