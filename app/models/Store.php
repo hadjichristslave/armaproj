@@ -2,7 +2,7 @@
 
 class Store extends Eloquent{
 
-
+	public $rules = array();
 	public function shop()
     {
         return $this->hasOne('Employee' , 'id' , 'employeeId');
