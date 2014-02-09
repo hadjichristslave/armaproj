@@ -45,41 +45,21 @@
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
+	<?
+		if(Session::has('message'))
+			echo '<h5 class="form-title">'.Session::get('message').'</h5>'
+		?>
 	<!-- BEGIN LOGIN FORM -->
-	{{ Form::open(array("url" => "/auth/token/".$token."/".$email , "method"=>"post")) }}
-
+{{ Form::open(array("url" => "/auth/token/".$token."/".$email , "method"=>"post")) }}
 {{ Form::label('password', 'Password')}}<br>
 {{ Form::password('password', Input::old('password')) }}<br>
 {{ Form::label('rpassword', 'rPassword')}}<br>
 {{ Form::password('rpassword', Input::old('password')) }}<br>
 {{ Form::text('token' , $token, array('hidden' =>true)) }}<br>
 {{ Form::text('email' , $email, array('hidden' =>true)) }}<br>
-{{ Form::submit('Register!') }}
+{{ Form::submit('Password reset!') }}
 
 {{ Form::token() . Form::close() }}
-	<!-- END LOGIN FORM -->
-	<!-- BEGIN FORGOT PASSWORD FORM -->
-	<form class="forget-form" action="/auth/forgot" method="post">
-		{{ Form::token()}}
-		<h3>Forget Password ?</h3>
-		<p>
-			 Enter your e-mail address below to reset your password.
-		</p>
-		<div class="form-group">
-			<div class="input-icon">
-				<i class="fa fa-envelope"></i>
-				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
-			</div>
-		</div>
-		<div class="form-actions">
-			<button type="button" id="back-btn" class="btn">
-			<i class="m-icon-swapleft"></i> Back </button>
-			<button type="submit" class="btn blue pull-right">
-			Submit <i class="m-icon-swapright m-icon-white"></i>
-			</button>
-		</div>
-	</form>
-	<!-- END FORGOT PASSWORD FORM -->
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN COPYRIGHT -->
