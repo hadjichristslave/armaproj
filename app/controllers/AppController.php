@@ -33,12 +33,12 @@ class AppController extends Controller {
 		*/
 		if($model == "User"){
 			if(Input::get('newpassword')!=Input::get('rnewpassword')){
-				return 'passwords do not match';
+				return Redirect::to('/app/user')->with('message' , 'passwords do not match');
 			}
 			$password       = Input::get('password');
 			$hashedPassword = User::find(Auth::user()->id)->password;
 			if(!Hash::check($password, $hashedPassword)){
-				return 'password given is not correct';
+				return Redirect::to('/app/user')->with('message' , 'password given is not correct');
 			}
 		}
 		$message = Dbtools::updateFromModel($model, $id ,$key);

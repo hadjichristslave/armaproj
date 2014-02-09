@@ -841,7 +841,7 @@
 												</form>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
-												<form action="/myproject/public/app/update/User" id="updateSensibleDataForm" method="post"> 
+												<form action="/azadmin/myproject/public/app/update/User" id="updateSensibleDataForm" method="post"> 
 													{{Form::token()}}
 													<div class="form-group">
 														<label class="control-label">Τρέχων Κωδικός</label>
