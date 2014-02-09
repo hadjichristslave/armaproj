@@ -102,7 +102,7 @@
 														<i class="fa fa-mobile"></i> {{Auth::user()->employee->mobile}}
 													</li>
 													<li>
-														<i class="fa fa-phone"></i> {{Auth::user()->employee->mobile}}
+														<i class="fa fa-phone"></i> {{Auth::user()->employee->phone}}
 													</li>
 													<li>
 														<i class="fa fa-envelope-o"></i> {{Auth::user()->email}}
