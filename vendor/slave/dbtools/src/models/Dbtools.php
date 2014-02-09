@@ -83,6 +83,12 @@ class Dbtools extends Model {
 		$counter = $model::where($tablekey , '=' , $id)->count();
 		return $counter>0;
 	}
+    public static function return($model, $id, $singleRecord){
+        if($singleRecord==true){
+            $data = $model::where($tablekey , ,'=' , $id)->first();
+            return Response::json($data);
+        }
+    }
 	
 
 }
