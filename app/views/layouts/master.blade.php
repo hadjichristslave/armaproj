@@ -1187,6 +1187,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				<!-- /.modal-dialog -->
 			</div>
 			<!-- /.modal -->
+						
+				<?php
+					if(isset($message) && !empty($message)){
+					// your code here
+						echo '<div class="row">
+						<div class="col-md-12">
+					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+					<h3 class="page-title">dddddddd
+					'.$message.'
+					</h3>
+					
+					<!-- END PAGE TITLE & BREADCRUMB-->
+				</div>';
+					}
+				?>
+				
+			</div>
 			@yield('content')
 
 

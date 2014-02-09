@@ -3,6 +3,8 @@ use DB;
 use Input;
 use Validpack;
 use Hash;
+use Auth;
+use Redirect;
 use Illuminate\Database\Eloquent\Model;
 
 class Dbtools extends Model {
@@ -61,8 +63,9 @@ class Dbtools extends Model {
                     if($key == "password" && strlen(Input::get('newpassword'))>2)
                         $inputData->$key = Hash::make(Input::get('newpassword'));
                 $inputData->save();
-                echo 'database 1';
-                return "database-1";
+                $message = 'Succesful user ' . Auth::user()->username  . " update";
+                return $message;
+
             }else{
                 echo 'database 2';
                 return "database-2";

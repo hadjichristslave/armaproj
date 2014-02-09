@@ -41,7 +41,8 @@ class AppController extends Controller {
 				return 'password given is not correct';
 			}
 		}
-		Dbtools::updateFromModel($model, $id ,$key);
+		$message = Dbtools::updateFromModel($model, $id ,$key);
+		return Redirect::to('/azadmin/myproject/public/app/user');
 	}
 
 }
