@@ -82,7 +82,9 @@ class AppController extends Controller {
 				Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , 'failed user creation');	
 			}
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
-
+		}if($model == 'Employee' && $action=='delete'){
+			$message = Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
+			$message = Dbtools::deleteFromModel("User",Input::get('id') , "userId");
 		}
 
 
