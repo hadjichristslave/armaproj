@@ -43,7 +43,7 @@ jQuery( document ).ready(function( $ ) {
 		$('.employeeEditForm').submit();
 	});
 	$('.userDelete').click(function(){
-		$('.userEditForm').attr('action' , '/azadmin/myproject/public/app/custom/User/delete');
+		$('.userEditForm').attr('action' , '/azadmin/myproject/public/app/data/User/delete');
 		$('.userEditForm').submit();
 	});
 
