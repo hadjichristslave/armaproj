@@ -8,9 +8,9 @@
 										</div>
 										<div class="tools">
 											<span>
-											<select class="form-control" name="companyId" id="employeeIdSelect">
+											<select class="form-control" name="employeeid" id="employeeIdSelect">
 												<option value="0" selected>--</option>
-												@foreach(Store::all() as $key=>$value)
+												@foreach(Employee::all() as $key=>$value)
 												<option value="{{$value->id}}">{{$value->brand}}</option>																	
 												@endforeach
 											</select>
