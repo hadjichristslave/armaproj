@@ -8,7 +8,7 @@
 										</div>
 										<div class="tools">
 											<span>
-											<select class="form-control" name="employeeid" id="UserIdSelect">
+											<select class="form-control" name="userId" id="userIdSelect">
 												<option value="0" selected>--</option>
 												@foreach(User::all() as $key=>$value)
 												<option value="{{$value->id}}">{{$value->username}}</option>																	
