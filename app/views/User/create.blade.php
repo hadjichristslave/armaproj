@@ -36,7 +36,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Email</label>
 															<div class="col-md-9">
-																<input type="text" class="form-control" name="email"  placeholder="Email!">
+																<input type="text" class="form-control" name="email"  placeholder="Email">
 															</div>
 														</div>
 													</div>
@@ -50,15 +50,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Κωδικός</label>
 															<div class="col-md-9">
-																<input type="text" class="form-control" name="newpassword"  placeholder="Επώνυμο">
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-group">
-															<label class="control-label col-md-3">Επαλήθευση κωδικού</label>
-															<div class="col-md-9">
-																<input type="text" class="form-control" name="newpassword"  placeholder="Επώνυμο">
+																<input type="password" class="form-control" name="password"  placeholder="Επώνυμο">
 															</div>
 														</div>
 													</div>													
