@@ -27,6 +27,7 @@
 										<!-- BEGIN FORM-->
 										<form action="/azadmin/myproject/public/app/data/User/edit" class="form-horizontal userEditForm" method="post">
 											{{Form::token()}}
+											{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>
 												<div class="row">
@@ -56,7 +57,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Κωδικός</label>
 															<div class="col-md-9">
-																<input type="password" class="form-control ajax_password" name="password"  placeholder="Επώνυμο">
+																<input type="password" class="form-control ajax_password" name="password"  placeholder="Κωδικός">
 															</div>
 														</div>
 													</div>													
