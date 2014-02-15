@@ -30,6 +30,17 @@ jQuery( document ).ready(function( $ ) {
 	        });
 		});
 	});
+
+	$( "#productIdSelect" ).change(function() {
+		alert('thid');
+		  $.get( "/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
+		  	console.log(data.slice(0,-4));
+		  	var response = JSON.parse(data.slice(0,-4));
+		  	 $.each(response, function(index, element) {
+            	$(".ajax_"+index).val(element);
+	        });
+		});
+	});
 	
 	$('.shopEdit').click(function(){
 		$('.shopEditForm').submit();
@@ -45,6 +56,10 @@ jQuery( document ).ready(function( $ ) {
 	$('.userDelete').click(function(){
 		$('.userEditForm').attr('action' , '/azadmin/myproject/public/app/data/User/delete');
 		$('.userEditForm').submit();
+	});
+	$('.productDelete').click(function(){
+		$('.productEditForm').attr('action' , '/azadmin/myproject/public/app/data/Product/delete');
+		$('.productEditForm').submit();
 	});
 
 });
