@@ -20,6 +20,16 @@ jQuery( document ).ready(function( $ ) {
 	        });
 		});
 	});
+	$( "#userIdSelect" ).change(function() {
+		alert('thid');
+		  $.get( "/azadmin/myproject/public/app/return/User/"+$(this).val()+"/true", function(data) {
+		  	console.log(data.slice(0,-4));
+		  	var response = JSON.parse(data.slice(0,-4));
+		  	 $.each(response, function(index, element) {
+            	$(".ajax_"+index).val(element);
+	        });
+		});
+	});
 	
 	$('.shopEdit').click(function(){
 		$('.shopEditForm').submit();
@@ -31,6 +41,10 @@ jQuery( document ).ready(function( $ ) {
 	$('.employeeDelete').click(function(){
 		$('.employeeEditForm').attr('action' , '/azadmin/myproject/public/app/custom/Employee/delete');
 		$('.employeeEditForm').submit();
+	});
+	$('.userDelete').click(function(){
+		$('.userEditForm').attr('action' , '/azadmin/myproject/public/app/custom/User/delete');
+		$('.userEditForm').submit();
 	});
 
 });

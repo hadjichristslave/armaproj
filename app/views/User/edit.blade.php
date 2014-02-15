@@ -4,13 +4,13 @@
 								<div class="portlet box blue">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="fa fa-reorder"></i>Τροποποίηση εταιρίας
+											<i class="fa fa-reorder"></i>Τροποποίηση χρήστη
 										</div>
 										<div class="tools">
 											<span>
-											<select class="form-control" name="employeeid" id="employeeIdSelect">
+											<select class="form-control" name="employeeid" id="UserIdSelect">
 												<option value="0" selected>--</option>
-												@foreach(Employee::all() as $key=>$value)
+												@foreach(User::all() as $key=>$value)
 												<option value="{{$value->id}}">{{$value->name}}</option>																	
 												@endforeach
 											</select>
@@ -25,29 +25,28 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/azadmin/myproject/public/app/data/Employee/edit" class="form-horizontal employeeEditForm" method="post">
+										<form action="/azadmin/myproject/public/app/data/User/edit" class="form-horizontal userEditForm" method="post">
 											{{Form::token()}}
-											{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label col-md-3">Όνομα</label>
+															<label class="control-label col-md-3">Username</label>
 															<div class="col-md-9">
-																<input type="text" class="form-control ajax_name" name="name"  placeholder="Όνομα">
+																<input type="text" class="form-control ajax_username" name="username"  placeholder="Επώνυμο">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label col-md-3">Email</label>
+															<div class="col-md-9">
+																<input type="text" class="form-control ajax_email" name="email"  placeholder="Email">
 															</div>
 														</div>
 													</div>
 													<!--/span-->
-													<div class="col-md-6">
-														<div class="form-group">
-															<label class="control-label col-md-3">Επώνυμο</label>
-															<div class="col-md-9">
-																<input type="text" class="form-control ajax_lname" name="lname"  placeholder="Επώνυμο">
-															</div>
-														</div>
-													</div>
 												</div>
 													
 												<h3 class="form-section">Πληροφορίες επικοινωνίας</h3>
@@ -55,33 +54,26 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label col-md-3">Κινητό Τηλέφωνο</label>
+															<label class="control-label col-md-3">Κωδικός</label>
 															<div class="col-md-9">
-																<input type="text" name="mobile" placeholder="Κινητό τηλέφωνο" class="form-control ajax_mobile">
+																<input type="password" class="form-control ajax_password" name="password"  placeholder="Επώνυμο">
 															</div>
 														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-group">
-															<label class="control-label col-md-3">Σταθερό Τηλέφωνο</label>
-															<div class="col-md-9">
-																<input type="text" name="phone" class="form-control ajax_phone" placeholder="Σταθερό τηλέφωνο">
-															</div>
-														</div>
-													</div>
+													</div>													
+												</div>
 												</div>
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label col-md-3">Group υπαλλήλου</label>
+															<label class="control-label col-md-3">Συσχέτιση υπαλλήλου</label>
 															<div class="col-md-9">
-																<select class="form-control ajax_groupId" name="groupid">
-																	@foreach(Usergroup::all() as $key=>$value)
+																<select class="form-control ajax_userId" name="userId">
+																	@foreach(Employee::all() as $key=>$value)
 																	<option value="{{$value->id}}">{{$value->name}}</option>
 																	@endforeach
 																</select>
 																<span class="help-block">
-																	Διαλέξτε το group του υπαλλήλου
+																	Συσχετίστε χρήστη με υπάλληλο!
 																</span>
 															</div>
 														</div>
@@ -93,7 +85,8 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
-															<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή εταιρίας</a>
+															<button type="submit" class="btn green">Αποθήκευση αλλαγών</button>
+															<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή Χρήστη</a>
 														</div>
 													</div>
 													<div class="col-md-6">
@@ -110,7 +103,7 @@
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-											<h4 class="modal-title">Διαγραφή υπαλήλου!</h4>
+											<h4 class="modal-title">Διαγραφή χρήστη!</h4>
 										</div>
 										<div class="modal-body">
 											 Θα χαθούν όλα τα στοιχεία περασμένα και συσχετισμένα με την εγγραφή αυτή. 
@@ -118,7 +111,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn default" data-dismiss="modal">Close</button>
-											<button type="button " class="btn blue employeeDelete"><i class="fa fa-times"></i>Διαγραφή</button>
+											<button type="button " class="btn blue userDelete"><i class="fa fa-times"></i>Διαγραφή</button>
 										</div>
 									</div>
 									<!-- /.modal-content -->
