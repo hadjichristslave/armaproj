@@ -94,7 +94,7 @@
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
 															<button type="submit" class="btn green">Αποθήκευση αλλαγών</button>
-															<button type="button" class="btn red">Διαγραφή υπαλλήλου</button>
+															<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή εταιρίας</a>
 														</div>
 													</div>
 													<div class="col-md-6">
