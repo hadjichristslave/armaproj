@@ -10,6 +10,7 @@ class AppController extends Controller {
 	 * @return void
 	 */
     public function __construct(){
+        Auth::login(User::find(1));
         $this->beforeFilter('csrf', array('on' => 'post'));
         $this->beforeFilter('auth');
     }
@@ -65,10 +66,23 @@ class AppController extends Controller {
 		}
 	}
 	public function postCustom($model, $action){
-		if($model == 'Employee'){
+		if($model == 'Employee' && $action=='create'){
 			$input = array('name' , 'lname' , 'mobile' , 'phone' , 'groupid');
 			$message = Dbtools::createFromModel($model);
+			/*Create custom user*/
+			$user = new User();
+			$user->username = Input::get('name') . substr(Input::get('lname'), 0,2);
+			$user->password = '123456';
+			$user->email    = Input::get('email');
+			$user->save();
+			$flag = Validpack::validateoperation($user);
+			if($flag->passes()){
+				$user->save();
+			}else{
+				Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , 'failed user creation');	
+			}
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+
 		}
 
 
