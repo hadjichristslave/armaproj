@@ -29,7 +29,7 @@ class Dbtools extends Model {
             if($flag->passes()){
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password")
-                        $inputData->key = Hash::make($value);
+                        $inputData->$key = Hash::make($value);
                 $inputData->save();
                 $message = 'Succesful data insert!';
                 return $message;
@@ -59,8 +59,13 @@ class Dbtools extends Model {
 			echo 'Caught exception: '.  $e->getMessage(). "\n";	
 		}
 	}
-	public static function updateFromModel($model , $id , $tablekey){
-        $input = Input::except('_token' , 'rnewpassword' , 'newpassword');
+	public static function updateFromModel($model , $id , $tablekey , $arrayOfAttributes = null){
+        if($arrayOfAttributes==null)
+          $input = Input::except('_token' , 'rnewpassword' , 'newpassword');
+        else
+            $input = Input::get($arrayOfAttributes);
+
+        
         $inputData = $model::where($tablekey, '=' , $id)->first();
         try{
             if(!Dbtools::exists($model, $id, $tablekey)){
