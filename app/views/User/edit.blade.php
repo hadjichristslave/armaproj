@@ -11,7 +11,7 @@
 											<select class="form-control" name="employeeid" id="UserIdSelect">
 												<option value="0" selected>--</option>
 												@foreach(User::all() as $key=>$value)
-												<option value="{{$value->id}}">{{$value->name}}</option>																	
+												<option value="{{$value->id}}">{{$value->username}}</option>																	
 												@endforeach
 											</select>
 												<?php
