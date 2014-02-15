@@ -29,7 +29,7 @@ jQuery( document ).ready(function( $ ) {
 		$('.shopEditForm').submit();
 	});
 	$('.employeeDelete').click(function(){
-		$('.employeeEditForm').attr('action' , '/azadmin/myproject/public/app/data/Store/delete');
+		$('.employeeEditForm').attr('action' , '/azadmin/myproject/public/app/custom/Employee/delete');
 		$('.employeeEditForm').submit();
 	});
 
