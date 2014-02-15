@@ -72,7 +72,7 @@ class AppController extends Controller {
 			/*Create custom user*/
 			$user = new User();
 			$user->username = Input::get('name') . substr(Input::get('lname'), 0,2);
-			$user->password = '123456';
+			$user->password = Hash::make('123456');
 			$user->email    = Input::get('email');
 			$user->save();
 			$flag = Validpack::validateoperation($user);
