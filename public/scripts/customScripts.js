@@ -28,5 +28,9 @@ jQuery( document ).ready(function( $ ) {
 		$('.shopEditForm').attr('action' , '/azadmin/myproject/public/app/data/Store/delete');
 		$('.shopEditForm').submit();
 	});
+	$('.employeeDelete').click(function(){
+		$('.employeeEditForm').attr('action' , '/azadmin/myproject/public/app/data/Store/delete');
+		$('.employeeEditForm').submit();
+	});
 
 });

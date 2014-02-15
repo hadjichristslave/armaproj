@@ -11,7 +11,7 @@
 											<select class="form-control" name="employeeid" id="employeeIdSelect">
 												<option value="0" selected>--</option>
 												@foreach(Employee::all() as $key=>$value)
-												<option value="{{$value->id}}">{{$value->brand}}</option>																	
+												<option value="{{$value->id}}">{{$value->name}}</option>																	
 												@endforeach
 											</select>
 												<?php
@@ -25,7 +25,7 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/azadmin/myproject/public/app/custom/Employee/edit" class="form-horizontal" method="post">
+										<form action="/azadmin/myproject/public/app/custom/Employee/edit" class="form-horizontal employeeEditForm" method="post">
 											{{Form::token()}}
 											{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 											<div class="form-body">
@@ -57,7 +57,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Κινητό Τηλέφωνο</label>
 															<div class="col-md-9">
-																<input type="text" name="mobile" class="form-control ajax_mobile">
+																<input type="text" name="mobile" placeholder="Κινητό τηλέφωνο" class="form-control ajax_mobile">
 															</div>
 														</div>
 													</div>
@@ -65,7 +65,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Σταθερό Τηλέφωνο</label>
 															<div class="col-md-9">
-																<input type="text" name="phone" class="form-control" placeholder="Περιοχή">
+																<input type="text" name="phone" class="form-control ajax_phone" placeholder="Σταθερό τηλέφωνο">
 															</div>
 														</div>
 													</div>
@@ -75,7 +75,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Group υπαλλήλου</label>
 															<div class="col-md-9">
-																<select class="form-control ajax_userGropu" name="groupid">
+																<select class="form-control ajax_groupId" name="groupid">
 																	@foreach(Usergroup::all() as $key=>$value)
 																	<option value="{{$value->id}}">{{$value->name}}</option>
 																	@endforeach
@@ -111,7 +111,7 @@
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-											<h4 class="modal-title">Διαγραφή εταιρίας!</h4>
+											<h4 class="modal-title">Διαγραφή υπαλήλου!</h4>
 										</div>
 										<div class="modal-body">
 											 Θα χαθούν όλα τα στοιχεία περασμένα και συσχετισμένα με την εγγραφή αυτή. 
@@ -119,7 +119,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn default" data-dismiss="modal">Close</button>
-											<button type="button " class="btn blue shopDelete"><i class="fa fa-times"></i>Διαγραφή</button>
+											<button type="button " class="btn blue employeeDelete"><i class="fa fa-times"></i>Διαγραφή</button>
 										</div>
 									</div>
 									<!-- /.modal-content -->
