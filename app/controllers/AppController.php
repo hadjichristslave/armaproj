@@ -86,7 +86,7 @@ class AppController extends Controller {
 			$tblkey = $tablekey==null?'id':$tablekey;
 			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
 			$message .= "<br>User  message".  Dbtools::deleteFromModel("User",Input::get('id') , "userId");
-			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+			return Redirect::to('/app/data/'. $model. '/' . "edit")->with('message' , $message);
 		}
 
 
