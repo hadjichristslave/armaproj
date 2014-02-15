@@ -1,7 +1,7 @@
 <?php
 
 class Employeeorder extends Eloquent{
-
+    public $rules = array();
 	public function orderDetails()
     {
         return $this->hasMany('Order' , 'id' , 'orderId');

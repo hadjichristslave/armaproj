@@ -1,7 +1,7 @@
 <?php
 
 class Storeproduct extends Eloquent{
-
+public $rules = array();
 
 	public function products()
     {
