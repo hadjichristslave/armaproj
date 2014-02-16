@@ -79,22 +79,16 @@ jQuery( document ).ready(function( $ ) {
 		$('.orderEditForm').submit();
 	});
 
+
 });
 
 
 function setupClickBehaviour(){
-	$(".addOrderProduct").click(function(){
-		$("div.productRow").clone().appendTo(".form-body");
-	});
-	$(".removeOrderProduct").click(function(){
-		$(this).parent().parent().remove();
-	});
-}
-function updateClickBehaviour(){
-	$(".addOrderProduct").click(function(){
+	$(".addOrderProduct").on('click', function(){
 		$("div.productRow:first").clone().appendTo(".form-body");
 	});
-	$(".removeOrderProduct").click(function(){
+	$(".removeOrderProduct").on('click',function(){
 		$(this).parent().parent().remove();
 	});
+
 }
