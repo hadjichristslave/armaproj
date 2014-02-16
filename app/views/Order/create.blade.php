@@ -40,8 +40,10 @@
 						<!--/span-->
 					</div>
 					<div class="row productRow">
-					<i class="fa fa-plus addOrderProduct"></i>
-					<i class="fa fa-minus removeOrderProduct"></i>
+					<h4 class="form-section">
+						<i class="fa fa-plus addOrderProduct"></i>
+						<i class="fa fa-minus removeOrderProduct"></i>
+					</h4>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>

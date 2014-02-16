@@ -79,10 +79,12 @@ jQuery( document ).ready(function( $ ) {
 	});
 
 	$(".addOrderProduct").click(function(){
+		console.log('got at least htere');
 		$("div.productRow").last().clone();
 	});
 
 	$(".removeOrderProduct").click(function(){
+		console.log('got at least htere');
 		if($("div.productRow").count>1){
 			$(this).prev('div.productRow').remove();			
 		}
