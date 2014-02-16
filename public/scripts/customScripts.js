@@ -77,5 +77,15 @@ jQuery( document ).ready(function( $ ) {
 		$('.orderEditForm').attr('action' , '/azadmin/myproject/public/app/data/Order/delete');
 		$('.orderEditForm').submit();
 	});
-	
+
+	$(".addOrderProduct").click(function(){
+		$("div.productRow").last().clone();
+	});
+
+	$(".removeOrderProduct").click(function(){
+		if($("div.productRow").count>1){
+			$(this).prev('div.productRow').remove();			
+		}
+	});
+
 });
