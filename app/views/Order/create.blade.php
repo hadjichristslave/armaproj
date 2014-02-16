@@ -68,15 +68,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<div class="form-group">
 								<label class="control-label col-md-3">Σχόλια</label>
 								<div class="col-md-9">
-									<input type="text" class="form-control ajax_comments" name="comments"  placeholder="Σχόλια">
+									<textarea class="form-control ajax_comments" name="comments"  placeholder="Σχόλια">
+									</textarea>
 								</div>
 							</div>
 						</div>
 						<!--/span-->
+						<div class="row" />
 				     </div>
 				 </div>
 				     <div class="form-actions fluid">
