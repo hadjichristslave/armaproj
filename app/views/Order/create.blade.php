@@ -48,12 +48,13 @@
 						</div>
 						<!--/span-->
 					</div>
-					<h3 class="form-section" style="padding-bottom:15px;">Προιόντα
-					<span style="float:right;">
-							<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
-							<a href="#" class="btn red removeOrderProduct">Διαγραφή <i class="fa fa-minus"></i></a>
-					</span>
-					<div class="row"></div>
+					<div class="row">
+						<h3 class="form-section" style="padding-bottom:15px;">Προιόντα
+						<span style="float:right;">
+								<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
+								<a href="#" class="btn red removeOrderProduct">Διαγραφή <i class="fa fa-minus"></i></a>
+						</span>
+					</div>
 					<div class="row productRow">
 						<div class="col-md-6">
 							<div class="form-group">
