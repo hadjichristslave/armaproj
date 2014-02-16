@@ -89,15 +89,15 @@ jQuery( document ).ready(function( $ ) {
 		divCounter++;
 		elementToClone = $("div.productRow:first").clone().hide();
 		elementToClone.find("select[name='productId']").attr('name' , 'name1'+divCounter);
-		elementToClone.find("textarea[name='comments']").attr('name' , 'comments2'+divCounter);
+		elementToClone.find("input[name='comments']").attr('name' , 'comments2'+divCounter);
 		elementToClone.find("input[name='quantity']").attr('name' , 'quantity3'+divCounter);
 		elementToClone.appendTo(".form-body").fadeIn('slow');
 	});
 	$(".removeOrderProduct").on('click',function(){
-		if(("div.productRow").length>1){
+		if($("div.productRow").length>1){
 			$("div.productRow:last").hide('slow' , function(){$(this).remove()});
 		}else{
-			console.log('only one element on list, not removing that');
+			console.log('only one element on list, not removing that, for god\'s sake');
 
 		}
 	});

@@ -33,7 +33,7 @@
 								<div class="col-md-9">
 										<select class="form-control ajax_storeId" name="storeId">
 											@foreach(Store::all() as $key=>$value)
-											<option value="{{$value->id}}">{{$value->name}}</option>
+											<option value="{{$value->id}}">{{$value->title}}</option>
 											@endforeach
 										</select>
 										<span class="help-block">
