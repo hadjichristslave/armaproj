@@ -38,6 +38,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/fullcalendar.print.css">
 <link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/select2.css">
 <link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/jquery.ui.all.css">
+<link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/css/customStyle.css">
 <!-- END THEME STYLES -->
 <!-- Login styles	-->
 <link rel="stylesheet" type="text/css" href="http://www.armancon.com/azadmin/assets/plugins/select2/select2_metro.css"/>

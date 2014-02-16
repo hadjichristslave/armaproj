@@ -45,6 +45,8 @@
 						<!--/span-->
 					</div>
 					<div class="row productRow">
+						<hr>
+						<hr>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>
@@ -77,7 +79,6 @@
 							</div>
 						</div>
 						<!--/span-->
-						<hr>
 				     </div>
 				 </div>
 				     <div class="form-actions fluid">
