@@ -85,10 +85,8 @@ jQuery( document ).ready(function( $ ) {
 function setupClickBehaviour(){
 	$(".addOrderProduct").click(function(){
 		$("div.productRow").clone().appendTo(".form-body");
-		setupClickBehaviour();
 	});
 	$(".removeOrderProduct").click(function(){
 		$(this).parent().parent().remove();
-		setupClickBehaviour();
 	});
 }
