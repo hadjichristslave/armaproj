@@ -85,10 +85,10 @@
 						<div class="col-md-6">
 							<div class="col-md-offset-3 col-md-9">
 								<button type="submit" class="btn green">Αποθήκευση Παραγγελίας</button>
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<label class="control-label col-md-3">Σύνολο:</label>
 									<div class="input-group">
-										<input type="password" class="form-control" placeholder="Σύνολο" value=15 readonly>
+										<input type="text" class="form-control placeholder" ajax_sum="Σύνολο" value=15 readonly>
 										<span class="input-group-addon">
 											<i class="fa fa-euro"></i>
 										</span>
