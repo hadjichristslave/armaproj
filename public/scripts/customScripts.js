@@ -82,7 +82,7 @@ jQuery( document ).ready(function( $ ) {
 		$("div.productRow:first").clone().appendTo(".form-body");
 	});
 	$(".removeOrderProduct").on('click',function(){
-		$(this).parent().parent().remove();
+		$("div.productRow:last").remove();
 	});
 
 
@@ -94,7 +94,7 @@ function setupClickBehaviour(){
 		$("div.productRow:first").clone().appendTo(".form-body");
 	});
 	$(".removeOrderProduct").on('click',function(){
-		$(this).parent().parent().remove();
+		$("div.productRow:last").remove();
 	});
 
 }
