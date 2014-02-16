@@ -90,3 +90,11 @@ function setupClickBehaviour(){
 		$(this).parent().parent().remove();
 	});
 }
+function updateClickBehaviour(){
+	$(".addOrderProduct").click(function(){
+		$("div.productRow:first").clone().appendTo(".form-body");
+	});
+	$(".removeOrderProduct").click(function(){
+		$(this).parent().parent().remove();
+	});
+}
