@@ -95,7 +95,7 @@ jQuery( document ).ready(function( $ ) {
 	});
 	$(".removeOrderProduct").on('click',function(){
 		if(("div.productRow").length>1){
-			$("div.productRow:last").fadeOut('normal').remove();
+			$("div.productRow:last").hide('slow' , function(){$(this).remove()});
 		}else{
 			console.log('only one element on list, not removing that');
 
