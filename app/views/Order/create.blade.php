@@ -76,8 +76,9 @@
 							</div>
 						</div>
 						<!--/span-->
-				</div>
-				<div class="form-actions fluid">
+				     </div>
+				 </div>
+				     <div class="form-actions fluid">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="col-md-offset-3 col-md-9">
