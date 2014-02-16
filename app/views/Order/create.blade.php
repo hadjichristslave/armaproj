@@ -5,18 +5,18 @@
 		<div class="portlet-title">
 			<div class="caption">
 				<i class="fa fa-reorder"></i>Δημιουργία Παραγγελίας
+				<div class="sumDiv">
+					<label class="control-label col-md-6">Σύνολο:</label>
+					<div class="input-group">
+						<input type="text" class="form-control placeholder" ajax_sum="Σύνολο" value=15 readonly>
+						<span class="input-group-addon">
+							<i class="fa fa-euro"></i>
+						</span>
+					</div>
+				</div>
 			</div>
 			<div class="tools">
 				<span>
-					<div class="col-md-6">
-						<label class="control-label col-md-6">Σύνολο:</label>
-						<div class="input-group">
-							<input type="text" class="form-control placeholder" ajax_sum="Σύνολο" value=15 readonly>
-							<span class="input-group-addon">
-								<i class="fa fa-euro"></i>
-							</span>
-						</div>
-					</div>
 					<?php
 						if(Session::has('message'))
 							echo Session::get('message');
@@ -29,12 +29,7 @@
 			<form action="/azadmin/myproject/public/app/data/Order/create" class="form-horizontal" method="post">
 				{{Form::token()}}
 				<div class="form-body">
-					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες
-					<span style="float:right;">
-							<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
-							<a href="#" class="btn red removeOrderProduct">Διαγραφή <i class="fa fa-minus"></i></a>
-					</span>
-					</h3>
+					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες</h3>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -53,8 +48,12 @@
 						</div>
 						<!--/span-->
 					</div>
+					<h3 class="form-section" style="padding-bottom:15px;">Προιόντα
+					<span style="float:right;">
+							<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
+							<a href="#" class="btn red removeOrderProduct">Διαγραφή <i class="fa fa-minus"></i></a>
+					</span>
 					<div class="row productRow">
-						<hr>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>
@@ -87,6 +86,7 @@
 							</div>
 						</div>
 						<!--/span-->
+						<hr>
 				     </div>
 				 </div>
 				     <div class="form-actions fluid">

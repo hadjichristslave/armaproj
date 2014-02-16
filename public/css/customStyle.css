@@ -9,3 +9,8 @@
 .addOrderspan:hover{
 	cursor:hand;
 }
+.sumDiv{
+	float: right;
+	width: 15%;
+	margin-bottom: 5px; 
+}
