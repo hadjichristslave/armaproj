@@ -71,13 +71,13 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label class="control-label col-md-3">Σχόλια</label>
-								<div class="col-md-9">
+								<div class="col-md-12">
 									<input class="form-control ajax_comments" name="comments"  placeholder="Σχόλια" / >
 								</div>
 							</div>
 						</div>
 						<!--/span-->
-						<div class="row" />
+						<hr>
 				     </div>
 				 </div>
 				     <div class="form-actions fluid">

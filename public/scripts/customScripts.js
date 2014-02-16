@@ -88,9 +88,9 @@ jQuery( document ).ready(function( $ ) {
 	$(".addOrderProduct").on('click', function(){
 		divCounter++;
 		elementToClone = $("div.productRow:first").clone();
-		elementToClone.find("select[name='productId']").attr('name' , 'name1'+divCounter);
-		elementToClone.find("textarea[name='comments']").attr('name' , 'comments2'+divCounter);
-		elementToClone.find("input[name='quantity']").attr('name' , 'quantity3'+divCounter);
+		elementToClone.find("select[name='productId']").attr('name' , 'name_'+divCounter);
+		elementToClone.find("input[name='comments']").attr('name' , 'comments_'+divCounter);
+		elementToClone.find("input[name='quantity']").attr('name' , 'quantity_'+divCounter);
 		elementToClone.appendTo(".form-body");
 	});
 	$(".removeOrderProduct").on('click',function(){
