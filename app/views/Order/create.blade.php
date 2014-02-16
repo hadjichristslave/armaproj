@@ -20,10 +20,10 @@
 			<form action="/azadmin/myproject/public/app/data/Order/create" class="form-horizontal" method="post">
 				{{Form::token()}}
 				<div class="form-body">
-					<h3 class="form-section">Γενικές Πληροφορίες
+					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες
 					<span style="float:right;">
-							<a href="#" class="btn green addOrderProduct">Green <i class="fa fa-plus"></i></a>
-							<a href="#" class="btn remove removeOrderProduct">Green <i class="fa fa-minus"></i></a>
+							<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
+							<a href="#" class="btn red removeOrderProduct">Διαγραφή <i class="fa fa-minus"></i></a>
 					</span>
 					</h3>
 					<div class="row">
