@@ -48,7 +48,7 @@
 						</div>
 						<!--/span-->
 					</div>
-					<h3 class="form-section" style="padding-bottom:15px;">Προιόντα
+					<h3 class="form-section" style="padding-bottom:15px;">Προιόντα</h3>
 					<div class="row">
 						<span style="float:right;">
 								<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
