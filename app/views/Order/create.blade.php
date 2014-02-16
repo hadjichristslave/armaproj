@@ -53,6 +53,7 @@
 							<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
 							<a href="#" class="btn red removeOrderProduct">Διαγραφή <i class="fa fa-minus"></i></a>
 					</span>
+					<div class="row"></div>
 					<div class="row productRow">
 						<div class="col-md-6">
 							<div class="form-group">
