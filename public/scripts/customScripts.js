@@ -84,10 +84,7 @@ jQuery( document ).ready(function( $ ) {
 	});
 
 	$(".removeOrderProduct").click(function(){
-		console.log('got at least htere');
-		if($("div.productRow").count>1){
-			$(this).prev('div.productRow').remove();			
-		}
+		$(this).parent().parent().remove();
 	});
 
 });
