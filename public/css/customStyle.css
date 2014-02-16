@@ -1,3 +1,15 @@
 .productRow > hr{
-	width:80%;
+	width:95%;
+	margin-left:15px;
+}
+
+.addOrderProduct:hover{
+	cursor:hand;
+	background:silver;
+	margin:10px;
+}
+.removeOrderProduct:hover{
+	cursor:hand;
+	background:silver;
+	margin:10px;
 }
