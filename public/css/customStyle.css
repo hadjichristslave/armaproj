@@ -5,11 +5,7 @@
 
 .addOrderProduct:hover{
 	cursor:hand;
-	background:silver;
-	margin:10px;
 }
 .removeOrderProduct:hover{
 	cursor:hand;
-	background:silver;
-	margin:10px;
 }

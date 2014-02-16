@@ -22,8 +22,12 @@
 				<div class="form-body">
 					<h3 class="form-section">Γενικές Πληροφορίες
 					<span style="float:right;">
-						<i class="fa fa-plus addOrderProduct" title="add product"></i>
-						<i class="fa fa-minus removeOrderProduct" title="remove product"></i>
+						<span class= 'addOrderspan'>
+							<i class="fa fa-plus addOrderProduct" title="add product"></i>
+						</span>
+						<span class= 'removeOrderspan'>
+							<i class="fa fa-minus removeOrderProduct" title="remove product"></i>
+						</span>
 					</span>
 					</h3>
 					<div class="row">
