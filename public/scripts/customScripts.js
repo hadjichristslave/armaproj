@@ -1,5 +1,6 @@
 jQuery( document ).ready(function( $ ) {
   // Code using $ as usual goes here.
+  setupClickBehaviour();
 	$( "#companyIdSelect" ).change(function() {
 		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
@@ -78,13 +79,16 @@ jQuery( document ).ready(function( $ ) {
 		$('.orderEditForm').submit();
 	});
 
-	$(".addOrderProduct").click(function(){
-		console.log('got at least htere');
-		$("div.productRow").clone().appendTo(".form-body");
-	});
+});
 
+
+function setupClickBehaviour(){
+	$(".addOrderProduct").click(function(){
+		$("div.productRow").clone().appendTo(".form-body");
+		setupClickBehaviour();
+	});
 	$(".removeOrderProduct").click(function(){
 		$(this).parent().parent().remove();
+		setupClickBehaviour();
 	});
-
-});
+}
