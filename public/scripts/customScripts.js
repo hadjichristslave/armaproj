@@ -88,9 +88,9 @@ jQuery( document ).ready(function( $ ) {
 	$(".addOrderProduct").on('click', function(){
 		divCounter++;
 		elementToClone = $("div.productRow:first").clone().hide();
-		elementToClone.find("select[name='productId']").attr('name_' , 'name1'+divCounter);
-		elementToClone.find("input[name='comments']").attr('name_' , 'comments2'+divCounter);
-		elementToClone.find("input[name='quantity']").attr('name_' , 'quantity3'+divCounter);
+		elementToClone.find("select[name='productId']").attr('name' , 'name_'+divCounter);
+		elementToClone.find("input[name='comments']").attr('name' , 'comments_'+divCounter);
+		elementToClone.find("input[name='quantity']").attr('name' , 'quantity_'+divCounter);
 		elementToClone.appendTo(".form-body").fadeIn('slow');
 	});
 	$(".removeOrderProduct").on('click',function(){
@@ -98,10 +98,10 @@ jQuery( document ).ready(function( $ ) {
 			$("div.productRow:last").hide('slow' , function(){$(this).remove()});
 		}else{
 			console.log('only one element on list, not removing that, for god\'s sake');
-
 		}
 	});
 
+	$(".select2").select2();
 
 
 });
