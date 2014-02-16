@@ -72,8 +72,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Σχόλια</label>
 								<div class="col-md-9">
-									<textarea class="form-control ajax_comments" name="comments"  placeholder="Σχόλια">
-									</textarea>
+									<input class="form-control ajax_comments" name="comments"  placeholder="Σχόλια" / >
 								</div>
 							</div>
 						</div>

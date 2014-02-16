@@ -1,3 +1,10 @@
+/**
+	Variable declaration
+*/
+var divCounter =0;
+
+
+/*---End of variable dec--------*/
 jQuery( document ).ready(function( $ ) {
   // Code using $ as usual goes here.
 	$( "#companyIdSelect" ).change(function() {
@@ -79,22 +86,22 @@ jQuery( document ).ready(function( $ ) {
 	});
 
 	$(".addOrderProduct").on('click', function(){
-		$("div.productRow:first").clone().appendTo(".form-body");
+		divCounter++;
+		elementToClone = $("div.productRow:first").clone();
+		elementToClone.find("select[name='productId']").attr('name' , 'name1'+divCounter);
+		elementToClone.find("textarea[name='comments']").attr('name' , 'comments2'+divCounter);
+		elementToClone.find("input[name='quantity']").attr('name' , 'quantity3'+divCounter);
+		elementToClone.appendTo(".form-body");
 	});
 	$(".removeOrderProduct").on('click',function(){
-		$("div.productRow:last").remove();
+		if(("div.productRow").length>1){
+			$("div.productRow:last").remove();
+		}else{
+			console.log('only one element on list, not removing that');
+
+		}
 	});
+
 
 
 });
-
-
-function setupClickBehaviour(){
-	$(".addOrderProduct").on('click', function(){
-		$("div.productRow:first").clone().appendTo(".form-body");
-	});
-	$(".removeOrderProduct").on('click',function(){
-		$("div.productRow:last").remove();
-	});
-
-}
