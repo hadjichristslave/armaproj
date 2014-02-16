@@ -8,6 +8,15 @@
 			</div>
 			<div class="tools">
 				<span>
+					<div class="col-md-6">
+						<label class="control-label col-md-6">Σύνολο:</label>
+						<div class="input-group">
+							<input type="text" class="form-control placeholder" ajax_sum="Σύνολο" value=15 readonly>
+							<span class="input-group-addon">
+								<i class="fa fa-euro"></i>
+							</span>
+						</div>
+					</div>
 					<?php
 						if(Session::has('message'))
 							echo Session::get('message');
@@ -33,7 +42,7 @@
 								<div class="col-md-9">
 										<select class="form-control ajax_storeId" name="storeId">
 											@foreach(Store::all() as $key=>$value)
-											<option value="{{$value->id}}">{{$value->title}}</option>
+											<option value="{{$value->id}}">{{$value->brand}}</option>
 											@endforeach
 										</select>
 										<span class="help-block">
@@ -52,7 +61,7 @@
 								<div class="col-md-9">
 										<select class="form-control ajax_productId" name="productId">
 											@foreach(Product::all() as $key=>$value)
-											<option value="{{$value->id}}">{{$value->name}}</option>
+											<option value="{{$value->id}}">{{$value->title}}</option>
 											@endforeach
 										</select>
 										<span class="help-block">
@@ -85,15 +94,6 @@
 						<div class="col-md-6">
 							<div class="col-md-offset-3 col-md-9">
 								<button type="submit" class="btn green">Αποθήκευση Παραγγελίας</button>
-								<div class="col-md-6">
-									<label class="control-label col-md-6">Σύνολο:</label>
-									<div class="input-group">
-										<input type="text" class="form-control placeholder" ajax_sum="Σύνολο" value=15 readonly>
-										<span class="input-group-addon">
-											<i class="fa fa-euro"></i>
-										</span>
-									</div>
-								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
