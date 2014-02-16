@@ -42,15 +42,7 @@
 					<i class="fa fa-plus"></i>
 					<i class="fa fa-minus"></i>
 					<div class="row productRow">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label col-md-3">Ποσότητα</label>
-								<div class="col-md-9">
-									<input type="number" class="form-control" name="quantity"  placeholder="Ποσότητα">
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>
 								<div class="col-md-9">
@@ -63,6 +55,22 @@
 											Διαλέξτε το προιόν βάσει του τίτλου του
 										</span>
 									</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label col-md-3">Ποσότητα</label>
+								<div class="col-md-9">
+									<input type="number" class="form-control ajax_quantity" name="quantity"  placeholder="Ποσότητα">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label col-md-3">Σχόλια</label>
+								<div class="col-md-9">
+									<input type="text" class="form-control ajax_comments" name="comments"  placeholder="Σχόλια">
+								</div>
 							</div>
 						</div>
 						<!--/span-->
