@@ -8,10 +8,10 @@
 										</div>
 										<div class="tools">
 											<span>
-											<select class="form-control" name="productId" id="productIdSelect">
+											<select class="form-control select2" name="productId" id="productIdSelect">
 												<option value="0" selected>--</option>
 												@foreach(Product::all() as $key=>$value)
-												<option value="{{$value->id}}">{{$value->name}}</option>																	
+												<option value="{{$value->id}}">{{$value->title}}</option>																	
 												@endforeach
 											</select>
 												<?php

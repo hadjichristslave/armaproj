@@ -86,7 +86,7 @@
 							<div class="col-md-offset-3 col-md-9">
 								<button type="submit" class="btn green">Αποθήκευση Παραγγελίας</button>
 								<div class="col-md-6">
-									<label class="control-label col-md-3">Σύνολο:</label>
+									<label class="control-label col-md-6">Σύνολο:</label>
 									<div class="input-group">
 										<input type="text" class="form-control placeholder" ajax_sum="Σύνολο" value=15 readonly>
 										<span class="input-group-addon">
