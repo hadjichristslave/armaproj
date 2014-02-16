@@ -80,7 +80,7 @@ jQuery( document ).ready(function( $ ) {
 
 	$(".addOrderProduct").click(function(){
 		console.log('got at least htere');
-		$("div.productRow").last().clone();
+		$("div.productRow").clone();
 	});
 
 	$(".removeOrderProduct").click(function(){
