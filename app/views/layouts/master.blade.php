@@ -514,7 +514,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <div class="page-container">
 	<!-- BEGIN SIDEBAR -->
 	<div class="page-sidebar-wrapper">
-		<div class="page-sidebar navbar-collapse collapse" style="position:fixed!important">
+		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu">
 				<li class="sidebar-toggler-wrapper">
@@ -537,7 +537,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				<li class="start ">
-					<a href="index.html">
+					<a href="/azadmin/myproject/public/app/user">
 					<i class="fa fa-home"></i>
 					<span class="title">
 						 Dashboard
