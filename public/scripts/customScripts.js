@@ -131,7 +131,7 @@ function updateOrderCost(){
 		$.ajax({
 	        type:  'get',
 	        cache:  false ,
-	        url:  '/myproject/public/app/updatecost',
+	        url:  '/azadmin/myproject/public/app/updatecost',
 	        data:  {cart:JSON.stringify(orderObjects)},
 	        success: function(resp) {
 	            $('.ajax_sum').val(resp);
