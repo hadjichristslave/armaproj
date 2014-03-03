@@ -100,8 +100,8 @@ jQuery( document ).ready(function( $ ) {
 			console.log('only one element on list, not removing that, for god\'s sake');
 		}
 	});
-
-	$(".select2").select2();
+	console.log('reached tgat');
+	$(".select2").each().select2();
 
 
 });

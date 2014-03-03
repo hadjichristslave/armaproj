@@ -544,6 +544,32 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					</span>
 					</a>
 				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="fa fa-gift"></i>
+						<span class="title">
+							Frontend Themes
+						</span>
+						<span class="arrow">
+						</span>
+					</a>
+					<ul class="sub-menu" style="display: none;">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Complete E-Commerce Frontend Theme For Metronic Admin">
+							<a href="http://keenthemes.com/preview/index.php?theme=metronic_ecommerce" target="_blank">
+								<span class="title">
+									E-Commerce Frontend
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Complete Multipurpose Corporate Frontend Theme For Metronic Admin">
+							<a href="http://keenthemes.com/preview/index.php?theme=metronic_frontend" target="_blank">
+								<span class="title">
+									Corporate Frontend
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
 				<li class="last ">
 					<a href="charts.html">
 					<i class="fa fa-bar-chart-o"></i>
