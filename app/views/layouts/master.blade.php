@@ -548,23 +548,153 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					<a href="javascript:;">
 						<i class="fa fa-gift"></i>
 						<span class="title">
-							Frontend Themes
+							Χρήστης
 						</span>
 						<span class="arrow">
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Complete E-Commerce Frontend Theme For Metronic Admin">
-							<a href="http://keenthemes.com/preview/index.php?theme=metronic_ecommerce" target="_blank">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/User/create">
 								<span class="title">
-									E-Commerce Frontend
+									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Complete Multipurpose Corporate Frontend Theme For Metronic Admin">
-							<a href="http://keenthemes.com/preview/index.php?theme=metronic_frontend" target="_blank">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/User/edit">
 								<span class="title">
-									Corporate Frontend
+									Τροποποίηση
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="fa fa-gift"></i>
+						<span class="title">
+							Υπάληλος
+						</span>
+						<span class="arrow">
+						</span>
+					</a>
+					<ul class="sub-menu" style="display: none;">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Employee/create">
+								<span class="title">
+									Δημιουργία
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Employee/edit">
+								<span class="title">
+									Τροποποίηση
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="fa fa-gift"></i>
+						<span class="title">
+							Κατάστημα
+						</span>
+						<span class="arrow">
+						</span>
+					</a>
+					<ul class="sub-menu" style="display: none;">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Store/create">
+								<span class="title">
+									Δημιουργία
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Store/edit">
+								<span class="title">
+									Τροποποίηση
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="fa fa-gift"></i>
+						<span class="title">
+							Απόθεμα καταστήματος
+						</span>
+						<span class="arrow">
+						</span>
+					</a>
+					<ul class="sub-menu" style="display: none;">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Store/create">
+								<span class="title">
+									Δημιουργία
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Store/edit">
+								<span class="title">
+									Τροποποίηση
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="fa fa-gift"></i>
+						<span class="title">
+							Παραγγελία
+						</span>
+						<span class="arrow">
+						</span>
+					</a>
+					<ul class="sub-menu" style="display: none;">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Order/create">
+								<span class="title">
+									Δημιουργία
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Order/edit">
+								<span class="title">
+									Τροποποίηση
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="javascript:;">
+						<i class="fa fa-gift"></i>
+						<span class="title">
+							Προιόν
+						</span>
+						<span class="arrow">
+						</span>
+					</a>
+					<ul class="sub-menu" style="display: none;">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Product/create">
+								<span class="title">
+									Δημιουργία
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+							<a href="/azadmin/myproject/public/app/data/Product/edit">
+								<span class="title">
+									Τροποποίηση
 								</span>
 							</a>
 						</li>
