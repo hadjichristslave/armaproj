@@ -546,7 +546,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				</li>
 				<li class="">
 					<a href="javascript:;">
-						<i class="fa fa-gift"></i>
+						<i class="fa fa-user"></i>
 						<span class="title">
 							Χρήστης
 						</span>
@@ -572,7 +572,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				</li>
 				<li class="">
 					<a href="javascript:;">
-						<i class="fa fa-gift"></i>
+						<i class="fa fa-briefcase"></i>
 						<span class="title">
 							Υπάληλος
 						</span>
@@ -598,7 +598,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				</li>
 				<li class="">
 					<a href="javascript:;">
-						<i class="fa fa-gift"></i>
+						<i class="fa fa-shopping-cart"></i>
 						<span class="title">
 							Κατάστημα
 						</span>
@@ -624,7 +624,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				</li>
 				<li class="">
 					<a href="javascript:;">
-						<i class="fa fa-gift"></i>
+						<i class="fa fa-archive"></i>
 						<span class="title">
 							Απόθεμα καταστήματος
 						</span>
@@ -650,7 +650,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				</li>
 				<li class="">
 					<a href="javascript:;">
-						<i class="fa fa-gift"></i>
+						<i class="fa fa-truck"></i>
 						<span class="title">
 							Παραγγελία
 						</span>
