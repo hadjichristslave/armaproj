@@ -514,7 +514,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <div class="page-container">
 	<!-- BEGIN SIDEBAR -->
 	<div class="page-sidebar-wrapper">
-		<div class="page-sidebar navbar-collapse collapse">
+		<div class="page-sidebar navbar-collapse collapse" style="position:fixed!important">
 			<!-- BEGIN SIDEBAR MENU -->
 			<ul class="page-sidebar-menu">
 				<li class="sidebar-toggler-wrapper">
@@ -676,7 +676,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				</li>
 				<li class="">
 					<a href="javascript:;">
-						<i class="fa fa-gift"></i>
+						<i class="fa fa-barcode"></i>
 						<span class="title">
 							Προιόν
 						</span>
