@@ -769,7 +769,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="/azadmin/myproject/public/packages/slave/calendar/js/dataTableScripts.js"></script>
 <script src="/azadmin/myproject/public/packages/slave/calendar/js/demo.calendar.js"></script> 
 <script src="/azadmin/myproject/public/packages/slave/calendar/js/cmsScripts.js"></script>	
-<script src="/azadmin/myproject/public/packages/slave/calendar/js/select2.min.js"></script>
+<script src="/azadmin/assets/plugings/select2/select2.js"></script>
 <!--user scripts-->
 <script type="text/javascript" src="/azadmin/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <!--user scripts end-->
