@@ -95,6 +95,7 @@ jQuery( document ).ready(function($) {
 		elementToClone.find("select.select2").each(function(){
 			$(this).select2();
 		});
+		elementToClone.find("div.select2").first().hide();
 		elementToClone.appendTo(".form-body").fadeIn('slow');
 
 	});
