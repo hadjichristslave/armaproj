@@ -92,7 +92,11 @@ jQuery( document ).ready(function($) {
 		elementToClone.find("select[name='productId']").attr('name' , 'name_'+divCounter);
 		elementToClone.find("input[name='comments']").attr('name' , 'comments_'+divCounter);
 		elementToClone.find("input[name='quantity']").attr('name' , 'quantity_'+divCounter);
+		elementToClone.find("select.select2").each(function(){
+			$(this).select2();
+		});
 		elementToClone.appendTo(".form-body").fadeIn('slow');
+
 	});
 	$(".removeOrderProduct").on('click',function(){
 		if($("div.productRow").length>1){
