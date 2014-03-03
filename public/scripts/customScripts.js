@@ -5,7 +5,7 @@ var divCounter =0;
 
 
 /*---End of variable dec--------*/
-jQuery( document ).ready(function( $ ) {
+jQuery( window ).load(function( $ ) {
   // Code using $ as usual goes here.
 	$( "#companyIdSelect" ).change(function() {
 		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
