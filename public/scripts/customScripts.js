@@ -3,10 +3,11 @@
 */
 var divCounter =0;
 
-
 /*---End of variable dec--------*/
-jQuery( document ).ready(function( $ ) {
+jQuery( document ).ready(function($) {
   // Code using $ as usual goes here.
+
+
 	$( "#companyIdSelect" ).change(function() {
 		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
@@ -101,8 +102,9 @@ jQuery( document ).ready(function( $ ) {
 		}
 	});
 	console.log('reached tgat');
-	$(".select2").each().select2();
-	console.log('reached out of tgat');
+	$(".select2").each(function(){
+		$(this).select2();
+	});
 
 
 });

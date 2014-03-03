@@ -36,6 +36,7 @@
 								<label class="control-label col-md-3">Κατάστημα</label>
 								<div class="col-md-9">
 										<select class="form-control ajax_storeId select2" name="storeId">
+											<option value="-1">----------</option>
 											@foreach(Store::all() as $key=>$value)
 											<option value="{{$value->id}}">{{$value->brand}}</option>
 											@endforeach
@@ -60,6 +61,7 @@
 								<label class="control-label col-md-3">Προιόν</label>
 								<div class="col-md-9">
 										<select class="form-control ajax_productId select2" name="productId">
+											<option value="-1">----------</option>
 											@foreach(Product::all() as $key=>$value)
 											<option value="{{$value->id}}">{{$value->title}}</option>
 											@endforeach

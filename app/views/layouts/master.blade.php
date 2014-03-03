@@ -41,7 +41,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/css/customStyle.css">
 <!-- END THEME STYLES -->
 <!-- Login styles	-->
-<link rel="stylesheet" type="text/css" href="http://www.armancon.com/azadmin/assets/plugins/select2/select2_metro.css"/>
+<link rel="stylesheet" type="text/css" href="/azadmin/assets/plugins/select2/select2_metro.css"/>
 <!-- Login styles end	-->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -748,7 +748,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="assets/plugins/respond.min.js"></script>
 <script src="assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="/azadmin/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
 <script src="/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 <script src="/azadmin/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
@@ -762,6 +762,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
 <script src="/azadmin/myproject/public/packages/slave/calendar/js/fullcalendar.min.js"></script>
+<script src="/azadmin/assets/plugins/select2/select2.js"></script>
+
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/azadmin/assets/scripts/app.js"></script>
@@ -769,7 +771,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="/azadmin/myproject/public/packages/slave/calendar/js/dataTableScripts.js"></script>
 <script src="/azadmin/myproject/public/packages/slave/calendar/js/demo.calendar.js"></script> 
 <script src="/azadmin/myproject/public/packages/slave/calendar/js/cmsScripts.js"></script>	
-<script src="/azadmin/assets/plugins/select2/select2.js"></script>
 <!--user scripts-->
 <script type="text/javascript" src="/azadmin/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <!--user scripts end-->
@@ -779,7 +780,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
 
 
-<script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
+<script src="/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
 <script>
 jQuery(document).ready(function() {       
