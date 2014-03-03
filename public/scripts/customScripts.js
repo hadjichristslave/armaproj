@@ -101,7 +101,7 @@ jQuery( document ).ready(function( $ ) {
 		}
 	});
 	console.log('reached tgat');
-	//$(".select2").each().select2();
+	$(".select2").each().select2();
 
 
 });
