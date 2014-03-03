@@ -10,8 +10,8 @@ class AppController extends Controller {
 	 * @return void
 	 */
     public function __construct(){
-        Auth::login(User::find(1));
-        $this->beforeFilter('csrf', array('on' => 'post'));
+        //Auth::login(User::find(1));
+        //$this->beforeFilter('csrf', array('on' => 'post'));
         $this->beforeFilter('auth');
     }
 	public function getDashboard(){
@@ -87,6 +87,11 @@ class AppController extends Controller {
 			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
 			$message .= "<br>User  message".  Dbtools::deleteFromModel("User",Input::get('id') , "userId");
 			return Redirect::to('/app/data/'. $model. '/' . "edit")->with('message' , $message);
+		}if($model="Order" && $action=="create"){
+
+
+
+
 		}
 
 

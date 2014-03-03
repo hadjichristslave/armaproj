@@ -26,7 +26,7 @@
 		</div>
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="/azadmin/myproject/public/app/custom/Order/create" class="form-horizontal" method="post">
+			<form action="http://armancon.com/azadmin/myproject/public/app/custom/Order/create" class="form-horizontal" method="post">
 				{{Form::token()}}
 				<div class="form-body">
 					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες</h3>
