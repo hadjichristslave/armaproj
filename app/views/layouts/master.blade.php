@@ -544,7 +544,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					</span>
 					</a>
 				</li>
-				<li class="">
+				<!-- <li class="">
 					<a href="javascript:;">
 						<i class="fa fa-user"></i>
 						<span class="title">
@@ -570,7 +570,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</li>
 					</ul>
 				</li>
-				<!-- <li class="">
+				 <li class="">
 					<a href="javascript:;">
 						<i class="fa fa-briefcase"></i>
 						<span class="title">
