@@ -596,7 +596,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</li>
 					</ul>
 				</li>
-				<li class="">
+				<!-- <li class="">
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
 						<span class="title">
@@ -699,7 +699,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							</a>
 						</li>
 					</ul>
-				</li>
+				</li> -->
 				<li class="last ">
 					<a href="charts.html">
 					<i class="fa fa-bar-chart-o"></i>
