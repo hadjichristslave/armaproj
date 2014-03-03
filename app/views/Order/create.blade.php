@@ -8,7 +8,7 @@
 				<div class="sumDiv">
 					<label class="control-label col-md-6">Σύνολο:</label>
 					<div class="input-group">
-						<input type="text" class="form-control placeholder" ajax_sum="Σύνολο" value=15 readonly>
+						<input type="text" class="form-control placeholder ajax_sum" ajax_sum="Σύνολο" value=15 readonly>
 						<span class="input-group-addon">
 							<i class="fa fa-euro"></i>
 						</span>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="http://armancon.com/azadmin/myproject/public/app/custom/Order/create" class="form-horizontal" method="post">
+			<form action="/myproject/public/app/custom/Order/create" class="form-horizontal" method="post">
 				{{Form::token()}}
 				<div class="form-body">
 					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες</h3>
@@ -63,7 +63,7 @@
 										<select class="form-control ajax_productId select2" name="productId">
 											<option value="-1">----------</option>
 											@foreach(Product::all() as $key=>$value)
-											<option value="{{$value->id}}">{{$value->title}}</option>
+											<option value="{{$value->id}}">{{$value->title}} - (Τρέχων απόθεμα:{{$value->availableStock}})</option>
 											@endforeach
 										</select>
 										<span class="help-block">
@@ -76,7 +76,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Ποσότητα</label>
 								<div class="col-md-9">
-									<input type="number" class="form-control ajax_quantity" name="quantity"  placeholder="Ποσότητα">
+									<input type="number" min="0" max="1000" class="form-control ajax_quantity" name="quantity"  placeholder="Ποσότητα">
 								</div>
 							</div>
 						</div>

@@ -6,7 +6,9 @@ var divCounter =0;
 /*---End of variable dec--------*/
 jQuery( document ).ready(function($) {
   // Code using $ as usual goes here.
-
+	$(".select2").each(function(){
+		$(this).select2();
+	});
 
 	$( "#companyIdSelect" ).change(function() {
 		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
@@ -19,7 +21,6 @@ jQuery( document ).ready(function($) {
 	});
 
 	$( "#employeeIdSelect" ).change(function() {
-		alert('thid');
 		  $.get( "/azadmin/myproject/public/app/return/Employee/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
@@ -29,7 +30,6 @@ jQuery( document ).ready(function($) {
 		});
 	});
 	$( "#userIdSelect" ).change(function() {
-		alert('thid');
 		  $.get( "/azadmin/myproject/public/app/return/User/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
@@ -51,7 +51,6 @@ jQuery( document ).ready(function($) {
 	});
 
 	$( "#orderIdSelect" ).change(function() {
-		alert('thid');
 		  $.get( "/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
@@ -89,7 +88,7 @@ jQuery( document ).ready(function($) {
 	$(".addOrderProduct").on('click', function(){
 		divCounter++;
 		elementToClone = $("div.productRow:first").clone().hide();
-		elementToClone.find("select[name='productId']").attr('name' , 'name_'+divCounter);
+		elementToClone.find("select[name='productId']").attr('name' , 'productId_'+divCounter);
 		elementToClone.find("input[name='comments']").attr('name' , 'comments_'+divCounter);
 		elementToClone.find("input[name='quantity']").attr('name' , 'quantity_'+divCounter);
 		elementToClone.find("select.select2").each(function(){
@@ -106,10 +105,36 @@ jQuery( document ).ready(function($) {
 			console.log('only one element on list, not removing that, for god\'s sake');
 		}
 	});
-	console.log('reached tgat');
-	$(".select2").each(function(){
-		$(this).select2();
+
+	$(document).on('keyup change',"input[type='number']", function(evt){
+	   var charCode = (evt.which) ? evt.which : event.keyCode
+		if (!(charCode > 31 && (charCode < 48 || charCode > 57))==false) return false;
+		updateOrderCost();
 	});
 
-
 });
+
+
+function orderCart(productId,quantity)
+{
+	this.productId=productId;
+	this.quantity=quantity;
+}
+function updateOrderCost(){
+	orderObjects = new Array();
+		$('.productRow').each(function(){
+			var productId  = $(this).find('.select2').select2('data').id;
+			var productQtt = $(this).find('.ajax_quantity').val();
+			console.log(productId  + " " + productQtt);
+			orderObjects.push(new orderCart(productId, productQtt));
+		});
+		$.ajax({
+	        type:  'get',
+	        cache:  false ,
+	        url:  '/myproject/public/app/updatecost',
+	        data:  {cart:JSON.stringify(orderObjects)},
+	        success: function(resp) {
+	            $('.ajax_sum').val(resp);
+	        } 
+	      });
+}

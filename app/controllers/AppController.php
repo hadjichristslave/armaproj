@@ -87,15 +87,34 @@ class AppController extends Controller {
 			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
 			$message .= "<br>User  message".  Dbtools::deleteFromModel("User",Input::get('id') , "userId");
 			return Redirect::to('/app/data/'. $model. '/' . "edit")->with('message' , $message);
-		}if($model="Order" && $action=="create"){
-
-
-
-
+		}if($model=="Order" && $action=="create"){
+			$numberOfElements = (count(Input::all())-2)/3;
+			$message          = '';
+			for ($i=0; $i <$numberOfElements ; $i++) { 
+				$currentElement = $i;
+				$prefix = $i==0?"":"_".$currentElement;
+				$order = new Order();
+				$order->shopId    = Input::get("shopId");
+				$order->productId = Input::get("productId" . $prefix);
+				$order->quantity  = Input::get("quantity" . $prefix);
+				$order->comments  = Input::get("comments" . $prefix);
+				$flag = Validpack::validateoperation($order);
+				if($flag->passes())
+					$order->save();
+				else
+					$message .= $message==""?"product ".$currentElement.", ":$currentElement.", ";
+			}
+			$message = $message==""?"succesfull data insert":$message." validation error";
+			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
 		}
+	}
 
-
-
+	public function getUpdatecost(){
+		$cart   =    json_decode(Input::get('cart'),true);
+		$sum = 0;
+		foreach ($cart as $key => $value) 
+			$sum +=  Product::find($value['productId'])->unitPrice*$value['quantity'];
+		return $sum;
 	}
 
 }

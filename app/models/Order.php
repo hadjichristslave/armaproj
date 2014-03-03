@@ -2,6 +2,7 @@
 
 class Order extends Eloquent{
 
+	public $rules = array('quantity' =>'required|numeric|max:10');
 
 	public function shop()
     {
