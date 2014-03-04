@@ -57,7 +57,7 @@ class LoginController extends Controller {
 	}
 	public function getLogin(){
 		if (Auth::check())
-		        return Redirect::intended('app/dashboard');
+		        return Redirect::intended('app/user');
 		else    return View::make('login::login');
 	}
 	public function postSignup(){
