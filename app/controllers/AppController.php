@@ -91,7 +91,7 @@ class AppController extends Controller {
 			$initial = false;
 			$numberOfElements = (count(Input::all())-3)/3;
 			$message          = '';
-			$employeeOrder = new EmployeeOrder();
+			$employeeOrder = new Employeeorder();
 			for ($i=0; $i <$numberOfElements ; $i++) { 
 				$currentElement = $i;
 				$prefix = $i==0?"":"_".$currentElement;
