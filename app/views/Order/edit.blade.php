@@ -31,8 +31,9 @@
 			</div>
 			<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="/azadmin/myproject/public/app/custom/Order/create" class="form-horizontal myuberform" method="post">
+			<form action="/azadmin/myproject/public/app/custom/Order/edit" class="form-horizontal myuberform" method="post">
 				{{Form::token()}}
+				<input type="text" name="id" class="employeeOrderFormId" style="display:none"/>
 				<div class="form-body">
 					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες</h3>
 					<div class="row">
@@ -106,7 +107,7 @@
 						</span>
 					</h3>
 					<div class="row productRow">
-						<input type="text" name="id" class="ajax_id" style="display:none;" />
+						<input type="text" class="ajax_id" style="display:none;" />
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>
@@ -143,8 +144,8 @@
 							<div class="form-group">
 								<label class="control-label col-md-3"></label>
 								<div class="col-md-3">
-										<a class="btn red" data-toggle="modal" href="#basic2"><i class="fa fa-times">
-											</i> Διαγραφή μεμονωμένου προίόντος
+										<a class="btn red employeeOrderProduct" data-toggle="modal" href="#basic2"><i class="fa fa-times">
+											</i> Διαγραφή προίόντος
 										</a>
 								</div>
 							</div>
@@ -157,8 +158,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="col-md-offset-3 col-md-9">
-								<button type="submit" class="btn green">Αποθήκευση αλλαγών</button>
-								<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή παραγγελίας</a>
+								<button type="button" class="btn green">Αποθήκευση αλλαγών</button>
+								<a class="btn red " data-toggle="modal" href="#basic">Διαγραφή παραγγελίας</a>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -183,7 +184,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn default" data-dismiss="modal">Close</button>
-					<button type="button " class="btn blue productDelete"><i class="fa fa-times"></i>Διαγραφή</button>
+					<button type="button " class="btn blue completeOrderDelete"><i class="fa fa-times"></i> Διαγραφή</button>
 				</div>
 			</div>
 			<!-- /.modal-content -->

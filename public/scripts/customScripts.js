@@ -1,7 +1,10 @@
 /**
 	Variable declaration
 */
-var divCounter =0;
+var divCounter     = 0;
+var orderProductId = 0;
+var orderViewId    = 0;
+var token  = $("input[name='_token']").val();
 
 /*---End of variable dec--------*/
 jQuery( document ).ready(function($) {
@@ -105,9 +108,9 @@ jQuery( document ).ready(function($) {
 
 	$("#employeeorderIdSelect").on("change", function() {
 		 clearProductElements();
-		 var firstProduct = true;
-		 var ordId        = $(this).val();
-		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+$(this).val()+"/true", function(data) {
+		 var firstProduct   = true;
+		 orderViewId        = $(this).val();
+		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+orderViewId+"/true", function(data) {
 		  	$.each(data.order,function(key, val){
 		  		$(".ajax_"+key).val(val);
 		  		myform = $(".myuberform");
@@ -132,11 +135,30 @@ jQuery( document ).ready(function($) {
 		  	});
 		  	
 		});
-		$("#employeeorderIdSelect").select2('val', ordId);
 	 });
+	$(document).on('click' , ".employeeOrderProduct", function(evt){
+		orderProductId = $(this).parent().parent().parent().parent().find(".ajax_id").val();
+	});
 
-	$(document).on('click',"orderProductDelete", function(evt){
-	   
+	$(document).on('click',".orderProductDelete", function(evt){
+   		var request = $.ajax({
+		  url: "/azadmin/myproject/public/app/data/Order/delete/"+orderProductId+ "/id/noredirect",
+		  type: "POST",
+		  data: { _token : token , id: orderProductId},
+		});
+		request.done(function( msg ) {
+		   $('.ajax_id').each(function(){
+		   		if($(this).val()==orderProductId)
+		   			$(this).parent().hide('slow').remove();
+		   })
+		});
+
+	});
+
+	$(".completeOrderDelete").click(function(){
+		$(".employeeOrderFormId").val(orderViewId);
+		$('.myuberform').attr('action' , '/myproject/public/app/custom/Employeeorder/delete/id');
+		$('.myuberform').submit();
 	});
 
 

@@ -52,17 +52,19 @@ class AppController extends Controller {
 	public function getReturn($model, $id , $singleRecord){
 		echo json_encode(Dbtools::returnData($model, $id , $singleRecord));
 	}
-	public function postData($model, $action, $id=null , $tablekey = null){
+	public function postData($model, $action, $id=null , $tablekey = null , $redirect = null){
 		$tblkey = $tablekey==null?'id':$tablekey;
+		$redir  = $redirect==null?true:false;
+
 		if($action =='create'){
 			$message = Dbtools::createFromModel($model);
-			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+			return $redir?Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message):$message;
 		}else if($action=='edit'){
 			$message = Dbtools::updateFromModel($model ,Input::get('id') , $tblkey);
-			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message)->with('id' , $id);
+			return $redir?Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message)->with('id' , $id):$message;
 		}else if($action=='delete'){
 			$message = Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
-			return Redirect::to('/app/data/'. $model. '/edit')->with('message' , $message)->with('id' , $id);
+			return $redir?Redirect::to('/app/data/'. $model. '/edit')->with('message' , $message)->with('id' , $id):$message;
 		}
 	}
 	public function postCustom($model, $action , $tablekey = null){
@@ -119,6 +121,11 @@ class AppController extends Controller {
 			}
 			$message = $message==""?"succesfull data insert":$message." validation error";
 			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+		}if($model=="Employeeorder" && $action=="delete"){
+			$tblkey = $tablekey==null?'id':$tablekey;
+			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
+			Order::where('orderId' , '=' , Input::get("id"))->delete();
+			return Redirect::to('/app/data/Order/edit')->with('message' , $message);
 		}
 	}
 
