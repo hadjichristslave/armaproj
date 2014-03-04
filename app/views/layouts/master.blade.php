@@ -701,10 +701,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					</ul>
 				</li>
 				<li class="last ">
-					<a href="charts.html">
-					<i class="fa fa-bar-chart-o"></i>
+					<a href="/azadmin/myproject/public/calendar/calendar">
+					<i class="fa fa-calendar"></i>
 					<span class="title">
-						 Visual Charts
+						 Calendar
 					</span>
 					</a>
 				</li>

@@ -8,8 +8,6 @@ class Search{
 		$this->order     = $order;
 		$this->orderData = $orderData;
 	}
-
-
 	public function Jsonfy(){
 		$respArr = array( json_encode($this->order), json_encode($this->orderData));
 		return $respArr;

@@ -31,7 +31,7 @@
 			</div>
 			<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="/azadmin/myproject/public/app/custom/Order/create" class="form-horizontal" method="post">
+			<form action="/azadmin/myproject/public/app/custom/Order/create" class="form-horizontal myuberform" method="post">
 				{{Form::token()}}
 				<div class="form-body">
 					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες</h3>
@@ -106,11 +106,12 @@
 						</span>
 					</h3>
 					<div class="row productRow">
+						<input type="text" name="id" class="ajax_id" style="display:none;" />
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>
 								<div class="col-md-9">
-										<select class="form-control ajax_productId select2" name="productId">
+										<select class="form-control ajax_productId" name="productId">
 											<option value="-1">----------</option>
 											@foreach(Product::all() as $key=>$value)
 											<option value="{{$value->id}}">{{$value->title}} - (Τρέχων απόθεμα:{{$value->availableStock}})</option>
@@ -130,11 +131,21 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12">
+						<div class="col-md-9">
 							<div class="form-group">
 								<label class="control-label col-md-3">Σχόλια</label>
 								<div class="col-md-9">
 									<input class="form-control ajax_comments" name="comments"  placeholder="Σχόλια" / >
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label col-md-3"></label>
+								<div class="col-md-3">
+										<a class="btn red" data-toggle="modal" href="#basic2"><i class="fa fa-times">
+											</i> Διαγραφή μεμονωμένου προίόντος
+										</a>
 								</div>
 							</div>
 						</div>
@@ -179,4 +190,26 @@
 		</div>
 		<!-- /.modal-dialog -->
 </div>
+
+	<div class="modal fade" id="basic2" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">Διαγραφή προιόντος παραγγελίας.</h4>
+				</div>
+				<div class="modal-body">
+					 Θα διαγράψετε μόνο το προιόν αυτό από την παραγγελία.
+					 Είστε σίγουρος/η?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn default" data-dismiss="modal">Close</button>
+					<button type="button " class="btn blue orderProductDelete" data-dismiss="modal"><i class="fa fa-times"></i>Διαγραφή</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+</div>
+
 @stop

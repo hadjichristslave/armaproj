@@ -86,17 +86,7 @@ jQuery( document ).ready(function($) {
 	});
 
 	$(".addOrderProduct").on('click', function(){
-		divCounter++;
-		elementToClone = $("div.productRow:first").clone().hide();
-		elementToClone.find("select[name='productId']").attr('name' , 'productId_'+divCounter);
-		elementToClone.find("input[name='comments']").attr('name' , 'comments_'+divCounter);
-		elementToClone.find("input[name='quantity']").attr('name' , 'quantity_'+divCounter);
-		elementToClone.find("select.select2").each(function(){
-			$(this).select2();
-		});
-		elementToClone.find("div.select2").first().hide();
-		elementToClone.appendTo(".form-body").fadeIn('slow');
-
+		cloneProductElement();
 	});
 	$(".removeOrderProduct").on('click',function(){
 		if($("div.productRow").length>1){
@@ -113,19 +103,41 @@ jQuery( document ).ready(function($) {
 	});
 
 
-	$("#employeeorderIdSelect").on("change", function(e) { 
-		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+e.val+"/true", function(data) {
-		  	console.log(data.order);
+	$("#employeeorderIdSelect").on("change", function() {
+		 clearProductElements();
+		 var firstProduct = true;
+		 var ordId        = $(this).val();
+		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+$(this).val()+"/true", function(data) {
 		  	$.each(data.order,function(key, val){
-		  		$(".ajax_"+key).select2("val", val);
 		  		$(".ajax_"+key).val(val);
-		  	})
-		  	$.each(data.orderData , function(key,val){
-		  		console.log(data.orderData);
+		  		myform = $(".myuberform");
+		  		myform.find(".ajax_"+key).select2("val", val);
+		  	});
+		  	$.each(data.orderData , function(key, val){
+		  		if(firstProduct){
+		  			firstProduct = !firstProduct;
+	  				var elementToModify = $("div.productRow:last");
+	  				$.each(val, function(key2,val2){
+			  			elementToModify.find("input[name='"+key2+"']").val(val2);
+			  			elementToModify.find(".ajax_"+key2).val(val2);
+			  		});
+		  		}else{
+			  		cloneProductElement();
+			  		var elementToModify = $("div.productRow:last");
+			  		$.each(val, function(key2,val2){
+			  			elementToModify.find("input[name='"+key2+"_"+divCounter+"']").val(val2);
+			  			elementToModify.find(".ajax_"+key2).val(val2);
+			  		});
+			  	}
 		  	});
 		  	
 		});
+		$("#employeeorderIdSelect").select2('val', ordId);
 	 });
+
+	$(document).on('click',"orderProductDelete", function(evt){
+	   
+	});
 
 
 });
@@ -153,4 +165,20 @@ function updateOrderCost(){
 	            $('.ajax_sum').val(resp);
 	        } 
 	      });
+}
+
+function cloneProductElement(){
+	divCounter++;
+	elementToClone = $("div.productRow:first").clone().hide();
+	elementToClone.find("select[name='productId']").attr('name' , 'productId_'+divCounter);
+	elementToClone.find("input[name='comments']").attr('name' , 'comments_'+divCounter);
+	elementToClone.find("input[name='quantity']").attr('name' , 'quantity_'+divCounter);
+	elementToClone.find("select.select2").each(function(){
+		$(this).select2();
+	});
+	elementToClone.find("div.select2").first().hide();
+	elementToClone.appendTo(".form-body").fadeIn('slow');
+}
+function clearProductElements(){
+	$("div.productRow:not(:first)").remove();
 }
