@@ -4,14 +4,22 @@
 		<div class="portlet box blue">
 			<div class="portlet-title">
 				<div class="caption">
-					<i class="fa fa-reorder"></i>Τροποποίηση προιόντος
+					<i class="fa fa-reorder"></i>Τροποποίηση παραγγελίας
 				</div>
-				<div class="tools">
+				<div class="sumDiv">
+					<div class="input-group">
+						<input type="text" class="form-control placeholder ajax_totalPrice" value=-- readonly>
+						<span class="input-group-addon">
+							<i class="fa fa-euro"></i>
+						</span>
+					</div>
+				</div>
+				<div class="tools customTools">
 					<span>
-					<select class="form-control" name="orderId" id="orderIdSelect">
+					<select class="form-control select2 ajax_employeeId" name="orderId" id="employeeorderIdSelect">
 						<option value="0" selected>--</option>
-						@foreach(Order::all() as $key=>$value)
-						<option value="{{$value->id}}">{{$value->name}}</option>																	
+						@foreach(Employeeorder::where('storeId' , '>'  , 0)->get() as $key=>$employeeOrder)
+						<option value="{{$employeeOrder->id}}">{{$employeeOrder->employee->name}} on {{$employeeOrder->store->brand}} @ {{$employeeOrder->created_at}}</option>																	
 						@endforeach
 					</select>
 						<?php
@@ -23,19 +31,19 @@
 			</div>
 			<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="/azadmin/myproject/public/app/data/Order/edit" class="form-horizontal orderEditForm" method="post">
+			<form action="/azadmin/myproject/public/app/custom/Order/create" class="form-horizontal" method="post">
 				{{Form::token()}}
-				{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 				<div class="form-body">
-					<h3 class="form-section">Γενικές Πληροφορίες</h3>
+					<h3 class="form-section" style="padding-bottom:15px;">Γενικές Πληροφορίες</h3>
 					<div class="row">
-						<div class="col-md-6">
+							<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label col-md-3">Κατάστημα</label>
-								<div class="col-md-9">
-										<select class="form-control ajax_storeId" name="storeId">
+								<div class="col-md-6">
+										<select class="form-control ajax_storeId select2" name="storeId">
+											<option value="-1">----------</option>
 											@foreach(Store::all() as $key=>$value)
-											<option value="{{$value->id}}">{{$value->name}}</option>
+											<option value="{{$value->id}}">{{$value->brand}}</option>
 											@endforeach
 										</select>
 										<span class="help-block">
@@ -43,25 +51,69 @@
 										</span>
 									</div>
 							</div>
+						</div>	
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label col-md-3">Αναμενόμενη παράδοση</label>
+										<div class="col-md-6">
+											<input class="form-control form-control-inline input-medium date-picker ajax_expectedDelivery" name="expectedDate" size="16" type="text" value="" readonly>
+											<span class="help-block">
+												 Αναμενόμενη παράδοση
+											</span>
+										</div>
+									</div>
 						</div>
 						<!--/span-->
 					</div>
-					<div class="row productRow">
+					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label col-md-3">Ποσότητα</label>
-								<div class="col-md-9">
-									<input type="number" class="form-control" name="quantity"  placeholder="Ποσότητα">
-								</div>
+								<label class="control-label col-md-3">Κατάσταση παραγγελίας</label>
+								<div class="col-md-6">
+										<select class="form-control ajax_stateId select2" name="storeId">
+											<option value="-1">----------</option>
+											@foreach(Orderstate::all() as $key=>$value)
+											<option value="{{$value->id}}">{{$value->name}}</option>
+											@endforeach
+										</select>
+										<span class="help-block">
+											Τρέχουσα κατάσταση παραγγελίας
+										</span>
+									</div>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
+								<label class="control-label col-md-3">Υπεύθυνος υπάλληλος</label>
+								<div class="col-md-6">
+										<select class="form-control ajax_employeeId select2" name="storeId" disabled>
+											<option value="-1">----------</option>
+											@foreach(Employee::all() as $key=>$value)
+											<option value="{{$value->id}}">{{$value->name}}</option>
+											@endforeach
+										</select>
+										<span class="help-block">
+											Υπεύθυνος υπάλληλος
+										</span>
+									</div>
+							</div>
+						</div>
+					</div>
+					<h3 class="form-section" style="padding-bottom:15px;">Προιόντα
+						<span style="float:right;">
+								<a href="#" class="btn green addOrderProduct">Προσθήκη  <i class="fa fa-plus"></i></a>
+								<a href="#" class="btn red removeOrderProduct">Διαγραφή <i class="fa fa-minus"></i></a>
+						</span>
+					</h3>
+					<div class="row productRow">
+						<div class="col-md-6">
+							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>
 								<div class="col-md-9">
-										<select class="form-control ajax_productId" name="productId">
+										<select class="form-control ajax_productId select2" name="productId">
+											<option value="-1">----------</option>
 											@foreach(Product::all() as $key=>$value)
-											<option value="{{$value->id}}">{{$value->name}}</option>
+											<option value="{{$value->id}}">{{$value->title}} - (Τρέχων απόθεμα:{{$value->availableStock}})</option>
 											@endforeach
 										</select>
 										<span class="help-block">
@@ -70,13 +122,32 @@
 									</div>
 							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label col-md-3">Ποσότητα</label>
+								<div class="col-md-9">
+									<input type="number" min="0" max="1000" class="form-control ajax_quantity" name="quantity"  placeholder="Ποσότητα">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label class="control-label col-md-3">Σχόλια</label>
+								<div class="col-md-9">
+									<input class="form-control ajax_comments" name="comments"  placeholder="Σχόλια" / >
+								</div>
+							</div>
+						</div>
 						<!--/span-->
-				</div>
-				<div class="form-actions fluid">
+						<hr>
+				     </div>
+				 </div>
+				     <div class="form-actions fluid">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="col-md-offset-3 col-md-9">
-								<button type="submit" class="btn green">Αποθήκευση Παραγγελίας</button>
+								<button type="submit" class="btn green">Αποθήκευση αλλαγών</button>
+								<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή παραγγελίας</a>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -93,7 +164,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-					<h4 class="modal-title">Διαγραφή προιόντος!</h4>
+					<h4 class="modal-title">Διαγραφή παραγγελίας!</h4>
 				</div>
 				<div class="modal-body">
 					 Θα χαθούν όλα τα στοιχεία περασμένα και συσχετισμένα με την εγγραφή αυτή. 

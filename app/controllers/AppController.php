@@ -88,19 +88,32 @@ class AppController extends Controller {
 			$message .= "<br>User  message".  Dbtools::deleteFromModel("User",Input::get('id') , "userId");
 			return Redirect::to('/app/data/'. $model. '/' . "edit")->with('message' , $message);
 		}if($model=="Order" && $action=="create"){
-			$numberOfElements = (count(Input::all())-2)/3;
+			$initial = false;
+			$numberOfElements = (count(Input::all())-3)/3;
 			$message          = '';
+			$employeeOrder = new EmployeeOrder();
 			for ($i=0; $i <$numberOfElements ; $i++) { 
 				$currentElement = $i;
 				$prefix = $i==0?"":"_".$currentElement;
 				$order = new Order();
-				$order->shopId    = Input::get("shopId");
-				$order->productId = Input::get("productId" . $prefix);
-				$order->quantity  = Input::get("quantity" . $prefix);
-				$order->comments  = Input::get("comments" . $prefix);
+				$order->setOrderData($prefix);
 				$flag = Validpack::validateoperation($order);
-				if($flag->passes())
+				if($flag->passes() && $initial ==false){
+					$initial = true;
+					$employeeOrder->setEmployeeData();
+					$flag2 = Validpack::validateoperation($employeeOrder);
+					if($flag2->passes()){
+						$employeeOrder->save();
+						$order->orderId = $employeeOrder->id;
+						$order->save();
+					}else{
+						return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , "wrong data on employee, order dropped");
+					}
+				}else if($flag->passes()){
+					$order->orderId = $employeeOrder->id;
 					$order->save();
+
+				}
 				else
 					$message .= $message==""?"product ".$currentElement.", ":$currentElement.", ";
 			}
@@ -112,9 +125,25 @@ class AppController extends Controller {
 	public function getUpdatecost(){
 		$cart   =    json_decode(Input::get('cart'),true);
 		$sum = 0;
+		try{
 		foreach ($cart as $key => $value) 
 			$sum +=  Product::find($value['productId'])->unitPrice*$value['quantity'];
+		}catch(Exception $e){}
 		return $sum;
 	}
+	public function getCustomreturn($model, $id , $singleRecord){
+		if($model=="Employeeorder"){
+			$order      = Employeeorder::find($id);
+			$orderData  = Employeeorder::find($id)->orderDetails;
+			$ordDat     = array();
+			foreach ($orderData as $key => $value) {
+				array_push($ordDat, $value->getAttributes());
+			}
+			$arrayName = array('order' =>  $order->getAttributes(), 'orderData' =>$ordDat );
+			return Response::json($arrayName);
+		}
+		
+	}
+	
 
 }

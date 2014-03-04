@@ -13,7 +13,11 @@ class Order extends Eloquent{
         return $this->hasOne('Product' , 'id' , 'productId');
     }
 
-
+    public function setOrderData($prefix){
+		$this->productId = Input::get("productId" . $prefix);
+		$this->quantity  = Input::get("quantity" . $prefix);
+		$this->comments  = Input::get("comments" . $prefix);
+    }
 
 
 

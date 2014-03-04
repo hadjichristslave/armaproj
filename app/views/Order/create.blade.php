@@ -6,9 +6,8 @@
 			<div class="caption">
 				<i class="fa fa-reorder"></i>Δημιουργία Παραγγελίας
 				<div class="sumDiv">
-					<label class="control-label col-md-6">Σύνολο:</label>
 					<div class="input-group">
-						<input type="text" class="form-control placeholder ajax_sum" ajax_sum="Σύνολο" value=15 readonly>
+						<input type="text" class="form-control placeholder ajax_sum" value=-- readonly>
 						<span class="input-group-addon">
 							<i class="fa fa-euro"></i>
 						</span>
@@ -47,6 +46,14 @@
 									</div>
 							</div>
 						</div>
+						<div class="form-group">
+										<div class="col-md-3">
+											<input class="form-control form-control-inline input-medium date-picker" name="expectedDate" size="16" type="text" value="" readonly>
+											<span class="help-block">
+												 Αναμενόμενη παράδοση
+											</span>
+										</div>
+									</div>
 						<!--/span-->
 					</div>
 					<h3 class="form-section" style="padding-bottom:15px;">Προιόντα

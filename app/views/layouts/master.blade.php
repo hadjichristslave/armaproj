@@ -38,7 +38,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/fullcalendar.print.css">
 <link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/select2.css">
 <link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/jquery.ui.all.css">
-<link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/css/customStyle.css">
+<link media="all" type="text/css" rel="stylesheet" href="/myproject/public/css/customStyle.css">
 <!-- END THEME STYLES -->
 <!-- Login styles	-->
 <link rel="stylesheet" type="text/css" href="/azadmin/assets/plugins/select2/select2_metro.css"/>
@@ -782,13 +782,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 <script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
+
+
+
+<!-- ORDER CREATE-->
+<script type="text/javascript" src="/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<!-- ORDER CREATE END-->
+<script src="/azadmin/assets/scripts/custom/components-pickers.js"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {       
-   // initiate layout and plugins
-   App.init();
-   Login.init();
-});
-</script>
+    jQuery(document).ready(function() {       
+       // initiate layout and plugins
+       App.init();
+       ComponentsPickers.init();
+			Login.init();
+    });   
+</script>	
 <!-- END PAGE LEVEL SCRIPTS -->
 </body>
 <!-- END BODY -->

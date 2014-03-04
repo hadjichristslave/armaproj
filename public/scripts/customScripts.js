@@ -112,6 +112,22 @@ jQuery( document ).ready(function($) {
 		updateOrderCost();
 	});
 
+
+	$("#employeeorderIdSelect").on("change", function(e) { 
+		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+e.val+"/true", function(data) {
+		  	console.log(data.order);
+		  	$.each(data.order,function(key, val){
+		  		$(".ajax_"+key).select2("val", val);
+		  		$(".ajax_"+key).val(val);
+		  	})
+		  	$.each(data.orderData , function(key,val){
+		  		console.log(data.orderData);
+		  	});
+		  	
+		});
+	 });
+
+
 });
 
 
