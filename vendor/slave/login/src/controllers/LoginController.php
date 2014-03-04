@@ -52,7 +52,7 @@ class LoginController extends Controller {
 
 	public function postLogin(){
 		if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')),true))
-		        return Redirect::intended('app/dashboard');
+		        return Redirect::intended('app/user');
 		else    return Redirect::to("/login")->with('message' , 'wrong credentials!');	
 	}
 	public function getLogin(){
