@@ -31,7 +31,7 @@
 			</div>
 			<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="/azadmin/myproject/public/app/custom/Order/edit" class="form-horizontal myuberform" method="post">
+			<form action="/azadmin/myproject/public/app/custom/Employeeorder/edit" class="form-horizontal myuberform" method="post">
 				{{Form::token()}}
 				<input type="text" name="id" class="employeeOrderFormId" style="display:none"/>
 				<div class="form-body">
@@ -71,7 +71,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Κατάσταση παραγγελίας</label>
 								<div class="col-md-6">
-										<select class="form-control ajax_stateId select2" name="storeId">
+										<select class="form-control ajax_stateId select2" name="stateId">
 											<option value="-1">----------</option>
 											@foreach(Orderstate::all() as $key=>$value)
 											<option value="{{$value->id}}">{{$value->name}}</option>
@@ -87,7 +87,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">Υπεύθυνος υπάλληλος</label>
 								<div class="col-md-6">
-										<select class="form-control ajax_employeeId select2" name="storeId" disabled>
+										<select class="form-control ajax_employeeId select2" name="employeeId" disabled>
 											<option value="-1">----------</option>
 											@foreach(Employee::all() as $key=>$value)
 											<option value="{{$value->id}}">{{$value->name}}</option>
@@ -158,7 +158,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="col-md-offset-3 col-md-9">
-								<button type="button" class="btn green">Αποθήκευση αλλαγών</button>
+								<button type="submit" class="btn green saveOrderChanges">Αποθήκευση αλλαγών</button>
 								<a class="btn red " data-toggle="modal" href="#basic">Διαγραφή παραγγελίας</a>
 							</div>
 						</div>

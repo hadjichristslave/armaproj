@@ -94,7 +94,7 @@ class AppController extends Controller {
 			$numberOfElements = (count(Input::all())-3)/3;
 			$message          = '';
 			$employeeOrder = new Employeeorder();
-			for ($i=0; $i <$numberOfElements ; $i++) { 
+			for ($i=0; $i <$numberOfElements ; $i++) {
 				$currentElement = $i;
 				$prefix = $i==0?"":"_".$currentElement;
 				$order = new Order();
@@ -126,7 +126,25 @@ class AppController extends Controller {
 			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
 			Order::where('orderId' , '=' , Input::get("id"))->delete();
 			return Redirect::to('/app/data/Order/edit')->with('message' , $message);
-		}
+		}if($model=="Employeeorder" && $action=="edit"){
+			$employeeOrder = Employeeorder::find(Input::get('id'));
+			$employeeOrder->setEmployeeUpdData();
+			$flag2 = Validpack::validateoperation($employeeOrder);
+			if($flag2->passes()){
+				$employeeOrder->save();
+				Order::where('orderId' , '=' , $employeeOrder->id)->delete();
+				foreach(Input::all() as $key=>$val){
+					if (strpos($key,'productId') !== false) {
+						    $arrayz = explode('_' , $key);
+						    $prefix = count($arrayz)==1?"":"_".$arrayz[1];
+					    	$order = new Order();
+					    	$order->validateAndSaveOrder($prefix);
+					}
+				}
+			}else
+				return Redirect::to('/app/data/Order/edit')->with('message' , "Order Validation Error");
+			return Redirect::to('/app/data/Order/edit')->with('message' , "Order Updated correctly");
+		}	
 	}
 
 	public function getUpdatecost(){

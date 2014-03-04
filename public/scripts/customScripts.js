@@ -108,8 +108,9 @@ jQuery( document ).ready(function($) {
 
 	$("#employeeorderIdSelect").on("change", function() {
 		 clearProductElements();
-		 var firstProduct   = true;
-		 orderViewId        = $(this).val();
+		 var firstProduct                       = true;
+		 orderViewId                            = $(this).val();
+		 $(".employeeOrderFormId").val($(this).val());
 		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+orderViewId+"/true", function(data) {
 		  	$.each(data.order,function(key, val){
 		  		$(".ajax_"+key).val(val);
@@ -141,6 +142,14 @@ jQuery( document ).ready(function($) {
 	});
 
 	$(document).on('click',".orderProductDelete", function(evt){
+		if(orderProductId==0){
+			alert('Διαλέξτε παραγγελία πρώτα!');
+			return false;
+		}
+		if($("div.productRow").length==1){
+			alert('Η παραγγελία θα πρέπει να έχει τουλάχιστον ένα προιόν!');
+			return false;
+		}
    		var request = $.ajax({
 		  url: "/azadmin/myproject/public/app/data/Order/delete/"+orderProductId+ "/id/noredirect",
 		  type: "POST",
@@ -150,7 +159,8 @@ jQuery( document ).ready(function($) {
 		   $('.ajax_id').each(function(){
 		   		if($(this).val()==orderProductId)
 		   			$(this).parent().hide('slow').remove();
-		   })
+		   				reCreateInitialRow();
+		   });
 		});
 
 	});
@@ -160,14 +170,24 @@ jQuery( document ).ready(function($) {
 		$('.myuberform').attr('action' , '/myproject/public/app/custom/Employeeorder/delete/id');
 		$('.myuberform').submit();
 	});
-
-
 });
 
 
 function orderCart(productId,quantity)
 {
 	this.productId=productId;
+	this.quantity=quantity;
+}
+function orderBasicInfo(orderId, storeId, employeeId, stateId, date){
+	this.orderId = orderId;
+	this.storeId = storeId;
+	this.employeeId = employeeId;
+	this.stateId = stateId;
+	this.date = date;
+}
+function orderItem(productId, quantity, comments){
+	this.productId=productId;
+	this.comments=comments;
 	this.quantity=quantity;
 }
 function updateOrderCost(){
@@ -200,6 +220,11 @@ function cloneProductElement(){
 	});
 	elementToClone.find("div.select2").first().hide();
 	elementToClone.appendTo(".form-body").fadeIn('slow');
+}
+function reCreateInitialRow(){
+	$("div.productRow:first").find("select").attr('name' , 'productId');
+	$("div.productRow:first").find("input:last").attr('name' , 'comments');
+	$("div.productRow:first").find("input[type='number']").attr('name' , 'quantity');
 }
 function clearProductElements(){
 	$("div.productRow:not(:first)").remove();

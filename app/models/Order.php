@@ -20,7 +20,13 @@ class Order extends Eloquent{
     }
 
 
-
+    public function validateAndSaveOrder($prefix){
+        $this->setOrderData($prefix);
+        $this->orderId = Input::get('id');
+        $flag = Validpack::validateoperation($this);
+        if($flag->passes())
+            $this->save();
+    }
 
 
 
