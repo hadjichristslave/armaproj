@@ -9,7 +9,7 @@ class Store extends Eloquent{
     }
     public function products()
     {
-        return $this->hasMany('Storeproduct' , 'shopId' , 'id');
+        return $this->hasMany('Storeproduct' , 'storeId' , 'id');
     }
 
 

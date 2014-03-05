@@ -170,6 +170,34 @@ jQuery( document ).ready(function($) {
 		$('.myuberform').attr('action' , '/myproject/public/app/custom/Employeeorder/delete/id');
 		$('.myuberform').submit();
 	});
+
+	$(document).on('change' , ".ajax_productId", function(){
+		updateOrderCost();
+	});
+
+	$(".storeProductSelect2").on("change",function(){
+		newSelectData = new Array();
+		$.get("/myproject/public/app/customreturn/Store/"+$(this).val()+"/true/products" , function(data){
+			 // the selected values
+			   	for (var i=0; i<data.length; i++) {
+			   		newSelectData.push(data[i].productId);
+			   	}
+			   	$(".select2-result-label").each(function()
+			        {
+			            console.log($(this).text());
+			        });
+			    // var selects = $('.productOfStoreSelect2');			    
+			    // // loop trough all the selects
+			    // for (var i=0; i<selects.length; i++) {
+			    //     //re-enable all options before
+			    //     $(selects[i]).find('option').removeAttr('disabled');
+			    //     // loop trough all the values
+			    //     if(newSelectData.indexOf($(selects[i]).select2("val"))==-1)
+			    //             $(selects[i]).find('option[value='+$(selects[i]).val("val")+']').attr('disabled', 'disabled');
+			    // }
+		  	
+		});
+	});	
 });
 
 
@@ -201,7 +229,7 @@ function updateOrderCost(){
 		$.ajax({
 	        type:  'get',
 	        cache:  false ,
-	        url:  '/azadmin/myproject/public/app/updatecost',
+	        url:  '/myproject/public/app/updatecost',
 	        data:  {cart:JSON.stringify(orderObjects)},
 	        success: function(resp) {
 	            $('.ajax_sum').val(resp);

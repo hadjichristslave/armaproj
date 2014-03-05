@@ -49,7 +49,7 @@ class AppController extends Controller {
 		return View::make($model."." . $action)->with('id' , $id);
 	}
 
-	public function getReturn($model, $id , $singleRecord){
+	public function getReturn($model, $id , $singleRecord, $isRelation= null, $relationFunction=null){
 		echo json_encode(Dbtools::returnData($model, $id , $singleRecord));
 	}
 	public function postData($model, $action, $id=null , $tablekey = null , $redirect = null){
@@ -156,7 +156,7 @@ class AppController extends Controller {
 		}catch(Exception $e){}
 		return $sum;
 	}
-	public function getCustomreturn($model, $id , $singleRecord){
+	public function getCustomreturn($model, $id , $singleRecord , $relationFunction){
 		if($model=="Employeeorder"){
 			$order      = Employeeorder::find($id);
 			$orderData  = Employeeorder::find($id)->orderDetails;
@@ -166,8 +166,13 @@ class AppController extends Controller {
 			}
 			$arrayName = array('order' =>  $order->getAttributes(), 'orderData' =>$ordDat );
 			return Response::json($arrayName);
+		}if($relationFunction!=null){
+			return Response::json($model::find($id)->$relationFunction);
 		}
 		
+	}
+	public function getView($view){
+		return View::make($view);
 	}
 	
 

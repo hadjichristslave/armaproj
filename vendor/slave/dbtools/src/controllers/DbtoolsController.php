@@ -56,7 +56,7 @@ class DbtoolsController extends Controller {
         echo 'No method found';
         return;
     }
-    public function getReturn($model, $id =null, $tablekey = null){
+    public function getReturn($model, $id =null, $tablekey = null, $isRelation = null, $relationFunction = null){
         $key = $tablekey==null?'id':$tablekey;
         if($id!=null){
             $answer = $model::where($key , '=' , $id)->first();

@@ -8,14 +8,4 @@ public $rules = array();
         return $this->hasMany('Product' , 'id' , 'productId');
     }
 
-
-    public function products()
-    {
-        return $this->hasMany('Product' , 'id' , 'productId');
-    }
-
-
-
-
-
 }
