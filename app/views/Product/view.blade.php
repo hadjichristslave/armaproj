@@ -119,7 +119,7 @@
 									<th width="30%">
 										 Product&nbsp;Name
 									</th>
-									<th width="15%">
+									<th width="17%">
 										 Category
 									</th>
 									<th width="3%">
