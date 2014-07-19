@@ -10,9 +10,12 @@ class AppController extends Controller {
 	 * @return void
 	 */
     public function __construct(){
-        //Auth::login(User::find(1));
+        Auth::login(User::find(1));
         //$this->beforeFilter('csrf', array('on' => 'post'));
         $this->beforeFilter('auth');
+    }
+    public function getPopulate(){
+    	return Product::populate();	
     }
 	public function getDashboard(){
 		return View::make('dashboard');

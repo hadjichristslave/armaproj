@@ -28,7 +28,7 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/azadmin/myproject/public/app/data/Store/create" class="form-horizontal" method="post">
+										<form action="/myproject/public/app/data/Store/create" class="form-horizontal" method="post">
 											{{Form::token()}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>
