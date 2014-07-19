@@ -13,7 +13,7 @@ class Dbtools extends Model {
         $counter = $model::where($tablekey , '=' , $id)->count();
         return $counter>0;
     }
-
+    
 	public static function createFromModel($model , $arrayOfAttributes = null){
         if($arrayOfAttributes==null)
 		  $input = Input::except('_token');

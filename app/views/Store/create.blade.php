@@ -60,6 +60,23 @@
 															</div>
 														</div>
 													</div>
+													<div class="col-md-12">
+														<div class="form-group">
+															<div class="col-md-12">
+																<h4>Brands</h4>
+															       <div class="clearfix">
+															        <div class="btn-group btn-group-justified" data-toggle="buttons">
+															        	@foreach(Brand::all() as $key=>$value)
+														        			<label class="btn default brandbutton">
+														        				<input type="checkbox" class="toggle">
+														        				{{$value->title}}
+														        			</label>													
+																		@endforeach
+															        </div>
+														       </div>
+														   </div>
+														</div>
+													</div>
 												</div>
 													
 												<h3 class="form-section">Γεωγραφικές πληροφορίες</h3>

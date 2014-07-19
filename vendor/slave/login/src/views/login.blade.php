@@ -14,21 +14,21 @@
 <meta content="" name="author"/>
 <meta name="MobileOptimized" content="320">
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="http://armancon.com/azadmin/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link rel="stylesheet" type="text/css" href="http://armancon.com/azadmin/assets/plugins/select2/select2_metro.css"/>
+<link rel="stylesheet" type="text/css" href="/azadmin/assets/plugins/select2/select2_metro.css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
-<link href="http://armancon.com/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="http://armancon.com/azadmin/assets/css/pages/login-soft.css" rel="stylesheet" type="text/css"/>
-<link href="http://armancon.com/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="/azadmin/assets/css/pages/login-soft.css" rel="stylesheet" type="text/css"/>
+<link href="/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -37,13 +37,13 @@
 <body class="login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-	<img src="http://armancon.com/azadmin/assets/img/logo-big.png" alt=""/>
+	<img src="/azadmin/assets/img/logo-big.png" alt=""/>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="http://armancon.com/azadmin/myproject/public/auth/login" method="post">
+	<form class="login-form" action="/azadmin/myproject/public/auth/login" method="post">
 		<h3 class="form-title">Login to your account</h3>
 		<?php
 		if(Session::has('message'))
@@ -89,7 +89,7 @@
 	</form>
 	<!-- END LOGIN FORM -->
 	<!-- BEGIN FORGOT PASSWORD FORM -->
-	<form class="forget-form" action="http://armancon.com/azadmin/myproject/public/auth/forgot" method="post">
+	<form class="forget-form" action="/azadmin/myproject/public/auth/forgot" method="post">
 		{{ Form::token()}}
 		<h3>Forget Password ?</h3>
 		<p>
@@ -120,26 +120,26 @@
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-	<script src="http://armancon.com/azadmin/assets/plugins/respond.min.js"></script>
-	<script src="http://armancon.com/azadmin/assets/plugins/excanvas.min.js"></script> 
+	<script src="/azadmin/assets/plugins/respond.min.js"></script>
+	<script src="/azadmin/assets/plugins/excanvas.min.js"></script> 
 	<![endif]-->
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="http://armancon.com/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://armancon.com/azadmin/assets/plugins/select2/select2.min.js"></script>
+<script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/azadmin/assets/plugins/select2/select2.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="http://armancon.com/azadmin/assets/scripts/app.js" type="text/javascript"></script>
-<script src="http://armancon.com/azadmin/assets/scripts/login-soft.js" type="text/javascript"></script>
+<script src="/azadmin/assets/scripts/app.js" type="text/javascript"></script>
+<script src="/azadmin/assets/scripts/login-soft.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 		jQuery(document).ready(function() {     

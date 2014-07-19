@@ -821,8 +821,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
        // initiate layout and plugins
        App.init();
        ComponentsPickers.init();
-			Login.init();
-    });   
+		Login.init();
+    });  
 </script>	
 <!-- END PAGE LEVEL SCRIPTS -->
 </body>
