@@ -110,31 +110,31 @@
 									<th width="3%">
 										 ID
 									</th>
-									<th width="10%">
+									<th width="4%">
 										 SKU
 									</th>
 									<th width="7%">
 										 Barcode
 									</th>
-									<th width="15%">
+									<th width="30%">
 										 Product&nbsp;Name
 									</th>
-									<th width="15%">
+									<th width="9%">
 										 Category
 									</th>
-									<th width="10%">
+									<th width="3%">
 										 Price
 									</th>
-									<th width="10%">
+									<th width="4%">
 										 Stock
 									</th>
-									<th width="15%">
+									<th width="9%">
 										 Date&nbsp;Created
 									</th>
-									<th width="10%">
+									<th width="8%">
 										 Status
 									</th>
-									<th width="10%">
+									<th width="3%">
 										 Actions
 									</th>
 								</tr>
@@ -175,10 +175,7 @@
 										</select>
 									</td>
 									<td>
-										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_price_from" placeholder="From"/>
-										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_price_to" placeholder="To"/>
+										<input type="text" class="form-control form-filter input-sm" name="product_price_to"/>
 									</td>
 									<td>
 										<div class="margin-bottom-5">
@@ -219,15 +216,15 @@
 								<tbody>		
 									<tr role="row" class="odd">
 										<td class="sorting_1">000000</td>
-									<td></td>
-									<td>1234567890123</td>
-									<td>Test Product</td>
-									<td>Mens/FootWear</td>
-									<td>185.50$</td>
-									<td>2318</td>
-									<td>05/01/2011</td>
-									<td><span class="label label-sm label-danger">Deleted</span></td>
-									<td><a class="btn btn-xs default btn-editable" href="ecommerce_products_edit.html"><i class="fa fa-pencil"></i> Edit</a></td>
+										<td><b>12345678</b></td>
+										<td>1234567890123</td>
+										<td>Test Product</td>
+										<td>Beverly Hills Formula</td>
+										<td>185.50$</td>
+										<td>2318</td>
+										<td>05/01/2011</td>
+										<td><span class="label label-sm label-danger">Deleted</span></td>
+										<td><a class="btn btn-xs default btn-editable" href="ecommerce_products_edit.html"><i class="fa fa-pencil"></i> Edit</a></td>
 									</tr>
 								</tbody>
 								</table>
