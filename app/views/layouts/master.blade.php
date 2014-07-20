@@ -632,17 +632,24 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία προιόντων">
 							<a href="/azadmin/myproject/public/app/data/Storeproduct/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη προιόντων">
 							<a href="/azadmin/myproject/public/app/data/Storeproduct/edit">
 								<span class="title">
 									Τροποποίηση
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Συνολο προιόντων">
+							<a href="/azadmin/myproject/public/app/data/Storeproduct/view">
+								<span class="title">
+									Συνολο προιόντων
 								</span>
 							</a>
 						</li>

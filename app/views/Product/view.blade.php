@@ -52,11 +52,6 @@
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
-					<div class="note note-danger">
-						<p>
-							 NOTE: The below datatable is not connected to a real database so the filter and sorting is just simulated for demo purposes only.
-						</p>
-					</div>
 					<!-- Begin: life time stats -->
 					<div class="portlet">
 						<div class="portlet-title">
