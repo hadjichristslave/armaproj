@@ -14,6 +14,10 @@ jQuery( document ).ready(function($) {
 		$(this).select2();
 	});
 
+	$("#fieldsReset").click(function(){
+		$('input').each(function(){ $(this).val('')});
+	});
+
 	$( "#companyIdSelect" ).change(function() {
 		  $.get( "/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
 		  	var response = JSON.parse(data.slice(0,-4));
@@ -21,19 +25,20 @@ jQuery( document ).ready(function($) {
             	$(".ajax_"+index).val(element);
 	       		});
 			});
-		  $(".ajax_brandButton").each(function(){ $(this).removeClass('active')});
+		  $(".ajax_brandButton").each(function(){ console.log($(this).find('input').first().val('')); $(this).removeClass('active')});
   		  $(".ajax_brandButtonDate").each(function(){ $(this).find('input').first().val('')});
 		  jQuery.ajax({
 		         url:    "/myproject/public/app/customreturn/Storebrand/"+$(this).val()+"/false",
 		         success: function(data) {
-		                      
-					  	 	$.each(data, function(index, element) {
-					  	 		//console.log(element);
-					  	 		$(".ajax_brandButton_"+element.brandId).addClass('active');
-					  	 		$(".ajax_brandButtonDate_"+element.brandId).find('input').first().val(element.startingDate);
-				            	
-				       	 	});
-		                  },
+			  	 	$.each(data, function(index, element) {
+			  	 		$(".ajax_brandButton_"+element.brandId).click();
+			  	 		var rawDate = element.startingDate;
+			  	 		var rawDateArray = rawDate.split('-');
+			  	 		var rawDate = rawDateArray[1] + '/' + rawDateArray[2] + '/' + rawDateArray[0];
+			  	 		$(".ajax_brandButtonDate_"+element.brandId).find('input').first().val(rawDate);
+		            	
+		       	 	});
+                  },
 		         async:   false
 		    });       
 		  
@@ -272,7 +277,4 @@ function reCreateInitialRow(){
 }
 function clearProductElements(){
 	$("div.productRow:not(:first)").remove();
-}
-function resetFields(){
-
 }

@@ -152,7 +152,7 @@
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
 															<button type="button" class="btn green shopEdit">Αποθήκευση αλλαγών</button>
-															<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή υπαλλήλου</a>
+															<a class="btn red" data-toggle="modal" href="#basic">Διαγραφή εταιρίας</a>
 														</div>
 													</div>
 													<div class="col-md-6">
@@ -172,8 +172,8 @@
 											<h4 class="modal-title">Διαγραφή εταιρίας!</h4>
 										</div>
 										<div class="modal-body">
-											 Θα χαθούν όλα τα στοιχεία περασμένα και συσχετισμένα με την εγγραφή αυτή. 
-											 Είστε σίγουρος/η ότι θέλετε να προχωρήσετε με τη διαγραφή
+											 Θα χαθούν όλα τα στοιχεία περασμένα και συσχετισμένα με την εγγραφή αυτή.<br>
+											 Είστε σίγουρος/η ότι θέλετε να προχωρήσετε με τη διαγραφή?
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn default" data-dismiss="modal">Close</button>

@@ -83,13 +83,16 @@ class AppController extends Controller {
 				$message = Dbtools::createFromModel($model, $storeAttributes);
 				$store = Store::orderby('created_at', 'desc')->first();
 				StoreBrand::createStoreBrandsFromInput($store->id);
-				return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
 			}else if($action =='edit'){
 				$message = Dbtools::updateFromModel($model, Input::get('id') , 'id' ,  $storeAttributes);
 				Storebrand::where('storeId' , '=' , Input::get('id'))->delete();
 				Storebrand::createStoreBrandsFromInput(Input::get('id'));
+			}else if($action='delete'){
+				Storebrand::where('storeId' , '=' , Input::get('id'))->delete();
+				$message = Dbtools::deleteFromModel($model, Input::get('id') , 'id');
+			}
+				$action = $action=='delete'?'edit':$action;
 				return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
-			}	
 		}
 		if($model == 'Employee' && $action=='create'){
 			$input = array('name' , 'lname' , 'mobile' , 'phone' , 'groupid');

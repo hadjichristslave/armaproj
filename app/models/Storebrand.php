@@ -17,7 +17,7 @@ class Storebrand extends Eloquent{
     	return $this->date;
     }
     public function validateDate(){
-    	$tempDate = explode("/" , $this->date);
+    	$tempDate = explode("-" , $this->date);
 		return sizeof($tempDate)>1;
     }
     public function formatDate(){
@@ -32,10 +32,9 @@ class Storebrand extends Eloquent{
 					$storeBrand = new Storebrand();
 					$storeBrand->storeId = $storeId;
 					$storeBrand->brandId = $record[1];
-
 					$storeBrand->setdate(Input::get("brandFrom__".$record[1]));
-					if(!$storeBrand->validateDate()) continue;
 					$storeBrand->formatDate();
+					if(!$storeBrand->validateDate()) continue;
 					$storeBrand->startingDate = $storeBrand->getdate();
 					$storeBrand->save();
 				}
