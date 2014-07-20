@@ -4,7 +4,7 @@
 								<div class="portlet box blue">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="fa fa-reorder"></i>Τροποποίηση εταιρίας
+											<i class="fa fa-reorder"></i>Τροποποίηση καταστήματος
 										</div>
 										<div class="tools">
 											<span>
@@ -25,7 +25,7 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/azadmin/myproject/public/app/data/Store/edit" class="form-horizontal shopEditForm" method="post">
+										<form action="/myproject/public/app/custom/Store/edit" class="form-horizontal shopEditForm" method="post">
 											{{Form::token()}}
 											{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 											<div class="form-body">
@@ -65,8 +65,8 @@
 															       <div class="clearfix">
 															        <div class="btn-group btn-group-justified" data-toggle="buttons">
 															        	@foreach(Brand::all() as $key=>$value)
-														        			<label class="btn default brandbutton">
-														        				<input type="checkbox" class="toggle">
+														        			<label class="btn default ajax_brandButton ajax_brandButton_{{$value->id}}">
+														        				<input type="checkbox" class="toggle" name="brand___{{$value->id}}___{{$value->title}}">
 														        				{{$value->title}}
 														        			</label>													
 																		@endforeach
@@ -74,7 +74,23 @@
 														       </div>
 														   </div>
 														</div>
+														<div class="form-group">
+															<div class="col-md-12">
+															        <div class="btn-group btn-group-justified" data-toggle="buttons">
+															        	@foreach(Brand::all() as $key=>$value)
+														        			<label class="btn default ajax_brandButtonDate ajax_brandButtonDate_{{$value->id}}">
+														        				<span class="help-block">
+																					 Από:
+																				</span>
+														        				<input class="form-control form-control-inline input-small date-picker" name="brandFrom__{{$value->id}}" size="12" type="text" value="" readonly>
+																				
+														        			</label>
+																		@endforeach
+															        </div>
+														   </div>
+														</div>
 													</div>
+
 												</div>
 													
 												<h3 class="form-section">Γεωγραφικές πληροφορίες</h3>
@@ -84,7 +100,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Διεύθυνση</label>
 															<div class="col-md-9">
-																<input type="text" name="address" class="ajax_address" class="form-control">
+																<input type="text" name="address" class="ajax_address form-control">
 															</div>
 														</div>
 													</div>
@@ -92,7 +108,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Περιοχή</label>
 															<div class="col-md-9">
-																<input type="text" name="area" class="ajax_area" class="form-control" placeholder="Περιοχή">
+																<input type="text" name="area" class="ajax_area form-control" placeholder="Περιοχή">
 															</div>
 														</div>
 													</div>
@@ -102,7 +118,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Post Code</label>
 															<div class="col-md-9">
-																<input type="text" name='postcode' class="ajax_postcode" class="form-control">
+																<input type="text" name='postcode' class="ajax_postcode form-control">
 															</div>
 														</div>
 													</div>
@@ -111,7 +127,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Πόλη</label>
 															<div class="col-md-9">
-																<input type="text" name="city" class="ajax_city" class="form-control" placeholder="Πόλη">
+																<input type="text" name="city" class="ajax_city form-control" placeholder="Πόλη">
 															</div>
 														</div>
 													</div>
@@ -123,7 +139,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Νομός</label>
 															<div class="col-md-9">
-																<input type="text" name="county" class="ajax_county" class="form-control" placeholder="Νομός">
+																<input type="text" name="county" class="ajax_county form-control" placeholder="Νομός">
 															</div>
 														</div>
 													</div>

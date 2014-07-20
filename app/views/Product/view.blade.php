@@ -116,10 +116,10 @@
 									<th width="7%">
 										 Barcode
 									</th>
-									<th width="30%">
+									<th width="35%">
 										 Product&nbsp;Name
 									</th>
-									<th width="17%">
+									<th width="20%">
 										 Category
 									</th>
 									<th width="3%">
@@ -214,18 +214,27 @@
 								</tr>
 								</thead>
 								<tbody>		
-									<tr role="row" class="odd">
-										<td class="sorting_1">000000</td>
-										<td><b>12345678</b></td>
-										<td>1234567890123</td>
-										<td>Test Product</td>
-										<td>Beverly Hills Formula</td>
-										<td>185.50$</td>
-										<td>2318</td>
-										<td>05/01/2011</td>
-										<td><span class="label label-sm label-danger">Deleted</span></td>
-										<td><a class="btn btn-xs default btn-editable" href="ecommerce_products_edit.html"><i class="fa fa-pencil"></i> Edit</a></td>
-									</tr>
+									<?php
+										$class="odd";
+									?>
+									@foreach(Product::take(100)->get() as $key=>$value)
+										<tr role="row" class="{{$class}}">
+											<td class="sorting_1">{{$value->id}}</td>
+											<td><b>{{$value->sku}}</b></td>
+											<td>{{$value->barcode}}</td>
+											<td>{{$value->title}}</td>
+											<td>{{$value->brand}}</td>
+											<td>{{$value->unitPrice}}</td>
+											<td>{{$value->availableStock}}</td>
+											<td>{{$value->created_at}}</td>
+											<td><span class="label label-sm label-danger">Deleted</span></td>
+											<td><a class="btn btn-xs default btn-editable" href="ecommerce_products_edit.html"><i class="fa fa-pencil"></i> Edit</a></td>	
+										</tr>						
+									@endforeach
+
+									<?php
+										$class= $class=="odd"?"even":"odd";
+									?>
 								</tbody>
 								</table>
 							</div>

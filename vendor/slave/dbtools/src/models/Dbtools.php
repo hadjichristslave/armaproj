@@ -18,7 +18,7 @@ class Dbtools extends Model {
         if($arrayOfAttributes==null)
 		  $input = Input::except('_token');
         else
-            $input = Input::get($arrayOfAttributes);
+            $input = Input::only($arrayOfAttributes);
 
         $inputData = new $model();
         try{
@@ -63,7 +63,7 @@ class Dbtools extends Model {
         if($arrayOfAttributes==null)
           $input = Input::except('_token' , 'rnewpassword' , 'newpassword');
         else
-            $input = Input::get($arrayOfAttributes);
+            $input = Input::only($arrayOfAttributes);
 
         
         $inputData = $model::where($tablekey, '=' , $id)->first();

@@ -71,6 +71,26 @@ class AppController extends Controller {
 		}
 	}
 	public function postCustom($model, $action , $tablekey = null){
+		if($model=="Store"){
+			$storeAttributes = array('brand',
+									 'area',
+			 						 'postcode',
+			 						 'address',
+			 						 'employeeId',
+			 						 'city',
+			 						 'county');
+			if($action=='create'){
+				$message = Dbtools::createFromModel($model, $storeAttributes);
+				$store = Store::orderby('created_at', 'desc')->first();
+				StoreBrand::createStoreBrandsFromInput($store->id);
+				return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+			}else if($action =='edit'){
+				$message = Dbtools::updateFromModel($model, Input::get('id') , 'id' ,  $storeAttributes);
+				Storebrand::where('storeId' , '=' , Input::get('id'))->delete();
+				Storebrand::createStoreBrandsFromInput(Input::get('id'));
+				return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+			}	
+		}
 		if($model == 'Employee' && $action=='create'){
 			$input = array('name' , 'lname' , 'mobile' , 'phone' , 'groupid');
 			$message = Dbtools::createFromModel($model);
@@ -159,7 +179,7 @@ class AppController extends Controller {
 		}catch(Exception $e){}
 		return $sum;
 	}
-	public function getCustomreturn($model, $id , $singleRecord , $relationFunction){
+	public function getCustomreturn($model, $id , $singleRecord , $relationFunction = null){
 		if($model=="Employeeorder"){
 			$order      = Employeeorder::find($id);
 			$orderData  = Employeeorder::find($id)->orderDetails;
@@ -171,6 +191,8 @@ class AppController extends Controller {
 			return Response::json($arrayName);
 		}if($relationFunction!=null){
 			return Response::json($model::find($id)->$relationFunction);
+		}if($model=="Storebrand"){
+			return Response::json($model::where('storeId' , '=' , $id)->get());
 		}
 		
 	}

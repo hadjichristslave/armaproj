@@ -14,7 +14,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Pages - Calendar</title>
+<title>Azadmin stock control flow mainpage</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
@@ -75,7 +75,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				<ul class="dropdown-menu extended notification">
 					<li>
 						<p>
-							 You have 14 new notifications
+							 You have 17 new notifications
 						</p>
 					</li>
 					<li>
@@ -804,15 +804,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="http://armancon.com/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="http://armancon.com/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="http://armancon.com/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
+<script src="/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="http://armancon.com/azadmin/assets/scripts/custom/components-pickers.js"></script>
 
-<script src="/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <!-- END LOGIN SCRIPTS -->
 
 
 
 <!-- ORDER CREATE-->
-<script type="text/javascript" src="http://armancon.com/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <!-- ORDER CREATE END-->
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>

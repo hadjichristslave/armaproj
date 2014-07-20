@@ -4,7 +4,7 @@
 				<div class="col-md-12">
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 					<h4 class="page-title">
-					Εταιρία<small> βασικές πληροφορίες</small>
+					Κατάστημα<small> βασικές πληροφορίες</small>
 					</h4>
 					<!-- END PAGE TITLE & BREADCRUMB-->
 				</div>
@@ -28,7 +28,8 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/myproject/public/app/data/Store/create" class="form-horizontal" method="post">
+										<!-- /azadmin/myproject/public/app/custom/Order/create -->
+										<form action="/myproject/public/app/custom/Store/create" class="form-horizontal" method="post">
 											{{Form::token()}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>
@@ -68,12 +69,27 @@
 															        <div class="btn-group btn-group-justified" data-toggle="buttons">
 															        	@foreach(Brand::all() as $key=>$value)
 														        			<label class="btn default brandbutton">
-														        				<input type="checkbox" class="toggle">
+														        				<input type="checkbox" class="toggle" name="brand___{{$value->id}}___{{$value->title}}">
 														        				{{$value->title}}
-														        			</label>													
+														        			</label>						
 																		@endforeach
 															        </div>
 														       </div>
+														   </div>
+														</div>
+														<div class="form-group">
+															<div class="col-md-12">
+															        <div class="btn-group btn-group-justified" data-toggle="buttons">
+															        	@foreach(Brand::all() as $key=>$value)
+														        			<label class="btn default brandbutton">
+														        				<span class="help-block">
+																					 Από:
+																				</span>
+														        				<input class="form-control form-control-inline input-small date-picker" name="brandFrom__{{$value->id}}" size="12" type="text" value="" readonly>
+																				
+														        			</label>
+																		@endforeach
+															        </div>
 														   </div>
 														</div>
 													</div>

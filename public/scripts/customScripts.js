@@ -7,6 +7,7 @@ var orderViewId    = 0;
 var token  = $("input[name='_token']").val();
 
 /*---End of variable dec--------*/
+
 jQuery( document ).ready(function($) {
   // Code using $ as usual goes here.
 	$(".select2").each(function(){
@@ -14,17 +15,32 @@ jQuery( document ).ready(function($) {
 	});
 
 	$( "#companyIdSelect" ).change(function() {
-		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
-		  	console.log(data.slice(0,-4));
+		  $.get( "/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
             	$(".ajax_"+index).val(element);
-	        });
-		});
+	       		});
+			});
+		  $(".ajax_brandButton").each(function(){ $(this).removeClass('active')});
+  		  $(".ajax_brandButtonDate").each(function(){ $(this).find('input').first().val('')});
+		  jQuery.ajax({
+		         url:    "/myproject/public/app/customreturn/Storebrand/"+$(this).val()+"/false",
+		         success: function(data) {
+		                      
+					  	 	$.each(data, function(index, element) {
+					  	 		//console.log(element);
+					  	 		$(".ajax_brandButton_"+element.brandId).addClass('active');
+					  	 		$(".ajax_brandButtonDate_"+element.brandId).find('input').first().val(element.startingDate);
+				            	
+				       	 	});
+		                  },
+		         async:   false
+		    });       
+		  
 	});
 
 	$( "#employeeIdSelect" ).change(function() {
-		  $.get( "/azadmin/myproject/public/app/return/Employee/"+$(this).val()+"/true", function(data) {
+		  $.get( "/myproject/public/app/return/Employee/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -33,7 +49,7 @@ jQuery( document ).ready(function($) {
 		});
 	});
 	$( "#userIdSelect" ).change(function() {
-		  $.get( "/azadmin/myproject/public/app/return/User/"+$(this).val()+"/true", function(data) {
+		  $.get( "/myproject/public/app/return/User/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -44,7 +60,7 @@ jQuery( document ).ready(function($) {
 
 	$( "#productIdSelect" ).change(function() {
 		alert('thid');
-		  $.get( "/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
+		  $.get( "/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -54,7 +70,7 @@ jQuery( document ).ready(function($) {
 	});
 
 	$( "#orderIdSelect" ).change(function() {
-		  $.get( "/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
+		  $.get( "/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -67,24 +83,24 @@ jQuery( document ).ready(function($) {
 		$('.shopEditForm').submit();
 	});
 	$('.shopDelete').click(function(){
-		$('.shopEditForm').attr('action' , '/azadmin/myproject/public/app/data/Store/delete');
+		$('.shopEditForm').attr('action' , '/myproject/public/app/custom/Store/delete');
 		$('.shopEditForm').submit();
 	});
 	$('.employeeDelete').click(function(){
-		$('.employeeEditForm').attr('action' , '/azadmin/myproject/public/app/custom/Employee/delete');
+		$('.employeeEditForm').attr('action' , '/myproject/public/app/custom/Employee/delete');
 		$('.employeeEditForm').submit();
 	});
 	$('.userDelete').click(function(){
-		$('.userEditForm').attr('action' , '/azadmin/myproject/public/app/data/User/delete');
+		$('.userEditForm').attr('action' , '/myproject/public/app/data/User/delete');
 		$('.userEditForm').submit();
 	});
 	$('.productDelete').click(function(){
-		$('.productEditForm').attr('action' , '/azadmin/myproject/public/app/data/Product/delete');
+		$('.productEditForm').attr('action' , '/myproject/public/app/data/Product/delete');
 		$('.productEditForm').submit();
 	});
 
 	$('.orderDelete').click(function(){
-		$('.orderEditForm').attr('action' , '/azadmin/myproject/public/app/data/Order/delete');
+		$('.orderEditForm').attr('action' , '/myproject/public/app/data/Order/delete');
 		$('.orderEditForm').submit();
 	});
 
@@ -111,7 +127,7 @@ jQuery( document ).ready(function($) {
 		 var firstProduct                       = true;
 		 orderViewId                            = $(this).val();
 		 $(".employeeOrderFormId").val($(this).val());
-		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+orderViewId+"/true", function(data) {
+		$.get( "/myproject/public/app/customreturn/Employeeorder/"+orderViewId+"/true", function(data) {
 		  	$.each(data.order,function(key, val){
 		  		$(".ajax_"+key).val(val);
 		  		myform = $(".myuberform");
@@ -151,7 +167,7 @@ jQuery( document ).ready(function($) {
 			return false;
 		}
    		var request = $.ajax({
-		  url: "/azadmin/myproject/public/app/data/Order/delete/"+orderProductId+ "/id/noredirect",
+		  url: "/myproject/public/app/data/Order/delete/"+orderProductId+ "/id/noredirect",
 		  type: "POST",
 		  data: { _token : token , id: orderProductId},
 		});
@@ -256,4 +272,7 @@ function reCreateInitialRow(){
 }
 function clearProductElements(){
 	$("div.productRow:not(:first)").remove();
+}
+function resetFields(){
+
 }
