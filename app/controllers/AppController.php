@@ -82,7 +82,7 @@ class AppController extends Controller {
 			if($action=='create'){
 				$message = Dbtools::createFromModel($model, $storeAttributes);
 				$store = Store::orderby('created_at', 'desc')->first();
-				StoreBrand::createStoreBrandsFromInput($store->id);
+				Storebrand::createStoreBrandsFromInput($store->id);
 			}else if($action =='edit'){
 				$message = Dbtools::updateFromModel($model, Input::get('id') , 'id' ,  $storeAttributes);
 				Storebrand::where('storeId' , '=' , Input::get('id'))->delete();
