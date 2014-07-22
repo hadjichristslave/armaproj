@@ -29,7 +29,7 @@
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
 										<!-- /azadmin/myproject/public/app/custom/Order/create -->
-										<form action="/azadmin/myproject/public/app/custom/Store/create" class="form-horizontal" method="post">
+										<form action="/myproject/public/app/custom/Store/create" class="form-horizontal" method="post">
 											{{Form::token()}}
 											<div class="form-body">
 												<h3 class="form-section">Γενικές Πληροφορίες</h3>

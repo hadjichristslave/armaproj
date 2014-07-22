@@ -17,6 +17,10 @@ class AppController extends Controller {
     public function getPopulate(){
     	return Product::populate();	
     }
+    public function getUpdateimages(){
+    	return Product::updateImages();	
+    }
+
 	public function getDashboard(){
 		return View::make('dashboard');
 	}

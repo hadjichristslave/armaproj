@@ -105,6 +105,9 @@
 									<th width="3%">
 										 ID
 									</th>
+									<th width="3%">
+										 Image
+									</th>
 									<th width="4%">
 										 SKU
 									</th>
@@ -117,14 +120,14 @@
 									<th width="20%">
 										 Category
 									</th>
-									<th width="3%">
+									<th width="5%">
 										 Price
 									</th>
 									<th width="4%">
 										 Stock
 									</th>
 									<th width="9%">
-										 Date&nbsp;Created
+										 Εισήχθη
 									</th>
 									<th width="8%">
 										 Status
@@ -136,7 +139,8 @@
 								<tr role="row" class="filter">
 									
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_id">
+									</td>
+									<td>
 									</td>
 									<td>
 										<input type="text" class="form-control form-filter input-sm" name="sku">
@@ -212,16 +216,17 @@
 									<?php
 										$class="odd";
 									?>
-									@foreach(Product::take(100)->get() as $key=>$value)
+									@foreach(Product::where('imageURI', '!=', '')->take(50)->get() as $key=>$value)
 										<tr role="row" class="{{$class}}">
 											<td class="sorting_1">{{$value->id}}</td>
+											<td class="sorting_1"><img class="avatar productImage" alt="" src="azadmin/myproject/public/pictures/{{$value->sku}}"></td>
 											<td><b>{{$value->sku}}</b></td>
 											<td>{{$value->barcode}}</td>
 											<td>{{$value->title}}</td>
 											<td>{{$value->brand}}</td>
-											<td>{{$value->unitPrice}}</td>
+											<td>{{$value->unitPrice}} €</td>
 											<td>{{$value->availableStock}}</td>
-											<td>{{$value->created_at}}</td>
+											<td>{{$value->lastImport}}</td>
 											<td><span class="label label-sm label-danger">Deleted</span></td>
 											<td><a class="btn btn-xs default btn-editable" href="ecommerce_products_edit.html"><i class="fa fa-pencil"></i> Edit</a></td>	
 										</tr>						

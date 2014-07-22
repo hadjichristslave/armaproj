@@ -19,3 +19,10 @@
 .customTools{
 	width:10%;
 }
+.input-sm {
+padding: 0px 2px !important;
+}
+.productImage{
+	max-width: 100px;
+	max-height:  100px;
+}

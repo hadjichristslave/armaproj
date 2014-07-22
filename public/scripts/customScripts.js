@@ -19,7 +19,7 @@ jQuery( document ).ready(function($) {
 	});
 
 	$( "#companyIdSelect" ).change(function() {
-		  $.get( "http://armancon.com/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
+		  $.get( "/azadmin/myproject/public/app/return/Store/"+$(this).val()+"/true", function(data) {
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
             	$(".ajax_"+index).val(element);
@@ -28,7 +28,7 @@ jQuery( document ).ready(function($) {
 		  $(".ajax_brandButton").each(function(){ console.log($(this).find('input').first().val('')); $(this).removeClass('active')});
   		  $(".ajax_brandButtonDate").each(function(){ $(this).find('input').first().val('')});
 		  jQuery.ajax({
-		         url:    "http://armancon.com/azadmin/myproject/public/app/customreturn/Storebrand/"+$(this).val()+"/false",
+		         url:    "/azadmin/myproject/public/app/customreturn/Storebrand/"+$(this).val()+"/false",
 		         success: function(data) {
 			  	 	$.each(data, function(index, element) {
 			  	 		$(".ajax_brandButton_"+element.brandId).click();
@@ -45,7 +45,7 @@ jQuery( document ).ready(function($) {
 	});
 
 	$( "#employeeIdSelect" ).change(function() {
-		  $.get( "http://armancon.com/azadmin/myproject/public/app/return/Employee/"+$(this).val()+"/true", function(data) {
+		  $.get( "/azadmin/myproject/public/app/return/Employee/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -54,7 +54,7 @@ jQuery( document ).ready(function($) {
 		});
 	});
 	$( "#userIdSelect" ).change(function() {
-		  $.get( "http://armancon.com/azadmin/myproject/public/app/return/User/"+$(this).val()+"/true", function(data) {
+		  $.get( "/azadmin/myproject/public/app/return/User/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -65,7 +65,7 @@ jQuery( document ).ready(function($) {
 
 	$( "#productIdSelect" ).change(function() {
 		alert('thid');
-		  $.get( "http://armancon.com/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
+		  $.get( "/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -75,7 +75,7 @@ jQuery( document ).ready(function($) {
 	});
 
 	$( "#orderIdSelect" ).change(function() {
-		  $.get( "http://armancon.com/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
+		  $.get( "/azadmin/myproject/public/app/return/Product/"+$(this).val()+"/true", function(data) {
 		  	console.log(data.slice(0,-4));
 		  	var response = JSON.parse(data.slice(0,-4));
 		  	 $.each(response, function(index, element) {
@@ -88,24 +88,24 @@ jQuery( document ).ready(function($) {
 		$('.shopEditForm').submit();
 	});
 	$('.shopDelete').click(function(){
-		$('.shopEditForm').attr('action' , 'http://armancon.com/azadmin/myproject/public/app/custom/Store/delete');
+		$('.shopEditForm').attr('action' , '/azadmin/myproject/public/app/custom/Store/delete');
 		$('.shopEditForm').submit();
 	});
 	$('.employeeDelete').click(function(){
-		$('.employeeEditForm').attr('action' , 'http://armancon.com/azadmin/myproject/public/app/custom/Employee/delete');
+		$('.employeeEditForm').attr('action' , '/azadmin/myproject/public/app/custom/Employee/delete');
 		$('.employeeEditForm').submit();
 	});
 	$('.userDelete').click(function(){
-		$('.userEditForm').attr('action' , 'http://armancon.com/azadmin/myproject/public/app/data/User/delete');
+		$('.userEditForm').attr('action' , '/azadmin/myproject/public/app/data/User/delete');
 		$('.userEditForm').submit();
 	});
 	$('.productDelete').click(function(){
-		$('.productEditForm').attr('action' , 'http://armancon.com/azadmin/myproject/public/app/data/Product/delete');
+		$('.productEditForm').attr('action' , '/azadmin/myproject/public/app/data/Product/delete');
 		$('.productEditForm').submit();
 	});
 
 	$('.orderDelete').click(function(){
-		$('.orderEditForm').attr('action' , 'http://armancon.com/azadmin/myproject/public/app/data/Order/delete');
+		$('.orderEditForm').attr('action' , '/azadmin/myproject/public/app/data/Order/delete');
 		$('.orderEditForm').submit();
 	});
 
@@ -132,7 +132,7 @@ jQuery( document ).ready(function($) {
 		 var firstProduct                       = true;
 		 orderViewId                            = $(this).val();
 		 $(".employeeOrderFormId").val($(this).val());
-		$.get( "http://armancon.com/azadmin/myproject/public/app/customreturn/Employeeorder/"+orderViewId+"/true", function(data) {
+		$.get( "/azadmin/myproject/public/app/customreturn/Employeeorder/"+orderViewId+"/true", function(data) {
 		  	$.each(data.order,function(key, val){
 		  		$(".ajax_"+key).val(val);
 		  		myform = $(".myuberform");
@@ -172,7 +172,7 @@ jQuery( document ).ready(function($) {
 			return false;
 		}
    		var request = $.ajax({
-		  url: "http://armancon.com/azadmin/myproject/public/app/data/Order/delete/"+orderProductId+ "/id/noredirect",
+		  url: "/azadmin/myproject/public/app/data/Order/delete/"+orderProductId+ "/id/noredirect",
 		  type: "POST",
 		  data: { _token : token , id: orderProductId},
 		});
@@ -188,7 +188,7 @@ jQuery( document ).ready(function($) {
 
 	$(".completeOrderDelete").click(function(){
 		$(".employeeOrderFormId").val(orderViewId);
-		$('.myuberform').attr('action' , 'http://armancon.com/azadmin/myproject/public/app/custom/Employeeorder/delete/id');
+		$('.myuberform').attr('action' , '/azadmin/myproject/public/app/custom/Employeeorder/delete/id');
 		$('.myuberform').submit();
 	});
 
@@ -198,7 +198,7 @@ jQuery( document ).ready(function($) {
 
 	$(".storeProductSelect2").on("change",function(){
 		newSelectData = new Array();
-		$.get("http://armancon.com/azadmin/myproject/public/app/customreturn/Store/"+$(this).val()+"/true/products" , function(data){
+		$.get("/azadmin/myproject/public/app/customreturn/Store/"+$(this).val()+"/true/products" , function(data){
 			 // the selected values
 			   	for (var i=0; i<data.length; i++) {
 			   		newSelectData.push(data[i].productId);
@@ -250,7 +250,7 @@ function updateOrderCost(){
 		$.ajax({
 	        type:  'get',
 	        cache:  false ,
-	        url:  'http://armancon.com/azadmin/myproject/public/app/updatecost',
+	        url:  '/azadmin/myproject/public/app/updatecost',
 	        data:  {cart:JSON.stringify(orderObjects)},
 	        success: function(resp) {
 	            $('.ajax_sum').val(resp);
