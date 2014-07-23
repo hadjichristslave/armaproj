@@ -219,7 +219,7 @@
 									@foreach(Product::where('imageURI', '!=', '')->take(50)->get() as $key=>$value)
 										<tr role="row" class="{{$class}}">
 											<td class="sorting_1">{{$value->id}}</td>
-											<td class="sorting_1"><img class="avatar productImage" alt="" src="azadmin/myproject/public/pictures/{{$value->sku}}"></td>
+											<td class="sorting_1"><img class="avatar productImage" alt="" src="/azadmin/myproject/public/pictures/{{$value->sku}}"></td>
 											<td><b>{{$value->sku}}</b></td>
 											<td>{{$value->barcode}}</td>
 											<td>{{$value->title}}</td>
