@@ -46,14 +46,14 @@
 									</div>
 							</div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 										<div class="col-md-3">
 											<input class="form-control form-control-inline input-medium date-picker" name="expectedDate" size="16" type="text" value="" readonly>
 											<span class="help-block">
 												 Αναμενόμενη παράδοση
 											</span>
 										</div>
-									</div>
+									</div> -->
 						<!--/span-->
 					</div>
 					<h3 class="form-section" style="padding-bottom:15px;">Προιόντα

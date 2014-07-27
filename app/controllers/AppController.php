@@ -82,7 +82,11 @@ class AppController extends Controller {
 			 						 'address',
 			 						 'employeeId',
 			 						 'city',
-			 						 'county');
+			 						 'county',
+			 						 'storeId',
+									 'receiverId',
+									 'deliveryId',
+									 'deliveryReceiverId');
 			if($action=='create'){
 				$message = Dbtools::createFromModel($model, $storeAttributes);
 				$store = Store::orderby('created_at', 'desc')->first();
@@ -186,7 +190,7 @@ class AppController extends Controller {
 		}catch(Exception $e){}
 		return $sum;
 	}
-	public function getCustomreturn($model, $id , $singleRecord , $relationFunction = null){
+	public function getCustomreturn($model, $id=null , $singleRecord=null , $relationFunction = null){
 		if($model=="Employeeorder"){
 			$order      = Employeeorder::find($id);
 			$orderData  = Employeeorder::find($id)->orderDetails;
@@ -200,12 +204,36 @@ class AppController extends Controller {
 			return Response::json($model::find($id)->$relationFunction);
 		}if($model=="Storebrand"){
 			return Response::json($model::where('storeId' , '=' , $id)->get());
+		}if($model=="Filter"){
+			$filters = json_decode(Input::get('filtz'));
+			$answer = Product::where(function($query) use ($filters) {
+				foreach($filters as $key=>$val){
+					if($val!='')
+						if(sizeof(explode('-', $key))==1)
+							$query->where($key, 'LIKE' , "%$val%");
+						else if(sizeof(explode('-', $key))==2){
+							$stocks = explode('-', $key);
+							$price  = (int) $val;
+							$relation = $stocks[1]=="From"?">=":"<=";
+							$query->where("availableStock", $relation , "$price");
+						}
+						else if(sizeof(explode('-', $key))==3){
+							$stocks = explode('-', $key);
+							$date  = Product::jsDateToSql($val);
+							$date  = new DateTime($date);
+							$relation = $stocks[2]=="from"?">=":"<=";
+							$query->where("lastImport", $relation , $date);
+						}
+						if(sizeof(explode('-', $key))==4)
+							$query->whereRaw('brand LIKE "%'.Brand::find($val)->title.'%"');
+						
+				}
+            })->get();
+            return Product::createProductView($answer);
 		}
 		
 	}
 	public function getView($view){
 		return View::make($view);
 	}
-	
-
 }

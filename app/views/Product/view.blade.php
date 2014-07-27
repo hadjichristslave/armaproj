@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('content')
-
 	<!-- BEGIN CONTENT -->
 			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<!-- BEGIN PAGE HEADER-->
+
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
@@ -11,45 +11,22 @@
 					Products <small>product listing</small>
 					</h3>
 					<ul class="page-breadcrumb breadcrumb">
-						<li class="btn-group">
-							<button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
-							<span>Actions</span><i class="fa fa-angle-down"></i>
-							</button>
-							<ul class="dropdown-menu pull-right" role="menu">
-								<li>
-									<a href="#">Action</a>
-								</li>
-								<li>
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li>
-							</ul>
-						</li>
 						<li>
 							<i class="fa fa-home"></i>
-							<a href="index.html">Home</a>
+							<a href="/myproject/public/app/user/">Home</a>
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li>
-							<a href="#">eCommerce</a>
-							<i class="fa fa-angle-right"></i>
+							<a href="/myproject/public/app/data/Product/view">Products</a>
 						</li>
-						<li>
-							<a href="#">Products</a>
-						</li>
+
 					</ul>
 					<!-- END PAGE TITLE & BREADCRUMB-->
 				</div>
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
+
 			<div class="row">
 				<div class="col-md-12">
 					<!-- Begin: life time stats -->
@@ -57,33 +34,6 @@
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="fa fa-gift"></i>Products
-							</div>
-							<div class="actions">
-								<div class="btn-group">
-									<a class="btn default yellow-stripe" href="#" data-toggle="dropdown">
-									<i class="fa fa-share"></i> Tools <i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="dropdown-menu pull-right">
-										<li>
-											<a href="#">
-											Export to Excel </a>
-										</li>
-										<li>
-											<a href="#">
-											Export to CSV </a>
-										</li>
-										<li>
-											<a href="#">
-											Export to XML </a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="#">
-											Print Invoices </a>
-										</li>
-									</ul>
-								</div>
 							</div>
 						</div>
 						<div class="portlet-body">
@@ -129,97 +79,72 @@
 									<th width="9%">
 										 Εισήχθη
 									</th>
-									<th width="8%">
-										 Status
-									</th>
 									<th width="3%">
 										 Actions
 									</th>
 								</tr>
-								<tr role="row" class="filter">
+								<tr role="row" class="filter filter-tr">
 									
 									<td>
 									</td>
 									<td>
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="sku">
+										<input type="text" class="form-control form-filter input-sm filter-sku" name="sku">
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="category">
+										<input type="text" class="form-control form-filter input-sm filter-category" name="barcode">
 									</td>
 
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_name">
+										<input type="text" class="form-control form-filter input-sm filter-name" name="title">
 									</td>
 									<td>
-										<select name="product_category" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="1">Mens</option>
-											<option value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Footwear</option>
-											<option value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clothing</option>
-											<option value="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessories</option>
-											<option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fashion Outlet</option>
-											<option value="6">Football Shirts</option>
-											<option value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premier League</option>
-											<option value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Football League</option>
-											<option value="9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serie A</option>
-											<option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bundesliga</option>
-											<option value="11">Brands</option>
-											<option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adidas</option>
-											<option value="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nike</option>
-											<option value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Airwalk</option>
-											<option value="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USA Pro</option>
-											<option value="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kangol</option>
+										<select name="product-category--" class="form-control form-filter input-sm">
+											@foreach(Brand::all() as $p)
+											<option value="{{$p->id}}">{{$p->title}}</option>
+											@endforeach
 										</select>
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_price_to"/>
+										<input type="text" class="form-control form-filter input-sm" name="unitPrice"/>
 									</td>
 									<td>
 										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_quantity_from" placeholder="From"/>
+											<input type="text" class="form-control form-filter input-sm" name="availableStock-From" placeholder="From"/>
 										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_quantity_to" placeholder="To"/>
+										<input type="text" class="form-control form-filter input-sm" name="availableStock-to" placeholder="To"/>
 									</td>
 									<td>
 										<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_from" placeholder="From">
+											<input type="text" class="form-control form-filter input-sm" readonly name="product-created-from" placeholder="From">
 											<span class="input-group-btn">
 											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
 											</span>
 										</div>
 										<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_to " placeholder="To">
+											<input type="text" class="form-control form-filter input-sm" readonly name="product-created-to " placeholder="To">
 											<span class="input-group-btn">
 											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
 											</span>
 										</div>
 									</td>
 									<td>
-										<select name="product_status" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="published">Published</option>
-											<option value="notpublished">Not Published</option>
-											<option value="deleted">Deleted</option>
-										</select>
-									</td>
-									<td>
 										<div class="margin-bottom-5">
-											<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
+											<button class="btn btn-sm yellow filter-submit margin-bottom" id="filter-search"><i class="fa fa-search"></i> Search</button>
 										</div>
-										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
+										<button class="btn btn-sm red filter-cancel" id="filter-reset"><i class="fa fa-times"></i> Reset</button>
 									</td>
 								</tr>
 								</thead>
-								<tbody>		
+								<tbody class="filter-tbody">		
 									<?php
 										$class="odd";
 									?>
-									@foreach(Product::where('imageURI', '!=', '')->take(50)->get() as $key=>$value)
+									@foreach(Product::where('imageURI', '!=', '')->take(51)->get() as $key=>$value)
 										<tr role="row" class="{{$class}}">
 											<td class="sorting_1">{{$value->id}}</td>
-											<td class="sorting_1"><img class="avatar productImage" alt="" src="/azadmin/myproject/public/pictures/{{$value->sku}}"></td>
+											<td class="sorting_1"><img class="avatar productImage" alt="" src="/myproject/public/pictures/{{$value->sku}}"></td>
 											<td><b>{{$value->sku}}</b></td>
 											<td>{{$value->barcode}}</td>
 											<td>{{$value->title}}</td>
@@ -227,7 +152,6 @@
 											<td>{{$value->unitPrice}} €</td>
 											<td>{{$value->availableStock}}</td>
 											<td>{{$value->lastImport}}</td>
-											<td><span class="label label-sm label-danger">Deleted</span></td>
 											<td><a class="btn btn-xs default btn-editable" href="ecommerce_products_edit.html"><i class="fa fa-pencil"></i> Edit</a></td>	
 										</tr>						
 									@endforeach

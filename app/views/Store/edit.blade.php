@@ -58,6 +58,50 @@
 															</div>
 														</div>
 													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label col-md-3">Κωδικός πελάτη</label>
+															<div class="col-md-9">
+																<input type="text" class="form-control ajax_storeId" name="storeId" placeholder="π.χ HC">
+																<span class="help-block">
+																	Κωδικός πελάτη αποθέτη 
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label col-md-3">Κωδικός παραλήπτη</label>
+															<div class="col-md-9">
+																<input type="text" class="form-control ajax_receiverId" name="receiverId" placeholder="π.χ HC.0206">
+																<span class="help-block">
+																	Κωδικός Παραλήπτη-πελάτη
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label col-md-3">Σημείο παράδοσης</label>
+															<div class="col-md-9">
+																<input type="text" class="form-control ajax_deliveryId" name="deliveryId" placeholder="π.χ HC.0206/5">
+																<span class="help-block">
+																	Κωδικός σημείου παράδοσης
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label col-md-3">Κωδικός σημείου παράδοσης-κωδικός παραλήπτη</label>
+															<div class="col-md-9">
+																<input type="text" class="form-control ajax_deliveryReceiverId" name="deliveryReceiverId" placeholder="π.χ HC.0206/5">
+																<span class="help-block">
+																	Κωδικός σημείου παράδοσης-κωδικός παραλήπτη
+																</span>
+															</div>
+														</div>
+													</div>
 													<div class="col-md-12">
 														<div class="form-group">
 															<div class="col-md-12">

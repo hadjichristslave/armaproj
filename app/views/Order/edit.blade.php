@@ -54,7 +54,7 @@
 							</div>
 						</div>	
 						<div class="col-md-6">
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="control-label col-md-3">Αναμενόμενη παράδοση</label>
 										<div class="col-md-6">
 											<input class="form-control form-control-inline input-medium date-picker ajax_expectedDelivery" name="expectedDate" size="16" type="text" value="" readonly>
@@ -62,7 +62,7 @@
 												 Αναμενόμενη παράδοση
 											</span>
 										</div>
-									</div>
+									</div> -->
 						</div>
 						<!--/span-->
 					</div>
@@ -110,9 +110,15 @@
 						<input type="text" class="ajax_id" style="display:none;" />
 						<div class="col-md-6">
 							<div class="form-group">
+										<label class="control-label col-md-3">Loading Remote Data</label>
+										<div class="col-md-4">
+											<input type="hidden" id="select2_sample6" class="form-control select2">
+										</div>
+									</div>
+							<div class="form-group">
 								<label class="control-label col-md-3">Προιόν</label>
 								<div class="col-md-9">
-										<select class="form-control ajax_productId" name="productId">
+										<select class="form-control select2 ajax_productId" name="productId">
 											<option value="-1">----------</option>
 											@foreach(Product::all() as $key=>$value)
 											<option value="{{$value->id}}">{{$value->title}} - (Τρέχων απόθεμα:{{$value->availableStock}})</option>

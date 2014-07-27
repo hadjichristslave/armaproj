@@ -196,6 +196,33 @@ jQuery( document ).ready(function($) {
 		updateOrderCost();
 	});
 
+	$("#filter-search").click(function(){
+		///azadmin/myproject/public/assets/global/plugins/carousel-owl-carousel/owl-carousel/AjaxLoader.gif
+		$('body').css({ opacity: 0.5 , backgroundImage: "/azadmin/myproject/public/assets/global/plugins/carousel-owl-carousel/owl-carousel/AjaxLoader.gif"});
+		var filters = {};
+		$(".filter-tr").find('input').each(function(){
+			if($(this).val!=undefined){
+				name = $(this).attr('name');
+				filters[name] = $(this).val();
+			}
+		});
+		$(".filter-tr").find('select').each(function(){
+			if($(this).val!=undefined){
+				name = $(this).attr('name');
+				filters[name] = $(this).val();
+			}
+		});
+		$.get('/azadmin/myproject/public/app/customreturn/Filter?filtz='+JSON.stringify(filters), function(data){
+			$(".filter-tbody").html(data)
+		});
+		$('body').css({ opacity: 1 , backgroundImage:''});
+	});
+	$("#filter-reset").click(function(){
+		$.get('/azadmin/myproject/public/app/return/Product', function(data){
+
+		});
+	});
+
 	$(".storeProductSelect2").on("change",function(){
 		newSelectData = new Array();
 		$.get("/azadmin/myproject/public/app/customreturn/Store/"+$(this).val()+"/true/products" , function(data){

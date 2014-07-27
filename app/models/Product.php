@@ -41,7 +41,7 @@ public $rules = array();
 	    			$newPr->sku            = $dataArray[0];
 	    			$newPr->title          = $dataArray[1];
 	    			$newPr->unitPrice      = Product::priceFormat($dataArray[2]);
-	    			$newPr->lastImport     = $dataArray[3];
+	    			$newPr->lastImport     = Product::jsDateToSql($dataArray[3]);
 	    			$newPr->barcode        = $dataArray[4];
 	    			$newPr->brand          = $dataArray[5];
 	    			$newPr->availableStock = $dataArray[6];
@@ -89,7 +89,6 @@ public $rules = array();
 		    die();
 		} 
 		fclose($handle);
-
     }
 
 
@@ -99,6 +98,36 @@ public $rules = array();
     }
 
 
+    public static function createProductView($data){
+    	$view = '';
+    	$class="odd";
+    	foreach($data as $key=>$value){
+    		$view .= "<tr role='row' class='$class'>
+				<td class='sorting_1'>$value->id</td>
+				<td class='sorting_1'><img class='avatar productImage' alt='' src='/myproject/public/pictures/$value->sku'></td>
+				<td><b>$value->sku</b></td>
+				<td>$value->barcode</td>
+				<td>$value->title</td>
+				<td>$value->brand</td>
+				<td>$value->unitPrice €</td>
+				<td>$value->availableStock</td>
+				<td>$value->lastImport</td>
+				<td><a class='btn btn-xs default btn-editable' href='ecommerce_products_edit.html'><i class='fa fa-pencil'></i> Edit</a></td>	
+			</tr>";
+			$class= $class=="odd"?"even":"odd";
+    	}
+    	return $view;
 
+    }
+
+
+    public static function sqlDateToJs($date){
+
+    }
+    public static function jsDateToSql($date){
+    	$dateArray = explode('/' , $date);
+    	if(sizeof($dateArray)<3) return '';
+    	return $dateArray[2] . '-' . $dateArray[1]  . '-' .$dateArray[0];
+    }
 
 }
