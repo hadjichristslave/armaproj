@@ -297,7 +297,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-					<h4 class="modal-title">Τρέχουσα παραγγελία <p class="pull-right">Σύνολο: <input type="text" class="form-control cartTotal" val="" readonly /> </p></h4>
+					<h4 class="modal-title productTitle">Τρέχουσα παραγγελία <p class="pull-right">Σύνολο: <input type="text" class="form-control cartTotal" val="" readonly /> </p></h4>
 				</div>
 				<div class="modal-body">
 					<div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
