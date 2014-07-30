@@ -31,3 +31,13 @@ padding: 0px 2px !important;
 	height:100px;
 	background-image: "/myproject/public/AjaxLoader.gif"
 }
+.actionli{
+	margin-top: -28px!important;
+}
+.modal-body {
+	padding: 20px 20px 40px 20px;
+}
+
+.productDeletebut{
+	padding: 15% 0 0 40%;
+}

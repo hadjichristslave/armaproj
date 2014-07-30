@@ -12,6 +12,10 @@ class Employee extends Eloquent{
         return $this->hasMany('User' , 'userId' , 'id');
     }
 
+    public function store()
+    {
+        return $this->hasMany('Store' , 'employeeId' , 'id');
+    }
 
 
 

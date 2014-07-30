@@ -185,7 +185,7 @@ class AppController extends Controller {
 		$cart   =    json_decode(Input::get('cart'),true);
 		$sum = 0;
 		try{
-		foreach ($cart as $key => $value) 
+		foreach ($cart as $key => $value)
 			$sum +=  Product::find($value['productId'])->unitPrice*$value['quantity'];
 		}catch(Exception $e){}
 		return $sum;
@@ -224,11 +224,11 @@ class AppController extends Controller {
 							$relation = $stocks[2]=="from"?">=":"<=";
 							$query->where("lastImport", $relation , $date);
 						}
-						if(sizeof(explode('-', $key))==4)
+						if(sizeof(explode('-', $key))==4 && $val!=0)
 							$query->whereRaw('brand LIKE "%'.Brand::find($val)->title.'%"');
 						
 				}
-            })->get();
+            })->take(50)->get();
             return Product::createProductView($answer);
 		}
 		

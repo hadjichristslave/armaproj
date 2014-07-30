@@ -31,7 +31,7 @@
 			</div>
 			<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="/azadmin/myproject/public/app/custom/Employeeorder/edit" class="form-horizontal myuberform" method="post">
+			<form action="/myproject/public/app/custom/Employeeorder/edit" class="form-horizontal myuberform" method="post">
 				{{Form::token()}}
 				<input type="text" name="id" class="employeeOrderFormId" style="display:none"/>
 				<div class="form-body">

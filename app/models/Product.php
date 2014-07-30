@@ -102,9 +102,10 @@ public $rules = array();
     	$view = '';
     	$class="odd";
     	foreach($data as $key=>$value){
-    		$view .= "<tr role='row' class='$class'>
+    		$view .= "<tr role='row' class='$class' rowId='$value->id'>
+    			<td><input type='checkbox' class='group-checkable' checkbox='$value->id'></td>
 				<td class='sorting_1'>$value->id</td>
-				<td class='sorting_1'><img class='avatar productImage' alt='' src='/myproject/public/pictures/$value->sku'></td>
+				<td class='sorting_1'><img class='avatar productImage' alt='' src='/azadmin/myproject/public/pictures/$value->sku'></td>
 				<td><b>$value->sku</b></td>
 				<td>$value->barcode</td>
 				<td>$value->title</td>
@@ -112,14 +113,12 @@ public $rules = array();
 				<td>$value->unitPrice €</td>
 				<td>$value->availableStock</td>
 				<td>$value->lastImport</td>
-				<td><a class='btn btn-xs default btn-editable' href='ecommerce_products_edit.html'><i class='fa fa-pencil'></i> Edit</a></td>	
+				<td><a class='btn btn-xs default btn-editable' productId=$value->id' data-toggle='modal' href='#responsive'><i class='fa fa-pencil'></i> Add product</a></td>	
 			</tr>";
 			$class= $class=="odd"?"even":"odd";
     	}
     	return $view;
-
     }
-
 
     public static function sqlDateToJs($date){
 

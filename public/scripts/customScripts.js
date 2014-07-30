@@ -1,9 +1,12 @@
 /**
 	Variable declaration
 */
-var divCounter     = 0;
-var orderProductId = 0;
-var orderViewId    = 0;
+var divCounter         = 0;
+var orderProductId     = 0;
+var orderViewId        = 0;
+var storeId            = 0;
+var hasfiltered         = false;
+var itemCartProducts   = new Array();
 var token  = $("input[name='_token']").val();
 
 /*---End of variable dec--------*/
@@ -192,12 +195,17 @@ jQuery( document ).ready(function($) {
 		$('.myuberform').submit();
 	});
 
+	$(".storeSubmit").click(function(){
+		storeId = $(".storeSelect").val();
+		$(".storeName").text($(".storeSelect option[value='"+storeId+"']").text());
+	});
+
 	$(document).on('change' , ".ajax_productId", function(){
 		updateOrderCost();
 	});
 
 	$("#filter-search").click(function(){
-		///azadmin/myproject/public/assets/global/plugins/carousel-owl-carousel/owl-carousel/AjaxLoader.gif
+		hasfiltered = true;
 		$('body').css({ opacity: 0.5 , backgroundImage: "/azadmin/myproject/public/assets/global/plugins/carousel-owl-carousel/owl-carousel/AjaxLoader.gif"});
 		var filters = {};
 		$(".filter-tr").find('input').each(function(){
@@ -233,27 +241,110 @@ jQuery( document ).ready(function($) {
 			   	$(".select2-result-label").each(function()
 			        {
 			            console.log($(this).text());
-			        });
-			    // var selects = $('.productOfStoreSelect2');			    
-			    // // loop trough all the selects
-			    // for (var i=0; i<selects.length; i++) {
-			    //     //re-enable all options before
-			    //     $(selects[i]).find('option').removeAttr('disabled');
-			    //     // loop trough all the values
-			    //     if(newSelectData.indexOf($(selects[i]).select2("val"))==-1)
-			    //             $(selects[i]).find('option[value='+$(selects[i]).val("val")+']').attr('disabled', 'disabled');
-			    // }
-		  	
+			        });		  	
 		});
-	});	
+	});
+
+	$(".addSingleProduct").click(function(){
+		productId = $(this).attr('productId');
+		updateProducts(productId);
+		console.log(itemCartProducts);
+	});
+
+	$(".addAllProducts").on('click', function(){
+		if(hasfiltered){
+			$("input").each(function(){  
+				console.log("filtered");
+				if($(this).attr('checkbox')){
+					var active = $(this).is(":checked");
+					if(active){
+						productId = $(this).attr('checkbox');
+						updateProducts(productId);
+					}
+				}
+			});
+		}else{
+			$(".checker").each(function(){ 
+				active = $(this).find('span').first().hasClass('checked');
+				if(active){
+					productId = $(this).find('input').first().attr('checkbox');
+					updateProducts(productId);
+				}
+			});
+		}
+	});
 });
+function updateProducts(productId){
+	flag = false;
 
-
+	for(var i in itemCartProducts)
+		if(itemCartProducts[i].prodId == productId)
+			flag = true;
+	if(flag == false){
+		prodQty      = 0;
+		prodName     = $.find('tr[rowId="'+productId+'"] td:nth-child(6)')[0].innerText;
+		unitPrice    = $.find('tr[rowId="'+productId+'"] td:nth-child(8)')[0].innerText;
+		itemCartProducts.push(new itemCart(productId, prodName, prodQty, unitPrice));
+	}
+	updateProductView();
+}
+function updateProductView(){
+	$(".selectedProducts").empty();
+	for(var i in itemCartProducts){
+		var tempHtml = "<tr productTr="+itemCartProducts[i].prodId+">";
+		tempHtml += '<td>'+itemCartProducts[i].prodId+'</td>';
+		tempHtml += '<td>'+itemCartProducts[i].prodName+'</td>';
+		tempHtml += '<td>'+itemCartProducts[i].unitPrice+'</td>';
+		tempHtml += '<td><div id="spinner4"><div class="input-group" style="width:150px;"><div class="spinner-buttons input-group-btn"><button type="button" class="btn spinner-down" onclick=decreaseValue('+itemCartProducts[i].prodId+')><i class="fa fa-minus"></i></button></div><input type="text" class="spinner-input form-control" maxlength="3" productId="'+itemCartProducts[i].prodId+'" readonly><div class="spinner-buttons input-group-btn"><button type="button" class="btn spinner-up" onclick=increaseValue('+itemCartProducts[i].prodId+')><i class="fa fa-plus"></i></button></div></div></div></td><td><div class="input-group productDeletebut"><button type="button" class="close" onclick=deleteProduct('+itemCartProducts[i].prodId+')></button></div></td>';
+		tempHtml += '<tr>';
+		$(".selectedProducts").append(tempHtml);
+	}
+}
+function deleteProduct(productId){
+	for(var i in itemCartProducts)
+		if(itemCartProducts[i].prodId==productId)
+			removeByIndex(itemCartProducts, i);
+	$("tr[productTr='"+productId+"']").hide().remove();
+	getOrderCost();
+}
+function increaseValue(productId){
+	price = $('input[productId="'+productId+'"]').val();
+	if(price=='') price = '0';
+	price = parseInt(price);
+	price++;
+	$('input[productId="'+productId+'"]').val(price);
+	updateProductQuantity(productId, price);
+	getOrderCost();
+}
+function decreaseValue(productId){
+	price = $('input[productId="'+productId+'"]').val();
+	if(price=='') price = '0';
+	price = parseInt(price);
+	price--;
+	$('input[productId="'+productId+'"]').val(price<0?0:price);
+	updateProductQuantity(productId, price);
+	getOrderCost();
+}
+function updateProductQuantity(productId, Qty){
+	for(var i in itemCartProducts){
+		if(itemCartProducts[i].prodId == productId)
+			itemCartProducts[i].prodQty =Qty
+	}
+}
+//used for the new product table view
+function itemCart(prodId, prodName, prodQty, unitPrice){
+	this.prodName = prodName;
+	this.prodId   = prodId
+	this.prodQty = prodQty;
+	this.unitPrice = unitPrice;
+}
+//used in older versions
 function orderCart(productId,quantity)
 {
 	this.productId=productId;
 	this.quantity=quantity;
 }
+//completely deprecated
 function orderBasicInfo(orderId, storeId, employeeId, stateId, date){
 	this.orderId = orderId;
 	this.storeId = storeId;
@@ -261,11 +352,31 @@ function orderBasicInfo(orderId, storeId, employeeId, stateId, date){
 	this.stateId = stateId;
 	this.date = date;
 }
+//completely deprecated
 function orderItem(productId, quantity, comments){
 	this.productId=productId;
 	this.comments=comments;
 	this.quantity=quantity;
 }
+
+function getOrderCost(){
+	orderObjects = new Array();
+	for(var i in itemCartProducts){
+			var productId  = itemCartProducts[i].prodId;
+			var productQtt = itemCartProducts[i].prodQty;
+			orderObjects.push(new orderCart(productId, productQtt));	
+	}
+	$.ajax({
+        type:  'get',
+        cache:  false ,
+        url:  '/azadmin/myproject/public/app/updatecost',
+        data:  {cart:JSON.stringify(orderObjects)},
+        success: function(resp) {
+            $('.cartTotal').val(resp);
+        } 
+      });
+}
+
 function updateOrderCost(){
 	orderObjects = new Array();
 		$('.productRow').each(function(){
@@ -304,4 +415,8 @@ function reCreateInitialRow(){
 }
 function clearProductElements(){
 	$("div.productRow:not(:first)").remove();
+}
+
+function removeByIndex(arr, index) {
+    arr.splice(index, 1);
 }
