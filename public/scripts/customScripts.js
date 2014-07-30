@@ -273,6 +273,26 @@ jQuery( document ).ready(function($) {
 			});
 		}
 	});
+
+	$(".newOrderSave").click(function(){
+		formData = {};
+		formData['storeId'] = storeId;
+		formData['token'] = $('input[name="_token"]').val();
+		for(i in itemCartProducts){
+			productPrefix = 'productId' + '_' + i;
+			quantityPrefix = 'quantity' + '_' + i;
+			formData[productPrefix] = itemCartProducts[i].prodId;
+			formData[quantityPrefix] = itemCartProducts[i].prodQty;
+		}
+		$.ajax({
+        type:  'post',
+        cache:  false ,
+        url:  '/azadmin/myproject/public/app/custom/Order/create',
+        data:  {cart:JSON.stringify(formData)},
+        success: function(resp) {
+        } 
+      });
+	});
 });
 function addToCart(productId){
 	updateProducts(productId);

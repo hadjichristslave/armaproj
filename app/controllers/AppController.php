@@ -125,24 +125,26 @@ class AppController extends Controller {
 			return Redirect::to('/app/data/'. $model. '/' . "edit")->with('message' , $message);
 		}if($model=="Order" && $action=="create"){
 			$initial = false;
-			$numberOfElements = (count(Input::all())-3)/3;
+			$formData = (array) json_decode(Input::get('cart'));
+			$numberOfElements = (count($formData)-2)/2;
 			$message          = '';
 			$employeeOrder = new Employeeorder();
 			for ($i=0; $i <$numberOfElements ; $i++) {
 				$currentElement = $i;
-				$prefix = $i==0?"":"_".$currentElement;
+				$prefix = "_".$currentElement;
 				$order = new Order();
-				$order->setOrderData($prefix);
+				$order->setOrderData($prefix , $formData);
 				$flag = Validpack::validateoperation($order);
 				if($flag->passes() && $initial ==false){
 					$initial = true;
-					$employeeOrder->setEmployeeData();
+					$employeeOrder->setEmployeeData($formData);
 					$flag2 = Validpack::validateoperation($employeeOrder);
 					if($flag2->passes()){
 						$employeeOrder->save();
 						$order->orderId = $employeeOrder->id;
 						$order->save();
 					}else{
+						echo 'data problem';
 						return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , "wrong data on employee, order dropped");
 					}
 				}else if($flag->passes()){

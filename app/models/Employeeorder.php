@@ -21,14 +21,14 @@ class Employeeorder extends Eloquent{
     }
 
 
-    public static function calculateTotalCost(){
+    public static function calculateTotalCost($array){
         $sum = 0;
-        foreach(Input::all() as $key=>$val){
+        foreach($array as $key=>$val){
             if (strpos($key,'productId') !== false) {
                 $arrayz = explode('_' , $key);
-                $prefix = count($arrayz)==1?"":"_".$arrayz[1];
-                $productId = Input::get("productId" . $prefix);
-                $quantity  = Input::get("quantity" . $prefix);
+                $prefix = "_".$arrayz[1];
+                $productId = $array["productId" . $prefix];
+                $quantity  = $array["quantity" . $prefix];
                 $sum +=  $productId==0?0:Product::find($productId)->unitPrice*$quantity;
             }
 
@@ -45,12 +45,11 @@ class Employeeorder extends Eloquent{
         return $date;
     }
 
-    public function setEmployeeData(){
+    public function setEmployeeData($array){
         $this->employeeId         = Auth::user()->userId;
         $this->stateId            = 1;
-        $this->storeId            = Input::get("storeId");
-        $this->expectedDelivery   = Employeeorder::getDate();
-        $this->totalPrice         = Employeeorder::calculateTotalCost();
+        $this->storeId            = $array['storeId'];
+        $this->totalPrice         = Employeeorder::calculateTotalCost($array);
     }
     public function setEmployeeUpdData(){
         $this->stateId            = Input::get("stateId");

@@ -22,8 +22,9 @@
 							<button type="button" class="btn blue addAllProducts" data-toggle="modal" href="#responsive" data-hover="dropdown" data-delay="1000" data-close-others="true">
 							<span>Προσθήκη όλων</span>
 							</button>
-							<button type="button" class="btn green">
+							<button type="button" class="btn green newOrderSave">
 							<span>Αποθήκευση παραγγελίας</span>
+							{{Form::token()}}
 							</button>
 						</li>
 
