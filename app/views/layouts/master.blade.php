@@ -825,12 +825,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
  
 
 <!-- order display scripts -->
-<script src="/azadmin/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<!-- <script src="/azadmin/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="/azadmin/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/azadmin/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/azadmin/assets/global/scripts/datatable.js"></script>
 <script src="/azadmin/assets/admin/pages/scripts/ecommerce-orders-view.js"></script>
-<script src="/azadmin/assets/admin/pages/scripts/components-form-tools.js"></script>
+<script src="/azadmin/assets/admin/pages/scripts/components-form-tools.js"></script> -->
 <!-- order display scripts -->
 
 

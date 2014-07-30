@@ -58,8 +58,8 @@
 																<i class="fa fa-shopping-cart"></i>
 															</div>
 															<div class="details">
-																<div class="number">
-																	 549
+																<div class="number orderProducts">
+																	 --
 																</div>
 																<div class="desc">
 																	 Προϊόντα πραγγελίας
@@ -76,8 +76,8 @@
 																<i class="fa fa-globe"></i>
 															</div>
 															<div class="details">
-																<div class="number">
-																	 +89%
+																<div class="number orderCost">
+																	 --
 																</div>
 																<div class="desc">
 																	 Κόστος παραγγελίας
@@ -217,8 +217,8 @@
 											<button class="btn btn-sm yellow filter-submit margin-bottom" id="filter-search">
 												<i class="fa fa-search"></i> Φιλτρο</button>
 										</div>
-										<button class="btn btn-sm red filter-cancel" id="filter-reset">
-											<i class="fa fa-times"></i> Reset</button>
+										<!-- <button class="btn btn-sm red filter-cancel" id="filter-reset">
+											<i class="fa fa-times"></i> Reset</button> -->
 									</td>
 								</tr>
 								</thead>
@@ -346,7 +346,7 @@
 				</div>
 				<div class="modal-footer">
 					<!-- <button type="button" data-dismiss="modal" class="btn default">Close</button> -->
-					<button type="button" class="btn green">Save changes</button>
+					<button type="button" class="btn green" data-dismiss="modal">Save changes</button>
 				</div>
 			</div>
 		</div>
