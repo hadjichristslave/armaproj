@@ -113,7 +113,7 @@ public $rules = array();
 				<td>$value->unitPrice €</td>
 				<td>$value->availableStock</td>
 				<td>$value->lastImport</td>
-				<td><a class='btn btn-xs default btn-editable' productId=$value->id' data-toggle='modal' href='#responsive'><i class='fa fa-pencil'></i> Add product</a></td>	
+				<td><a class='btn btn-xs default btn-editable addSingleProduct' onClick='addToCart($value->id)' data-toggle='modal' href='#responsive' productId='$value->id' ><i class='fa fa-plus'></i> Add product</a></td>	
 			</tr>";
 			$class= $class=="odd"?"even":"odd";
     	}

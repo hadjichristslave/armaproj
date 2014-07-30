@@ -230,7 +230,7 @@
 										<tr role="row" class="{{$class}}" rowId="{{$value->id}}">
 											<td><input type="checkbox" class="group-checkable" checkbox="{{$value->id}}"></td>
 											<td class="sorting_1">{{$value->id}}</td>
-											<td class="sorting_1"><img class="avatar productImage" alt="" src="/myproject/public/pictures/{{$value->sku}}"></td>
+											<td class="sorting_1"><img class="avatar productImage" alt="" src="http://armancon.com/azadmin/myproject/public/pictures/{{$value->sku}}"></td>
 											<td><b>{{$value->sku}}</b></td>
 											<td>{{$value->barcode}}</td>
 											<td>{{$value->title}}</td>
@@ -297,13 +297,13 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-					<h4 class="modal-title">Τρέχουσα παραγγελία</h4>
+					<h4 class="modal-title">Τρέχουσα παραγγελία <p class="pull-right">Σύνολο: <input type="text" class="form-control cartTotal" val="" readonly /> </p></h4>
 				</div>
 				<div class="modal-body">
 					<div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
 						<div class="row">
 							<div class="col-md-12">
-								<h4>Προϊόντα <p class="pull-right">Σύνολο: <input type="text" class="form-control cartTotal" val="" readonly /> </p></h4>
+								<h4 class="productHeader">Προϊόντα</h4>
 								<div class="portlet">
 									<div class="portlet-body">
 										<div class="table-container">											
