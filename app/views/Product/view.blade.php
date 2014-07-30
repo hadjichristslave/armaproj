@@ -345,7 +345,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" data-dismiss="modal" class="btn default">Close</button>
+					<!-- <button type="button" data-dismiss="modal" class="btn default">Close</button> -->
 					<button type="button" class="btn green">Save changes</button>
 				</div>
 			</div>
