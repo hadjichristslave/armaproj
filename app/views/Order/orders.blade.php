@@ -78,11 +78,11 @@
 										 Ενέργειες
 									</th>
 								</tr>
-								<tr role="row" class="filter">
+								<tr role="row" class="filter filter-tr">
 									<td>
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="order_id">
+										<input type="text" class="form-control form-filter input-sm" name="id">
 									</td>
 									<td>
 										<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
@@ -99,45 +99,47 @@
 										</div>
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="order_customer_name">
+										<input type="text" class="form-control form-filter input-sm" name="store_Name">
 									</td>
 									
 									<td>
 										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="order_base_price_from" placeholder="From"/>
+											<input type="text" class="form-control form-filter input-sm" name="order_total_price_from" placeholder="From"/>
 										</div>
-										<input type="text" class="form-control form-filter input-sm" name="order_base_price_to" placeholder="To"/>
+										<input type="text" class="form-control form-filter input-sm" name="order_total_price_to" placeholder="To"/>
 									</td>
 									
 									<td>
-										<select name="order_status" class="form-control form-filter input-sm">
+										<select name="stateId" class="form-control form-filter input-sm">
 											<option value="">Επιλέξτε...</option>
-											<option value="pending">Ανοιχτή</option>
-											<option value="closed">Κλειστή</option>
-											<option value="hold">Σε αναμονή</option>
-											<option value="fraud">Ακυρωμένη</option>
+											<option value="1">Ανοιχτή</option>
+											<option value="2">Κλειστή</option>
+											<option value="3">Σε αναμονή</option>
+											<option value="4">Ακυρωμένη</option>
 										</select>
 									</td>
 									<td>
 										<div class="margin-bottom-5">
-											<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
+											<button class="btn btn-sm yellow filter-submit margin-bottom filterOrders"><i class="fa fa-search"></i> Search</button>
 										</div>
 										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
 									</td>
 								</tr>
-								<tr>
-								<td><input type="checkbox" class="group-checkable"></td>
-								<td>2411264</td>
-								<td>27/07/2014</td>
-								<td>Hondos Center Ερμού</td>
-								<td>1596,45€</td>
-								<td><span class="label label-sm label-success">Ανοιχτή</span></td>
-								<td>
-								<a href="ecommerce_orders_view.html" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> View</a>
-								</td>
-								</tr>
 								</thead>
-								<tbody>
+								<tbody class="filter-tbody">
+									@foreach(Employeeorder::where('employeeId' , '=' , Auth::user()->userId)->get() as $ord)
+										<tr>
+									<td><input type="checkbox" class="group-checkable"></td>
+									<td>{{$ord->id}}</td>
+									<td>{{$ord->created_at}}</td>
+									<td>{{Store::find($ord->storeId)->brand}}</td>
+									<td>{{$ord->totalPrice}}€</td>
+									<td><span class="label label-sm label-success">{{Orderstate::find($ord->stateId)->name}}</span></td>
+									<td>
+									<a href="/myproject/public/app/data/Order/display/{{$ord->id}}" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
+									</td>
+									</tr>
+									@endforeach
 								</tbody>
 								</table>
 							</div>

@@ -27,6 +27,26 @@ class Order extends Eloquent{
             $this->save();
     }
 
+    public static function createProductView($data){
+        $view = '';
+        $class="odd";
+        foreach($data as $key=>$value){
+            $view .= '<tr role="row" class='.$class.' rowId='.$value->id.'>
+                                <td><input type="checkbox" class="group-checkable"></td>
+                                <td>'.$value->id.'</td>
+                                <td>'.$value->created_at.'</td>
+                                <td>'.Store::find($value->storeId)->brand.'</td>
+                                <td>'.$value->totalPrice.'€</td>
+                                <td><span class="label label-sm label-success">'.Orderstate::find($value->stateId)->name.'</span></td>
+                                <td>
+                                <a href="/myproject/public/app/data/Order/display/'.$value->id.'" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
+                                </td>
+                                </tr>';
+            $class= $class=="odd"?"even":"odd";
+        }
+        return $view;
+    }
+
 
 
 }

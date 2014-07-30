@@ -7,7 +7,7 @@
 				<div class="col-md-12">
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 					<h3 class="page-title">
-					Παραγγελία <small>λεπτομέρειες</small>
+					Παραγγελία <small>λεπτομέρειες </small>
 					</h3>
 					<ul class="page-breadcrumb breadcrumb">
 						<li class="btn-group">
@@ -55,8 +55,8 @@
 					<div class="portlet">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-shopping-cart"></i>Παραγγελία #12313232 <span class="hidden-480">
-								| Ιουλ 27, 2014 17:16:25 </span>
+								<i class="fa fa-shopping-cart"></i>Παραγγελία {{Employeeorder::find($id)->id}} <span class="hidden-480">
+								| {{Employeeorder::find($id)->created_at}} </span>
 							</div>
 							<div class="actions">
 								<a href="#" class="btn default yellow-stripe">
@@ -142,8 +142,8 @@
 																 Παραγγελία #:
 															</div>
 															<div class="col-md-7 value">
-																 12313232 <span class="label label-info label-sm">
-															Έχει αποσταλεί στο Λογιστήριο </span>
+																 {{Employeeorder::find($id)->id}} <span class="label label-info label-sm">
+															{{Orderstate::find(Employeeorder::find($id)->stateId)->name}} </span>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -151,7 +151,7 @@
 																 Ημερομηνία Δημιουργίας:
 															</div>
 															<div class="col-md-7 value">
-																 Ιουλ 27, 2014 17:16:25 PM
+																 {{Employeeorder::find($id)->created_at}}
 															</div>
 														</div>
 														<div class="row static-info">
@@ -160,7 +160,7 @@
 															</div>
 															<div class="col-md-7 value">
 																<span class="label label-success">
-																Ανοιχτή </span>
+																{{Orderstate::find(Employeeorder::find($id)->stateId)->name}} </span>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -176,7 +176,7 @@
 																 Σύνολικό Κόστος:
 															</div>
 															<div class="col-md-7 value">
-																 175.25€
+																 {{Employeeorder::find($id)->totalPrice}}
 															</div>
 														</div>
 														
@@ -200,7 +200,7 @@
 																 Τίτλος:
 															</div>
 															<div class="col-md-7 value">
-																 Hondos Center Ερμού
+																 {{Store::find(Employeeorder::find($id)->storeId)->brand}}
 															</div>
 														</div>
 														<div class="row static-info">
@@ -208,7 +208,7 @@
 																 Υπεύθυνος:
 															</div>
 															<div class="col-md-7 value">
-																 Παπαδόπουλος Δημήτρης
+																 {{Employee::find(Employeeorder::find($id)->employeeId)->name}}
 															</div>
 														</div>
 														
@@ -217,7 +217,7 @@
 																 Διέυθυνση:
 															</div>
 															<div class="col-md-7 value">
-																 Ερμού 39, Αθήνα, Τ.Κ. 10563
+																 {{Store::find(Employeeorder::find($id)->storeId)->address}}																 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -225,7 +225,7 @@
 																 Τηλέφωνο:
 															</div>
 															<div class="col-md-7 value">
-																 2103319717
+																 {{Employee::find(Employeeorder::find($id)->employeeId)->phone}}
 															</div>
 														</div>
 														<div class="row static-info">
@@ -233,7 +233,7 @@
 																 Email:
 															</div>
 															<div class="col-md-7 value">
-																 jhon@doe.com
+																 {{Employee::find(Employeeorder::find($id)->employeeId)->email}}
 															</div>
 														</div>
 														

@@ -232,6 +232,40 @@ class AppController extends Controller {
 				}
             })->take(50)->get();
             return Product::createProductView($answer);
+		}if($model=="orderFilter"){
+			$filters = json_decode(Input::get('filtz'));
+			$answer = Employeeorder::where('employeeId' , '=' , Auth::user()->userId)
+					->where(function($query) use ($filters) {
+				foreach($filters as $key=>$val){
+					if($val!='')
+						if(sizeof(explode('_', $key))==1)
+							$query->where($key, 'LIKE' , "%$val%");
+						else if(sizeof(explode('_', $key))==4){
+							$stocks = explode('_', $key);
+							$price  = (int) $val;
+							$relation = $stocks[3]=="from"?">=":"<=";
+							$query->where("totalPrice", $relation , "$price");
+						}
+						else if(sizeof(explode('_', $key))==3){
+							$stocks = explode('_', $key);
+							$date  = Product::jsDateToSql($val);
+							$date  = new DateTime($date);
+							$relation = $stocks[2]=="from"?">=":"<=";
+							$query->where("created_at", $relation , $date);
+						}
+						else if(sizeof(explode('_', $key))==2){
+							$query->whereExists(function($query2) use($val)
+				            {
+				                $query2->select(DB::raw('*'))
+				                      ->from('stores')
+									  ->where('brand', 'LIKE' , "%$val%");
+				            });
+
+						}
+						
+				}
+            })->take(50)->get();
+            return Order::createProductView($answer);
 		}
 		
 	}
