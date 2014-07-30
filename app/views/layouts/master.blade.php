@@ -657,13 +657,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						<span class="arrow">
 						</span>
 					</a>
-					<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Συνολο προιόντων">
-							<a href="/azadmin/myproject/public/app/data/Product/view">
-								<span class="title">
-									Δημιουργία
-								</span>
-							</a>
-						</li>
 					<!-- <ul class="sub-menu" style="display: none;">
 						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
 							<a href="/azadmin/myproject/public/app/data/Order/create">
@@ -672,17 +665,25 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 								</span>
 							</a>
 						</li> -->
-						<!-- <li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
+						<ul class="sub-menu" style="display: none;">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Συνολο προιόντων">
+								<a href="/azadmin/myproject/public/app/data/Product/view">
+									<span class="title">
+										Δημιουργία
+									</span>
+								</a>
+							</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
 							<a href="/azadmin/myproject/public/app/data/Order/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
 							</a>
-						</li> -->
+						</li>
 						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
 							<a href="/azadmin/myproject/public/app/data/Order/display">
 								<span class="title">
-									Τροποποίηση
+									Μεμονομένη παραγγελία
 								</span>
 							</a>
 						</li>
@@ -825,7 +826,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
-<script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
+<script src="/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="/azadmin/assets/scripts/custom/components-pickers.js"></script>
 <!-- END LOGIN SCRIPTS -->
