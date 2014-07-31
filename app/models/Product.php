@@ -128,5 +128,8 @@ public $rules = array();
     	if(sizeof($dateArray)<3) return '';
     	return $dateArray[2] . '-' . $dateArray[1]  . '-' .$dateArray[0];
     }
-
+    public static function getSubtotal($id, $quantity){
+    	$product = Product::find($id);
+    	return $product->unitPrice*$quantity;
+    }
 }

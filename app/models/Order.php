@@ -39,7 +39,7 @@ class Order extends Eloquent{
                                 <td>'.$value->totalPrice.'€</td>
                                 <td><span class="label label-sm label-success">'.Orderstate::find($value->stateId)->name.'</span></td>
                                 <td>
-                                <a href="/myproject/public/app/data/Order/display/'.$value->id.'" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
+                                <a href="/azadmin/myproject/public/app/data/Order/display/'.$value->id.'" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
                                 </td>
                                 </tr>';
             $class= $class=="odd"?"even":"odd";
@@ -47,6 +47,12 @@ class Order extends Eloquent{
         return $view;
     }
 
-
+    public static function totalNumberOfPproducts($id){
+        $totalProds = 0;
+        foreach(Order::where('orderId' , '=' , $id)->get() as $ord){
+            $totalProds +=$ord->quantity;
+        }
+        return $totalProds;
+    }
 
 }

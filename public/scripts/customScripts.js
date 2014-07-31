@@ -311,6 +311,12 @@ jQuery( document ).ready(function($) {
         } 
       });
 	});
+
+	$('input').on('change' , function(){
+		if($(this).attr('productId-edit')){
+			console.log('asdf');
+		}
+	});
 });
 function addToCart(productId){
 	updateProducts(productId);
@@ -329,6 +335,17 @@ function updateProducts(productId){
 		itemCartProducts.push(new itemCart(productId, prodName, prodQty, unitPrice));
 	}
 	updateProductView();
+}
+function productEditCartPopulate(){
+	itemCartProducts = new Array();
+	totalProducts    = 0;
+	$(".productEditTr").each(function(){
+		productId       = $(this).attr('itemId');
+		prodQty         = $(this).find('td:nth-child(2)').find('input').first().val();
+		totalProducts  += parseInt(prodQty);
+		itemCartProducts.push(new itemCart(productId, " ", prodQty, ""));
+	});
+	$('.productTotalNumber').text(totalProducts);
 }
 function getTotalProducts(){
 	total = 0;
@@ -411,7 +428,7 @@ function orderItem(productId, quantity, comments){
 	this.quantity=quantity;
 }
 
-function getOrderCost(){
+function getOrderCost(editView){
 	orderObjects = new Array();
 	for(var i in itemCartProducts){
 			var productId  = itemCartProducts[i].prodId;
@@ -426,10 +443,17 @@ function getOrderCost(){
         success: function(resp) {
             $('.cartTotal').val(resp);
             cost = resp + " €";
-            $(".orderCost").text(cost);
+            if (typeof editView != 'undefined' ){
+            	console.log('defined');
+				$('.totalCostz').text(cost);
+			}
+			else{
+				console.log('non defined');
+            	$(".orderCost").text(cost);
+			}
         } 
       });
-	$('.orderProducts').text(getTotalProducts());
+		$('.orderProducts').text(getTotalProducts());
 }
 
 function updateOrderCost(){
@@ -449,6 +473,13 @@ function updateOrderCost(){
 	            $('.ajax_sum').val(resp);
 	        } 
 	      });
+}
+
+function cartify(productId , action){
+	action=="true"?increaseValue(productId):decreaseValue(productId);
+	productEditCartPopulate();
+	getOrderCost('true');
+
 }
 
 function cloneProductElement(){

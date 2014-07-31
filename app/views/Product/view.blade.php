@@ -27,8 +27,6 @@
 							{{Form::token()}}
 							</button>
 						</li>
-
-
 					</ul>
 					<!-- END PAGE TITLE & BREADCRUMB-->
 				</div>

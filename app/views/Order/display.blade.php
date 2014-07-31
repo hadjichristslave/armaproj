@@ -142,8 +142,9 @@
 																 Παραγγελία #:
 															</div>
 															<div class="col-md-7 value">
-																 {{Employeeorder::find($id)->id}} <span class="label label-info label-sm">
-															{{Orderstate::find(Employeeorder::find($id)->stateId)->name}} </span>
+															 <span class="label label-info label-sm">
+															 	{{Employeeorder::find($id)->id}}
+															 </span>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -167,19 +168,10 @@
 															<div class="col-md-5 name">
 																 Προϊόντα:
 															</div>
-															<div class="col-md-7 value">
-																 12
+															<div class="col-md-7 value productTotalNumber">
+																 {{Order::totalNumberOfPproducts($id)}}
 															</div>
-														</div>
-														<div class="row static-info">
-															<div class="col-md-5 name">
-																 Σύνολικό Κόστος:
-															</div>
-															<div class="col-md-7 value">
-																 {{Employeeorder::find($id)->totalPrice}}
-															</div>
-														</div>
-														
+														</div>														
 													</div>
 												</div>
 											</div>
@@ -189,10 +181,10 @@
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Κατάστημα
 														</div>
-														<div class="actions">
+														<!-- <div class="actions">
 															<a href="#" class="btn btn-default btn-sm">
 															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
+														</div> -->
 													</div>
 													<div class="portlet-body">
 														<div class="row static-info">
@@ -228,14 +220,14 @@
 																 {{Employee::find(Employeeorder::find($id)->employeeId)->phone}}
 															</div>
 														</div>
-														<div class="row static-info">
+														<!-- <div class="row static-info">
 															<div class="col-md-5 name">
 																 Email:
 															</div>
 															<div class="col-md-7 value">
 																 {{Employee::find(Employeeorder::find($id)->employeeId)->email}}
 															</div>
-														</div>
+														</div> -->
 														
 													</div>
 												</div>
@@ -251,7 +243,7 @@
 														</div>
 														<div class="actions">
 															<a href="#" class="btn btn-default btn-sm">
-															<i class="fa fa-pencil"></i> Edit </a>
+															<i class="fa fa-plus"></i> Προσθήκη</a>
 														</div>
 													</div>
 													<div class="portlet-body">
@@ -280,111 +272,45 @@
 															</tr>
 															</thead>
 															<tbody>
-															<tr>
+																@foreach(Order::where('orderId' , '=' , $id)->get() as $ord)
+																	<tr class="productEditTr" itemId="{{$ord->productId}}">
 																<td>
 																	<a href="#">
-																	Product 1 </a>
+																	{{Product::find($ord->productId)->title}}</a>
 																</td>
 																<td>
 																	<div id="spinner4">
-												<div class="input-group" style="width:150px;">
-													<div class="spinner-buttons input-group-btn">
-														<button type="button" class="btn spinner-up blue">
-														<i class="fa fa-plus"></i>
-														</button>
-													</div>
-													<input type="text" class="spinner-input form-control" maxlength="3">
-													<div class="spinner-buttons input-group-btn">
-														<button type="button" class="btn spinner-down red">
-														<i class="fa fa-minus"></i>
-														</button>
-													</div>
-												</div>
-											</div>
+																		<div class="input-group" style="width:150px;">
+																			<div class="spinner-buttons input-group-btn">
+																				<button type="button" class="btn spinner-up" onclick=cartify("{{$ord->id}}","true") >
+																				<i class="fa fa-plus"></i>
+																				</button>
+																			</div>
+																			<input type="text" class="spinner-input form-control" productId-edit='on' productId="{{$ord->id}}" maxlength="3" value="{{$ord->quantity}}">
+																			<div class="spinner-buttons input-group-btn">
+																				<button type="button" class="btn spinner-down" onclick=cartify("{{$ord->id}}","false") >
+																				<i class="fa fa-minus"></i>
+																				</button>
+																			</div>
+																		</div>
+																	</div>
 																</td>
 																<td>
-																	 3,33€
+																	 {{Product::find($ord->productId)->unitPrice}}€
 																</td>
 																<td>
-																	 326
-																</td>
-																<td>
-																	 33%
-																</td>
-																
-																<td>
-																	 691.00€
-																</td>
-															</tr>
-															<tr>
-																<td>
-																	<a href="#">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	6
-																</td>
-																<td>
-																	 2,49€
-																</td>
-																<td>
-																	 12
+																	 {{Product::find($ord->productId)->availableStock}}
 																</td>
 																<td>
 																	 33%
 																</td>
 																
 																<td>
-																	 691.00€
+																	{{Product::getSubtotal($ord->productId, $ord->quantity)}}€
 																</td>
 															</tr>
-															<tr>
-																<td>
-																	<a href="#">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	15
-																</td>
-																<td>
-																	 1,49€
-																</td>
-																<td>
-																	 142
-																</td>
-																<td>
-																	 33%
-																</td>
-																
-																<td>
-																	 691.00€
-																</td>
-															</tr>
-															<tr>
-																<td>
-																	<a href="#">
-																	Product 1 </a>
-																</td>
-																<td>
-																	<span class="label label-sm label-success">
-																	18
-																</td>
-																<td>
-																	 24,99€
-																</td>
-																<td>
-																	 596
-																</td>
-																<td>
-																	 33%
-																</td>
-																
-																<td>
-																	 691.00€
-																</td>
-															</tr>
+																@endforeach
+															
 															</tbody>
 															</table>
 														</div>
@@ -399,18 +325,10 @@
 												<div class="well">
 													<div class="row static-info align-reverse">
 														<div class="col-md-8 name">
-															 Χωρίς Έκπτωση:
-														</div>
-														<div class="col-md-3 value">
-															 1.724,50€
-														</div>
-													</div>
-													<div class="row static-info align-reverse">
-														<div class="col-md-8 name">
 															 Σύνολο Τελικό:
 														</div>
-														<div class="col-md-3 value">
-															 1.100,50€
+														<div class="col-md-3 value totalCostz">
+															{{Employeeorder::find($id)->totalPrice}}€
 														</div>
 													</div>
 												</div>
@@ -492,7 +410,7 @@
 														<option value="canceled">Canceled</option>
 													</select>
 												</td>
-												<td>
+												<td>χ
 													<div class="margin-bottom-5">
 														<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
 													</div>
