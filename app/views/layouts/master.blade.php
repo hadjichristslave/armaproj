@@ -246,8 +246,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 								</span>
 								<span class="subject">
 									<span class="from">
-										 Bob Nilson
-									</span>
+										 Γιάννης Αποστόλου </span>
 									<span class="time">
 										 2 hrs
 									</span>
@@ -463,7 +462,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<img alt="" src="/azadmin/assets/img/avatar1_small.jpg"/>
 				<span class="username">
-					 Bob Nilson
+					 Γιάννης Αποστόλου
 				</span>
 				<i class="fa fa-angle-down"></i>
 				</a>
