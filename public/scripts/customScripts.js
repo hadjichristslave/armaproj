@@ -8,7 +8,8 @@ var storeId            = 0;
 var hasfiltered         = false;
 var itemCartProducts   = new Array();
 var token  = $("input[name='_token']").val();
-
+var currentOrder       = 0;
+var selectified        = '';
 /*---End of variable dec--------*/
 
 jQuery( document ).ready(function($) {
@@ -43,8 +44,7 @@ jQuery( document ).ready(function($) {
 		       	 	});
                   },
 		         async:   false
-		    });       
-		  
+		    });
 	});
 
 	$( "#employeeIdSelect" ).change(function() {
@@ -312,14 +312,76 @@ jQuery( document ).ready(function($) {
       });
 	});
 
-	$('input').on('change' , function(){
-		if($(this).attr('productId-edit')){
-			console.log('asdf');
-		}
+	$('input.editInput').on('change' , function(){
+		productEditCartPopulate();
+
+		id = $(this).attr('productId');
+		model   = "Order";
+		key     = $(this).attr('key');
+		value   = $(this).val();
+		updateSingleCell(id , model, key, value);
+
+		getOrderCost('true');
 	});
+
+	$(".orderEditStateChange").change(function(){
+		orderId = $(this).attr('orderId');
+		key     = $(this).attr('key');
+		value   = $(this).val();
+		model   = "Employeeorder";
+		updateSingleCell(orderId , model, key, value);
+	});
+
+
+	$(".productEditAdd").on('click',function(){
+		args = {'orderId' : $('tbody.productBody').attr('orderId') };
+		objId = createEmpty('Order', args);
+		getAllProducts();
+		obj = "<tr class='productEditTr' itemId='1' orderId='1' productTr='"+currentOrder.id+"'><td> "+selectified+"</td> <td> <div id='spinner4'> <div class='input-group' style='width:150px;'> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-up' onclick=cartify('"+currentOrder.id+"','true') > <i class='fa fa-plus'></i> </button> </div> <input type='text' class='spinner-input form-control editInput' itemId='1' productId-edit='on' key='quantity' productId='"+currentOrder.id+"' maxlength='3' value='currentOrder.quantity'> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-down' onclick=cartify('"+currentOrder.id+"','false') > <i class='fa fa-minus'></i> </button> </div> </div> </div> </td> <td>  Product::find(currentOrder.productId)->unitPrice€ </td> <td>   </td> <td>  33% </td>  <td class='subtotal' subtotal='on'> 0€ </td> <td > <div class='input-group deleteEditProduct'> <button type='button' class='close' onclick='deleteProduct("+currentOrder.id+" , 'Order')'></button> </div> </td> </tr>";
+		$(".productBody").append(obj);
+		select2Format();
+
+	});
+
+
 });
 function addToCart(productId){
 	updateProducts(productId);
+}
+function select2Format(tabledata){	
+		ComponentsDropdowns.init();
+}
+
+function getAllProducts(){
+	$.ajax({
+        type:  'get',
+        cache:  false ,
+        async : false, 
+        url:  '/azadmin/myproject/public/app/selectify/Product/0/false',
+        success: function(resp) {
+			selectified = resp;
+        } 
+      });
+}
+
+function returnSmth(model, id , singlerecord){
+	$.get("/azadmin/myproject/public/app/return/"+model + "/"+ id+"/"+singlerecord, function(data){
+		currentOrder = data;
+	});
+}
+
+function createEmpty(model , data){
+	args = JSON.stringify(data);
+	$.ajax({
+        type:  'post',
+        cache:  false ,
+        async : false, 
+        url:  '/azadmin/myproject/public/app/createempty/Order',
+        data:  {args:args},
+        success: function(resp) {
+			currentOrder = resp;
+        } 
+      });
 }
 function updateProducts(productId){
 	flag = false;
@@ -368,13 +430,25 @@ function updateProductView(){
 	}
 	$('.orderProducts').text(getTotalProducts());
 }
-function deleteProduct(productId){
+function deleteProduct(productId , model){
 	for(var i in itemCartProducts)
 		if(itemCartProducts[i].prodId==productId)
 			removeByIndex(itemCartProducts, i);
 	$("tr[productTr='"+productId+"']").fadeOut(400);
 	getOrderCost();
 	$('.orderProducts').text(getTotalProducts());
+	if (arguments.length == 2)
+		deleteByIndex(productId, model);
+}
+
+function deleteByIndex(id, model){
+	console.log(id + model);
+	$.post('/azadmin/myproject/public/app/data/'+model+'/delete'+'?id='+id, function(data){
+		if(data){
+			console.log('success');
+			deleteProduct(id);
+		}
+	});
 }
 function increaseValue(productId){
 	price = $('input[productId="'+productId+'"]').val();
@@ -444,11 +518,9 @@ function getOrderCost(editView){
             $('.cartTotal').val(resp);
             cost = resp + " €";
             if (typeof editView != 'undefined' ){
-            	console.log('defined');
 				$('.totalCostz').text(cost);
 			}
 			else{
-				console.log('non defined');
             	$(".orderCost").text(cost);
 			}
         } 
@@ -479,7 +551,18 @@ function cartify(productId , action){
 	action=="true"?increaseValue(productId):decreaseValue(productId);
 	productEditCartPopulate();
 	getOrderCost('true');
+	setSubtotal(productId);
+}
 
+function setSubtotal(productId){
+	input = $("input[productId='"+productId+"']");
+	qty   = input.val();
+	itmId = input.attr('itemId');
+
+	$.get('/azadmin/myproject/public/app/subtotal?productId='+itmId+"&quantity="+qty, function(data){
+		answer = data + " €";
+		$("tr[itemId='"+itmId+"']").find('td[subtotal="on"]')[0].innerText  = answer;
+	});
 }
 
 function cloneProductElement(){
@@ -505,4 +588,10 @@ function clearProductElements(){
 
 function removeByIndex(arr, index) {
     arr.splice(index, 1);
+}
+function updateSingleCell(id , Model, key, value){
+	url = "/azadmin/myproject/public/app/update/"+Model+"?"+key+"="+value+"&id="+id;
+	$.post(url, function(data){
+		
+	});
 }

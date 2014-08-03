@@ -29,10 +29,10 @@ class AppController extends Controller {
 		return View::make('user');
 	}
 
-	public function postUpdate($model , $tablekey=null){
+	public function anyUpdate($model , $tablekey=null){
 		$id = 0;
 		$key = $tablekey==null?'id':$tablekey;
-		if($model  == "Employee" || $model = "User")    $id = Auth::user()->userId;
+		if($model  == "Employee" || $model == "User")    $id = Auth::user()->userId;
 		else 						 $id = Input::get('id');
 		/*
 		*     USER SPECIFIC UPDATE LOGIC
@@ -52,12 +52,26 @@ class AppController extends Controller {
 		->with('message' , $message);
 	}
 
+	public function getSearch($model){
+		$q    = Input::get("q");
+		$temp = $model::where('sku' , 'LIKE' , "%$q%")->orWhere('title' , "LIKE", "%$q%")->get();
+		$ans  = array();
+		foreach($temp as $key)
+			array_push($ans, array("id"=>$key->id, "text"=>$key->title));
+		echo json_encode($ans);
+	}	
+
 	public function getData($model, $action, $id=null){
 		return View::make($model."." . $action)->with('id' , $id);
 	}
 
 	public function getReturn($model, $id , $singleRecord, $isRelation= null, $relationFunction=null){
 		echo json_encode(Dbtools::returnData($model, $id , $singleRecord));
+	}
+	public function getSelectify($model, $id , $singleRecord, $isRelation= null, $relationFunction=null){
+		$ans  = "<input type='hidden' select id='select2_sample6' class='form-control select2'>";
+		return $ans;
+
 	}
 	public function postData($model, $action, $id=null , $tablekey = null , $redirect = null){
 		$tblkey = $tablekey==null?'id':$tablekey;
@@ -73,6 +87,14 @@ class AppController extends Controller {
 			$message = Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
 			return $redir?Redirect::to('/app/data/'. $model. '/edit')->with('message' , $message)->with('id' , $id):$message;
 		}
+	}
+	public function postCreateempty($model){
+		$mod = new $model();
+		$data = json_decode(Input::get('args'));
+		foreach($data as  $key=>$val)
+			$mod->$key = $val;
+		$mod->save();
+		return $mod;
 	}
 	public function postCustom($model, $action , $tablekey = null){
 		if($model=="Store"){
@@ -268,6 +290,9 @@ class AppController extends Controller {
             return Order::createProductView($answer);
 		}
 		
+	}
+	public function getSubtotal(){
+		echo Product::getSubtotal(Input::get('productId'), Input::get('quantity'));
 	}
 	public function getView($view){
 		return View::make($view);

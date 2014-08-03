@@ -44,3 +44,7 @@ padding: 0px 2px !important;
 .productTitle{
 	height:100px;
 }
+.deleteEditProduct{
+	width: 50%;
+	margin-top: 20%;
+}

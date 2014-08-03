@@ -131,10 +131,10 @@
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Λεπτομέρειες
 														</div>
-														<div class="actions">
+														<!-- <div class="actions">
 															<a href="#" class="btn btn-default btn-sm">
 															<i class="fa fa-pencil"></i> Edit </a>
-														</div>
+														</div> -->
 													</div>
 													<div class="portlet-body">
 														<div class="row static-info">
@@ -160,8 +160,11 @@
 																 Κατάσταση:
 															</div>
 															<div class="col-md-7 value">
-																<span class="label label-success">
-																{{Orderstate::find(Employeeorder::find($id)->stateId)->name}} </span>
+																<select class="form-control orderEditStateChange" orderId="{{$id}}" key="stateId" name="employeeId">
+																	@foreach(Orderstate::all() as $ord)
+																		<option value="{{$ord->id}}"  {{Orderstate::find(Employeeorder::find($id)->stateId)->id==$ord->id?'selected':''}}>{{$ord->name}}</option>																	
+																	@endforeach																
+																</select>
 															</div>
 														</div>
 														<div class="row static-info">
@@ -242,7 +245,7 @@
 															<i class="fa fa-cogs"></i>Προϊόντα
 														</div>
 														<div class="actions">
-															<a href="#" class="btn btn-default btn-sm">
+															<a href="#" class="btn btn-default btn-sm productEditAdd">
 															<i class="fa fa-plus"></i> Προσθήκη</a>
 														</div>
 													</div>
@@ -269,11 +272,14 @@
 																<th>
 																	 Σύνολο
 																</th>
+																<th style="width:1%">
+																	 Διαγραφή
+																</th>
 															</tr>
 															</thead>
-															<tbody>
+															<tbody class="productBody" orderId="{{$id}}" >
 																@foreach(Order::where('orderId' , '=' , $id)->get() as $ord)
-																	<tr class="productEditTr" itemId="{{$ord->productId}}">
+																	<tr class="productEditTr" itemId="{{$ord->productId}}" orderId="{{$id}}" productTr="{{$ord->id}}">
 																<td>
 																	<a href="#">
 																	{{Product::find($ord->productId)->title}}</a>
@@ -286,7 +292,7 @@
 																				<i class="fa fa-plus"></i>
 																				</button>
 																			</div>
-																			<input type="text" class="spinner-input form-control" productId-edit='on' productId="{{$ord->id}}" maxlength="3" value="{{$ord->quantity}}">
+																			<input type="text" class="spinner-input form-control editInput" itemId="{{$ord->productId}}" productId-edit='on' key="quantity" productId="{{$ord->id}}" maxlength="3" value="{{$ord->quantity}}">
 																			<div class="spinner-buttons input-group-btn">
 																				<button type="button" class="btn spinner-down" onclick=cartify("{{$ord->id}}","false") >
 																				<i class="fa fa-minus"></i>
@@ -305,8 +311,13 @@
 																	 33%
 																</td>
 																
-																<td>
+																<td class="subtotal" subtotal="on">
 																	{{Product::getSubtotal($ord->productId, $ord->quantity)}}€
+																</td>
+																<td >
+																	<div class="input-group deleteEditProduct">
+																		<button type="button" class="close" onclick="deleteProduct({{$ord->id}} , 'Order')"></button>
+																	</div>
 																</td>
 															</tr>
 																@endforeach
