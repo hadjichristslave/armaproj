@@ -25,7 +25,7 @@
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/myproject/public/app/custom/Store/edit" class="form-horizontal shopEditForm" method="post">
+										<form action="/azadmin/myproject/public/app/custom/Store/edit" class="form-horizontal shopEditForm" method="post">
 											{{Form::token()}}
 											{{ Form::text("id", $value = "0", array('class'=>"ajax_id" , "hidden" =>true));}}
 											<div class="form-body">
