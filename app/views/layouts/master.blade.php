@@ -21,27 +21,27 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <meta content="" name="author"/>
 <meta name="MobileOptimized" content="320">
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="/azadmin/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="/azadmin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="/azadmin/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link href="/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet"/>
+<link href="http://armancon.com/azadmin/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet"/>
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
-<link href="/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
-<link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/fullcalendar.print.css">
-<link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/select2.css">
-<link media="all" type="text/css" rel="stylesheet" href="/azadmin/myproject/public/packages/slave/calendar/css/jquery.ui.all.css">
-<link media="all" type="text/css" rel="stylesheet" href="/azadmin/assets/css/customStyle.css">
+<link href="http://armancon.com/azadmin/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="http://armancon.com/azadmin/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link media="all" type="text/css" rel="stylesheet" href="http://armancon.com/azadmin/myproject/public/packages/slave/calendar/css/fullcalendar.print.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://armancon.com/azadmin/myproject/public/packages/slave/calendar/css/select2.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://armancon.com/azadmin/myproject/public/packages/slave/calendar/css/jquery.ui.all.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://armancon.com/azadmin/assets/css/customStyle.css">
 <!-- END THEME STYLES -->
 <!-- Login styles	-->
-<link rel="stylesheet" type="text/css" href="/azadmin/assets/plugins/select2/select2_metro.css"/>
+<link rel="stylesheet" type="text/css" href="http://armancon.com/azadmin/assets/plugins/select2/select2_metro.css"/>
 <!-- Login styles end	-->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -54,12 +54,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<div class="header-inner">
 		<!-- BEGIN LOGO -->
 		<a class="navbar-brand" href="index.html">
-		<img src="/azadmin/myproject/public/logo.png" alt="logo" class="img-responsive"/>
+		<img src="http://armancon.com/azadmin/myproject/public/logo.png" alt="logo" class="img-responsive"/>
 		</a>
 		<!-- END LOGO -->
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 		<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<img src="/azadmin/assets/img/menu-toggler.png" alt=""/>
+		<img src="http://armancon.com/azadmin/assets/img/menu-toggler.png" alt=""/>
 		</a>
 		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
@@ -206,7 +206,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="/azadmin/assets/img/avatar2.jpg" alt=""/>
+									<img src="http://armancon.com/azadmin/assets/img/avatar2.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -224,7 +224,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="/azadmin/assets/img/avatar3.jpg" alt=""/>
+									<img src="http://armancon.com/azadmin/assets/img/avatar3.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -242,7 +242,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="/azadmin/assets/img/avatar1.jpg" alt=""/>
+									<img src="http://armancon.com/azadmin/assets/img/avatar1.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -259,7 +259,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="/azadmin/assets/img/avatar2.jpg" alt=""/>
+									<img src="http://armancon.com/azadmin/assets/img/avatar2.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -277,7 +277,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 							<li>
 								<a href="inbox.html?a=view">
 								<span class="photo">
-									<img src="/azadmin/assets/img/avatar3.jpg" alt=""/>
+									<img src="http://armancon.com/azadmin/assets/img/avatar3.jpg" alt=""/>
 								</span>
 								<span class="subject">
 									<span class="from">
@@ -460,7 +460,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-				<img alt="" src="/azadmin/assets/img/avatar1_small.jpg"/>
+				<img alt="" src="http://armancon.com/azadmin/assets/img/avatar1_small.jpg"/>
 				<span class="username">
 					 Γιάννης Αποστόλου
 				</span>
@@ -496,7 +496,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						<a href="extra_lock.html"><i class="fa fa-lock"></i> Lock Screen</a>
 					</li>
 					<li>
-						<a href="/azadmin/myproject/public/auth/logout"><i class="fa fa-key"></i> Log Out</a>
+						<a href="http://armancon.com/azadmin/myproject/public/auth/logout"><i class="fa fa-key"></i> Log Out</a>
 					</li>
 				</ul>
 			</li>
@@ -536,7 +536,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				<li class="start ">
-					<a href="/azadmin/myproject/public/app/user">
+					<a href="http://armancon.com/azadmin/myproject/public/app/user">
 					<i class="fa fa-home"></i>
 					<span class="title">
 						 Dashboard
@@ -553,15 +553,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/User/create">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/User/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/User/edit">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/User/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
@@ -579,15 +579,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Employee/create">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Employee/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Employee/edit">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Employee/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
@@ -605,15 +605,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Store/create">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Store/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Store/edit">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Store/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
@@ -631,15 +631,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία προιόντων">
-							<a href="/azadmin/myproject/public/app/data/Storeproduct/create">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Storeproduct/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη προιόντων">
-							<a href="/azadmin/myproject/public/app/data/Storeproduct/edit">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Storeproduct/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
@@ -657,37 +657,37 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<!-- <ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Order/create">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Order/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li> -->
 						<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Συνολο προιόντων">
-								<a href="/azadmin/myproject/public/app/data/Product/view">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+								<a href="http://armancon.com/azadmin/myproject/public/app/data/Product/view">
 									<span class="title">
 										Δημιουργία
 									</span>
 								</a>
 							</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Order/edit">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Order/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Order/display">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Order/display">
 								<span class="title">
 									Μεμονομένη παραγγελία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Σύνολο παραγγελιών">
-							<a href="/azadmin/myproject/public/app/data/Order/orders">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Order/orders">
 								<span class="title">
 									Παραγγελίες
 								</span>
@@ -705,15 +705,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/View/orders">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/View/orders">
 								<span class="title">
 									Συνολο παραγγελιών
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία χρήστη πλατφόρμας">
-							<a href="/azadmin/myproject/public/app/data/Order/display">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Order/display">
 								<span class="title">
 									Μεμονομένη παραγγελία
 								</span>
@@ -731,15 +731,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Δημιουργία προιόντος">
-							<a href="/azadmin/myproject/public/app/data/Product/create">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Product/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" data-original-title="Τροποποίηση/Διαγραφή προιόντων">
-							<a href="/azadmin/myproject/public/app/data/Product/edit">
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="http://armancon.com/azadmin/myproject/public/app/data/Product/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
@@ -748,7 +748,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					</ul>
 				</li>
 				<li class="last ">
-					<a href="/azadmin/myproject/public/calendar/calendar">
+					<a href="http://armancon.com/azadmin/myproject/public/calendar/calendar">
 					<i class="fa fa-calendar"></i>
 					<span class="title">
 						 Calendar
@@ -796,50 +796,50 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
-<script src="/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="/azadmin/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
-<script src="/azadmin/myproject/public/packages/slave/calendar/js/fullcalendar.min.js"></script>
-<script src="/azadmin/assets/plugins/select2/select2.js"></script>
+<script src="http://armancon.com/azadmin/myproject/public/packages/slave/calendar/js/fullcalendar.min.js"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/select2/select2.js"></script>
 
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/azadmin/assets/scripts/app.js"></script>
-<script src="/azadmin/assets/scripts/calendar.js"></script>
-<script src="/azadmin/myproject/public/packages/slave/calendar/js/dataTableScripts.js"></script>
-<script src="/azadmin/myproject/public/packages/slave/calendar/js/demo.calendar.js"></script> 
-<script src="/azadmin/myproject/public/packages/slave/calendar/js/cmsScripts.js"></script>	
+<script src="http://armancon.com/azadmin/assets/scripts/app.js"></script>
+<script src="http://armancon.com/azadmin/assets/scripts/calendar.js"></script>
+<script src="http://armancon.com/azadmin/myproject/public/packages/slave/calendar/js/dataTableScripts.js"></script>
+<script src="http://armancon.com/azadmin/myproject/public/packages/slave/calendar/js/demo.calendar.js"></script> 
+<script src="http://armancon.com/azadmin/myproject/public/packages/slave/calendar/js/cmsScripts.js"></script>	
 <!--user scripts-->
-<script type="text/javascript" src="/azadmin/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="http://armancon.com/azadmin/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <!--user scripts end-->
 <!-- LOGIN SCRIPTS-->
-<script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-<script src="/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
-<script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
-<script src="/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script src="/azadmin/assets/scripts/custom/components-pickers.js"></script>
-<script src="/azadmin/myproject/public/components-dropdowns.js"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="http://armancon.com/azadmin/assets/scripts/custom/components-pickers.js"></script>
+<script src="http://armancon.com/azadmin/myproject/public/components-dropdowns.js"></script>
 
 <!-- END LOGIN SCRIPTS -->
  
 
 <!-- order display scripts -->
-<!-- <script src="/azadmin/assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="/azadmin/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="/azadmin/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="/azadmin/assets/global/scripts/datatable.js"></script>
-<script src="/azadmin/assets/admin/pages/scripts/ecommerce-orders-view.js"></script>
-<script src="/azadmin/assets/admin/pages/scripts/components-form-tools.js"></script> -->
+<!-- <script src="http://armancon.com/azadmin/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="http://armancon.com/azadmin/assets/global/scripts/datatable.js"></script>
+<script src="http://armancon.com/azadmin/assets/admin/pages/scripts/ecommerce-orders-view.js"></script>
+<script src="http://armancon.com/azadmin/assets/admin/pages/scripts/components-form-tools.js"></script> -->
 <!-- order display scripts -->
 
 
