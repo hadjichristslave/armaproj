@@ -61,6 +61,10 @@ var ComponentsDropdowns = function () {
                 return m;
             } // we do not want to escape markup since we are displaying html in results
         });
+        $("#select2_sample6").on("select2-selecting", function(e) { 
+            console.log ("selecting val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+            
+        });
     }
 
     return {
