@@ -825,7 +825,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script src="http://armancon.com/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="http://armancon.com/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="http://armancon.com/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
-<script src="/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
+<script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <script src="http://armancon.com/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="http://armancon.com/azadmin/assets/scripts/custom/components-pickers.js"></script>
 <script src="/azadmin/myproject/public/components-dropdowns.js"></script>
