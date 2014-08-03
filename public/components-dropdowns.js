@@ -38,7 +38,7 @@ var ComponentsDropdowns = function () {
             placeholder: "Search for a movie",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "/myproject/public/app/search/Product",
+                url: "/azadmin/myproject/public/app/search/Product",
                 data: function (term, page) {
                     return {
                         q: term // search term
@@ -48,7 +48,7 @@ var ComponentsDropdowns = function () {
                     console.log(data);
                     var results = [];
                     for(var i = 0; i < data.length; ++i){
-                        results.push({id: data[i].value, text: data[i].text});
+                        results.push({id: data[i].id, text: data[i].text});
                     }
                     return {results: results}
                 }
