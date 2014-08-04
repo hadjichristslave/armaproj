@@ -370,7 +370,6 @@ jQuery( document ).ready(function($) {
 		id = $("tbody.productBody").attr('orderId');
 		$.get("/azadmin/myproject/public/app/export/"+id,function(data){
 			newwindow = window.open(data);
-			newwindow.onload = newwindow.close();
 		});
 	});
 });
