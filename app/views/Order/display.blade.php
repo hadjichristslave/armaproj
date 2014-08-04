@@ -16,18 +16,9 @@
 							</button>
 							<ul class="dropdown-menu pull-right" role="menu">
 								<li>
-									<a href="#">Action</a>
-								</li>
-								<li>
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
+									<a class="more" data-toggle="modal" href="#basic">Εξαγωγή παραγγελίας σε csv
+								     <i class="m-icon-swapright m-icon-white"></i>
+									 </a>
 								</li>
 							</ul>
 						</li>
@@ -587,4 +578,31 @@
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
+
+
+<div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+				<h4 class="modal-title">Το προιόν θα εξαχθεί σε μορφή csv!</h4>
+			</div>
+			<div class="modal-body">
+				 <div class="col-md-6">
+					Είστε σίγουρος οτι θέλετε να προχωρήσετε με την εξαγωγή;
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn default" data-dismiss="modal">Κλείσιμο</button>
+				<button type="button" class="btn blue csvExport" data-dismiss="modal">Εξαγωγή σε csv και κατέβασμα!</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+
+
+
+
 @stop

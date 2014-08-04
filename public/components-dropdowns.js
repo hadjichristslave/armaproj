@@ -1,3 +1,4 @@
+var counter = 0;
 var ComponentsDropdowns = function () {
 
     var handleSelect2 = function () {
@@ -9,8 +10,6 @@ var ComponentsDropdowns = function () {
         }
       
         function movieFormatResult(movie) {
-            console.log('moveiFormatResults');
-            console.log(movie);
             var markup = "<table class='results'><tr>";
             
                 markup += "<td productId='"+movie.id+"' >"+movie.text+"</td>";
@@ -29,23 +28,21 @@ var ComponentsDropdowns = function () {
         }
 
         function movieFormatSelection(movie) {
-            console.log('movie format selection');
-            console.log(movie);
             return movie.text;
         }
 
-        $("#select2_sample6").select2({
+        $(".select2_sample"+counter).select2({
             placeholder: "Search for a movie",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "/myproject/public/app/search/Product",
+                url: "/azadmin/myproject/public/app/search/Product",
+                allowClear: true,
                 data: function (term, page) {
                     return {
                         q: term // search term
                     };
                 },
                 results: function(data){
-                    console.log(data);
                     var results = [];
                     for(var i = 0; i < data.length; ++i){
                         results.push({id: data[i].id, text: data[i].text});
@@ -60,11 +57,25 @@ var ComponentsDropdowns = function () {
             escapeMarkup: function (m) {
                 return m;
             } // we do not want to escape markup since we are displaying html in results
+        }) .on("change", function(e) { 
+            var selection = $(this);
+            order = selection.parent().parent().attr('producttr');
+            selection.parent().parent().attr('itemId', e.val);
+            selection.parent().next().find('input').attr('itemId' , e.val);
+            updateSingleCell(order , 'Order', 'productId', e.val);
+            $.get("/azadmin/myproject/public/app/return/Product/"+e.val+"/true",function(data){
+                console.log(data.slice(0,-4));
+                dat = JSON.parse(data.slice(0,-4));
+                console.log(dat);
+                selection.parent().next().next().text( dat.unitPrice + " €");
+                selection.parent().next().next().next().text( dat.availableStock);
+                selection.parent().parent().find('td').find('button').last().attr('onclick' , 'deleteProduct('+e.val+',"Order")');
+                console.log(selection.parent().next().next());
+
+            });
+            // console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); 
         });
-        $("#select2_sample6").on("select2-selecting", function(e) { 
-            console.log ("selecting val="+ e.val+" choice="+ JSON.stringify(e.choice));})
-            
-        });
+        counter++;
     }
 
     return {

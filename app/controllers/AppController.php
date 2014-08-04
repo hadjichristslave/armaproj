@@ -69,8 +69,31 @@ class AppController extends Controller {
 		echo json_encode(Dbtools::returnData($model, $id , $singleRecord));
 	}
 	public function getSelectify($model, $id , $singleRecord, $isRelation= null, $relationFunction=null){
-		$ans  = "<input type='hidden' select id='select2_sample6' class='form-control select2'>";
+		$ans  = "<input type='hidden' select id='' val='' class='select2_sample".$id." form-control select2'>";
 		return $ans;
+
+	}
+
+	public function getExport($id){
+		$orderProducts = Order::where('orderId' , '=', $id)->get();
+		$csv           = '';
+		$csv = "'Παραγγελία κωδικός παραγγελίας','Κωδικός κωδικός είδους','Περιγραφή','Τεμάχια','Κωδικός πελάτη αποθέτη','Κωδικός Παραλήπτη','Κωδικος σημείου','Κωδικός σημείου παράδοσης' \n";//Column headers
+		foreach($orderProducts as $ord){
+			$csv .= $id       . ',';
+			$csv .= $ord->id  . ',';
+			$csv .= '"'.Product::find($ord->productId)->title  . '",';
+			$csv .= $ord->quantity  . ',';
+			$csv .= Store::find(Employeeorder::find($id)->storeId)->storeId  . ',';
+			$csv .= Store::find(Employeeorder::find($id)->storeId)->receiverId  . ',';
+			$csv .= Store::find(Employeeorder::find($id)->storeId)->deliveryId  . ',';
+			$csv .= Store::find(Employeeorder::find($id)->storeId)->deliveryReceiverId  . ',';
+			$csv .= "\n";
+		}
+
+			$csv_handler = fopen ('csvfile.csv','w');
+			fwrite ($csv_handler,$csv);
+			fclose ($csv_handler);
+			return "/azadmin/myproject/public/csvfile.csv"; 
 
 	}
 	public function postData($model, $action, $id=null , $tablekey = null , $redirect = null){
@@ -178,7 +201,7 @@ class AppController extends Controller {
 					$message .= $message==""?"product ".$currentElement.", ":$currentElement.", ";
 			}
 			$message = $message==""?"succesfull data insert":$message." validation error";
-			return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
+			return '/azadmin/myproject/public/app/data/'. $model. '/display/'.$employeeOrder->id;
 		}if($model=="Employeeorder" && $action=="delete"){
 			$tblkey = $tablekey==null?'id':$tablekey;
 			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);

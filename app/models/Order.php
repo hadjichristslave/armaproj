@@ -2,7 +2,7 @@
 
 class Order extends Eloquent{
 
-	public $rules = array('quantity' =>'required|numeric|max:10');
+	public $rules = array('quantity' =>'required|numeric|max:100000');
 
 	public function shop()
     {
