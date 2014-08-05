@@ -184,20 +184,21 @@
 																<i class="fa fa-question"></i> Περιγραφή
 															</th> -->
 															<th>
-																<i class="fa fa-bookmark"></i> Ποσό
+																<i class="glyphicon glyphicon-euro"></i> Ποσό
+															</th>
+															<th>
+																<i class="glyphicon glyphicon-list-alt"></i> Κατάσταση
 															</th>
 															<th>
 																<i class="fa fa-bookmark"></i> Δημιουργήθηκε
 															</th>
 															<th>
-																<i class="fa fa-bookmark"></i>Κατάσταση
-															</th>
-															<th>
+																<i class="glyphicon glyphicon-pencil"></i> Τροποποίηση
 															</th>
 														</tr>
 														</thead>
 														<tbody>
-														@foreach(Employeeorder::where('employeeId' , '=' , Auth::user()->userId)->orderBy('created_at','desc')->limit(10)->get() as $ord)
+														@foreach(Employeeorder::where('employeeId' , '=' , Auth::user()->userId)->orderBy('created_at','desc')->limit(6)->get() as $ord)
 														<tr>
 															<td>
 																<a href="#">{{Store::find($ord->storeId)->brand}}</a>
@@ -218,7 +219,7 @@
 																{{$ord->created_at}}
 															</td>
 															<td>
-																<a class="btn default btn-xs green-stripe" href="#">Εμφάνιση</a>
+																<a class="btn default btn-xs green-stripe" href="/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}">Εμφάνιση</a>
 															</td>
 														</tr>
 														@endforeach
