@@ -836,7 +836,7 @@
 												</p>
 											</div>
 										</div>
-									</div>
+									</div> 
 									<div class="col-md-5 portfolio-stat">
 										<div class="portfolio-info">
 											 Πωλησεις Μηνα
@@ -846,7 +846,7 @@
 										</div>
 										
 										<div class="portfolio-info">
-											 Εσοδα
+											 Έσοδα ρε: 
 											<span>
 												{{Employeeorder::where('storeId' , '=' , $store->id)->where('stateId','=',2)->sum('totalPrice')}}
 											</span>
@@ -854,7 +854,7 @@
 									</div>
 									<div class="col-md-2">
 										<div class="portfolio-btn">
-											<a href="/azadmin/myproject/public/app/data/Store/edit/{{$id}}" class="btn bigicn-only">
+											<a href="/azadmin/myproject/public/app/data/Store/edit/{{$store->id}}" class="btn bigicn-only">
 											<span>
 												Κατάστημα
 											</span>
