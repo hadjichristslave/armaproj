@@ -58,7 +58,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <div class="page-lock">
 	<div class="page-logo">
 		<a class="brand" href="index.html">
-		<img src="http://armancon.com/azadmin/azadmin/myproject/public/logo.png" alt="logo"/>
+		<img src="http://armancon.com/azadmin/myproject/public/logo.png" alt="logo"/>
 		</a>
 	</div>
 	<div class="page-body">

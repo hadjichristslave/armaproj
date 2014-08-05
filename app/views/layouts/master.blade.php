@@ -221,7 +221,7 @@
 						<a href="javascript:;" id="trigger_fullscreen"><i class="fa fa-move"></i> Full Screen</a>
 					</li>
 					<li>
-						<a href="/myproject/public/app/lock"><i class="fa fa-lock"></i> Lock Screen</a>
+						<a href="/azadmin/myproject/public/app/lock"><i class="fa fa-lock"></i> Lock Screen</a>
 					</li>
 					<li>
 						<a href="/azadmin/myproject/public/auth/logout"><i class="fa fa-key"></i> Log Out</a>
