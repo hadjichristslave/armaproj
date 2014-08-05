@@ -263,6 +263,7 @@
 					</form>
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
+				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
 				<li class="start ">
 					<a href="/azadmin/myproject/public/app/user">
 					<i class="fa fa-home"></i>
@@ -271,6 +272,8 @@
 					</span>
 					</a>
 				</li>
+				@endif
+				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=5)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-user"></i>
@@ -323,6 +326,8 @@
 						</li>
 					</ul>
 				</li>
+				@endif
+				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
 				 <li class="">
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
@@ -349,6 +354,8 @@
 						</li>
 					</ul>
 				</li>
+				@endif
+				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=10)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-archive"></i>
@@ -375,6 +382,8 @@
 						</li>
 					</ul>
 				</li>
+				@endif
+				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-truck"></i>
@@ -423,6 +432,8 @@
 						</li>
 					</ul>
 				</li>
+				@endif
+				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-bar-chart-o"></i>
@@ -449,6 +460,8 @@
 						</li>
 					</ul>
 				</li>
+				@endif
+				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-barcode"></i>
@@ -475,6 +488,7 @@
 						</li>
 					</ul>
 				</li>
+				@endif
 				<li class="last ">
 					<a href="/azadmin/myproject/public/calendar/calendar">
 					<i class="fa fa-calendar"></i>
@@ -553,7 +567,7 @@
 <script src="/azadmin/assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <script src="/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
-<script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
+<script src="/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="/azadmin/myproject/public/components-pickers.js"></script>
 <script src="/azadmin/myproject/public/components-dropdowns.js"></script>
