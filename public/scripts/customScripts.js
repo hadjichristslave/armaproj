@@ -196,6 +196,19 @@ jQuery( document ).ready(function($) {
 		$('.myuberform').submit();
 	});
 
+	$(".modalDeleteOrder").click(function(){
+		$(".deleteOrder").attr('orderId' , $(this).attr('orderId'));
+	});	
+
+	$(".deleteOrder").click(function(){
+		var currentIdz = $(this).attr('orderId');
+		var token      = $('input[name="_token"]').val();
+		$.post("/azadmin/myproject/public/app/custom/Employeeorder/delete?id="+currentIdz+"&_token="+token, function(data){
+			location.reload();
+
+		});
+	});
+
 	$(".storeSubmit").click(function(){
 		storeId = $(".storeSelect").val();
 		$(".storeName").text($(".storeSelect option[value='"+storeId+"']").text());
