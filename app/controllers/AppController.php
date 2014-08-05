@@ -13,6 +13,7 @@ class AppController extends Controller {
         Auth::login(User::find(1));
         //$this->beforeFilter('csrf', array('on' => 'post'));
         $this->beforeFilter('auth');
+        $this->beforeFilter('mail');
     }
     public function getPopulate(){
     	return Product::populate();	

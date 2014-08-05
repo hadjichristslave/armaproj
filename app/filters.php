@@ -44,6 +44,41 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('mail', function()
+{
+	$path =  Request::path();
+	$needl1 = "Employeeorder";
+	$needl2 = "update";
+	$needl3 = Input::get('stateId');
+	$id     = Input::get('id');
+	if($needl3!=null){
+		if(strpos($path, $needl1)>0 && strpos($path, $needl2)>0){
+			if($needl3==4){
+				$user = User::where('userGroup' , '=' , '4')->get();
+				foreach($user as $us){
+					Mail::send('emails.neworder', array('title'=>"Νέα παραγγελία!" ,
+												 'name'=>$us->username, 
+												 'id' =>$id), 
+							function($message) use ($us){
+								$message->to($us->email,"Panos")->subject('Νέα παραγγελία');
+			   		});
+				}
+			}else if($needl3==5 && Employeeorder::find($id)->stateId==4){
+				$user = User::where('userGroup' , '=' , '4')->get();
+				foreach($user as $us){
+					Mail::send('emails.orderclose', array('title'=>"Νέα παραγγελία!" ,
+												 'name'=>$us->username, 
+												 'id' =>$id), 
+							function($message) use ($us){
+								$message->to($us->email,"Panos")->subject('Νέα παραγγελία');
+			   		});
+				}
+			}
+		}
+	}
+	
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

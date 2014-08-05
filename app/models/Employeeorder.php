@@ -21,6 +21,19 @@ class Employeeorder extends Eloquent{
     }
 
 
+    public static function getOrdersWithinDays($within , $model){
+        $data = $model::whereRaw('`created_at` >= DATE_SUB(CURDATE(), INTERVAL '.$within.' DAY)')->get();
+        return count($data);
+    }
+
+    public static function getTotalOrderIncome(){
+        $sum =0;
+        foreach(Employeeorder::all() as $order){ 
+            $sum += $order->stateId==2?$order->totalPrice:0;
+        }
+        return $sum;
+    }
+
     public static function calculateTotalCost($array){
         $sum = 0;
         foreach($array as $key=>$val){

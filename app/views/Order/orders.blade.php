@@ -10,7 +10,7 @@
 								<i class="fa fa-shopping-cart"></i>Παραγγελίες Πωλητή
 							</div>
 							<div class="actions">
-								<a href="/azadmin/myproject/public/app/data/Order/Create" class="btn default yellow-stripe">
+								<a href="/azadmin/myproject/public/app/data/Product/view" class="btn default yellow-stripe">
 								<i class="fa fa-plus"></i>
 								<span class="hidden-480">
 								Νέα παραγγελία </span>
@@ -140,7 +140,7 @@
 									<td>{{$ord->totalPrice}}€</td>
 									<td><span class="label label-sm label-success">{{Orderstate::find($ord->stateId)->name}}</span></td>
 									<td>
-									<a href="/myproject/public/app/data/Order/display/{{$ord->id}}" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
+									<a href="/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
 									<a orderId="{{$ord->id}}" data-toggle="modal" href="#basic" class="btn btn-xs default btn-editable modalDeleteOrder"><i class="glyphicon glyphicon-remove"></i>Delete</a>
 									</td>
 									</tr>

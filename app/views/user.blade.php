@@ -128,7 +128,7 @@
 																	Παραγγελιες Ημερας <i class="fa fa-img-up"></i>
 																</span>
 																<span class="sale-num">
-																	23
+																	{{Employeeorder::getOrdersWithinDays(1 , 'Employeeorder')}}
 																</span>
 															</li>
 															<li>
@@ -136,7 +136,7 @@
 																	Παραγγελιες Εβδομαδας <i class="fa fa-img-down"></i>
 																</span>
 																<span class="sale-num">
-																	87
+																	{{Employeeorder::getOrdersWithinDays(7, 'Employeeorder')}}
 																</span>
 															</li>
 															<li>
@@ -144,7 +144,7 @@
 																	Συνολικες Παραγγελιες
 																</span>
 																<span class="sale-num">
-																	2377
+																	{{Employeeorder::getOrdersWithinDays(3000, 'Employeeorder')}}
 																</span>
 															</li>
 															<li>
@@ -152,7 +152,7 @@
 																	Εσοδα
 																</span>
 																<span class="sale-num">
-																	37.990€
+																	{{Employeeorder::getTotalOrderIncome()}}€
 																</span>
 															</li>
 														</ul>
@@ -180,11 +180,14 @@
 															<th>
 																<i class="fa fa-briefcase"></i> Κατάστημα
 															</th>
-															<th class="hidden-xs">
+															<!-- <th class="hidden-xs">
 																<i class="fa fa-question"></i> Περιγραφή
-															</th>
+															</th> -->
 															<th>
 																<i class="fa fa-bookmark"></i> Ποσό
+															</th>
+															<th>
+																<i class="fa fa-bookmark"></i> Δημιουργήθηκε
 															</th>
 															<th>
 																<i class="fa fa-bookmark"></i>Κατάσταση
@@ -194,151 +197,31 @@
 														</tr>
 														</thead>
 														<tbody>
+														@foreach(Employeeorder::where('employeeId' , '=' , Auth::user()->userId)->orderBy('created_at','desc')->limit(10)->get() as $ord)
 														<tr>
 															<td>
-																<a href="#">Hondos Ερμού (Answer)</a>
+																<a href="#">{{Store::find($ord->storeId)->brand}}</a>
 															</td>
-															<td class="hidden-xs">
+															<!-- <td class="hidden-xs">
 																Πρεπει να δρομολογηθεί το αργότερο μέχρι άυριο.
-															</td>
+															</td> -->
 															<td class="hidden-xs">
-																52560.10€
+																{{$ord->totalPrice}}€
 															</td>
 															<td>
 																
 																<span class="label label-success label-sm">
-																	Απεστάλει
+																	{{Orderstate::find($ord->stateId)->name}}
 																</span>
+															</td>
+															<td>
+																{{$ord->created_at}}
 															</td>
 															<td>
 																<a class="btn default btn-xs green-stripe" href="#">Εμφάνιση</a>
 															</td>
 														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																Μεσολογγί (Beautycom) </a>
-															</td>
-															<td class="hidden-xs">
-																Office furniture purchase
-															</td>
-															<td class="hidden-xs">
-																5760.00€
-															</td>
-															<td>
-																
-																<span class="label label-warning label-sm">
-																	Έλεγχος
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">Εμφάνιση</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																FoodMaster Ltd </a>
-															</td>
-															<td class="hidden-xs">
-																Company Anual Dinner Catering
-															</td>
-															<td class="hidden-xs">
-																12400.00€
-															</td>
-															<td>
-																
-																<span class="label label-success label-sm">
-																	Απεστάλει
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">Εμφάνιση</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																WaterPure Ltd </a>
-															</td>
-															<td class="hidden-xs">
-																Payment for Jan 2013
-															</td>
-															<td class="hidden-xs">
-																610.50€
-															</td>
-															<td>
-																
-																<span class="label label-danger label-sm">
-																	Ακυρώθηκε
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs red-stripe" href="#">Εμφάνιση</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">Pixel Ltd</a>
-															</td>
-															<td class="hidden-xs">
-																Server hardware purchase
-															</td>
-															<td class="hidden-xs">
-																52560.10€
-															</td>
-															<td>
-																
-																<span class="label label-success label-sm">
-																	Παραδόθηκε
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs green-stripe" href="#">Εμφάνιση</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																Smart House </a>
-															</td>
-															<td class="hidden-xs">
-																Office furniture purchase
-															</td>
-															<td class="hidden-xs">
-																5760.00€
-															</td>
-															<td>
-																
-																<span class="label label-warning label-sm">
-																	Ελεγχος
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">Εμφάνιση</a>
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">
-																FoodMaster Ltd </a>
-															</td>
-															<td class="hidden-xs">
-																Company Anual Dinner Catering
-															</td>
-															<td class="hidden-xs">
-																12400.00€
-															</td>
-															<td>
-																
-																<span class="label label-success label-sm">
-																	Απεστάλει
-																</span>
-															</td>
-															<td>
-																<a class="btn default btn-xs blue-stripe" href="#">Εμφάνιση</a>
-															</td>
-														</tr>
+														@endforeach
 														</tbody>
 														</table>
 													</div>
@@ -934,21 +817,22 @@
 									<div class="col-md-12">
 										<div class="add-portfolio">
 											<span>
-												Συνολικές πωλήσεις αυτό το μήνα 865 κομμάτια
+												Συνολικές παραγγελιές καταστημάτων υπαλλήλου: {{Employeeorder::getOrdersWithinDays(date("d"), 'Employeeorder')}}.
 											</span>
 											
 										</div>
 									</div>
 								</div>
 								<!--end add-portfolio-->
+								@foreach(Store::where('employeeId', '=', Auth::user()->userId)->get() as $store)
 								<div class="row portfolio-block">
 									<div class="col-md-5">
 										<div class="portfolio-text">
 											<img src="http://armancon.com/azadmin/assets/img/profile/portfolio/logo_metronic.jpg" alt=""/>
 											<div class="portfolio-text-info">
-												<h4>Κέρκυρα (Hondos Center)</h4>
+												<h4>{{$store->brand}}</h4>
 												<p>
-													Δεληγιώργη 28, Κέρκυρα, Τ.Κ. 15655 
+													{{$store->address}}
 												</p>
 											</div>
 										</div>
@@ -957,20 +841,20 @@
 										<div class="portfolio-info">
 											 Πωλησεις Μηνα
 											<span>
-												1187
+												{{Employeeorder::where('storeId' , '=' , $store->id)->count('id')}}
 											</span>
 										</div>
 										
 										<div class="portfolio-info">
 											 Εσοδα
 											<span>
-												37.240€
+												{{Employeeorder::where('storeId' , '=' , $store->id)->where('stateId','=',2)->sum('totalPrice')}}
 											</span>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div class="portfolio-btn">
-											<a href="#" class="btn bigicn-only">
+											<a href="/azadmin/myproject/public/app/data/Store/edit/{{$id}}" class="btn bigicn-only">
 											<span>
 												Κατάστημα
 											</span>
@@ -978,74 +862,7 @@
 										</div>
 									</div>
 								</div>
-								<!--end row-->
-								<div class="row portfolio-block">
-									<div class="col-md-5 col-sm-12 portfolio-text">
-										<img src="http://armancon.com/azadmin/assets/img/profile/portfolio/logo_azteca.jpg" alt=""/>
-										<div class="portfolio-text-info">
-											<h4>Καλαμάτα (Answer)</h4>
-											<p>
-												Παλαιολόγου 56, Καλαμάτα, ΤΚ 24100
-											</p>
-										</div>
-									</div>
-									<div class="col-md-5 portfolio-stat">
-										<div class="portfolio-info">
-											 Πωλησεις Μηνα
-											<span>
-												688
-											</span>
-										</div>
-										
-										<div class="portfolio-info">
-											 Εσοδα
-											<span>
-												7.060€
-											</span>
-										</div>
-									</div>
-									<div class="col-md-2 col-sm-12 portfolio-btn">
-										<a href="#" class="btn bigicn-only">
-										<span>
-											Κατάστημα
-										</span>
-										</a>
-									</div>
-								</div>
-								<!--end row-->
-								<div class="row portfolio-block">
-									<div class="col-md-5 portfolio-text">
-										<img src="http://armancon.com/azadmin/assets/img/profile/portfolio/logo_conquer.jpg" alt=""/>
-										<div class="portfolio-text-info">
-											<h4>Αλέξανδρούπολη (Κωνσταντίνου ΑΕ)</h4>
-											<p>
-												Περιβολάρη 12, Αλεξανδρούπολη, ΤΚ 98555
-											</p>
-										</div>
-									</div>
-									<div class="col-md-5 portfolio-stat">
-										<div class="portfolio-info">
-											 Πωλησεις Μηνα
-											<span>
-												240
-											</span>
-										</div>
-										
-										<div class="portfolio-info">
-											 Εσοδα
-											<span>
-												21.700€
-											</span>
-										</div>
-									</div>
-									<div class="col-md-2 portfolio-btn">
-										<a href="#" class="btn bigicn-only">
-										<span>
-											Κατάστημα
-										</span>
-										</a>
-									</div>
-								</div>
+								@endforeach
 								<!--end row-->
 							</div>
 							<!--end tab-pane-->
