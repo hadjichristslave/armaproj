@@ -847,7 +847,7 @@
 										</div>
 										
 										<div class="portfolio-info">
-											 Έσοδα ρε: 
+											 εσοδα: 
 											<span>
 												{{Employeeorder::where('storeId' , '=' , $store->id)->where('stateId','=',2)->sum('totalPrice')}}
 											</span>
