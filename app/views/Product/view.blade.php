@@ -12,11 +12,11 @@
 					<ul class="page-breadcrumb breadcrumb">
 						<li>
 							<i class="fa fa-home"></i>
-							<a href="/azadmin/myproject/public/app/user/">Home</a>
+							<a href="/myproject/public/app/user/">Home</a>
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li>
-							<a href="/azadmin/myproject/public/app/data/Product/view">Products</a>
+							<a href="/myproject/public/app/data/Product/view">Products</a>
 						</li>
 						<li class="btn-group actionli">
 							<button type="button" class="btn blue addAllProducts" data-toggle="modal" href="#responsive" data-hover="dropdown" data-delay="1000" data-close-others="true">

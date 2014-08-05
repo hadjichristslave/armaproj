@@ -129,6 +129,10 @@
 								<tbody class="filter-tbody">
 									@foreach(Employeeorder::where('employeeId' , '=' , Auth::user()->userId)->get() as $ord)
 										<tr>
+											<?php 
+												// var_dump($ord);
+												// die();
+											?>
 									<td><input type="checkbox" class="group-checkable"></td>
 									<td>{{$ord->id}}</td>
 									<td>{{$ord->created_at}}</td>
@@ -136,7 +140,8 @@
 									<td>{{$ord->totalPrice}}€</td>
 									<td><span class="label label-sm label-success">{{Orderstate::find($ord->stateId)->name}}</span></td>
 									<td>
-									<a href="/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
+									<a href="/myproject/public/app/data/Order/display/{{$ord->id}}" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
+									<a orderId="{{$ord->id}}" data-toggle="modal" href="#basic" class="btn btn-xs default btn-editable modalDeleteOrder"><i class="glyphicon glyphicon-remove"></i>Delete</a>
 									</td>
 									</tr>
 									@endforeach
@@ -153,5 +158,26 @@
 	</div>
 	
 </div>
+{{Form::token()}}
 
+
+<div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+				<h4 class="modal-title">Διαγραφή παραγγελίας</h4>
+			</div>
+			<div class="modal-body">
+				 Η παραγγελία θα διαγραφεί!
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn default" data-dismiss="modal">Άκυρο</button>
+				<button type="button" class="btn blue deleteOrder" orderId='0' >Διαγραφή</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
 @stop

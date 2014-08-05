@@ -35,7 +35,7 @@ var ComponentsDropdowns = function () {
             placeholder: "Search for a movie",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "/azadmin/myproject/public/app/search/Product",
+                url: "/myproject/public/app/search/Product",
                 allowClear: true,
                 data: function (term, page) {
                     return {
@@ -63,7 +63,7 @@ var ComponentsDropdowns = function () {
             selection.parent().parent().attr('itemId', e.val);
             selection.parent().next().find('input').attr('itemId' , e.val);
             updateSingleCell(order , 'Order', 'productId', e.val);
-            $.get("/azadmin/myproject/public/app/return/Product/"+e.val+"/true",function(data){
+            $.get("/myproject/public/app/return/Product/"+e.val+"/true",function(data){
                 console.log(data.slice(0,-4));
                 dat = JSON.parse(data.slice(0,-4));
                 console.log(dat);
