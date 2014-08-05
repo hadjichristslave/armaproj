@@ -29,6 +29,19 @@ class AppController extends Controller {
 	public function getUser(){
 		return View::make('user');
 	}
+	public function getLock(){
+		return View::make('lock');
+	}
+
+	public function postReauthenticate(){
+		if (Auth::attempt(array('email' => Auth::user()->email, 'password' => Input::get('password'))))
+		{
+			return Redirect::intended('/app/user');
+		}else{
+			return Redirect::intended('/app/lock')->with('message', 'Λάθος κωδικός, παρακαλώ ξαναδοκιμάστε!');
+		}
+	}
+
 
 	public function anyUpdate($model , $tablekey=null){
 		$id = 0;
@@ -94,7 +107,7 @@ class AppController extends Controller {
 			$csv_handler = fopen ('csvfile.csv','w');
 			fwrite ($csv_handler,$csv);
 			fclose ($csv_handler);
-			return "/azadmin/myproject/public/csvfile.csv"; 
+			return "/myproject/public/csvfile.csv"; 
 
 	}
 	public function postData($model, $action, $id=null , $tablekey = null , $redirect = null){
@@ -202,7 +215,7 @@ class AppController extends Controller {
 					$message .= $message==""?"product ".$currentElement.", ":$currentElement.", ";
 			}
 			$message = $message==""?"succesfull data insert":$message." validation error";
-			return '/azadmin/myproject/public/app/data/'. $model. '/display/'.$employeeOrder->id;
+			return '/myproject/public/app/data/'. $model. '/display/'.$employeeOrder->id;
 		}if($model=="Employeeorder" && $action=="delete"){
 			$tblkey = $tablekey==null?'id':$tablekey;
 			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
