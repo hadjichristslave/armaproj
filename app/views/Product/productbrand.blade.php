@@ -4,7 +4,7 @@
 								<div class="portlet box blue">
 									<div class="portlet-title">
 										<div class="caption">
-											<i class="fa fa-reorder"></i>Δημιουργία Προιόντος
+											<i class="fa fa-reorder"></i>Συσχετίστε προιόν με brand!
 										</div>
 										<div class="tools">
 											<span>
@@ -12,37 +12,41 @@
 													if(Session::has('message'))
 														echo Session::get('message');
 													else
-														echo 'Κανένα μήνυμα πλατφόρμας';
+														echo '';
 												?>
 											</span>
 										</div>
 									</div>
 									<div class="portlet-body form">
 										<!-- BEGIN FORM-->
-										<form action="/azadmin/myproject/public/app/data/Product/create" class="form-horizontal" method="post">
 											{{Form::token()}}
 											<div class="form-body">
-												<h3 class="form-section">Γενικές Πληροφορίες</h3>
+												@foreach(Product::select(array('brand','id'))->where('brand', '!=', '')->groupBy('brand')->get() as $prod)
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label col-md-3">Αποθήκη</label>
+															<label class="control-label col-md-6">
+																<input type="text" readonly class="form-control input-large productGroup_{{$prod->id}}" value="{{$prod->brand}}" name="product_{{$prod->id}}" /> 
+															</label>
 															<div class="col-md-9">
-																<select class="form-control" name="warehouseId">
-																	@foreach(Warehouse::all() as $key=>$value)
-																	<option value="{{$value->id}}">{{$value->name}}</option>
+																<select class="form-control input-large groupbrand" name="brand" target="{{$prod->id}}" 
+																	tableId="{{Productbrand::where('productGroup','=',$prod->brand)->count()>0?Productbrand::where('productGroup','=',$prod->brand)->first()->id:0}}">
+																	<option value="">--</option>
+																	@foreach(Brand::all() as $key=>$value)
+																	<option value="{{$value->id}}" {{Productbrand::where('brandId','=',$value->id)->where('productGroup' , '=' ,$prod->brand)->count()==1?"selected":""}}>{{$value->title}}</option>
 																	@endforeach
 																</select>
 																<span class="help-block">
-																	Συσχετίστε προιόν με αποθήκη!
 																</span>
 															</div>
 														</div>
 													</div>
 													<!--/span-->
 												</div>
+												<hr>
+												@endforeach
 											</div>
-											<div class="form-actions fluid">
+											<!-- <div class="form-actions fluid">
 												<div class="row">
 													<div class="col-md-6">
 														<div class="col-md-offset-3 col-md-9">
@@ -52,7 +56,7 @@
 													<div class="col-md-6">
 													</div>
 												</div>
-											</div>
+											</div> -->
 										</form>
 										<!-- END FORM-->
 									</div>

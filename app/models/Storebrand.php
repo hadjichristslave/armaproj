@@ -35,7 +35,6 @@ class Storebrand extends Eloquent{
                     $storeBrand->setdate(Input::get("brandFrom__".$record[1]));
                     $storeBrand->formatDate();
                     $storeBrand->discount = Input::get("brandDiscount__".$record[1]);
-
                     if(!$storeBrand->validateDate()) continue;
                     $storeBrand->startingDate = $storeBrand->getdate();
                     $storeBrand->save();

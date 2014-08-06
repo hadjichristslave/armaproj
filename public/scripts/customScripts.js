@@ -11,9 +11,11 @@ var token  = $("input[name='_token']").val();
 var currentOrder       = 0;
 var selectified        = '';
 var editCounter         = 0;
+var postResponse ='';
 /*---End of variable dec--------*/
 
 jQuery( document ).ready(function($) {
+	$("#nav_up").hide();
   // Code using $ as usual goes here.
 	$(".select2").each(function(){
 		$(this).select2();
@@ -129,6 +131,18 @@ jQuery( document ).ready(function($) {
 	   var charCode = (evt.which) ? evt.which : event.keyCode
 		if (!(charCode > 31 && (charCode < 48 || charCode > 57))==false) return false;
 		updateOrderCost();
+	});
+
+	$(".groupbrand").on('change', function(){
+		productGroup = $('.productGroup_'+$(this).attr('target')).val();
+		brandId      = $(this).val();
+		if($(this).attr('tableId')==0){
+			createEmptyModel("Productbrand", '');
+			updateSingleCell(currentOrder.id, "Productbrand" , 'brandId' , brandId);
+			updateSingleCell(currentOrder.id, "Productbrand" , 'productGroup' , productGroup);
+			$(this).attr('tableId',currentOrder.id);
+		}else
+			updateSingleCell($(this).attr('tableId') , "Productbrand" , 'brandId' , brandId);
 	});
 
 
@@ -368,7 +382,7 @@ jQuery( document ).ready(function($) {
 		});
 	});
 
-	$("#nav_up").hide();
+	
 	$(window).scroll(function() {
 	    if ($(this).scrollTop() > 100) {
 	        $('#nav_up').fadeIn();
@@ -389,6 +403,12 @@ jQuery( document ).ready(function($) {
 		 	}
 		 }
 	});
+// 	function updateSingleCell(id , Model, key, value){
+// 	url = "/azadmin/myproject/public/app/update/"+Model+"?"+key+"="+value+"&id="+id;
+// 	$.post(url, function(data){
+// 		return data;
+// 	});
+// }
 });
 
 
@@ -441,6 +461,19 @@ function createEmpty(model , data){
         cache:  false ,
         async : false, 
         url:  '/azadmin/myproject/public/app/createempty/Order',
+        data:  {args:args},
+        success: function(resp) {
+			currentOrder = resp;
+        } 
+      });
+}
+function createEmptyModel(model , data){
+	args = JSON.stringify(data);
+	$.ajax({
+        type:  'post',
+        cache:  false ,
+        async : false, 
+        url:  '/azadmin/myproject/public/app/createempty/'+model,
         data:  {args:args},
         success: function(resp) {
 			currentOrder = resp;
@@ -668,7 +701,7 @@ function removeByIndex(arr, index) {
 function updateSingleCell(id , Model, key, value){
 	url = "/azadmin/myproject/public/app/update/"+Model+"?"+key+"="+value+"&id="+id;
 	$.post(url, function(data){
-		
+		postResponse = data;
 	});
 }
 function animateToTop(){

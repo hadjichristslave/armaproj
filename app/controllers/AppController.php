@@ -128,8 +128,9 @@ class AppController extends Controller {
 	public function postCreateempty($model){
 		$mod = new $model();
 		$data = json_decode(Input::get('args'));
-		foreach($data as  $key=>$val)
-			$mod->$key = $val;
+		if($data!='')
+			foreach($data as  $key=>$val)
+				$mod->$key = $val;
 		$mod->save();
 		return $mod;
 	}
