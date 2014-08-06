@@ -386,6 +386,23 @@ jQuery( document ).ready(function($) {
 			newwindow = window.open(data);
 		});
 	});
+
+	$("#nav_up").hide();
+	$(window).scroll(function() {
+	    if ($(this).scrollTop() > 100) {
+	        $('#nav_up').fadeIn();
+	    } else {
+	        $('#nav_up').fadeOut();
+	    }
+	});
+
+
+
+
+
+
+
+
 });
 
 
@@ -652,4 +669,7 @@ function updateSingleCell(id , Model, key, value){
 	$.post(url, function(data){
 		
 	});
+}
+function animateToTop(){
+	$('html, body').animate({ scrollTop: 0 }, 'fast');
 }
