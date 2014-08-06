@@ -430,25 +430,12 @@
 		<div class="page-content">
 			@yield('content')
 
-
-
-
-
 		</div>
-
-
-
-		
 			<div class="page-footer-tools pull-right backToTop" id="nav_up" onclick="animateToTop()">
 				<span class="go-top">
 				<i class="fa fa-angle-up"></i>
 				</span>
 			</div>
-		
-
-
-
-
 	</div>
 
 

@@ -133,6 +133,20 @@
 															        </div>
 														   </div>
 														</div>
+														<div class="form-group">
+															<div class="col-md-12">
+															        <div class="btn-group btn-group-justified" data-toggle="buttons">
+															        	@foreach(Brand::all() as $key=>$value)
+														        			<label class="btn default ajax_brandButtonDiscount ajax_brandButtonDiscount_{{$value->id}}">
+														        				<span class="help-block">
+																					 Έκτπωση
+																				</span>
+														        				<input class="form-control form-control-inline input-small" name="brandDiscount__{{$value->id}}" size="12" type="text" value="">
+														        			</label>
+																		@endforeach
+															        </div>
+														   </div>
+														</div>
 													</div>
 
 												</div>

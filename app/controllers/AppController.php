@@ -107,7 +107,7 @@ class AppController extends Controller {
 			$csv_handler = fopen ('csvfile.csv','w');
 			fwrite ($csv_handler,$csv);
 			fclose ($csv_handler);
-			return "/myproject/public/csvfile.csv"; 
+			return "/azadmin/myproject/public/csvfile.csv"; 
 
 	}
 	public function postData($model, $action, $id=null , $tablekey = null , $redirect = null){
@@ -215,7 +215,7 @@ class AppController extends Controller {
 					$message .= $message==""?"product ".$currentElement.", ":$currentElement.", ";
 			}
 			$message = $message==""?"succesfull data insert":$message." validation error";
-			return '/myproject/public/app/data/'. $model. '/display/'.$employeeOrder->id;
+			return '/azadmin/myproject/public/app/data/'. $model. '/display/'.$employeeOrder->id;
 		}if($model=="Employeeorder" && $action=="delete"){
 			$tblkey = $tablekey==null?'id':$tablekey;
 			$message = "Employee message " . Dbtools::deleteFromModel($model ,Input::get('id') , $tblkey);
@@ -266,6 +266,7 @@ class AppController extends Controller {
 		}if($model=="Storebrand"){
 			return Response::json($model::where('storeId' , '=' , $id)->get());
 		}if($model=="Filter"){
+			$id = $id==null?0:$id;
 			$filters = json_decode(Input::get('filtz'));
 			$answer = Product::where(function($query) use ($filters) {
 				foreach($filters as $key=>$val){
@@ -289,7 +290,7 @@ class AppController extends Controller {
 							$query->whereRaw('brand LIKE "%'.Brand::find($val)->title.'%"');
 						
 				}
-            })->take(50)->get();
+            })->skip($id)->take(50)->get();
             return Product::createProductView($answer);
 		}if($model=="orderFilter"){
 			$filters = json_decode(Input::get('filtz'));

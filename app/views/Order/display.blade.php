@@ -594,7 +594,8 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn default" data-dismiss="modal">Κλείσιμο</button>
-				<button type="button" class="btn blue csvExport" data-dismiss="modal">Εξαγωγή σε csv και κατέβασμα!</button>
+				<button type="button" class="btn blue csvExport" data-dismiss="modal">
+					<i class="glyphicon glyphicon-download-alt"></i>Εξαγωγή σε csv και κατέβασμα!</button>
 			</div>
 		</div>
 		<!-- /.modal-content -->

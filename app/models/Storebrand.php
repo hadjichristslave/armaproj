@@ -3,7 +3,6 @@
 class Storebrand extends Eloquent{
 
 	private $date;
-
 	public $rules = array();
 	public function store()
     {
@@ -26,17 +25,20 @@ class Storebrand extends Eloquent{
     	$this->setDate($tempDate);
     }
     public static function createStoreBrandsFromInput($storeId){
+
     	foreach(Input::all() as $key=>$val){
 				$record = explode('___' , $key);
 				if(sizeof($record)>1){
 					$storeBrand = new Storebrand();
-					$storeBrand->storeId = $storeId;
-					$storeBrand->brandId = $record[1];
-					$storeBrand->setdate(Input::get("brandFrom__".$record[1]));
-					$storeBrand->formatDate();
-					if(!$storeBrand->validateDate()) continue;
-					$storeBrand->startingDate = $storeBrand->getdate();
-					$storeBrand->save();
+                    $storeBrand->storeId = $storeId;
+                    $storeBrand->brandId = $record[1];
+                    $storeBrand->setdate(Input::get("brandFrom__".$record[1]));
+                    $storeBrand->formatDate();
+                    $storeBrand->discount = Input::get("brandDiscount__".$record[1]);
+
+                    if(!$storeBrand->validateDate()) continue;
+                    $storeBrand->startingDate = $storeBrand->getdate();
+                    $storeBrand->save();
 				}
 			}
     }

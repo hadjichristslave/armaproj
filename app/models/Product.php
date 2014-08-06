@@ -103,7 +103,7 @@ public $rules = array();
     	$class="odd";
     	foreach($data as $key=>$value){
     		$view .= "<tr role='row' class='$class' rowId='$value->id'>
-    			<td><input type='checkbox' class='group-checkable' checkbox='$value->id'></td>
+    			<td><input type='checkbox' secondary='true' class='group-checkable' checkbox='$value->id'></td>
 				<td class='sorting_1'>$value->id</td>
 				<td class='sorting_1'><img class='avatar productImage' alt='' src='/azadmin/myproject/public/pictures/$value->sku'></td>
 				<td><b>$value->sku</b></td>

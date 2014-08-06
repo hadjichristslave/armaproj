@@ -221,28 +221,12 @@ jQuery( document ).ready(function($) {
 
 	$("#filter-search").click(function(){
 		hasfiltered = true;
-		var filters = {};
-		$(".filter-tr").find('input').each(function(){
-			if($(this).val!=undefined){
-				name = $(this).attr('name');
-				filters[name] = $(this).val();
-			}
-		});
-		$(".filter-tr").find('select').each(function(){
-			if($(this).val!=undefined){
-				name = $(this).attr('name');
-				filters[name] = $(this).val();
-			}
-		});
+		var filters = getFiltervars();
 		$.get('/azadmin/myproject/public/app/customreturn/Filter?filtz='+JSON.stringify(filters), function(data){
 			$(".filter-tbody").html(data)
 		});
 	});
-	$("#filter-reset").click(function(){
-		$.get('/azadmin/myproject/public/app/return/Product', function(data){
-
-		});
-	});
+	
 	$(".filterOrders").click(function(){
 		hasfiltered = true;
 		var filters = {};
@@ -284,26 +268,23 @@ jQuery( document ).ready(function($) {
 	});
 
 	$(".addAllProducts").on('click', function(){
-		if(hasfiltered){
-			$("input").each(function(){  
-				console.log("filtered");
-				if($(this).attr('checkbox')){
-					var active = $(this).is(":checked");
-					if(active){
-						productId = $(this).attr('checkbox');
-						updateProducts(productId);
-					}
-				}
-			});
-		}else{
-			$(".checker").each(function(){ 
-				active = $(this).find('span').first().hasClass('checked');
+		
+		$("input").each(function(){  
+			if($(this).attr('secondary')){
+				var active = $(this).is(":checked");
 				if(active){
-					productId = $(this).find('input').first().attr('checkbox');
+					productId = $(this).attr('checkbox');
 					updateProducts(productId);
 				}
-			});
-		}
+			}
+		});
+		$(".checker").each(function(){ 
+			active = $(this).find('span').first().hasClass('checked');
+			if(active){
+				productId = $(this).find('input').first().attr('checkbox');
+				updateProducts(productId);
+			}
+		});
 	});
 
 	$(".newOrderSave").click(function(){
@@ -394,19 +375,39 @@ jQuery( document ).ready(function($) {
 	    } else {
 	        $('#nav_up').fadeOut();
 	    }
+	     if($(this).scrollTop() + $(this).height() > $(document).height() - 100) {
+
+		 	if($("#datatable_products").length>0){
+		 		var skip = $("#datatable_products").find('tbody').first().find('tr').length-1
+		 		var filters = getFiltervars();
+		 		$("#datatable_products").fadeTo('slow',0.4);
+		 		$.get('/azadmin/myproject/public/app/customreturn/Filter/'+skip+'?filtz='+JSON.stringify(filters), function(data){
+					$(".filter-tbody").append(data);
+
+				});
+				$("#datatable_products").fadeTo('fast',1);
+		 	}
+		 }
 	});
-
-
-
-
-
-
-
-
 });
 
 
-
+function getFiltervars(){
+	var filters = {};
+		$(".filter-tr").find('input').each(function(){
+			if($(this).val!=undefined){
+				name = $(this).attr('name');
+				filters[name] = $(this).val();
+			}
+		});
+		$(".filter-tr").find('select').each(function(){
+			if($(this).val!=undefined){
+				name = $(this).attr('name');
+				filters[name] = $(this).val();
+			}
+		});
+		return filters;
+}
 function addToCart(productId){
 	updateProducts(productId);
 }
