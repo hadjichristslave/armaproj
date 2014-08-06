@@ -58,120 +58,35 @@
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<ul class="nav navbar-nav pull-right">
 			<!-- BEGIN NOTIFICATION DROPDOWN -->
+			@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
 			<li class="dropdown" id="header_notification_bar">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<i class="fa fa-warning"></i>
 				<span class="badge">
-					 6
+					 {{Employeeorder::where('stateId' , '=' , 4)->count()}}
 				</span>
 				</a>
 				<ul class="dropdown-menu extended notification">
 					<li>
 						<p>
-							 You have 17 new notifications
+							 You have {{Employeeorder::where('stateId' , '=' , 4)->count()}} new notifications
 						</p>
 					</li>
 					<li>
 						<ul class="dropdown-menu-list scroller" style="height: 250px;">
+							@foreach(Employeeorder::select(DB::raw("*,(UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_at))/60 AS minutes"))->where('stateId', '=' , 4)->where('employeeId', '=' ,Auth::user()->userId)->orderBy('minutes','desc')->get() as $ord)
 							<li>
-								<a href="#">
+								<a href="/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}">
 								<span class="label label-icon label-success">
 									<i class="fa fa-plus"></i>
 								</span>
-								 New user registered.
+								 Νέα παραγγελία!
 								<span class="time">
-									 Just now
+									{{Employeeorder::getDatediff($ord->id)}}
 								</span>
 								</a>
 							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-								</span>
-								 Server #12 overloaded.
-								<span class="time">
-									 15 mins
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-								</span>
-								 Server #2 not responding.
-								<span class="time">
-									 22 mins
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-								</span>
-								 Application error.
-								<span class="time">
-									 40 mins
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-								</span>
-								 Database overloaded 68%.
-								<span class="time">
-									 2 hrs
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-								</span>
-								 2 user IP blocked.
-								<span class="time">
-									 5 hrs
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-								</span>
-								 Storage Server #4 not responding.
-								<span class="time">
-									 45 mins
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-								</span>
-								 System Error.
-								<span class="time">
-									 55 mins
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-								</span>
-								 Database overloaded 68%.
-								<span class="time">
-									 2 hrs
-								</span>
-								</a>
-							</li>
+							@endforeach
 						</ul>
 					</li>
 					<li class="external">
@@ -179,6 +94,7 @@
 					</li>
 				</ul>
 			</li>
+			@endif
 			<!-- END NOTIFICATION DROPDOWN -->
 			<!-- BEGIN INBOX DROPDOWN -->
 			<!-- END INBOX DROPDOWN -->
@@ -252,7 +168,7 @@
 				</li>
 				<li class="sidebar-search-wrapper">
 					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<form class="sidebar-search" action="extra_search.html" method="POST">
+					<!-- <form class="sidebar-search" action="extra_search.html" method="POST">
 						<div class="form-container">
 							<div class="input-box">
 								<a href="javascript:;" class="remove"></a>
@@ -260,7 +176,7 @@
 								<input type="button" class="submit" value=" "/>
 							</div>
 						</div>
-					</form>
+					</form> -->
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
@@ -451,13 +367,13 @@
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<!-- <li class="tooltips" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Order/display">
 								<span class="title">
 									Μεμονομένη παραγγελία
 								</span>
 							</a>
-						</li>
+						</li> -->
 					</ul>
 				</li>
 				@endif
@@ -483,6 +399,13 @@
 							<a href="/azadmin/myproject/public/app/data/Product/edit">
 								<span class="title">
 									Τροποποίηση
+								</span>
+							</a>
+						</li>
+						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+							<a href="/azadmin/myproject/public/app/data/Product/productbrand">
+								<span class="title">
+									Συσχετιση προιόντος-brand
 								</span>
 							</a>
 						</li>

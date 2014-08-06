@@ -41,6 +41,7 @@ jQuery( document ).ready(function($) {
 			  	 		var rawDateArray = rawDate.split('-');
 			  	 		var rawDate = rawDateArray[1] + '/' + rawDateArray[2] + '/' + rawDateArray[0];
 			  	 		$(".ajax_brandButtonDate_"+element.brandId).find('input').first().val(rawDate);
+			  	 		$(".ajax_brandButtonDiscount_"+element.brandId).find('input').first().val(element.discount);
 		            	
 		       	 	});
                   },

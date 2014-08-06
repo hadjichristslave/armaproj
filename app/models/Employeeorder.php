@@ -26,6 +26,24 @@ class Employeeorder extends Eloquent{
         return count($data);
     }
 
+    public static function getDatediff($id){
+        $date = date('Y-m-d h:i:s');
+        $data =  Employeeorder::select(DB::raw("(UNIX_TIMESTAMP('$date')-UNIX_TIMESTAMP(created_at))/60 AS minutes"))->where('id' , '=', $id)->orderBy('minutes','desc')->first();
+        if($data->minutes<5)
+            return "Τώρα";
+        else if($data->minutes<60)
+            return "Πριν ". (int)($data->minutes). " λεπτά";
+        else if($data->minutes<1440){
+            $hours = (int)($data->minutes/60);
+            return "Πριν ". $hours . " ώρες";
+        }
+        else if($data->minutes>=1440){
+            $days = (int)($data->minutes/1440);
+            return "Πριν " .$days . " μέρες";
+        }
+        
+    }
+
     public static function getTotalOrderIncome(){
         $sum =0;
         foreach(Employeeorder::all() as $order){ 
