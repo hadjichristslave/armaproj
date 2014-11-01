@@ -315,8 +315,10 @@
 
 																		if($discount=="1")
 																			echo "0%";
-																		else
-																			echo $discount*100. "%";
+																		else{
+																			$dicsount *=100;
+																			echo $discount. "%";
+																		}
 																	?>
 																</td>
 																
