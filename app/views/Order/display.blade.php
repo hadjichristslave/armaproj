@@ -310,17 +310,17 @@
 																	?>
 																</td>
 																<td>
-																	{{Order::getDiscount($ord->productId,Employeeorder::find($id)->storeId)}} %
-																</td>
-																
-																<td class="subtotal" subtotal="on">
 																	<?
-																		$discount = Product::getSubtotal($ord->productId, $ord->quantity);
-																		if($discount==1)
+																		$discount = Order::getDiscount($ord->productId,Employeeorder::find($id)->storeId);
+																		if($discount=="1")
 																			echo "0%";
 																		else
 																			echo $discount. "%";
 																	?>
+																</td>
+																
+																<td class="subtotal" subtotal="on">
+																	{{Product::getSubtotal($ord->productId, $ord->quantity)}}€
 																</td>
 																<td >
 																	<div class="input-group deleteEditProduct">
