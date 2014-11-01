@@ -57,9 +57,9 @@ class Order extends Eloquent{
 
     public static function getDiscount($productId, $storeId){
         $productname  = Product::find($productId)->brand;
-        $productBrand = ProductBrand::where('productGroup' , '=' , $productname)->count();
+        $productBrand = Productbrand::where('productGroup' , '=' , $productname)->count();
         if($productBrand==0) return 1;
-        $productBrand = ProductBrand::where('productGroup' , '=' , $productname)->first();
+        $productBrand = Productbrand::where('productGroup' , '=' , $productname)->first();
         $discount     = Storebrand::where('storeId' , '=' , $storeId)->where('brandId' , '=' , $productBrand->brandId)->count();
         if($discount==0) return 1;
         $discount     = Storebrand::where('storeId' , '=' , $storeId)->where('brandId' , '=' , $productBrand->brandId)->first();
