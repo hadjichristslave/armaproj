@@ -69,8 +69,9 @@ var ComponentsDropdowns = function () {
                 dat = JSON.parse(data.slice(0,-4));
                 console.log(dat);
                 currentProdId = dat.id;
-                selection.parent().find('.subtotal').text( dat.unitPrice + " €");
+                selection.parent().next().next().text( dat.unitPrice + " €");
                 selection.parent().next().next().next().text( dat.availableStock);
+                selection.parent().find('.subtotal').text( "0€");
                 selection.parent().parent().find('td').find('button').last().attr('onclick' , 'deleteProduct('+e.val+',"Order")');
 
                 orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');

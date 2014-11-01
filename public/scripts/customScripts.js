@@ -556,7 +556,7 @@ function deleteByIndex(id, model){
 }
 function manualChange(productId){
 	price = $('input[productId="'+productId+'"]').val();
-	if(price=='') price = '0';
+	if(price=='') price = 0;
 	price = parseInt(price);
 	console.log(price);
 	$('input[productId="'+productId+'"]').val(price);
