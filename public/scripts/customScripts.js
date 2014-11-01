@@ -528,8 +528,6 @@ function updateProductView(){
 	$('.orderProducts').text(getTotalProducts());
 }
 function deleteProduct(orderIndex , model , productId){
-	productEditCartPopulate();
-	console.log(itemCartProducts);
 	for(var i in itemCartProducts){
 		if(typeof productid!== 'undefined')
 			if(itemCartProducts[i].prodId==productId)
@@ -538,8 +536,8 @@ function deleteProduct(orderIndex , model , productId){
 			if(itemCartProducts[i].prodId==orderIndex)
 				removeByIndex(itemCartProducts, i);
 	}
-	console.log(itemCartProducts);
 	$("tr[productTr='"+orderIndex+"']").fadeOut(400);
+	updateProductQuantity(productId, 0);
 	getOrderCost('',storeId);
 	$('.orderProducts').text(getTotalProducts());
 	 if(typeof model !== 'undefined'){
