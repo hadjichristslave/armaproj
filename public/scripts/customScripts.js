@@ -527,7 +527,7 @@ function updateProductView(){
 	}
 	$('.orderProducts').text(getTotalProducts());
 }
-function deleteProduct(orderIndex , model , productId = undefined){
+function deleteProduct(orderIndex , model , productId){
 	productEditCartPopulate();
 	console.log(itemCartProducts);
 	for(var i in itemCartProducts){
