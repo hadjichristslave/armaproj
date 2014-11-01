@@ -541,8 +541,9 @@ function deleteProduct(orderIndex , model , productId){
 	 if(typeof model !== 'undefined'){
 	 	deleteByIndex(orderIndex, model);
  	}
-
+ 	console.log("asdfad");
  	updateProductQuantity(productId, 0);
+ 	productEditCartPopulate();
 	getOrderCost('',storeId);
 }
 
@@ -619,6 +620,7 @@ function orderItem(productId, quantity, comments){
 
 function getOrderCost(editView , storeId){
 	productEditCartPopulate();
+	console.log(itemCartProducts);
 	orderObjects = new Array();
 	for(var i in itemCartProducts){
 			var productId  = itemCartProducts[i].prodId;
