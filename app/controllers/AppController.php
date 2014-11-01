@@ -261,7 +261,7 @@ class AppController extends Controller {
 	}
 
 	public function getDiscount($prodId, $orderId){
-		return  Order::getDiscount($prodid, Employeeorder::find($orderId)->storeId);
+		return  Order::getDiscount($prodId, Employeeorder::find($orderId)->storeId)*100;
 	}
 	
 	public function getCustomreturn($model, $id=null , $singleRecord=null , $relationFunction = null){
