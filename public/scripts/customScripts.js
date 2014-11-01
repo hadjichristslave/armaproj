@@ -340,7 +340,7 @@ jQuery( document ).ready(function($) {
 
 
 	$('input.editInput').on('change' , function(){
-		console.log('asdfasdfasdfasdf');
+		console.log($(this).val());
 		productEditCartPopulate();
 
 		id = $(this).attr('productId');
