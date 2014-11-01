@@ -76,9 +76,9 @@ var ComponentsDropdowns = function () {
 
             });
             orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
-            $.get("/azadmin/myproject/public/app/get/getDIscount/"+currentProdId+"/"+orderId, function(data)){
+            $.get("/azadmin/myproject/public/app/get/getDIscount/"+currentProdId+"/"+orderId, function(data){
                 console.log('current discount' + data);
-            }
+            });
             
             // console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); 
         });
