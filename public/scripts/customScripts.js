@@ -548,6 +548,7 @@ function manualChange(productId){
 	price = $('input[productId="'+productId+'"]').val();
 	if(price=='') price = '0';
 	price = parseInt(price);
+	console.log(price);
 	$('input[productId="'+productId+'"]').val(price);
 	updateProductQuantity(productId, price);
 	getOrderCost('',storeId);
