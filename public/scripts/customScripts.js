@@ -349,8 +349,12 @@ jQuery( document ).ready(function($) {
 		value   = $(this).val();
 		updateSingleCell(id , model, key, value);
 		
+
 		setSubtotal(id);
-		getOrderCost('true' ,storeId);
+
+		getOrderCost('true',storeId);
+		console.log(getOrderCost('true' ,storeId));
+
 		updateDBCost();
 	});
 
