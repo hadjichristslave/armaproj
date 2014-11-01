@@ -340,7 +340,6 @@ jQuery( document ).ready(function($) {
 
 
 	$('input.editInput').on('change' , function(){
-		console.log($(this).val());
 		productEditCartPopulate();
 
 		id = $(this).attr('productId');
@@ -349,11 +348,8 @@ jQuery( document ).ready(function($) {
 		value   = $(this).val();
 		updateSingleCell(id , model, key, value);
 		
-
 		setSubtotal(id);
-
 		getOrderCost('true',storeId);
-		console.log(getOrderCost('true' ,storeId));
 
 		updateDBCost();
 	});
@@ -511,6 +507,7 @@ function getTotalProducts(){
 	total = 0;
 	for(i in itemCartProducts)
 		total += itemCartProducts[i].prodQty;
+	console.log(itemCartProducts);
 	return total;
 }
 function updateProductView(){
