@@ -77,7 +77,7 @@ var ComponentsDropdowns = function () {
                 $.get("/azadmin/myproject/public/app/discount/"+currentProdId+"/"+orderId, function(data){
                     selection.parent().next().next().next().next().text( data+ " %");
                 });
-                $(".editAddDelete").attr('onclick' , "deleteProduct( "+producttr+",'Order' ,"+dat.id+") ");
+                $(".editAddDelete").attr('onclick' , "deleteProduct( "+order+",'Order' ,"+dat.id+") ");
 
             });
             
