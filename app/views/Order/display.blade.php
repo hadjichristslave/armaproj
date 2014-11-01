@@ -312,10 +312,11 @@
 																<td>
 																	<?
 																		$discount = Order::getDiscount($ord->productId,Employeeorder::find($id)->storeId);
+
 																		if($discount=="1")
 																			echo "0%";
 																		else
-																			echo $discount. "%";
+																			echo $discount*100. "%";
 																	?>
 																</td>
 																
