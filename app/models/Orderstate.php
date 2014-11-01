@@ -8,9 +8,9 @@ class Orderstate extends Eloquent{
 
 
 	public static function getStateLabel($labelId){
-		if($labelID==1||$labelID==4||$labelID==5)
+		if($labelId==1||$labelId==4||$labelId==5)
 			return "warning";
-		else if($labelID==2)
+		else if($labelId==2)
 			return "sucess";
 		else
 			return "danger";
