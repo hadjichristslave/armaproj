@@ -72,12 +72,12 @@ var ComponentsDropdowns = function () {
                 selection.parent().next().next().text( dat.unitPrice + " €");
                 selection.parent().next().next().next().text( dat.availableStock);
                 selection.parent().parent().find('td').find('button').last().attr('onclick' , 'deleteProduct('+e.val+',"Order")');
-                console.log(selection.parent().next().next());
 
                 orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
                 $.get("/azadmin/myproject/public/app/discount/"+currentProdId+"/"+orderId, function(data){
-                    selection.parent().next().text( data+ " %");
+                    selection.parent().next().next().text( data+ " %");
                 });
+                $(".editAddDelete").attr('onclick' , "deleteProduct( "+dat.id+",'Order') ");
             });
             
             

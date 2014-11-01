@@ -49,7 +49,7 @@
 								<i class="fa fa-shopping-cart"></i>Παραγγελία {{Employeeorder::find($id)->id}} <span class="hidden-480">
 								| {{Employeeorder::find($id)->created_at}} </span>
 							</div>
-							<div class="actions">
+						<!--	<div class="actions">
 								<a href="#" class="btn default yellow-stripe">
 								<i class="fa fa-angle-left"></i>
 								<span class="hidden-480">
@@ -83,7 +83,7 @@
 										</li>
 									</ul>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="portlet-body">
 							<div class="tabbable">

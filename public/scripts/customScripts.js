@@ -372,7 +372,7 @@ jQuery( document ).ready(function($) {
 		order = "Order";
 		getAllProducts($('tbody.productBody').attr('orderId'));
 
-		obj = "<tr class='productEditTr' itemId='1' orderId='"+$('tbody.productBody').attr('orderId')+"' productTr='"+currentOrder.id+"'><td> "+selectified+"</td> <td> <div id=''> <div class='input-group' style='width:150px;'> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-down' onclick=cartify('"+currentOrder.id+"','false') > <i class='fa fa-minus'></i> </button> </div> <input type='text' class='spinner-input form-control editInput' itemId='1' productId-edit='on' key='quantity' productId='"+currentOrder.id+"' maxlength='3' value='0' onchange=cartify('"+currentOrder.id+"','true' , 'manual')> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-up' onclick=cartify('"+currentOrder.id+"','true') > <i class='fa fa-plus'></i> </button> </div> </div> </div> </td> <td> -- </td> <td> --  </td> <td>  33% </td>  <td class='subtotal' subtotal='on'> 0€ </td> <td > <div class='input-group deleteEditProduct'> <button type='button' class='close' onclick=deleteProduct("+currentOrder.id+",'Order')></button> </div> </td> </tr>";
+		obj = "<tr class='productEditTr' itemId='1' orderId='"+$('tbody.productBody').attr('orderId')+"' productTr='"+currentOrder.id+"'><td> "+selectified+"</td> <td> <div id=''> <div class='input-group' style='width:150px;'> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-down' onclick=cartify('"+currentOrder.id+"','false') > <i class='fa fa-minus'></i> </button> </div> <input type='text' class='spinner-input form-control editInput' itemId='1' productId-edit='on' key='quantity' productId='"+currentOrder.id+"' maxlength='3' value='0' onchange=cartify('"+currentOrder.id+"','true' , 'manual')> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-up' onclick=cartify('"+currentOrder.id+"','true') > <i class='fa fa-plus'></i> </button> </div> </div> </div> </td> <td> -- </td> <td> --  </td> <td>  -- </td>  <td class='subtotal' subtotal='on'> 0€ </td> <td > <div class='input-group deleteEditProduct'> <button type='button' class='close editAddDelete' onclick=deleteProduct("+currentOrder.id+",'Order')></button> </div> </td> </tr>";
 		$(".productBody").append(obj);
 		select2Format(true);
 
@@ -528,14 +528,18 @@ function updateProductView(){
 	$('.orderProducts').text(getTotalProducts());
 }
 function deleteProduct(productId , model){
-	for(var i in itemCartProducts)
+	console.log(iitemCartProducts);
+	for(var i in itemCartProducts){
 		if(itemCartProducts[i].prodId==productId)
 			removeByIndex(itemCartProducts, i);
+	}
+	console.log(iitemCartProducts);
 	$("tr[productTr='"+productId+"']").fadeOut(400);
 	getOrderCost('',storeId);
 	$('.orderProducts').text(getTotalProducts());
 	if (arguments.length == 2)
 		deleteByIndex(productId, model);
+
 }
 
 function deleteByIndex(id, model){

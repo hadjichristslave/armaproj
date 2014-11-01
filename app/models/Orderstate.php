@@ -2,11 +2,6 @@
 
 class Orderstate extends Eloquent{
 
-
-
-
-
-
 	public static function getStateLabel($labelId){
 		if($labelId==1||$labelId==4||$labelId==5)
 			return "warning";

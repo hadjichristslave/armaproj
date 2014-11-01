@@ -325,20 +325,20 @@
 									</span>
 								</a>
 							</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<!-- <li class="tooltips" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Order/edit">
 								<span class="title">
 									Τροποποίηση
 								</span>
 							</a>
-						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						</li> -->
+						<!-- <li class="tooltips" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Order/display">
 								<span class="title">
 									Μεμονομένη παραγγελία
 								</span>
 							</a>
-						</li>
+						</li> -->
 						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Order/orders">
 								<span class="title">
@@ -350,7 +350,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
-				<li class="">
+				<!--<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-bar-chart-o"></i>
 						<span class="title">
@@ -373,9 +373,9 @@
 									Μεμονομένη παραγγελία
 								</span>
 							</a>
-						</li> -->
+						</li> 
 					</ul>
-				</li>
+				</li> -->
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
 				<li class="">
