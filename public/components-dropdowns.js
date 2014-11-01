@@ -74,6 +74,8 @@ var ComponentsDropdowns = function () {
 
             });
             console.log("order id is "  +order);
+            orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
+            console.log("dynamic order Id is " + orderId);
             // console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); 
         });
         counter++;
