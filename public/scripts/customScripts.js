@@ -695,7 +695,7 @@ function setSubtotal(productId){
 
 	$.get('/azadmin/myproject/public/app/subtotal?productId='+itmId+"&quantity="+qty, function(data){
 		answer = data + " €";
-		$("tr[itemId='"+itmId+"']").find('td[subtotal="on"]')[0].innerText  = answer;
+		$("tr[itemId='"+itmId+"']").find('td[subtotal="on"]').text(answer);
 	});
 }
 

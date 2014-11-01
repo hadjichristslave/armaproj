@@ -69,7 +69,7 @@ var ComponentsDropdowns = function () {
                 dat = JSON.parse(data.slice(0,-4));
                 console.log(dat);
                 currentProdId = dat.id;
-                selection.parent().next().next().text( dat.unitPrice + " €");
+                selection.parent().find('.subtotal').text( dat.unitPrice + " €");
                 selection.parent().next().next().next().text( dat.availableStock);
                 selection.parent().parent().find('td').find('button').last().attr('onclick' , 'deleteProduct('+e.val+',"Order")');
 
@@ -80,8 +80,6 @@ var ComponentsDropdowns = function () {
                 $(".editAddDelete").attr('onclick' , "deleteProduct( "+order+",'Order' ,"+dat.id+") ");
 
             });
-            
-            
             // console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); 
         });
         counter++;
