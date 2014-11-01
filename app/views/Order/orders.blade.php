@@ -15,7 +15,7 @@
 								<span class="hidden-480">
 								Νέα παραγγελία </span>
 								</a>
-								<div class="btn-group">
+								<!-- <div class="btn-group">
 									<a class="btn default yellow-stripe" href="#" data-toggle="dropdown">
 									<i class="fa fa-share"></i>
 									<span class="hidden-480">
@@ -34,7 +34,7 @@
 										
 										
 									</ul>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<div class="portlet-body">

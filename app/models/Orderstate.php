@@ -11,7 +11,7 @@ class Orderstate extends Eloquent{
 		if($labelId==1||$labelId==4||$labelId==5)
 			return "warning";
 		else if($labelId==2)
-			return "sucess";
+			return "success";
 		else
 			return "danger";
 	}
