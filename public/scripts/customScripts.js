@@ -528,6 +528,7 @@ function updateProductView(){
 	$('.orderProducts').text(getTotalProducts());
 }
 function deleteProduct(productId , model){
+	productEditCartPopulate();
 	console.log(itemCartProducts);
 	for(var i in itemCartProducts){
 		if(itemCartProducts[i].prodId==productId)
