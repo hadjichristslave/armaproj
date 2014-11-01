@@ -273,11 +273,13 @@
 																	<tr class="productEditTr" itemId="{{$ord->productId}}" orderId="{{$id}}" productTr="{{$ord->id}}">
 																<td>
 																	<?php 
-																		echo (Product::find($ord->productId)->availableStock==0)?"<del>":"";
+																		if(Product::where('id' , '=' , $ord->productId)->count()>0)
+																			echo (Product::find($ord->productId)->availableStock==0)?"<del>":"";
 																	?>
 																	<a href="#">{{Product::find($ord->productId)->title}}</a>
 																	<?php 
-																		echo (Product::find($ord->productId)->availableStock==0)?"</del>":"";
+																		if(Product::where('id' , '=' , $ord->productId)->count()>0)
+																			echo (Product::find($ord->productId)->availableStock==0)?"</del>":"";
 																	?>
 																</td>
 																<td>
