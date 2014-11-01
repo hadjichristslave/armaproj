@@ -370,7 +370,7 @@ jQuery( document ).ready(function($) {
 
 		objId = createEmpty('Order', args);
 		order = "Order";
-		getAllProducts();
+		getAllProducts($('tbody.productBody').attr('orderId'));
 
 		obj = "<tr class='productEditTr' itemId='1' orderId='"+$('tbody.productBody').attr('orderId')+"' productTr='"+currentOrder.id+"'><td> "+selectified+"</td> <td> <div id=''> <div class='input-group' style='width:150px;'> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-down' onclick=cartify('"+currentOrder.id+"','false') > <i class='fa fa-minus'></i> </button> </div> <input type='text' class='spinner-input form-control editInput' itemId='1' productId-edit='on' key='quantity' productId='"+currentOrder.id+"' maxlength='3' value='0' onchange=cartify('"+currentOrder.id+"','true' , 'manual')> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-up' onclick=cartify('"+currentOrder.id+"','true') > <i class='fa fa-plus'></i> </button> </div> </div> </div> </td> <td> -- </td> <td> --  </td> <td>  33% </td>  <td class='subtotal' subtotal='on'> 0€ </td> <td > <div class='input-group deleteEditProduct'> <button type='button' class='close' onclick=deleteProduct("+currentOrder.id+",'Order')></button> </div> </td> </tr>";
 		$(".productBody").append(obj);
@@ -435,12 +435,12 @@ function select2Format(tabledata){
 		ComponentsDropdowns.init();
 }
 
-function getAllProducts(){
+function getAllProducts(orderId){
 	$.ajax({
         type:  'get',
         cache:  false ,
         async : false, 
-        url:  '/azadmin/myproject/public/app/selectify/Product/'+editCounter+'/false',
+        url:  '/azadmin/myproject/public/app/selectify/Product/'+editCounter+'/'+orderId,
         success: function(resp) {
 			selectified = resp;
         } 

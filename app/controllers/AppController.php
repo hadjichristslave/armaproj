@@ -83,7 +83,7 @@ class AppController extends Controller {
 		echo json_encode(Dbtools::returnData($model, $id , $singleRecord));
 	}
 	public function getSelectify($model, $id , $singleRecord, $isRelation= null, $relationFunction=null){
-		$ans  = "<input type='hidden' select id='' val='' class='select2_sample".$id." form-control select2'>";
+		$ans  = "<input type='hidden' select id='' val='' class='select2_sample".$id." form-control select2' orderSelectInput='".$singleRecord."'>";
 		return $ans;
 
 	}

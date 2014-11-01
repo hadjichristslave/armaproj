@@ -32,7 +32,7 @@ var ComponentsDropdowns = function () {
         }
 
         $(".select2_sample"+counter).select2({
-            placeholder: "Search for a movie",
+            placeholder: "Αναζητήστε προϊόν ή κωδικό προϊόντος",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
                 url: "/azadmin/myproject/public/app/search/Product",
@@ -73,6 +73,7 @@ var ComponentsDropdowns = function () {
                 console.log(selection.parent().next().next());
 
             });
+            console.log("order id is "  +order);
             // console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); 
         });
         counter++;
