@@ -273,13 +273,11 @@
 																	<tr class="productEditTr" itemId="{{$ord->productId}}" orderId="{{$id}}" productTr="{{$ord->id}}">
 																<td>
 																	<?php 
-																		if(Product::where('id' , '=' , $ord->productId)->count()>0)
-																			echo (Product::find($ord->productId)->availableStock==0)?"<del>":"";
+																			echo (Product::find($ord->productId)->availableStock<=0)?"<del>":"";
 																	?>
 																	<a href="#">{{Product::find($ord->productId)->title}}</a>
 																	<?php 
-																		if(Product::where('id' , '=' , $ord->productId)->count()>0)
-																			echo (Product::find($ord->productId)->availableStock==0)?"</del>":"";
+																		echo (Product::find($ord->productId)->availableStock<=0)?"</del>":"";
 																	?>
 																</td>
 																<td>
@@ -316,7 +314,13 @@
 																</td>
 																
 																<td class="subtotal" subtotal="on">
-																	{{Product::getSubtotal($ord->productId, $ord->quantity)}}€
+																	<?
+																		$discount = Product::getSubtotal($ord->productId, $ord->quantity);
+																		if($discount==1)
+																			echo "0%";
+																		else
+																			echo $discount. "%";
+																	?>
 																</td>
 																<td >
 																	<div class="input-group deleteEditProduct">
