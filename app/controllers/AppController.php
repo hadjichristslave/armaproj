@@ -252,12 +252,10 @@ class AppController extends Controller {
 				$unitPrice     =  Product::find($value['productId'])->unitPrice;
 				$storeDiscount =  Order::getDiscount($value['productId'], $storeId);
 				$sum +=  ($unitPrice * $value['quantity']) * $storeDiscount;
-				echo $sum . "\n";
 			}
 		}catch(Exception $e){
 			var_dump($e);
 		}
-		echo "asdfa";
 		$sum = number_format($sum, 2, ',', '.');
 		return $sum;
 	}
