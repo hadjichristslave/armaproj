@@ -74,11 +74,12 @@ var ComponentsDropdowns = function () {
                 selection.parent().parent().find('td').find('button').last().attr('onclick' , 'deleteProduct('+e.val+',"Order")');
                 console.log(selection.parent().next().next());
 
+                orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
+                $.get("/azadmin/myproject/public/app/get/getDIscount/"+currentProdId+"/"+orderId, function(data){
+                    console.log('current discount' + data);
+                });
             });
-            orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
-            $.get("/azadmin/myproject/public/app/get/getDIscount/"+currentProdId+"/"+orderId, function(data){
-                console.log('current discount' + data);
-            });
+            
             
             // console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); 
         });
