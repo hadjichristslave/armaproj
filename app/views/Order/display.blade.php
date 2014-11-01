@@ -316,7 +316,7 @@
 																		if($discount=="1")
 																			echo "0%";
 																		else{
-																			$dicsount *=100;
+																			$discount *=100;
 																			echo $discount. "%";
 																		}
 																	?>
