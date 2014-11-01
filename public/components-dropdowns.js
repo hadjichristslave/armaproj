@@ -75,7 +75,7 @@ var ComponentsDropdowns = function () {
                 console.log(selection.parent().next().next());
 
                 orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
-                $.get("/azadmin/myproject/public/app/getDiscount/"+currentProdId+"/"+orderId, function(data){
+                $.get("/azadmin/myproject/public/app/discount/"+currentProdId+"/"+orderId, function(data){
                     console.log('current discount' + data);
                 });
             });
