@@ -246,13 +246,19 @@ class AppController extends Controller {
 	public function getUpdatecost(){
 		$cart   =    json_decode(Input::get('cart'),true);
 		$storeId = Input::get('storeId');
-
 		$sum = 0;
 		try{
-			foreach ($cart as $key => $value){
-				$sum +=  Product::find($value['productId'])->unitPrice*$value['quantity']*Order::getDiscount($value['productId'], $storeId);
+			foreach ($cart as $value){
+				$unitPrice     =  Product::find($value['productId'])->unitPrice;
+				$storeDiscount =  Order::getDiscount($value['productId'], $storeId);
+				$sum +=  ($unitPrice * $value['quantity']) * $storeDiscount;
+				echo $sum . "\n";
 			}
-		}catch(Exception $e){}
+		}catch(Exception $e){
+			var_dump($e);
+		}
+		echo "asdfa";
+		$sum = number_format($sum, 2, ',', '.');
 		return $sum;
 	}
 	
@@ -340,4 +346,5 @@ class AppController extends Controller {
 	public function getView($view){
 		return View::make($view);
 	}
+	
 }

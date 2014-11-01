@@ -310,7 +310,7 @@
 																	?>
 																</td>
 																<td>
-																	 33%
+																	{{Order::getDiscount($ord->productId,Employeeorders::find($ord->ordId)->storeId)}} %
 																</td>
 																
 																<td class="subtotal" subtotal="on">

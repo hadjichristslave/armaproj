@@ -12,6 +12,7 @@ var currentOrder       = 0;
 var selectified        = '';
 var editCounter         = 0;
 var postResponse ='';
+var currDiscount;
 /*---End of variable dec--------*/
 
 jQuery( document ).ready(function($) {
@@ -363,12 +364,14 @@ jQuery( document ).ready(function($) {
 	});
 
 
+
 	$(".productEditAdd").on('click',function(){
 		args = {'orderId' : $('tbody.productBody').attr('orderId') };
 
 		objId = createEmpty('Order', args);
 		order = "Order";
 		getAllProducts();
+		
 		obj = "<tr class='productEditTr' itemId='1' orderId='"+$('tbody.productBody').attr('orderId')+"' productTr='"+currentOrder.id+"'><td> "+selectified+"</td> <td> <div id=''> <div class='input-group' style='width:150px;'> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-down' onclick=cartify('"+currentOrder.id+"','false') > <i class='fa fa-minus'></i> </button> </div> <input type='text' class='spinner-input form-control editInput' itemId='1' productId-edit='on' key='quantity' productId='"+currentOrder.id+"' maxlength='3' value='0' onchange=cartify('"+currentOrder.id+"','true' , 'manual')> <div class='spinner-buttons input-group-btn'> <button type='button' class='btn spinner-up' onclick=cartify('"+currentOrder.id+"','true') > <i class='fa fa-plus'></i> </button> </div> </div> </div> </td> <td> -- </td> <td> --  </td> <td>  33% </td>  <td class='subtotal' subtotal='on'> 0€ </td> <td > <div class='input-group deleteEditProduct'> <button type='button' class='close' onclick=deleteProduct("+currentOrder.id+",'Order')></button> </div> </td> </tr>";
 		$(".productBody").append(obj);
 		select2Format();
@@ -507,7 +510,6 @@ function getTotalProducts(){
 	total = 0;
 	for(i in itemCartProducts)
 		total += itemCartProducts[i].prodQty;
-	console.log(itemCartProducts);
 	return total;
 }
 function updateProductView(){
@@ -720,4 +722,11 @@ function updateSingleCell(id , Model, key, value){
 }
 function animateToTop(){
 	$('html, body').animate({ scrollTop: 0 }, 'fast');
+}
+
+function getProdStoreDiscount(productId,storeId){
+	 url "/azadmin/myproject/public/app/prodStoreDiscount/"+productId+"/"+storeId;
+	$.get(url, function(data){
+		currDiscount = data;
+	});
 }
