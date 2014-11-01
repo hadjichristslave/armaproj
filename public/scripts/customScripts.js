@@ -537,14 +537,12 @@ function deleteProduct(orderIndex , model , productId){
 				removeByIndex(itemCartProducts, i);
 	}
 	$("tr[productTr='"+orderIndex+"']").remove();
+
 	$('.orderProducts').text(getTotalProducts());
 	 if(typeof model !== 'undefined'){
 	 	deleteByIndex(orderIndex, model);
  	}
- 	console.log("asdfad");
- 	updateProductQuantity(productId, 0);
- 	productEditCartPopulate();
-	getOrderCost('',storeId);
+	getOrderCost(true,storeId);
 }
 
 function deleteByIndex(id, model){
