@@ -542,7 +542,7 @@ function deleteProduct(orderIndex , model , productId){
 	 if(typeof model !== 'undefined'){
 	 	deleteByIndex(orderIndex, model);
  	}
-	getOrderCost(true,storeId);
+	getOrderCost('true',storeId);
 }
 
 function deleteByIndex(id, model){
