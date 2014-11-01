@@ -380,6 +380,7 @@ jQuery( document ).ready(function($) {
 
 	$(".csvExport").click(function(){
 		id = $("tbody.productBody").attr('orderId');
+
 		$.get("/azadmin/myproject/public/app/export/"+id,function(data){
 			newwindow = window.open(data);
 		});
@@ -564,6 +565,7 @@ function manualChange(productId){
 	getOrderCost('',storeId);
 }
 function increaseValue(productId){
+	productEditCartPopulate();
 	price = $('input[productId="'+productId+'"]').val();
 	if(price=='') price = '0';
 	price = parseInt(price);
@@ -573,6 +575,7 @@ function increaseValue(productId){
 	getOrderCost('',storeId);
 }
 function decreaseValue(productId){
+	productEditCartPopulate();
 	price = $('input[productId="'+productId+'"]').val();
 	if(price=='') price = '0';
 	if(price=='0') return;

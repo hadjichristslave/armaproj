@@ -20,6 +20,11 @@
 								     <i class="m-icon-swapright m-icon-white"></i>
 									 </a>
 								</li>
+								<li>
+									<a class="more" data-toggle="modal" href="#basic">Αποστολή σε αποθήκη
+								     <i class="m-icon-swapright m-icon-white"></i>
+									 </a>
+								</li>
 							</ul>
 						</li>
 						<li>
