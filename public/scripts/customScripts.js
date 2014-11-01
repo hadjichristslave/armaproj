@@ -528,12 +528,12 @@ function updateProductView(){
 	$('.orderProducts').text(getTotalProducts());
 }
 function deleteProduct(productId , model){
-	console.log(iitemCartProducts);
+	console.log(itemCartProducts);
 	for(var i in itemCartProducts){
 		if(itemCartProducts[i].prodId==productId)
 			removeByIndex(itemCartProducts, i);
 	}
-	console.log(iitemCartProducts);
+	console.log(itemCartProducts);
 	$("tr[productTr='"+productId+"']").fadeOut(400);
 	getOrderCost('',storeId);
 	$('.orderProducts').text(getTotalProducts());
