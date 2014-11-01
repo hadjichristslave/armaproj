@@ -80,7 +80,7 @@
 								<span class="label label-icon label-success">
 									<i class="fa fa-plus"></i>
 								</span>
-								 Νέα παραγγελία κωδικός {{$ord->id}}!
+								 Νέα παραγγελία κωδικός {{$ord->id}}!<br>
 								<span class="time">
 									{{Employeeorder::getDatediff($ord->id)}}
 								</span>

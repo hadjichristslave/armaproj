@@ -87,7 +87,7 @@
 															</a>
 														</div>
 													</div>
-													<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+													<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 companyDiv">
 														<div class="dashboard-stat blue">
 															<div class="visual">
 																<i class="fa fa-bar-chart-o"></i>
@@ -235,7 +235,16 @@
 											<td>{{$value->title}}</td>
 											<td>{{$value->brand}}</td>
 											<td>{{$value->unitPrice}} €</td>
-											<td>{{$value->availableStock}}</td>
+
+											<td>
+												<?php 
+													echo ($value->availableStock<=0)?"<del>":"";
+												?>
+												{{$value->availableStock}}
+												<?php 
+													echo ($value->availableStock<=0)?"</del>":"";
+												?>
+											</td>
 											<td>{{$value->lastImport}}</td>
 											<td>
 												<a class="btn btn-xs default btn-editable addSingleProduct" productId={{$value->id}}  data-toggle="modal" href="#responsive">

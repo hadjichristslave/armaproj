@@ -245,13 +245,17 @@ class AppController extends Controller {
 
 	public function getUpdatecost(){
 		$cart   =    json_decode(Input::get('cart'),true);
+		$storeId = Input::get('storeId');
+
 		$sum = 0;
 		try{
-		foreach ($cart as $key => $value)
-			$sum +=  Product::find($value['productId'])->unitPrice*$value['quantity'];
+			foreach ($cart as $key => $value){
+				$sum +=  Product::find($value['productId'])->unitPrice*$value['quantity']*Order::getDiscount($value['productId'], $storeId);
+			}
 		}catch(Exception $e){}
 		return $sum;
 	}
+	
 	public function getCustomreturn($model, $id=null , $singleRecord=null , $relationFunction = null){
 		if($model=="Employeeorder"){
 			$order      = Employeeorder::find($id);

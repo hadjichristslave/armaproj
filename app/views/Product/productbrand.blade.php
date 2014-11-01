@@ -21,9 +21,9 @@
 										<!-- BEGIN FORM-->
 											{{Form::token()}}
 											<div class="form-body">
-												@foreach(Product::select(array('brand','id'))->where('brand', '!=', '')->groupBy('brand')->get() as $prod)
 												<div class="row">
-													<div class="col-md-6">
+												@foreach(Product::select(array('brand','id'))->where('brand', '!=', '')->groupBy('brand')->get() as $prod)
+													<div class="col-md-3 associationdiv">
 														<div class="form-group">
 															<label class="control-label col-md-6">
 																<input type="text" readonly class="form-control input-large productGroup_{{$prod->id}}" value="{{$prod->brand}}" name="product_{{$prod->id}}" /> 
@@ -42,9 +42,9 @@
 														</div>
 													</div>
 													<!--/span-->
-												</div>
-												<hr>
+												
 												@endforeach
+												</div>
 											</div>
 											<!-- <div class="form-actions fluid">
 												<div class="row">

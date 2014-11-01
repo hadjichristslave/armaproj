@@ -332,11 +332,11 @@ jQuery( document ).ready(function($) {
 	});
 
 
-	$('input.createInput').on('change' , function(){
-		productEditCartPopulate();
-		setSubtotal(id);
-		getOrderCost('true');
-	});
+	 $('input.createInput').on('keyup' , function(){
+	 	productEditCartPopulate();
+	 	setSubtotal(id);
+	 	getOrderCost('true' , storeId);
+	 });
 
 
 	$('input.editInput').on('change' , function(){
@@ -350,7 +350,7 @@ jQuery( document ).ready(function($) {
 		updateSingleCell(id , model, key, value);
 		
 		setSubtotal(id);
-		getOrderCost('true');
+		getOrderCost('true' ,storeId);
 		updateDBCost();
 	});
 
@@ -403,12 +403,9 @@ jQuery( document ).ready(function($) {
 		 	}
 		 }
 	});
-// 	function updateSingleCell(id , Model, key, value){
-// 	url = "/azadmin/myproject/public/app/update/"+Model+"?"+key+"="+value+"&id="+id;
-// 	$.post(url, function(data){
-// 		return data;
-// 	});
-// }
+
+	storeId = $(".storeTitle").attr('storeId');
+
 });
 
 
@@ -521,7 +518,7 @@ function updateProductView(){
 		tempHtml += '<td>'+itemCartProducts[i].prodId+'</td>';
 		tempHtml += '<td>'+itemCartProducts[i].prodName+'</td>';
 		tempHtml += '<td>'+itemCartProducts[i].unitPrice+'</td>';
-		tempHtml += '<td><div><div class="input-group" style="width:150px;"><div class="spinner-buttons input-group-btn"><button type="button" class="btn spinner-down" onclick=decreaseValue('+itemCartProducts[i].prodId+')><i class="fa fa-minus"></i></button></div><input type="text" class="spinner-input form-control createInput" maxlength="3" value="'+itemCartProducts[i].prodQty+'" productId="'+itemCartProducts[i].prodId+'"><div class="spinner-buttons input-group-btn"><button type="button" class="btn spinner-up" onclick=increaseValue('+itemCartProducts[i].prodId+')><i class="fa fa-plus"></i></button></div></div></div></td><td><div class="input-group productDeletebut"><button type="button" class="close" onclick=deleteProduct('+itemCartProducts[i].prodId+')></button></div></td>';
+		tempHtml += '<td><div><div class="input-group" style="width:150px;"><div class="spinner-buttons input-group-btn"><button type="button" class="btn spinner-down" onclick=decreaseValue('+itemCartProducts[i].prodId+')><i class="fa fa-minus"></i></button></div><input type="text" class="spinner-input form-control" maxlength="3" value="'+itemCartProducts[i].prodQty+'" productId="'+itemCartProducts[i].prodId+'" onchange=manualChange('+itemCartProducts[i].prodId+')><div class="spinner-buttons input-group-btn"><button type="button" class="btn spinner-up" onclick=increaseValue('+itemCartProducts[i].prodId+')><i class="fa fa-plus"></i></button></div></div></div></td><td><div class="input-group productDeletebut"><button type="button" class="close" onclick=deleteProduct('+itemCartProducts[i].prodId+')></button></div></td>';
 		tempHtml += '<tr>';
 		$(".selectedProducts").append(tempHtml);
 	}
@@ -532,7 +529,7 @@ function deleteProduct(productId , model){
 		if(itemCartProducts[i].prodId==productId)
 			removeByIndex(itemCartProducts, i);
 	$("tr[productTr='"+productId+"']").fadeOut(400);
-	getOrderCost();
+	getOrderCost('',storeId);
 	$('.orderProducts').text(getTotalProducts());
 	if (arguments.length == 2)
 		deleteByIndex(productId, model);
@@ -547,6 +544,14 @@ function deleteByIndex(id, model){
 		}
 	});
 }
+function manualChange(productId){
+	price = $('input[productId="'+productId+'"]').val();
+	if(price=='') price = '0';
+	price = parseInt(price);
+	$('input[productId="'+productId+'"]').val(price);
+	updateProductQuantity(productId, price);
+	getOrderCost('',storeId);
+}
 function increaseValue(productId){
 	price = $('input[productId="'+productId+'"]').val();
 	if(price=='') price = '0';
@@ -554,16 +559,17 @@ function increaseValue(productId){
 	price++;
 	$('input[productId="'+productId+'"]').val(price);
 	updateProductQuantity(productId, price);
-	getOrderCost();
+	getOrderCost('',storeId);
 }
 function decreaseValue(productId){
 	price = $('input[productId="'+productId+'"]').val();
 	if(price=='') price = '0';
+	if(price=='0') return;
 	price = parseInt(price);
 	price--;
 	$('input[productId="'+productId+'"]').val(price<0?0:price);
 	updateProductQuantity(productId, price);
-	getOrderCost();
+	getOrderCost('',storeId);
 }
 function updateProductQuantity(productId, Qty){
 	for(var i in itemCartProducts){
@@ -599,23 +605,27 @@ function orderItem(productId, quantity, comments){
 	this.quantity=quantity;
 }
 
-function getOrderCost(editView){
+function getOrderCost(editView , storeId){
 	orderObjects = new Array();
 	for(var i in itemCartProducts){
 			var productId  = itemCartProducts[i].prodId;
 			var productQtt = itemCartProducts[i].prodQty;
 			orderObjects.push(new orderCart(productId, productQtt));	
 	}
+	if(storeId==0){
+		alert('Παρακαλώ διαλέξτε κατάστημα για το σωστό υπολογισμό κόστους!');
+		return false;
+	}
 	$.ajax({
         type:  'get',
         cache:  false ,
         async: false,
         url:  '/azadmin/myproject/public/app/updatecost',
-        data:  {cart:JSON.stringify(orderObjects)},
+        data:  {cart:JSON.stringify(orderObjects), storeId:storeId},
         success: function(resp) {
             $('.cartTotal').val(resp);
             cost = resp + " €";
-            if (typeof editView != 'undefined' ){
+            if (typeof editView != 'undefined' && editView =='true' ){
 				$('.totalCostz').text(cost);
 			}
 			else{
@@ -643,12 +653,12 @@ function updateOrderCost(){
 	            $('.ajax_sum').val(resp);
 	        } 
 	      });
-}
+} 
 
 function cartify(productId , action){
 	action=="true"?increaseValue(productId):decreaseValue(productId);
 	productEditCartPopulate();
-	getOrderCost('true');
+	getOrderCost('true' ,storeId);
 	setSubtotal(productId);
 	updateSingleCell(productId , 'Order', 'quantity', $('input[productId="'+productId+'"]').val() );
 	updateDBCost();
@@ -656,10 +666,7 @@ function cartify(productId , action){
 
 function updateDBCost(){
 	totalCost = $(".totalCostz").text();
-	console.log(totalCost);
 	totalCost = totalCost.slice(0,-1);
-	console.log(totalCost);
-	console.log(parseFloat(totalCost));
 	updateSingleCell($('tbody.productBody').attr('orderId') , 'Employeeorder', 'totalPrice', parseFloat(totalCost));
 }
 

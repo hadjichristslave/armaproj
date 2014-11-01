@@ -127,7 +127,7 @@
 								</tr>
 								</thead>
 								<tbody class="filter-tbody">
-									@foreach(Employeeorder::where('employeeId' , '=' , Auth::user()->userId)->get() as $ord)
+									@foreach(Employeeorder::where('employeeId' , '=' , Auth::user()->userId)->orderBy('created_at', 'desc')->get() as $ord)
 										<tr>
 											<?php 
 												// var_dump($ord);
@@ -138,7 +138,7 @@
 									<td>{{$ord->created_at}}</td>
 									<td>{{Store::find($ord->storeId)->brand}}</td>
 									<td>{{$ord->totalPrice}}€</td>
-									<td><span class="label label-sm label-success">{{Orderstate::find($ord->stateId)->name}}</span></td>
+									<td><span class="label label-sm label-{{Orderstate::getStateLabel(Orderstate::find($ord->stateId)->id)}}">{{Orderstate::find($ord->stateId)->name}}</span></td>
 									<td>
 									<a href="/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}" class="btn btn-xs default btn-editable"><i class="fa fa-search"></i> Edit</a>
 									<a orderId="{{$ord->id}}" data-toggle="modal" href="#basic" class="btn btn-xs default btn-editable modalDeleteOrder"><i class="glyphicon glyphicon-remove"></i>Delete</a>

@@ -25,7 +25,6 @@ class Storebrand extends Eloquent{
     	$this->setDate($tempDate);
     }
     public static function createStoreBrandsFromInput($storeId){
-
     	foreach(Input::all() as $key=>$val){
 				$record = explode('___' , $key);
 				if(sizeof($record)>1){

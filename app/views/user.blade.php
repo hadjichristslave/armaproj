@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<link href="/azadmin/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
+<link href="http://armancon.com/azadmin/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
@@ -62,7 +62,7 @@
 									<div class="col-md-3">
 										<ul class="list-unstyled profile-nav">
 											<li>
-												<img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/>
+												<img src="http://armancon.com/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/>
 												<a href="#" class="profile-edit">επεξεργασία</a>
 											</li>
 											<li>
@@ -219,7 +219,7 @@
 																{{$ord->created_at}}
 															</td>
 															<td>
-																<a class="btn default btn-xs green-stripe" href="/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}">Εμφάνιση</a>
+																<a class="btn default btn-xs green-stripe" href="http://armancon.com/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}">Εμφάνιση</a>
 															</td>
 														</tr>
 														@endforeach
@@ -653,7 +653,7 @@
 									<div class="col-md-9">
 										<div class="tab-content">
 											<div id="tab_1-1" class="tab-pane active">
-												<form role="form" action="/azadmin/myproject/public/app/update/Employee" method="post">
+												<form role="form" action="http://armancon.com/azadmin/myproject/public/app/update/Employee" method="post">
 													{{Form::token()}}
 													<div class="form-group">
 														<label class="control-label">Όνομα</label>
@@ -721,7 +721,7 @@
 												</form>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
-												<form action="/azadmin/myproject/public/app/update/User" id="updateSensibleDataForm" method="post"> 
+												<form action="http://armancon.com/azadmin/myproject/public/app/update/User" id="updateSensibleDataForm" method="post"> 
 													{{Form::token()}}
 													<div class="form-group">
 														<label class="control-label">Τρέχων Κωδικός</label>
@@ -821,7 +821,7 @@
 								<div class="row portfolio-block">
 									<div class="col-md-5">
 										<div class="portfolio-text">
-											<img src="/azadmin/assets/img/profile/portfolio/logo_metronic.jpg" alt=""/>
+											<img src="http://armancon.com/azadmin/assets/img/profile/portfolio/logo_metronic.jpg" alt=""/>
 											<div class="portfolio-text-info">
 												<h4>{{$store->brand}}</h4>
 												<p>
@@ -847,7 +847,7 @@
 									</div>
 									<div class="col-md-2">
 										<div class="portfolio-btn">
-											<a href="/azadmin/myproject/public/app/data/Store/edit/{{$store->id}}" class="btn bigicn-only">
+											<a href="http://armancon.com/azadmin/myproject/public/app/data/Store/edit/{{$store->id}}" class="btn bigicn-only">
 											<span>
 												Κατάστημα
 											</span>

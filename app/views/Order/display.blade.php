@@ -117,7 +117,7 @@
 									<div class="tab-pane active" id="tab_1">
 										<div class="row">
 											<div class="col-md-6 col-sm-12">
-												<div class="portlet yellow-crusta box">
+												<div class="portlet yellow box">
 													<div class="portlet-title">
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Λεπτομέρειες
@@ -170,7 +170,7 @@
 												</div>
 											</div>
 											<div class="col-md-6 col-sm-12">
-												<div class="portlet blue-hoki box">
+												<div class="portlet blue box">
 													<div class="portlet-title">
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Κατάστημα
@@ -185,7 +185,7 @@
 															<div class="col-md-5 name">
 																 Τίτλος:
 															</div>
-															<div class="col-md-7 value">
+															<div class="col-md-7 value storeTitle" storeId="{{Employeeorder::find($id)->storeId}}">
 																 {{Store::find(Employeeorder::find($id)->storeId)->brand}}
 															</div>
 														</div>
@@ -230,7 +230,7 @@
 										
 										<div class="row">
 											<div class="col-md-12 col-sm-12">
-												<div class="portlet grey-cascade box">
+												<div class="portlet grey box">
 													<div class="portlet-title">
 														<div class="caption">
 															<i class="fa fa-cogs"></i>Προϊόντα
@@ -272,21 +272,26 @@
 																@foreach(Order::where('orderId' , '=' , $id)->get() as $ord)
 																	<tr class="productEditTr" itemId="{{$ord->productId}}" orderId="{{$id}}" productTr="{{$ord->id}}">
 																<td>
-																	<a href="#">
-																	{{Product::find($ord->productId)->title}}</a>
+																	<?php 
+																		echo (Product::find($ord->productId)->availableStock==0)?"<del>":"";
+																	?>
+																	<a href="#">{{Product::find($ord->productId)->title}}</a>
+																	<?php 
+																		echo (Product::find($ord->productId)->availableStock==0)?"</del>":"";
+																	?>
 																</td>
 																<td>
 																	<div id="spinner4">
 																		<div class="input-group" style="width:150px;">
 																			<div class="spinner-buttons input-group-btn">
-																				<button type="button" class="btn spinner-up" onclick=cartify("{{$ord->id}}","true") >
-																				<i class="fa fa-plus"></i>
+																				<button type="button" class="btn spinner-down" onclick=cartify("{{$ord->id}}","false") >
+																				<i class="fa fa-minus"></i>
 																				</button>
 																			</div>
 																			<input type="text" class="spinner-input form-control editInput" itemId="{{$ord->productId}}" productId-edit='on' key="quantity" productId="{{$ord->id}}" maxlength="3" value="{{$ord->quantity}}">
 																			<div class="spinner-buttons input-group-btn">
-																				<button type="button" class="btn spinner-down" onclick=cartify("{{$ord->id}}","false") >
-																				<i class="fa fa-minus"></i>
+																				<button type="button" class="btn spinner-up" onclick=cartify("{{$ord->id}}","true") >
+																				<i class="fa fa-plus"></i>
 																				</button>
 																			</div>
 																		</div>
@@ -296,7 +301,13 @@
 																	 {{Product::find($ord->productId)->unitPrice}}€
 																</td>
 																<td>
+																	<?php 
+																		echo (Product::find($ord->productId)->availableStock==0)?"<del>":"";
+																	?>
 																	 {{Product::find($ord->productId)->availableStock}}
+																	 <?php 
+																		echo (Product::find($ord->productId)->availableStock==0)?"</del>":"";
+																	?>
 																</td>
 																<td>
 																	 33%
