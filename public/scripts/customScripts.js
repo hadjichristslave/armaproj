@@ -529,14 +529,18 @@ function updateProductView(){
 }
 function deleteProduct(orderIndex , model , productId){
 	for(var i in itemCartProducts){
-		if(typeof productid!== 'undefined')
+		if(typeof productid!== 'undefined'){
 			if(itemCartProducts[i].prodId==productId)
 				removeByIndex(itemCartProducts, i);
-		else
+			$("tr[producttr='"+orderIndex+"']").fadeOut(400).remove();
+		}
+		else{
 			if(itemCartProducts[i].prodId==orderIndex)
 				removeByIndex(itemCartProducts, i);
+			$("tr[productTr='"+orderIndex+"']").fadeOut(400).remove();
+		}
 	}
-	$("tr[productTr='"+orderIndex+"']").fadeOut(400);
+	
 	$('.orderProducts').text(getTotalProducts());
 	 if(typeof model !== 'undefined'){
 	 	deleteByIndex(orderIndex, model);
