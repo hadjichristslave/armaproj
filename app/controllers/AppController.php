@@ -259,6 +259,10 @@ class AppController extends Controller {
 		$sum = number_format($sum, 2, ',', '.');
 		return $sum;
 	}
+
+	public function getDiscount($prodId, $orderId){
+		return  Order::getDiscount($prodid, Employeeorder::find($orderId)->storeId);
+	}
 	
 	public function getCustomreturn($model, $id=null , $singleRecord=null , $relationFunction = null){
 		if($model=="Employeeorder"){

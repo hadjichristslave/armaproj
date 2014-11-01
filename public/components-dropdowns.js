@@ -1,4 +1,5 @@
 var counter = 0;
+var currentProdId;
 var ComponentsDropdowns = function () {
 
     var handleSelect2 = function () {
@@ -67,15 +68,18 @@ var ComponentsDropdowns = function () {
                 console.log(data.slice(0,-4));
                 dat = JSON.parse(data.slice(0,-4));
                 console.log(dat);
+                currentProdId = dat.id;
                 selection.parent().next().next().text( dat.unitPrice + " €");
                 selection.parent().next().next().next().text( dat.availableStock);
                 selection.parent().parent().find('td').find('button').last().attr('onclick' , 'deleteProduct('+e.val+',"Order")');
                 console.log(selection.parent().next().next());
 
             });
-            console.log("order id is "  +order);
             orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
-            console.log("dynamic order Id is " + orderId);
+            $.get("/azadmin/myproject/public/app/get/getDIscount/"+currentProdId+"/"+orderId, function(data)){
+                console.log('current discount' + data);
+            }
+            
             // console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); 
         });
         counter++;
