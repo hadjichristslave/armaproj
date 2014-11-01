@@ -75,9 +75,10 @@ var ComponentsDropdowns = function () {
 
                 orderId = $("input[orderSelectInput]").first().attr('orderSelectInput');
                 $.get("/azadmin/myproject/public/app/discount/"+currentProdId+"/"+orderId, function(data){
-                    selection.parent().next().next().text( data+ " %");
+                    selection.parent().next().next().next().next().text( data+ " %");
                 });
-                $(".editAddDelete").attr('onclick' , "deleteProduct( "+dat.id+",'Order') ");
+                $(".editAddDelete").attr('onclick' , "deleteProduct( "+producttr+",'Order' ,"+dat.id+") ");
+
             });
             
             

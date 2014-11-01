@@ -327,7 +327,7 @@
 																</td>
 																<td >
 																	<div class="input-group deleteEditProduct">
-																		<button type="button" class="close" onclick="deleteProduct({{$ord->id}} , 'Order')"></button>
+																		<button type="button" class="close" onclick="deleteProduct({{$ord->id}} , 'Order' , {{$ord->productId}})"></button>
 																	</div>
 																</td>
 															</tr>

@@ -527,19 +527,25 @@ function updateProductView(){
 	}
 	$('.orderProducts').text(getTotalProducts());
 }
-function deleteProduct(productId , model){
+function deleteProduct(orderIndex , model , productId = undefined){
 	productEditCartPopulate();
 	console.log(itemCartProducts);
 	for(var i in itemCartProducts){
-		if(itemCartProducts[i].prodId==productId)
-			removeByIndex(itemCartProducts, i);
+		if(typeof productid!== 'undefined')
+			if(itemCartProducts[i].prodId==productId)
+				removeByIndex(itemCartProducts, i);
+		else
+			if(itemCartProducts[i].prodId==orderIndex)
+				removeByIndex(itemCartProducts, i);
 	}
 	console.log(itemCartProducts);
-	$("tr[productTr='"+productId+"']").fadeOut(400);
+	$("tr[productTr='"+orderIndex+"']").fadeOut(400);
 	getOrderCost('',storeId);
 	$('.orderProducts').text(getTotalProducts());
-	if (arguments.length == 2)
-		deleteByIndex(productId, model);
+	 if(typeof model !== 'undefined'){
+	 	deleteByIndex(orderIndex, model);
+ 	}
+		
 
 }
 
