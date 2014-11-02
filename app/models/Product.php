@@ -132,4 +132,11 @@ public $rules = array();
     	$product = Product::find($id);
     	return $product->unitPrice*$quantity;
     }
+    public static function getIfActive($currentUrl){
+    	$url = $_SERVER['REQUEST_URI'];
+    	if (strpos($url, $currentUrl) !== false) {
+    		echo 'active';
+		}
+
+    }
 }

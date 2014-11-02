@@ -190,7 +190,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=5)
-				<li class="">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-user"></i>
 						<span class="title">
@@ -200,14 +200,14 @@
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{getIfActive('azadmin/myproject/public/app/data/User/create')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/User/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{getIfActive('azadmin/myproject/public/app/data/User/edit')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/User/edit">
 								<span class="title">
 									Τροποποίηση
@@ -216,7 +216,7 @@
 						</li>
 					</ul>
 				</li>
-				 <li class="">
+				 <li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-briefcase"></i>
 						<span class="title">
@@ -244,7 +244,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
-				 <li class="">
+				 <li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
 						<span class="title">
@@ -272,7 +272,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=10)
-				<li class="">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-archive"></i>
 						<span class="title">
@@ -300,7 +300,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
-				<li class="">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-truck"></i>
 						<span class="title">
@@ -378,7 +378,7 @@
 				</li> -->
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
-				<li class="">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-barcode"></i>
 						<span class="title">

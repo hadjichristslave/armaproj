@@ -734,3 +734,7 @@ function getProdStoreDiscount(productId,storeId){
 		currDiscount = data;
 	});
 }
+function getIfActive(currentUrl){
+	url = document.URL;
+	return url.indexOf(currentUrl) > -1?"active":"";
+}
