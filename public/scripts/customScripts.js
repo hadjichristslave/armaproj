@@ -665,7 +665,7 @@ function updateOrderCost(){
 } 
 
 function cartify(productId , action , manualAction){
-	if(typeof action !== "undefined"){
+	if(typeof manualAction !== "undefined"){
 		action =  manualChange(productId);
 	}else
 		action=="true"?increaseValue(productId):decreaseValue(productId);
