@@ -190,7 +190,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=5)
-				<li class="open">
+				<li class="active open">
 					<a href="javascript:;">
 						<i class="fa fa-user"></i>
 						<span class="title">
@@ -216,7 +216,7 @@
 						</li>
 					</ul>
 				</li>
-				 <li class="open">
+				 <li class="active open">
 					<a href="javascript:;">
 						<i class="fa fa-briefcase"></i>
 						<span class="title">
@@ -226,14 +226,14 @@
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Employee/create')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Employee/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Employee/edit')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Employee/edit">
 								<span class="title">
 									Τροποποίηση
@@ -244,7 +244,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
-				 <li class="open">
+				 <li class="active open">
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
 						<span class="title">
@@ -254,14 +254,14 @@
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Store/create')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Store/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Store/edit')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Store/edit">
 								<span class="title">
 									Τροποποίηση
@@ -272,7 +272,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=10)
-				<li class="open">
+				<li class="active open">
 					<a href="javascript:;">
 						<i class="fa fa-archive"></i>
 						<span class="title">
@@ -282,14 +282,14 @@
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Store/edit')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Storeproduct/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Store/edit')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Storeproduct/edit">
 								<span class="title">
 									Τροποποίηση
@@ -300,7 +300,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
-				<li class="open">
+				<li class="active open">
 					<a href="javascript:;">
 						<i class="fa fa-truck"></i>
 						<span class="title">
@@ -318,7 +318,7 @@
 							</a>
 						</li> -->
 						<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Product/view')}} " data-container="body" data-placement="right" data-html="true" >
 								<a href="/azadmin/myproject/public/app/data/Product/view">
 									<span class="title">
 										Δημιουργία
@@ -339,7 +339,7 @@
 								</span>
 							</a>
 						</li> -->
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Order/orders')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Order/orders">
 								<span class="title">
 									Παραγγελίες
@@ -378,7 +378,7 @@
 				</li> -->
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
-				<li class="open">
+				<li class="active open">
 					<a href="javascript:;">
 						<i class="fa fa-barcode"></i>
 						<span class="title">
@@ -412,7 +412,7 @@
 					</ul>
 				</li>
 				@endif
-				<li class="last ">
+				<li class="last {{Product::getIfActive('azadmin/myproject/public/calendar/calendar')}} ">
 					<a href="/azadmin/myproject/public/calendar/calendar">
 					<i class="fa fa-calendar"></i>
 					<span class="title">
