@@ -514,11 +514,9 @@ function getTotalProducts(){
 	return total;
 }
 function updateProductView(){
-	console.log(itemCartProducts);
 	$(".selectedProducts").empty();
-	console.log(itemCartProducts);
 	for(var i in itemCartProducts){
-		var tempHtml = "<tr productTr="+itemCartProducts[i].prodId+">";
+		var tempHtml = "<tr productTr="+itemCartProducts[i].prodId+" productEditTr="+itemCartProducts[i].prodId+">";
 		tempHtml += '<td>'+itemCartProducts[i].prodId+'</td>';
 		tempHtml += '<td>'+itemCartProducts[i].prodName+'</td>';
 		tempHtml += '<td>'+itemCartProducts[i].unitPrice+'</td>';
@@ -620,6 +618,7 @@ function orderItem(productId, quantity, comments){
 }
 
 function getOrderCost(editView , storeId){
+	productEditCartPopulate();
 	console.log(itemCartProducts);
 	orderObjects = new Array();
 	for(var i in itemCartProducts){
