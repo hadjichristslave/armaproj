@@ -618,8 +618,6 @@ function orderItem(productId, quantity, comments){
 }
 
 function getOrderCost(editView , storeId){
-	productEditCartPopulate();
-	console.log(itemCartProducts);
 	orderObjects = new Array();
 	for(var i in itemCartProducts){
 			var productId  = itemCartProducts[i].prodId;
