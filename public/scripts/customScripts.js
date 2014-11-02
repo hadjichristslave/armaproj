@@ -670,7 +670,7 @@ function updateOrderCost(){
 } 
 
 function cartify(productId , action , manualAction){
-	if(typeof optionalArg !== "undefined"){
+	if(typeof action !== "undefined"){
 		action =  manualChange(productId);
 
 	}else
