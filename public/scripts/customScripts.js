@@ -562,7 +562,6 @@ function manualChange(productId){
 	getOrderCost('',storeId);
 }
 function increaseValue(productId){
-	productEditCartPopulate();
 	price = $('input[productId="'+productId+'"]').val();
 	if(price=='') price = '0';
 	price = parseInt(price);
@@ -572,7 +571,6 @@ function increaseValue(productId){
 	getOrderCost('',storeId);
 }
 function decreaseValue(productId){
-	productEditCartPopulate();
 	price = $('input[productId="'+productId+'"]').val();
 	if(price=='') price = '0';
 	if(price=='0') return;
@@ -669,7 +667,6 @@ function updateOrderCost(){
 function cartify(productId , action , manualAction){
 	if(typeof action !== "undefined"){
 		action =  manualChange(productId);
-
 	}else
 		action=="true"?increaseValue(productId):decreaseValue(productId);
 
