@@ -516,7 +516,7 @@ function getTotalProducts(){
 function updateProductView(){
 	$(".selectedProducts").empty();
 	for(var i in itemCartProducts){
-		var tempHtml = "<tr productTr="+itemCartProducts[i].prodId+" class=productEditTr="+itemCartProducts[i].prodId+">";
+		var tempHtml = "<tr productTr="+itemCartProducts[i].prodId+" class='productEditTr' >";
 		tempHtml += '<td>'+itemCartProducts[i].prodId+'</td>';
 		tempHtml += '<td>'+itemCartProducts[i].prodName+'</td>';
 		tempHtml += '<td>'+itemCartProducts[i].unitPrice+'</td>';
