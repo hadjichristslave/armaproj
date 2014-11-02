@@ -190,7 +190,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=5)
-				<li class="active open">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-user"></i>
 						<span class="title">
@@ -216,7 +216,7 @@
 						</li>
 					</ul>
 				</li>
-				 <li class="active open">
+				 <li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-briefcase"></i>
 						<span class="title">
@@ -244,7 +244,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
-				 <li class="active open">
+				 <li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
 						<span class="title">
@@ -272,7 +272,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=10)
-				<li class="active open">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-archive"></i>
 						<span class="title">
@@ -300,7 +300,7 @@
 				</li>
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
-				<li class="active open">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-truck"></i>
 						<span class="title">
@@ -378,7 +378,7 @@
 				</li> -->
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
-				<li class="active open">
+				<li class="open">
 					<a href="javascript:;">
 						<i class="fa fa-barcode"></i>
 						<span class="title">
