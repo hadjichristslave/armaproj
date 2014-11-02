@@ -227,6 +227,9 @@
 									?>
 									@foreach(Product::where('imageURI', '!=', '')->take(51)->get() as $key=>$value)
 										<tr role="row" class="{{$class}}" rowId="{{$value->id}}">
+											<?php 
+													echo ($value->availableStock<=0)?"<del>":"";
+											?>
 											<td><input type="checkbox" initial="true" class="group-checkable" checkbox="{{$value->id}}"></td>
 											<td class="sorting_1">{{$value->id}}</td>
 											<td class="sorting_1"><img class="avatar productImage" alt="" src="/azadmin/myproject/public/pictures/{{$value->sku}}"></td>
@@ -237,13 +240,9 @@
 											<td>{{$value->unitPrice}} €</td>
 
 											<td>
-												<?php 
-													echo ($value->availableStock<=0)?"<del>":"";
-												?>
+												
 												{{$value->availableStock}}
-												<?php 
-													echo ($value->availableStock<=0)?"</del>":"";
-												?>
+												
 											</td>
 											<td>{{$value->lastImport}}</td>
 											<td>
@@ -252,6 +251,9 @@
 													<i class="fa fa-plus"></i> Add Product
 												</a>
 											</td>	
+											<?php 
+													echo ($value->availableStock<=0)?"</del>":"";
+											?>
 										</tr>						
 									@endforeach
 
