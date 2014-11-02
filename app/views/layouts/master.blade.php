@@ -200,14 +200,14 @@
 						</span>
 					</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips {{getIfActive('azadmin/myproject/public/app/data/User/create')}}" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/User/create')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/User/create">
 								<span class="title">
 									Δημιουργία
 								</span>
 							</a>
 						</li>
-						<li class="tooltips {{getIfActive('azadmin/myproject/public/app/data/User/edit')}}" data-container="body" data-placement="right" data-html="true" >
+						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/User/edit')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/User/edit">
 								<span class="title">
 									Τροποποίηση
