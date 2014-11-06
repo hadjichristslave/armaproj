@@ -526,7 +526,6 @@ function updateProductView(){
 	$('.orderProducts').text(getTotalProducts());
 }
 function deleteProduct(orderIndex , model , productId){
-	console.log("this");
 	for(var i in itemCartProducts){
 		if(typeof productid!== 'undefined')
 			if(itemCartProducts[i].prodId==productId)
@@ -537,12 +536,10 @@ function deleteProduct(orderIndex , model , productId){
 	}
 	$("tr[productTr='"+orderIndex+"']").remove();
 
-	console.log("this");
 	$('.orderProducts').text(getTotalProducts());
 	 if(typeof model !== 'undefined'){
 	 	deleteByIndex(orderIndex, model);
  	}
-	console.log("this");
 	getOrderCost('true',storeId);
 }
 
@@ -639,8 +636,10 @@ function getOrderCost(editView , storeId){
             cost = resp + " €";
             if (typeof editView != 'undefined' && editView =='true' ){
 				$('.totalCostz').text(cost);
+            	$(".orderCost").text(cost);
 			}
 			else{
+				$('.totalCostz').text(cost);
             	$(".orderCost").text(cost);
 			}
         } 
