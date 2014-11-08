@@ -527,7 +527,10 @@ function updateProductView(){
 }
 function deleteProduct(orderIndex , model , productId){
 	for(var i in itemCartProducts){
-		if(typeof productid!== 'undefined'){
+		if(typeof productid === "undefined")
+			{
+				console.log("undefined");
+		}else{
 			if(itemCartProducts[i].prodId==productId){
 				removeByIndex(itemCartProducts, i);
 			}
