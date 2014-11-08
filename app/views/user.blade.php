@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('content')
+<!--
+	<?php var_dump(Auth::user()); ?>
+	-->
 <link href="http://armancon.com/azadmin/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
 			<div class="row">
 				<div class="col-md-12">
