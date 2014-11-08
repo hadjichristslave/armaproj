@@ -527,16 +527,17 @@ function updateProductView(){
 }
 function deleteProduct(orderIndex , model , productId){
 	for(var i in itemCartProducts){
-		if(typeof productid === "undefined")
-			{
-				console.log("undefined");
+		if(typeof productid=== 'undefined'){
+			console.log("undefined");
+			if(itemCartProducts[i].prodId==orderIndex)
+				removeByIndex(itemCartProducts, i);
 		}else{
+			console.log("defined");
 			if(itemCartProducts[i].prodId==productId){
 				removeByIndex(itemCartProducts, i);
 			}
 		}else
-			if(itemCartProducts[i].prodId==orderIndex)
-				removeByIndex(itemCartProducts, i);
+			
 	}
 	$("tr[productTr='"+orderIndex+"']").remove();
 
