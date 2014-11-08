@@ -684,12 +684,12 @@ function updateOrderCost(){
 } 
 
 function cartify(productId , action , manualAction){
+	productEditCartPopulate();
 	if(typeof manualAction !== "undefined"){
 		action =  manualChange(productId);
 	}else
 		action=="true"?increaseValue(productId):decreaseValue(productId);
 
-	productEditCartPopulate();
 	getOrderCost('true' ,storeId);
 	setSubtotal(productId);
 	updateSingleCell(productId , 'Order', 'quantity', $('input[productId="'+productId+'"]').val() );
