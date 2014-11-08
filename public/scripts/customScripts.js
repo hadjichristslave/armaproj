@@ -564,7 +564,7 @@ function deleteProduct(orderIndex , model , productId){
 
 function deleteByIndex(id, model){
 	console.log(id + model);
-	$.post('/azadmin/myproject/public/app/data/'+model+'/delete'+'?id='+id, function(data){
+	$.post('/azadmin/myproject/public/app/data/'+model+'/delete'+'?id='+id+"&_token="+token, function(data){
 		if(data){
 			console.log('success');
 			deleteProduct(id);
