@@ -409,7 +409,6 @@
 
 <!-- END LOGIN SCRIPTS -->
  
-
 <!-- order display scripts -->
 <!-- <script src="/azadmin/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="/azadmin/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
@@ -431,7 +430,6 @@
        	App.init();
 		Login.init();
 		ComponentsPickers.init();
-		ComponentsFormTools.init();
     });  
 </script>	
 
