@@ -75,7 +75,7 @@
 																<i class="fa fa-globe"></i>
 															</div>
 															<div class="details">
-																<div class="number orderCost">
+																<div class="number totalCostz orderCost">
 																	 --
 																</div>
 																<div class="desc">
