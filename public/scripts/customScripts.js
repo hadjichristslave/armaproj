@@ -316,7 +316,7 @@ jQuery( document ).ready(function($) {
 
 		formData = {};
 		formData['storeId'] = storeId;
-		formData['token'] = $('input[name="_token"]').val();
+		formData['_token'] = $('input[name="_token"]').val();
 		for(i in itemCartProducts){
 			productPrefix = 'productId' + '_' + i;
 			quantityPrefix = 'quantity' + '_' + i;
