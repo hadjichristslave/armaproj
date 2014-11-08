@@ -12,7 +12,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
 
-	public $rules = array( 'email' =>'unique:users' );
+	public $rules = array( 'email' =>'unique:users' , 'name'=> 'unique:users' );
 
 	public function employee()
     {

@@ -192,7 +192,7 @@
 						</li>
 					</ul>
 				</li>
-				 <li class="">
+				 <li class="active open">
 					<a href="javascript:;">
 						<i class="fa fa-briefcase"></i>
 						<span class="title">
