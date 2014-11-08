@@ -407,7 +407,7 @@
 														<span></span>
 													</div>
 													<div class="margin-top-10">
-														
+														<input name="id" value="{{Auth::user()->id}}" hidden />
 														<button type="submit" class="btn default">Αποθήκευση αλλαγών</button>
 													</div>
 												</form>
