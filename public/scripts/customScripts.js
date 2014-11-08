@@ -526,8 +526,9 @@ function updateProductView(){
 	$('.orderProducts').text(getTotalProducts());
 }
 function deleteProduct(orderIndex , model , productId){
+	productEditCartPopulate();
 	for(var i in itemCartProducts){
-		if(typeof productid=== 'undefined'){
+		if(typeof productId=== 'undefined'){
 			console.log("undefined");
 			if(itemCartProducts[i].prodId==orderIndex)
 				removeByIndex(itemCartProducts, i);
