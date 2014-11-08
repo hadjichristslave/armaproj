@@ -58,7 +58,7 @@
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<ul class="nav navbar-nav pull-right">
 			<!-- BEGIN NOTIFICATION DROPDOWN -->
-			@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
+			@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
 			<li class="dropdown" id="header_notification_bar">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<i class="fa fa-warning"></i>

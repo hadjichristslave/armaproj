@@ -224,7 +224,7 @@
 																 Τηλέφωνο:
 															</div>
 															<div class="col-md-7 value">
-																 {{Employeeorder::find($id)->employee>phone}}
+																 {{Employeeorder::find($id)->employee->phone}}
 															</div>
 														</div>
 														<!-- <div class="row static-info">
