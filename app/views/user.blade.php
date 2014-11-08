@@ -211,7 +211,7 @@
 															</td>
 															<td>
 																
-																<span class="label label-success label-sm {{Orderstate::getStateLabel(Orderstate::find($ord->stateId)->id)}}">
+																<span class="label label-success label-sm label-{{Orderstate::getStateLabel(Orderstate::find($ord->stateId)->id)}}">
 																	{{Orderstate::find($ord->stateId)->name}}
 																</span>
 															</td>

@@ -63,13 +63,13 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<i class="fa fa-warning"></i>
 				<span class="badge">
-					 {{Employeeorder::where('stateId' , '=' , 4)->count()}}
+					 {{Employeeorder::where('stateId' , '=' , 4)->where('employeeId', '=' ,Auth::user()->userId)->count()}}
 				</span>
 				</a>
 				<ul class="dropdown-menu extended notification">
 					<li>
 						<p>
-							 You have {{Employeeorder::where('stateId' , '=' , 4)->count()}} new notifications
+							 You have {{Employeeorder::where('stateId' , '=' , 4)->where('employeeId', '=' ,Auth::user()->userId)->count()}} new notifications
 						</p>
 					</li>
 					<li>
