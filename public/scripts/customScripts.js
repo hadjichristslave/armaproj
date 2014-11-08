@@ -227,7 +227,7 @@ jQuery( document ).ready(function($) {
 
 	$(".storeSubmit").click(function(){
 		storeId = $(".storeSelect").val();
-		string.substring(0, length);
+		name = $(".storeSelect option:selected").text();
 		name = name.length>12?name.substring(0,7)+"...":name;
 		$(".storeName").text(name);
 		getOrderCost('true' ,storeId);
