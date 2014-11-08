@@ -316,7 +316,6 @@ jQuery( document ).ready(function($) {
 
 		formData = {};
 		formData['storeId'] = storeId;
-		formData['_token'] = $('input[name="_token"]').val();
 		for(i in itemCartProducts){
 			productPrefix = 'productId' + '_' + i;
 			quantityPrefix = 'quantity' + '_' + i;
@@ -327,7 +326,7 @@ jQuery( document ).ready(function($) {
         type:  'post',
         cache:  false ,
         url:  '/azadmin/myproject/public/app/custom/Order/create',
-        data:  {cart:JSON.stringify(formData)},
+        data:  {cart:JSON.stringify(formData),_token = $('input[name="_token"]').val()},
         success: function(resp) {
         	console.log(resp);
         	window.location.href = resp;
