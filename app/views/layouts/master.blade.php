@@ -74,7 +74,7 @@
 					</li>
 					<li>
 						<ul class="dropdown-menu-list scroller" style="height: 250px;">
-							@foreach(Employeeorder::select(DB::raw("*,(UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_at))/60 AS minutes"))->where('stateId', '=' , 4)->where('employeeId', '=' ,Auth::user()->userId)->orderBy('minutes','desc')->get() as $ord)
+							@foreach(Employeeorder::select(DB::raw("*,(UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(created_at))/60 AS minutes"))->where('stateId', '!=' , 1)->where('employeeId', '=' ,Auth::user()->userId)->orderBy('minutes','desc')->get() as $ord)
 							<li>
 								<a href="/azadmin/myproject/public/app/data/Order/display/{{$ord->id}}">
 								<span class="label label-icon label-success">
