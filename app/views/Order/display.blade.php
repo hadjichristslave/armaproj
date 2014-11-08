@@ -612,7 +612,7 @@
 			</div>
 			<!-- END PAGE CONTENT-->
 
-
+{{Form::token()}}
 <div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
