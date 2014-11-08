@@ -383,15 +383,16 @@ jQuery( document ).ready(function($) {
 	$(".csvExport").click(function(){
 		id = $("tbody.productBody").attr('orderId');
 		$(".orderProducts").find('tbody tr').each(function(){
-		 	stock = pareInt($(this).find('td:nth-child(4)').text());
+		 	stock = parseInt($(this).find('td:nth-child(4)').text());
 		 	console.log(stock);
 		 	if(stock<=0){
 		 		alert("Παρακαλώ διαγράψτε όλα τα προιόντα με μηδενικό απόθεμα προτού προχωρήσετε στην εξαγωγή της παραγγελίας σε csv");
 		 		return false;
+		 	}else{
+				$.get("/azadmin/myproject/public/app/export/"+id,function(data){
+					newwindow = window.open(data);
+				});
 		 	}
-		});
-		$.get("/azadmin/myproject/public/app/export/"+id,function(data){
-			newwindow = window.open(data);
 		});
 	});
 
