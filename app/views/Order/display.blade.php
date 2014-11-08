@@ -274,7 +274,7 @@
 															</tr>
 															</thead>
 															<tbody class="productBody" orderId="{{$id}}" >
-																@foreach(Order::where('orderId' , '=' , $id)->where("orderId" ,"!=" , "")->get() as $ord)
+																@foreach(Order::where('orderId' , '=' , $id)->where("productId" ,">" , 0 )->get() as $ord)
 																	<tr class="productEditTr" itemId="{{$ord->productId}}" orderId="{{$id}}" productTr="{{$ord->id}}">
 																<td>
 																	<?php 
