@@ -63,6 +63,7 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<i class="fa fa-warning"></i>
 				<span class="badge">
+					{{ Employee::find(Auth::user()->userId)->employOrders->where('stateId' , '!=' ,1)->count()}}
 					 {{Employeeorder::where('stateId' , '=' , 4)->where('employeeId', '=' ,Auth::user()->userId)->count()}}
 				</span>
 				</a>
@@ -192,7 +193,7 @@
 						</li>
 					</ul>
 				</li>
-				 <li class="active open">
+				 <li class="">
 					<a href="javascript:;">
 						<i class="fa fa-briefcase"></i>
 						<span class="title">
@@ -404,8 +405,8 @@
 <script src="/azadmin/myproject/public/scripts/login-soft.js" type="text/javascript"></script>
 <script src="/azadmin/myproject/public/scripts/customScripts.js" type="text/javascript"></script>
 <script src="/azadmin/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script src="/azadmin/myproject/public/components-pickers.js"></script>
 <script src="/azadmin/myproject/public/components-dropdowns.js"></script>
+<script src="/azadmin/myproject/public/components-pickers.js"></script>
 
 <!-- END LOGIN SCRIPTS -->
  
