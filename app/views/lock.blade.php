@@ -76,6 +76,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<span class="locked">
 			Locked </span>
 			<form class="form-inline" action="/azadmin/myproject/public/app/reauthenticate" method="post">
+				{{Form::token()}}
 				<div class="input-group input-medium">
 					<input type="password" class="form-control" name="password" placeholder="Password">
 					<span class="input-group-btn">
