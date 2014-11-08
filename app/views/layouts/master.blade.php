@@ -58,7 +58,8 @@
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<ul class="nav navbar-nav pull-right">
 			<!-- BEGIN NOTIFICATION DROPDOWN -->
-			@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
+			{{Auth::user()}}
+			@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=1)
 			<li class="dropdown" id="header_notification_bar">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 				<i class="fa fa-warning"></i>
@@ -155,7 +156,7 @@
 				</li>
 				<li class="sidebar-search-wrapper">
 				</li>
-				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
+				@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=1)
 				<li class="start ">
 					<a href="/azadmin/myproject/public/app/user">
 					<i class="fa fa-home"></i>
@@ -165,7 +166,7 @@
 					</a>
 				</li>
 				@endif
-				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=5)
+				@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=5)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-user"></i>
@@ -219,7 +220,7 @@
 					</ul>
 				</li>
 				@endif
-				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
+				@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=2)
 				 <li class="">
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
@@ -247,7 +248,7 @@
 					</ul>
 				</li>
 				@endif
-				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=10)
+				@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=10)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-archive"></i>
@@ -275,7 +276,7 @@
 					</ul>
 				</li>
 				@endif
-				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
+				@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=1)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-truck"></i>
@@ -303,7 +304,7 @@
 					</ul>
 				</li>
 				@endif
-				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
+				@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=2)
 				<li class="">
 					<a href="javascript:;">
 						<i class="fa fa-barcode"></i>
