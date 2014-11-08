@@ -526,7 +526,8 @@ function updateProductView(){
 	$('.orderProducts').text(getTotalProducts());
 }
 function deleteProduct(orderIndex , model , productId){
-	productEditCartPopulate();
+	if(typeof productId!=="undefined")
+			productEditCartPopulate();
 	for(var i in itemCartProducts){
 		if(typeof productId=== 'undefined'){
 			console.log("undefined");
