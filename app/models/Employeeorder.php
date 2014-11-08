@@ -7,7 +7,7 @@ class Employeeorder extends Eloquent{
         return $this->hasMany('Order' , 'orderId' , 'id');
     }
 
-    public function employee()
+    public  function employee()
     {
         return $this->hasOne('Employee' , 'id' , 'employeeId');
     }
