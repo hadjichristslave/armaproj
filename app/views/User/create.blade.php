@@ -50,7 +50,7 @@
 														<div class="form-group">
 															<label class="control-label col-md-3">Κωδικός</label>
 															<div class="col-md-9">
-																<input type="password" class="form-control" name="password"  placeholder="Επώνυμο">
+																<input type="password" class="form-control" name="password"  placeholder="κωδικός">
 															</div>
 														</div>
 													</div>													
