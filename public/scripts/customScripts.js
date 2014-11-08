@@ -489,8 +489,8 @@ function updateProducts(productId){
 		}else console.log('did not exist');
 	if(flag == false){
 		prodQty      = 0;
-		prodName     = $.find('tr[rowId="'+productId+'"] td:nth-child(6)').text();
-		unitPrice    = $.find('tr[rowId="'+productId+'"] td:nth-child(8)').text();
+		prodName     = $.find('tr[rowId="'+productId+'"] td:nth-child(6)')[0].textContent;
+		unitPrice    = $.find('tr[rowId="'+productId+'"] td:nth-child(8)')[0].textContent;
 		itemCartProducts.push(new itemCart(productId, prodName, prodQty, unitPrice));
 	}
 	updateProductView();
