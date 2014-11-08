@@ -536,7 +536,7 @@ function deleteProduct(orderIndex , model , productId){
 			if(itemCartProducts[i].prodId==productId){
 				removeByIndex(itemCartProducts, i);
 			}
-		}else
+		}
 			
 	}
 	$("tr[productTr='"+orderIndex+"']").remove();
