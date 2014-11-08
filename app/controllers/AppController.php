@@ -46,7 +46,7 @@ class AppController extends Controller {
 	public function anyUpdate($model , $tablekey=null){
 		$id = 0;
 		$key = $tablekey==null?'id':$tablekey;
-		if($model  == "Employee" || $model == "User")    $id = Auth::user()->userId;
+		if($model  == "Employee")    $id = Auth::user()->userId;
 		else 						 $id = Input::get('id');
 		/*
 		*     USER SPECIFIC UPDATE LOGIC
