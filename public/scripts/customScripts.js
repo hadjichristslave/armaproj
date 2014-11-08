@@ -527,10 +527,11 @@ function updateProductView(){
 }
 function deleteProduct(orderIndex , model , productId){
 	for(var i in itemCartProducts){
-		if(typeof productid!== 'undefined')
-			if(itemCartProducts[i].prodId==productId)
+		if(typeof productid!== 'undefined'){
+			if(itemCartProducts[i].prodId==productId){
 				removeByIndex(itemCartProducts, i);
-		else
+			}
+		}else
 			if(itemCartProducts[i].prodId==orderIndex)
 				removeByIndex(itemCartProducts, i);
 	}
@@ -636,10 +637,8 @@ function getOrderCost(editView , storeId){
             cost = resp + " €";
             if (typeof editView != 'undefined' && editView =='true' ){
 				$('.totalCostz').text(cost);
-            	$(".orderCost").text(cost);
 			}
 			else{
-				$('.totalCostz').text(cost);
             	$(".orderCost").text(cost);
 			}
         } 
