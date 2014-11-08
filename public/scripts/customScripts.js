@@ -326,7 +326,7 @@ jQuery( document ).ready(function($) {
         type:  'post',
         cache:  false ,
         url:  '/azadmin/myproject/public/app/custom/Order/create',
-        data:  {cart:JSON.stringify(formData),_token:$('input[name="_token"]').val()},
+        data:  {cart:JSON.stringify(formData),_token:token},
         success: function(resp) {
         	console.log(resp);
         	window.location.href = resp;
@@ -738,7 +738,7 @@ function removeByIndex(arr, index) {
     arr.splice(index, 1);
 }
 function updateSingleCell(id , Model, key, value){
-	url = "/azadmin/myproject/public/app/update/"+Model+"?"+key+"="+value+"&id="+id;
+	url = "/azadmin/myproject/public/app/update/"+Model+"?"+key+"="+value+"&id="+id+"&_token="+token;
 	$.post(url, function(data){
 		postResponse = data;
 	});
