@@ -228,7 +228,7 @@ jQuery( document ).ready(function($) {
 	$(".storeSubmit").click(function(){
 		storeId = $(".storeSelect").val();
 		name = $(".storeSelect option:selected").text();
-		name = name.length>12?name.substring(0,7)+"...":name;
+		name = name.length>12?name.substring(0,10)+"...":name;
 		$(".storeName").text(name);
 		getOrderCost('true' ,storeId);
 	});
@@ -382,7 +382,14 @@ jQuery( document ).ready(function($) {
 
 	$(".csvExport").click(function(){
 		id = $("tbody.productBody").attr('orderId');
-
+		$(".orderProducts").find('tbody tr').each(function(){
+		 	stock = pareInt($(this).find('td:nth-child(4)').text());
+		 	console.log(stock);
+		 	if(stock<=0){
+		 		alert("Παρακαλώ διαγράψτε όλα τα προιόντα με μηδενικό απόθεμα προτού προχωρήσετε στην εξαγωγή της παραγγελίας σε csv");
+		 		return false;
+		 	}
+		});
 		$.get("/azadmin/myproject/public/app/export/"+id,function(data){
 			newwindow = window.open(data);
 		});

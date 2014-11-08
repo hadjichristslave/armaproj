@@ -117,20 +117,7 @@
 					<li>
 						<a href="/azadmin/myproject/public/calendar/calendar"><i class="fa fa-calendar"></i> My Calendar</a>
 					</li>
-					<!-- <li>
-						<a href="inbox.html"><i class="fa fa-envelope"></i> My Inbox
-						<span class="badge badge-danger">
-							 3
-						</span>
-						</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-tasks"></i> My Tasks
-						<span class="badge badge-success">
-							 7
-						</span>
-						</a>
-					</li> -->
+				
 					<li class="divider">
 					</li>
 					<li>
@@ -167,17 +154,6 @@
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 				</li>
 				<li class="sidebar-search-wrapper">
-					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<!-- <form class="sidebar-search" action="extra_search.html" method="POST">
-						<div class="form-container">
-							<div class="input-box">
-								<a href="javascript:;" class="remove"></a>
-								<input type="text" placeholder="Search..."/>
-								<input type="button" class="submit" value=" "/>
-							</div>
-						</div>
-					</form> -->
-					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
 				<li class="start ">
@@ -309,14 +285,6 @@
 						<span class="arrow">
 						</span>
 					</a>
-					<!-- <ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
-							<a href="/azadmin/myproject/public/app/data/Order/create">
-								<span class="title">
-									Δημιουργία
-								</span>
-							</a>
-						</li> -->
 						<ul class="sub-menu" style="display: none;">
 						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Product/view')}} " data-container="body" data-placement="right" data-html="true" >
 								<a href="/azadmin/myproject/public/app/data/Product/view">
@@ -325,20 +293,6 @@
 									</span>
 								</a>
 							</li>
-						<!-- <li class="tooltips" data-container="body" data-placement="right" data-html="true" >
-							<a href="/azadmin/myproject/public/app/data/Order/edit">
-								<span class="title">
-									Τροποποίηση
-								</span>
-							</a>
-						</li> -->
-						<!-- <li class="tooltips" data-container="body" data-placement="right" data-html="true" >
-							<a href="/azadmin/myproject/public/app/data/Order/display">
-								<span class="title">
-									Μεμονομένη παραγγελία
-								</span>
-							</a>
-						</li> -->
 						<li class="tooltips {{Product::getIfActive('azadmin/myproject/public/app/data/Order/orders')}}" data-container="body" data-placement="right" data-html="true" >
 							<a href="/azadmin/myproject/public/app/data/Order/orders">
 								<span class="title">
@@ -348,34 +302,6 @@
 						</li>
 					</ul>
 				</li>
-				@endif
-				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=1)
-				<!--<li class="">
-					<a href="javascript:;">
-						<i class="fa fa-bar-chart-o"></i>
-						<span class="title">
-							Καταστατικό
-						</span>
-						<span class="arrow">
-						</span>
-					</a>
-					<ul class="sub-menu" style="display: none;">
-						<li class="tooltips" data-container="body" data-placement="right" data-html="true" >
-							<a href="/azadmin/myproject/public/app/data/View/orders">
-								<span class="title">
-									Συνολο παραγγελιών
-								</span>
-							</a>
-						</li>
-						<!-- <li class="tooltips" data-container="body" data-placement="right" data-html="true" >
-							<a href="/azadmin/myproject/public/app/data/Order/display">
-								<span class="title">
-									Μεμονομένη παραγγελία
-								</span>
-							</a>
-						</li> 
-					</ul>
-				</li> -->
 				@endif
 				@if(Usergroup::find(Auth::user()->userGroup)->privilegeValue>=2)
 				<li class="">

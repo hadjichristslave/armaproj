@@ -247,7 +247,7 @@
 													</div>
 													<div class="portlet-body">
 														<div class="table-responsive">
-															<table class="table table-hover table-bordered table-striped">
+															<table class="table table-hover table-bordered table-striped orderProducts">
 															<thead>
 															<tr>
 																<th>
