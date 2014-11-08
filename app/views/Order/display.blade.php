@@ -199,7 +199,7 @@
 																 Τίτλος:
 															</div>
 															<div class="col-md-7 value storeTitle" storeId="{{Employeeorder::find($id)->storeId}}">
-																 {{Store::find(Employeeorder::find($id)->storeId)->brand}}
+																 {{Employeeorder::find($id)->store->brand}}
 															</div>
 														</div>
 														<div class="row static-info">
@@ -207,7 +207,7 @@
 																 Υπεύθυνος:
 															</div>
 															<div class="col-md-7 value">
-																 {{Employee::find(Employeeorder::find($id)->employeeId)->name}}
+																 {{Employeeorder::find($id)->employee->name}}
 															</div>
 														</div>
 														
@@ -216,7 +216,7 @@
 																 Διέυθυνση:
 															</div>
 															<div class="col-md-7 value">
-																 {{Store::find(Employeeorder::find($id)->storeId)->address}}																 
+																 {{Employeeorder::find($id)->store->address}}																 
 															</div>
 														</div>
 														<div class="row static-info">
@@ -224,7 +224,7 @@
 																 Τηλέφωνο:
 															</div>
 															<div class="col-md-7 value">
-																 {{Employee::find(Employeeorder::find($id)->employeeId)->phone}}
+																 {{Employeeorder::find($id)->employee>phone}}
 															</div>
 														</div>
 														<!-- <div class="row static-info">
