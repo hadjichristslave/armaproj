@@ -227,7 +227,10 @@ jQuery( document ).ready(function($) {
 
 	$(".storeSubmit").click(function(){
 		storeId = $(".storeSelect").val();
-		$(".storeName").text($(".storeSelect option[value='"+storeId+"']").text());
+		string.substring(0, length);
+		name = name.length>12?name.substring(0,7)+"...":name;
+		$(".storeName").text(name);
+		getOrderCost('true' ,storeId);
 	});
 
 	$(document).on('change' , ".ajax_productId", function(){
