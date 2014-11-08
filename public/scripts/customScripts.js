@@ -326,7 +326,7 @@ jQuery( document ).ready(function($) {
         type:  'post',
         cache:  false ,
         url:  '/azadmin/myproject/public/app/custom/Order/create',
-        data:  {cart:JSON.stringify(formData),_token = $('input[name="_token"]').val()},
+        data:  {cart:JSON.stringify(formData),_token:$('input[name="_token"]').val()},
         success: function(resp) {
         	console.log(resp);
         	window.location.href = resp;
