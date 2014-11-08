@@ -156,7 +156,7 @@
 				<li class="sidebar-search-wrapper">
 				</li>
 				@if(Usergroup::find(Auth::user()->employee->groupId)->privilegeValue>=1)
-				<li class="start ">
+				<li class="start {{Product::getIfActive('azadmin/myproject/public/app/user')}}">
 					<a href="/azadmin/myproject/public/app/user">
 					<i class="fa fa-home"></i>
 					<span class="title">
