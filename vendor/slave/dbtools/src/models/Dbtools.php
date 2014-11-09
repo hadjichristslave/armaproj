@@ -79,6 +79,7 @@ class Dbtools extends Model {
                 else if($value!="" && $key != "password")
                     $inputData->$key = $value;
             }
+            var_dump($inputData);
             $flag = Validpack::validateoperation($inputData);
             if($flag->passes()){
                 foreach ($inputData->attributes as $key => $value)
@@ -87,7 +88,6 @@ class Dbtools extends Model {
                 $inputData->save();
                 $message = 'Succesful ' .$model. " record update!";
                 return $message;
-
             }else{
                 $message = 'Data for  ' . $model. " not valid!";
                 die();

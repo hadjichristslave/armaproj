@@ -62,8 +62,7 @@ class AppController extends Controller {
 			}
 		}
 		$message = Dbtools::updateFromModel($model, $id ,$key);
-		return Redirect::to('/app/user')
-		->with('message' , $message);
+		return Redirect::to('/app/user')->with('message' , $message);
 	}
 
 	public function getSearch($model){
