@@ -18,7 +18,7 @@
 									if(Session::has('message'))
 										echo Session::get('message');
 									else
-										echo 'no message';
+										echo 'Καμία ειδοποίηση';
 								?>
 							</span>
 							</button>
