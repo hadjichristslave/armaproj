@@ -79,6 +79,7 @@ class Dbtools extends Model {
                 else if($value!="" && $key != "password")
                     $inputData->$key = $value;
             }
+            echo 'input data';
             var_dump($inputData);
             $flag = Validpack::validateoperation($inputData);
             if($flag->passes()){
@@ -90,7 +91,8 @@ class Dbtools extends Model {
                 return $message;
             }else{
                 $message = 'Data for  ' . $model. " not valid!";
-                die();
+                echo 'result';
+                var_dump($flag);
                 return $message;
             }
         }catch(Exception $e){
