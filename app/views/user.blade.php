@@ -67,8 +67,9 @@
 											<li>
 												<!-- <img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/> -->
 												<?
-													echo getcwd();
-													if (file_exists('/azadmin/myproject/public/useravatars/user'.Auth::user()->id)){
+													echo getcwd() . "\n";
+													echo '/useravatars/user'.Auth::user()->id . "\n";
+													if (file_exists('/useravatars/user'.Auth::user()->id)){
 														echo 'exists :) ';
 														echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" class="img-responsive" alt=""/> ';
 													}else{
