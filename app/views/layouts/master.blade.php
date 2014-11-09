@@ -107,7 +107,7 @@
 					<?
 
 						if (file_exists('useravatars/user'.Auth::user()->id))
-							echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" alt=""/> ';
+							echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" alt="" style="width:29px;height:29px"/> ';
 						else
 							 echo '<img alt="" src="/azadmin/assets/img/avatar1_small.jpg"/> ';
 					?>
