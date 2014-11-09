@@ -353,7 +353,7 @@ class AppController extends Controller {
 		return View::make($view);
 	}
 
-	public function getPicture(){
+	public function postPicture(){
 		echo 'thid;/';
 		if (Input::hasFile('file'))
 		{

@@ -345,7 +345,8 @@
 												<p>
 													Χρησιμοποιήστε αρχεία με κατάληξη .jpg με μέγιστο μέγεθος 400kB.
 												</p>
-												<form action="/azadmin/myproject/public/app/picture" enctype="multipart/form-data" method="get" role="form">
+												<form action="/azadmin/myproject/public/app/picture" enctype="multipart/form-data" method="post" role="form">
+													{{Form::token()}}
 													<div class="form-group">
 														<div class="thumbnail" style="width: 310px;">
 															<img src="http://www.placehold.it/310x170/EFEFEF/AAAAAA&amp;text=no+image" alt="">
