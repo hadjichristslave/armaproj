@@ -362,6 +362,7 @@ class AppController extends Controller {
 			Input::file('file')->move($destinationPath, $filename);
     		
 		}
+		return Redirect::to('/app/user/')->with('message' , "picture upload sucess");
 	}
 	
 }

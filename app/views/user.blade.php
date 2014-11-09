@@ -65,8 +65,13 @@
 									<div class="col-md-3">
 										<ul class="list-unstyled profile-nav">
 											<li>
-												<img src="http://armancon.com/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/>
-												<a href="#" class="profile-edit">επεξεργασία</a>
+												<!-- <img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/> -->
+												<?
+													if (File::exists('/azadmin/myproject/public/useravatars/user'.Auth::user()->id))
+														echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" class="img-responsive" alt=""/> '
+													else
+														 echo '<img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/> ';
+												?>
 											</li>
 											<li>
 												<a href="#">Μηνύματα
