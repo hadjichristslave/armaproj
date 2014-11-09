@@ -354,11 +354,12 @@ class AppController extends Controller {
 	}
 
 	public function getPicture(){
+		echo 'thid;/';
 		if (Input::hasFile('file'))
 		{
 			$destinationPath = "useravatars";
 			$filename        = "user". Auth::user()->id;
-			Input::file('photo')->move($destinationPath, $fileName);
+			Input::file('file')->move($destinationPath, $fileName);
     		
 		}
 	}
