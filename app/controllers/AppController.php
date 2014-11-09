@@ -61,8 +61,6 @@ class AppController extends Controller {
 				return Redirect::to('/app/user')->with('message' , 'password given is not correct');
 			}
 			Input::merge(array('password' => Input::get('newpassword')));
-			var_dump(Input::all());
-			die();
 		}
 		$message = Dbtools::updateFromModel($model, $id ,$key);
 		return Redirect::to('/app/user')
