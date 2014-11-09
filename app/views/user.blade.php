@@ -68,15 +68,10 @@
 												<!-- <img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/> -->
 												<?
 
-													echo getcwd() . "<br>";
-													echo 'useravatars/user'.Auth::user()->id . "<br>";
-													if (file_exists('useravatars/user'.Auth::user()->id)){
-														echo 'exists :) ';
+													if (file_exists('useravatars/user'.Auth::user()->id))
 														echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" class="img-responsive" alt=""/> ';
-													}else{
-														echo 'doesn\'t exist :( ';
+													else
 														 echo '<img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/> ';
-														}
 												?>
 											</li>
 											<li>
