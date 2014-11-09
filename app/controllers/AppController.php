@@ -358,13 +358,13 @@ class AppController extends Controller {
 		if (Input::hasFile('file'))
 		{
 			$extension = Input::file('file')->getClientOriginalExtension();
-			var_dump($extension);
-			if($extension!= "png" && $extension!= "jpg" && $extension!= "jpg" && $extension!= "gif"){
-				return Redirect::to('/app/user/')->with('message' , "Only .jpg, .png, and .gif formats supported");		
+			if($extension!= "png" && $extension!= "jpg" && $extension!= "jpeg" && $extension!= "gif"){
+				return Redirect::to('/app/user/')->with('message' , "Επιτρεπτές κωδικοποιήσεις εικόνας: .jpg, .png, and .gif");		
 			}
 			$size = Input::file('file')->getSize();
-			var_dump($size);
-			die();
+			if($size > 2000000){
+				return Redirect::to('/app/user/')->with('message' , "Μέγιστο επιτρεπτό μέγεθος εικόνας 2MB");			
+			}
 			$destinationPath = "useravatars";
 			$filename        = "user". Auth::user()->id;
 			Input::file('file')->move($destinationPath, $filename);

@@ -349,7 +349,8 @@
 											</div>
 											<div id="tab_2-2" class="tab-pane">
 												<p>
-													Χρησιμοποιήστε αρχεία με κατάληξη .jpg με μέγιστο μέγεθος 400kB.
+													Επιτρεπτά αρχεία: .jpg,.png,gif <br>
+													Μέγιστο επιτρεπτό μέγεθος 2ΜΒ.
 												</p>
 												<form action="/azadmin/myproject/public/app/picture" enctype="multipart/form-data" method="post" role="form">
 													{{Form::token()}}
