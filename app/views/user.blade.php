@@ -68,7 +68,7 @@
 												<!-- <img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/> -->
 												<?
 													if (File::exists('/azadmin/myproject/public/useravatars/user'.Auth::user()->id))
-														echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" class="img-responsive" alt=""/> '
+														echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" class="img-responsive" alt=""/> ';
 													else
 														 echo '<img src="/azadmin/assets/img/profile/profile-img.png" class="img-responsive" alt=""/> ';
 												?>
