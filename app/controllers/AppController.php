@@ -359,7 +359,7 @@ class AppController extends Controller {
 			$destinationPath = "useravatars";
 			$filename        = "user". Auth::user()->id;
 			Input::file('photo')->move($destinationPath, $fileName);
-    		//
+    		
 		}
 	}
 	

@@ -373,8 +373,7 @@
 														</div>
 													</div>
 													<div class="margin-top-10">
-														<a href="#" class="btn green">Submit</a>
-														<a href="#" class="btn default">Cancel</a>
+														<button type="submit" class="btn green">Submit</button>
 														<input name="id" value="{{Auth::user()->id}}" hidden />
 													</div>
 												</form>
