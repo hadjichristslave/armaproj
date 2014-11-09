@@ -104,7 +104,14 @@
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-				<img alt="" src="/azadmin/assets/img/avatar1_small.jpg"/>
+					<?
+
+						if (file_exists('useravatars/user'.Auth::user()->id))
+							echo '<img src="/azadmin/myproject/public/useravatars/user'.Auth::user()->id.'" alt=""/> ';
+						else
+							 echo '<img alt="" src="/azadmin/assets/img/avatar1_small.jpg"/> ';
+					?>
+				
 				<span class="username">
 					 {{Employee::find(Auth::user()->userId)->name}} {{Employee::find(Auth::user()->userId)->lname}}
 				</span>
