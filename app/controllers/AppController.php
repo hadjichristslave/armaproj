@@ -357,6 +357,14 @@ class AppController extends Controller {
 		echo 'thid;/';
 		if (Input::hasFile('file'))
 		{
+			$extension = Input::file('file')->getClientOriginalExtension();
+			var_dump($extension);
+			if($extension!= "png" && $extension!= "jpg" && $extension!= "jpg" && $extension!= "gif"){
+				return Redirect::to('/app/user/')->with('message' , "Only .jpg, .png, and .gif formats supported");		
+			}
+			$size = Input::file('file')->getSize();
+			var_dump($size);
+			die();
 			$destinationPath = "useravatars";
 			$filename        = "user". Auth::user()->id;
 			Input::file('file')->move($destinationPath, $filename);
