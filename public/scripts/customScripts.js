@@ -35,6 +35,7 @@ jQuery( document ).ready(function($) {
 			});
 		  $(".ajax_brandButton").each(function(){ console.log($(this).find('input').first().val('')); $(this).removeClass('active')});
   		  $(".ajax_brandButtonDate").each(function(){ $(this).find('input').first().val('')});
+  		  
 		  jQuery.ajax({
 		         url:    "/azadmin/myproject/public/app/customreturn/Storebrand/"+$(this).val()+"/false",
 		         success: function(data) {

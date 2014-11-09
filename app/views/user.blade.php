@@ -345,7 +345,7 @@
 												<p>
 													Χρησιμοποιήστε αρχεία με κατάληξη .jpg με μέγιστο μέγεθος 400kB.
 												</p>
-												<form action="#" role="form">
+												<form action="/azadmin/myproject/public/app/picture" role="form">
 													<div class="form-group">
 														<div class="thumbnail" style="width: 310px;">
 															<img src="http://www.placehold.it/310x170/EFEFEF/AAAAAA&amp;text=no+image" alt="">
@@ -366,17 +366,11 @@
 																	<span class="fileupload-exists">
 																		<i class="fa fa-undo"></i> Change
 																	</span>
-																	<input type="file" class="default"/>
+																	<input type="file" name="file" class="default"/>
 																</span>
 																<a href="#" class="btn red fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
 															</div>
 														</div>
-														<!-- <span class="label label-danger">
-															NOTE!
-														</span>
-														 <span>
-															 Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only
-														</span> -->
 													</div>
 													<div class="margin-top-10">
 														<a href="#" class="btn green">Submit</a>

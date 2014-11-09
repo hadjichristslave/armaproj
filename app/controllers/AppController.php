@@ -150,7 +150,7 @@ class AppController extends Controller {
 									 'deliveryReceiverId');
 			if($action=='create'){
 				$message = Dbtools::createFromModel($model, $storeAttributes);
-				$store = Store::orderby('created_at', 'desc')->first();
+				$store = Store::orderBy('created_at', 'desc')->first();
 				Storebrand::createStoreBrandsFromInput($store->id);
 			}else if($action =='edit'){
 				$message = Dbtools::updateFromModel($model, Input::get('id') , 'id' ,  $storeAttributes);
@@ -159,6 +159,8 @@ class AppController extends Controller {
 			}else if($action='delete'){
 				Storebrand::where('storeId' , '=' , Input::get('id'))->delete();
 				$message = Dbtools::deleteFromModel($model, Input::get('id') , 'id');
+
+				Dbtools::deleteFromModel("Employeeorder" , Input::get('id'), 'storeId');
 			}
 				$action = $action=='delete'?'edit':$action;
 				return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
@@ -349,6 +351,16 @@ class AppController extends Controller {
 	}
 	public function getView($view){
 		return View::make($view);
+	}
+
+	public function getPicture(){
+		if (Input::hasFile('file'))
+		{
+			$destinationPath = "useravatars";
+			$filename        = "user". Auth::user()->id;
+			Input::file('photo')->move($destinationPath, $fileName);
+    		//
+		}
 	}
 	
 }
