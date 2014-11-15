@@ -79,8 +79,8 @@ class Dbtools extends Model {
                 else if($value!="" && $key != "password")
                     $inputData->$key = $value;
             }
-            $flag = Validpack::validateoperation($inputData);
 
+            $flag = Validpack::validateoperation($inputData);
             if($flag==true){
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password" && strlen(Input::get('newpassword'))>3)
@@ -94,6 +94,8 @@ class Dbtools extends Model {
             }
         }catch(Exception $e){
             echo 'Caught exception: '.  $e->getMessage(). "\n";
+        }catch(\Illuminate\Database\QueryException $e){
+            echo "Τα στοιχεία που δώσατε επηρεάζουν την ακαιρεώτητα της βάσης. Παρακαλώ ξανασυμπληρώστε τα στοιχεία";
         }
 	}
 	
