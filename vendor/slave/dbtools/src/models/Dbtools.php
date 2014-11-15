@@ -82,7 +82,7 @@ class Dbtools extends Model {
             echo 'input data';
             var_dump($inputData);
             $flag = Validpack::validateoperation($inputData);
-            if($flag->passes()){
+            if($flag){
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password" && strlen(Input::get('newpassword'))>2)
                         $inputData->$key = Hash::make(Input::get('newpassword'));
