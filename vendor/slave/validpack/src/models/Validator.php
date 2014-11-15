@@ -16,12 +16,10 @@ class Validator extends Model {
 		}
 		$validator = Validator::make($data,$rules);
 		if($validator->passes()){
-			var_dump($rules);
-			die('on errors');
+			echo ' on errors';
 			return true;
 		}
-		var_dump($rules);
-		die('found errors');
+		echo 'found errors';
 		return $validator->errors();
 	}	
 }
