@@ -81,6 +81,7 @@ class Dbtools extends Model {
             }
             $flag = Validpack::validateoperation($inputData);
             if($flag==true){
+                var_dump($flag);
                 die('no error');
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password" && strlen(Input::get('newpassword'))>3)

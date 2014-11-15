@@ -15,11 +15,8 @@ class Validator extends Model {
 			$data[$key] = $obj->$key;
 		}
 		$validator = Validator::make($data,$rules);
-		if($validator->passes()){
-			echo ' on errors';
+		if($validator->passes())
 			return true;
-		}
-		echo 'found errors';
 		return $validator->errors();
 	}	
 }
