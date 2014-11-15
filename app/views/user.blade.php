@@ -405,9 +405,8 @@
 													</div>
 													<div class="form-group">
 														<label>Input with Icon</label>
-														<div class="input-group input-icon right">
-															<span class="input-group-addon">
-															<i class="fa fa-exclamation tooltips" data-original-title="Invalid email." data-container="body"></i>
+														<div class="input-icon right">
+															<i style="z-index:100" class="fa fa-exclamation " data-original-title="Invalid email." data-container="body"></i>
 															<input type="text" name="email" placeholder="πχ onoma@azade.com" class="input-error form-control mailUpdate" value="{{Auth::user()->email}}"/>
 														</div>
 													</div>
