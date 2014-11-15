@@ -38,7 +38,9 @@ class Dbtools extends Model {
                 return $message;
             }
         }catch(Exception $e){
-            echo 'Caught exception: '.  $e->getMessage(). "\n";
+            return 'Κάποιο σφάλμα δημιουργήθηκε, παρακαλώ ελέγξτε τα στοιχεία της φόρμας: '.  $e->getMessage(). "\n";
+        }catch(\Illuminate\Database\QueryException $e){
+            return "Τα στοιχεία που δώσατε επηρεάζουν την ακαιρεώτητα της βάσης. Παρακαλώ ξανασυμπληρώστε τα στοιχεία";
         }
 	}
 	public static function deleteFromModel($model, $id, $tablekey){
@@ -56,8 +58,10 @@ class Dbtools extends Model {
 				return "Succesful data delete!";
 			}
 		}catch(Exception $e){
-			echo 'Caught exception: '.  $e->getMessage(). "\n";	
-		}
+            return 'Κάποιο σφάλμα δημιουργήθηκε, παρακαλώ ελέγξτε τα στοιχεία της φόρμας: '.  $e->getMessage(). "\n";
+        }catch(\Illuminate\Database\QueryException $e){
+            return "Τα στοιχεία που δώσατε επηρεάζουν την ακαιρεώτητα της βάσης. Παρακαλώ ξανασυμπληρώστε τα στοιχεία";
+        }
 	}
 	public static function updateFromModel($model , $id , $tablekey , $arrayOfAttributes = null){
         if($arrayOfAttributes==null)
@@ -93,9 +97,9 @@ class Dbtools extends Model {
                 return $message;
             }
         }catch(Exception $e){
-            echo 'Caught exception: '.  $e->getMessage(). "\n";
+            return 'Κάποιο σφάλμα δημιουργήθηκε, παρακαλώ ελέγξτε τα στοιχεία της φόρμας: '.  $e->getMessage(). "\n";
         }catch(\Illuminate\Database\QueryException $e){
-            echo "Τα στοιχεία που δώσατε επηρεάζουν την ακαιρεώτητα της βάσης. Παρακαλώ ξανασυμπληρώστε τα στοιχεία";
+            return "Τα στοιχεία που δώσατε επηρεάζουν την ακαιρεώτητα της βάσης. Παρακαλώ ξανασυμπληρώστε τα στοιχεία";
         }
 	}
 	
