@@ -82,7 +82,7 @@ class Dbtools extends Model {
             echo 'input data';
             var_dump($inputData);
             $flag = Validpack::validateoperation($inputData);
-            if($flag){
+            if($flag==true){
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password" && strlen(Input::get('newpassword'))>2)
                         $inputData->$key = Hash::make(Input::get('newpassword'));
@@ -91,8 +91,6 @@ class Dbtools extends Model {
                 return $message;
             }else{
                 $message = 'Data for  ' . $model. " not valid!";
-                echo 'result';
-                die();
                 return $message;
             }
         }catch(Exception $e){
