@@ -405,8 +405,11 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Τρέχων e-mail</label>
-														<input type="text" name="email" placeholder="πχ onoma@azade.com" class="form-control" value="{{Auth::user()->email}}"/>
-														<span></span>
+														<div class="input-group input-icon right">
+															<span class="input-group-addon">
+															<i class="fa fa-exclamation tooltips" data-original-title="Invalid email." data-container="body" aria-describedby="tooltip577873"></i>
+															<input type="text" name="email" placeholder="πχ onoma@azade.com" class="form-control" value="{{Auth::user()->email}}"/>
+														</div>
 													</div>
 													<div class="margin-top-10">
 														<input name="id" value="{{Auth::user()->id}}" hidden />
