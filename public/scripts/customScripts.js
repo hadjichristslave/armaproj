@@ -383,19 +383,14 @@ jQuery( document ).ready(function($) {
 	$(".csvExport").click(function(){
 		id        = $("tbody.productBody").attr('orderId');
 		isCorrect = true;
-		$(".orderProducts").find('tbody tr').each(function(){
-		 	stock = parseInt($(this).find('td:nth-child(4)').text());
-		 	console.log(stock);
-		 	if(stock<=0)
-		 		isCorrect = false;
-		});
-			if(isCorrect){
-				$.get("/azadmin/myproject/public/app/export/"+id,function(data){
-					newwindow = window.open(data);
-				});
-			}else{
-				alert("Παρακάλώ διαγράψτε όλα τα προϊόντα με μηδενικό απόθεμα προτού εξάγετε την παραγγελία");
-			}
+		if($(".allProductRow").find("del").size() >0){
+			alert("Παρακάλώ διαγράψτε όλα τα προϊόντα με μηδενικό απόθεμα προτού εξάγετε την παραγγελία");
+		}
+		else{
+			$.get("/azadmin/myproject/public/app/export/"+id,function(data){
+				newwindow = window.open(data);
+			});
+		}
 	});
 
 	
