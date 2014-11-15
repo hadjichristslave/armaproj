@@ -103,7 +103,7 @@ class AppController extends Controller {
 			$csv .= "\n";
 		}
 
-			$csv_handler = fopen ('csvfile.csv','w');
+			$csv_handler = fopen ($id.'.csv','w');
 			fwrite ($csv_handler,$csv);
 			fclose ($csv_handler);
 			return "/azadmin/myproject/public/csvfile.csv"; 
