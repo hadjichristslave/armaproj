@@ -4,10 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Validator extends Model {
 
-
-	public static function validate(){
-		echo 'asdfasd';
-	}
 	public static function validateop(&$obj){
 		$rules = $obj->rules;
 		$data     = array();

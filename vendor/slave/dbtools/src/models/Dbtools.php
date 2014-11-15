@@ -80,6 +80,13 @@ class Dbtools extends Model {
                     $inputData->$key = $value;
             }
             $flag = Validpack::validateoperation($inputData);
+
+            $inputData->email = "p.chatzichristodoulou@gmail.com";
+            var_dump(Validpack::validateoperation($inputData));
+
+            $inputData->email = "p.sdsds@gmail.com";
+            var_dump(Validpack::validateoperation($inputData));
+            die();
             if($flag!=true){
                 var_dump($flag);
                 die('no error');
