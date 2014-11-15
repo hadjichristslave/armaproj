@@ -106,7 +106,7 @@ class AppController extends Controller {
 			$csv_handler = fopen ($id.'.csv','w');
 			fwrite ($csv_handler,$csv);
 			fclose ($csv_handler);
-			return "/azadmin/myproject/public/csvfile.csv"; 
+			return "/azadmin/myproject/public/".$id.".csv"; 
 
 	}
 	public function postData($model, $action, $id=null , $tablekey = null , $redirect = null){
