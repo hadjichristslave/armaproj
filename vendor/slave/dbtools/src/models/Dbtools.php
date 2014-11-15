@@ -79,10 +79,9 @@ class Dbtools extends Model {
                 else if($value!="" && $key != "password")
                     $inputData->$key = $value;
             }
-            echo 'input data';
-            var_dump($inputData);
             $flag = Validpack::validateoperation($inputData);
             if($flag==true){
+                die('no error');
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password" && strlen(Input::get('newpassword'))>3)
                         $inputData->$key = Hash::make(Input::get('newpassword'));
