@@ -17,8 +17,6 @@ class Validator extends Model {
 		$validator = Validator::make($data,$rules);
 		if($validator->passes())
 			return true;
-		echo " errors";
-		var_dump($validator->errors());
 		return $validator->errors();
 	}	
 }
