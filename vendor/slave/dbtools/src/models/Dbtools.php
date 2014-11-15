@@ -84,7 +84,7 @@ class Dbtools extends Model {
             $flag = Validpack::validateoperation($inputData);
             if($flag==true){
                 foreach ($inputData->attributes as $key => $value)
-                    if($key == "password" && strlen(Input::get('newpassword'))>2)
+                    if($key == "password" && strlen(Input::get('newpassword'))>3)
                         $inputData->$key = Hash::make(Input::get('newpassword'));
                 $inputData->save();
                 $message = 'Succesful ' .$model. " record update!";
