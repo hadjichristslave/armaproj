@@ -80,7 +80,7 @@ class Dbtools extends Model {
                     $inputData->$key = $value;
             }
             $flag = Validpack::validateoperation($inputData);
-            if($flag==true){
+            if($flag!=true){
                 var_dump($flag);
                 die('no error');
                 foreach ($inputData->attributes as $key => $value)
