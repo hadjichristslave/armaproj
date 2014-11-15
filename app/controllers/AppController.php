@@ -158,7 +158,8 @@ class AppController extends Controller {
 				Storebrand::where('storeId' , '=' , Input::get('id'))->delete();
 				$message = Dbtools::deleteFromModel($model, Input::get('id') , 'id');
 
-				Dbtools::deleteFromModel("Employeeorder" , Input::get('id'), 'storeId');
+
+				//Dbtools::deleteFromModel("Employeeorder" , Input::get('id'), 'storeId');
 			}
 				$action = $action=='delete'?'edit':$action;
 				return Redirect::to('/app/data/'. $model. '/' . $action)->with('message' , $message);
