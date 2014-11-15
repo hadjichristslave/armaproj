@@ -92,7 +92,6 @@ class Dbtools extends Model {
             }else{
                 $message = 'Data for  ' . $model. " not valid!";
                 echo 'result';
-                var_dump($flag);
                 die();
                 return $message;
             }
