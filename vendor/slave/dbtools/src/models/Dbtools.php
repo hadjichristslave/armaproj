@@ -26,7 +26,7 @@ class Dbtools extends Model {
                     $inputData->$key = $value;
 
             $flag = Validpack::validateoperation($inputData);
-            if($flag->passes()){
+            if($flag=="true"){
                 foreach ($inputData->attributes as $key => $value)
                     if($key == "password")
                         $inputData->$key = Hash::make($value);
@@ -81,13 +81,7 @@ class Dbtools extends Model {
             }
             $flag = Validpack::validateoperation($inputData);
 
-            $inputData->email = "p.chatzichristodoulou@gmail.com";
-            var_dump(Validpack::validateoperation($inputData));
-
-            $inputData->email = "p.sdsds@gmail.com";
-            var_dump(Validpack::validateoperation($inputData));
-            die();
-            if($flag!=true){
+            if($flag=="true"){
                 var_dump($flag);
                 die('no error');
                 foreach ($inputData->attributes as $key => $value)
@@ -97,6 +91,8 @@ class Dbtools extends Model {
                 $message = 'Succesful ' .$model. " record update!";
                 return $message;
             }else{
+                echo " errorrrorr  \n \n \n \n ";
+                die($flag);
                 $message = 'Data for  ' . $model. " not valid!";
                 return $message;
             }
